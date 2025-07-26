@@ -1,0 +1,16 @@
+mapscripts Route101_MapScripts {}
+
+script Route101_EventScript_GiveEmergencyMon {
+    lock
+    faceplayer
+    msgbox(Route101_Text_TakeThisMon, MSGBOX_DEFAULT)
+    closemessage
+    givemon(SPECIES_GYARADOS, 25)
+    release
+}
+
+
+text Route101_Text_TakeThisMon {
+    "You don't have a Pokémon\n"
+    "with you. Take this."
+}
