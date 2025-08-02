@@ -131,7 +131,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToStartingMap(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_ROUTE101), MAP_NUM(MAP_ROUTE101), WARP_ID_NONE, 11, 13);
+    SetWarpDestination(MAP_GROUP(MAP_INSIDE_OF_TRUCK), MAP_NUM(MAP_INSIDE_OF_TRUCK), WARP_ID_NONE, 7, 5);
     WarpIntoMap();
 }
 
@@ -199,6 +199,7 @@ void NewGameInitData(void)
     ResetLotteryCorner();
     WarpToStartingMap();
     RunScriptImmediately(EventScript_ResetAllMapFlags);
+    FlagSet(FLAG_SPAWN_INVISIBLE);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();

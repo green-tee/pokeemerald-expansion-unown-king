@@ -62,7 +62,7 @@ $(TILESETGFXDIR)/secondary/battle_frontier_outside_east/tiles.4bpp: %.4bpp: %.pn
 	$(GFX) $< $@ -num_tiles 508 -Wnum_tiles
 
 $(TILESETGFXDIR)/primary/building/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 502 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 512 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/shop/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 502 -Wnum_tiles
@@ -137,7 +137,7 @@ $(TILESETGFXDIR)/secondary/secret_base/red_cave/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 83 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/inside_of_truck/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 62 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 126 -Wnum_tiles
 
 $(TILESETGFXDIR)/secondary/contest/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 430 -Wnum_tiles

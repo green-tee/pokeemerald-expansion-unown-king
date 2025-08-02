@@ -187,7 +187,7 @@ const struct Tileset gTileset_Building =
     .palettes = gTilesetPalettes_InsideBuilding,
     .metatiles = gMetatiles_InsideBuilding,
     .metatileAttributes = gMetatileAttributes_InsideBuilding,
-    .callback = InitTilesetAnim_Building,
+    .callback = NULL,
 };
 
 const struct Tileset gTileset_Shop =

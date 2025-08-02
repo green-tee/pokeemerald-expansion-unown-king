@@ -1,0 +1,156 @@
+mapscripts InsideOfTruck_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ROUTE101_STATE, 0: InsideOfTruck_EventScript_PlayIntro
+    ]
+}
+
+script InsideOfTruck_EventScript_PlayIntro {
+    lockall
+    // Showing Arceus
+    delay(120)
+    msgbox(InsideOfTruck_Text_AtDawnThereExistedNothing, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    msgbox(InsideOfTruck_Text_ArceusCameToBe, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    applymovement(LOCALID_PLAYER, InsideOfTruck_Movement_Slide11)
+    waitmovement(LOCALID_PLAYER)
+    // Showing Dialga and Palkia
+    delay(60)
+    msgbox(InsideOfTruck_Text_ArceusCreatedTime, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    msgbox(InsideOfTruck_Text_ArceusCreatedSpace, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    applymovement(LOCALID_PLAYER, InsideOfTruck_Movement_Slide11)
+    waitmovement(LOCALID_PLAYER)
+    // Showing two Mew
+    delay(60)
+    msgbox(InsideOfTruck_Text_ArceusCreatedMew, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    msgbox(InsideOfTruck_Text_ArceusGaveMewPowerToSplit, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    applymovement(LOCALID_PLAYER, InsideOfTruck_Movement_Slide11)
+    waitmovement(LOCALID_PLAYER)
+    // Showing GLYPHS Unown
+    delay(60)
+    msgbox(InsideOfTruck_Text_ArceusCreatedUnown, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    applymovement(LOCALID_PLAYER, InsideOfTruck_Movement_Slide14)
+    waitmovement(LOCALID_PLAYER)
+    // Showing Regice, Registeel, and Regirock
+    delay(60)
+    msgbox(InsideOfTruck_Text_MewBeganToMutate, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    msgbox(InsideOfTruck_Text_WorldShaped, MSGBOX_DEFAULT)
+    closemessage
+    delay(120)
+    msgbox(InsideOfTruck_Text_ArceusCreatedUnownKing, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    applymovement(LOCALID_PLAYER, InsideOfTruck_Movement_Slide15)
+    waitmovement(LOCALID_PLAYER)
+    // Showing Charizard, Blastoise, and Venusaur
+    delay(60)
+    msgbox(InsideOfTruck_Text_MoreVariationsCreated, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    warp(MAP_ROUTE101, 11, 13)
+    releaseall
+}
+
+movement InsideOfTruck_Movement_Slide11 {
+    walk_slow_right * 11
+}
+
+movement InsideOfTruck_Movement_Slide14 {
+    walk_slow_right * 14
+}
+
+movement InsideOfTruck_Movement_Slide15 {
+    walk_slow_right * 15
+}
+
+text InsideOfTruck_Text_AtDawnThereExistedNothing {
+    "At Dawn, there was neither space\n"
+    "nor time.\p"
+    "There existed nothing\n"
+    "but Nothing."
+}
+
+text InsideOfTruck_Text_ArceusCameToBe {
+    "Arceus came to be\n"
+    "and Nothing ceased to exist."
+}
+
+text InsideOfTruck_Text_ArceusCreatedTime {
+    "Arceus created time\n"
+    "and Dialga to rule over it."
+}
+
+text InsideOfTruck_Text_ArceusCreatedSpace {
+    "Then It created space\n"
+    "and Palkia to rule over it."
+}
+
+text InsideOfTruck_Text_ArceusCreatedMew {
+    "With time and space in place,\n"
+    "Arceus brought the first\l"
+    "true life form, bearing the name\l"
+    "Mew."
+}
+
+text InsideOfTruck_Text_ArceusGaveMewPowerToSplit {
+    "However, Arceus desired that\n"
+    "there be countless living\l"
+    "beings, thus It granted Mew\l"
+    "the power to split into two\l"
+    "life forms."
+}
+
+text InsideOfTruck_Text_ArceusCreatedUnown {
+    "At last, Arceus brought\n"
+    "the life forms known as Unown.\p"
+    "They appeared in a number of\n"
+    "shapes called Glyphs.\p"
+    "Every Glyph could radiate a wave\n"
+    "in its own image."
+}
+
+text InsideOfTruck_Text_MewBeganToMutate {
+    "Expoosed to those waves,\n"
+    "the true life forms began\l"
+    "to alter their appearence,\l"
+    "resulting in the birth of\l"
+    "final life forms."
+}
+
+text InsideOfTruck_Text_WorldShaped {
+    "The earliest final life forms\n"
+    "set out to shape the world\l"
+    "in which life would proliferate."
+}
+
+text InsideOfTruck_Text_ArceusCreatedUnownKing {
+    "But the Unown wished for a\n"
+    "leader to command them, for they\l"
+    "did not know how to best combine\l"
+    "their waves to affect the true\l"
+    "life forms.\p"
+    "Arceus granted their wish by\n"
+    "gifting them the Unown King."
+}
+
+text InsideOfTruck_Text_MoreVariationsCreated {
+    "Thanks to the Unown King's\n"
+    "orders, the world met more\l"
+    "and more variations of the final\l"
+    "life forms, until the Unown\l"
+    "and the Unown King were content."
+}

@@ -2836,11 +2836,11 @@
     {
       "id": "LAYOUT_INSIDE_OF_TRUCK",
       "name": "InsideOfTruck_Layout",
-      "width": 5,
-      "height": 5,
+      "width": 78,
+      "height": 11,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_InsideOfTruck",
       "border_filepath": "data/layouts/InsideOfTruck/border.bin",
       "blockdata_filepath": "data/layouts/InsideOfTruck/map.bin"
