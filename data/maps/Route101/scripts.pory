@@ -1,4 +1,45 @@
-mapscripts Route101_MapScripts {}
+mapscripts Route101_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_ROUTE101_STATE, 0: Route101_EventScript_FacePlayerNorth
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_ROUTE101_STATE, 0: Route101_EventScript_PlayIntroFollowUp
+    ]
+}
+
+script Route101_EventScript_FacePlayerNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+}
+
+script Route101_EventScript_PlayIntroFollowUp {
+    lockall
+    msgbox(Route101_Text_RestOfTheStory, MSGBOX_DEFAULT)
+    closemessage
+    special(ChooseStarter)
+    waitstate
+    msgbox(Route101_Text_ThereAre26Unown, MSGBOX_DEFAULT)
+    closemessage
+    setflag(FLAG_SYS_POKEMON_GET)
+    setflag(FLAG_SYS_POKEDEX_GET)
+    setvar(VAR_ROUTE101_STATE, 1)
+    releaseall
+}
+
+text Route101_Text_RestOfTheStory {
+    "The rest of this story is for you\n"
+    "to uncover.\p"
+    "The Unown King has been confined\n"
+    "inside the Temple of the Unown King.\p"
+    "But first, you will need a companion."
+}
+
+text Route101_Text_ThereAre26Unown {
+    "There are 26 Unown specimen\n"
+    "hiding in the Temple.\l"
+    "They will help you decrypting messages\l"
+    "written in an unintelligible script.\p"
+    "Find them all!"
+}
 
 script Route101_EventScript_GiveEmergencyMon {
     lock

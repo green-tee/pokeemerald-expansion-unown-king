@@ -61,7 +61,7 @@ script InsideOfTruck_EventScript_PlayIntro {
     msgbox(InsideOfTruck_Text_MoreVariationsCreated, MSGBOX_DEFAULT)
     closemessage
     delay(60)
-    warp(MAP_ROUTE101, 11, 13)
+    warpsilent(MAP_ROUTE101, 11, 13)
     releaseall
 }
 
@@ -108,27 +108,26 @@ text InsideOfTruck_Text_ArceusCreatedMew {
 
 text InsideOfTruck_Text_ArceusGaveMewPowerToSplit {
     "However, Arceus desired that\n"
-    "there be countless living\l"
-    "beings, thus It granted Mew\l"
-    "the power to split into two\l"
-    "life forms."
+    "there be countless living beings,\l"
+    "thus It granted Mew the power\l"
+    "to split into two life forms."
 }
 
 text InsideOfTruck_Text_ArceusCreatedUnown {
     "At last, Arceus brought\n"
     "the life forms known as Unown.\p"
-    "They appeared in a number of\n"
-    "shapes called Glyphs.\p"
+    "They appeared in a number of shapes\n"
+    "called Glyphs.\p"
     "Every Glyph could radiate a wave\n"
     "in its own image."
 }
 
 text InsideOfTruck_Text_MewBeganToMutate {
-    "Expoosed to those waves,\n"
+    "Exposed to those waves,\n"
     "the true life forms began\l"
     "to alter their appearence,\l"
-    "resulting in the birth of\l"
-    "final life forms."
+    "resulting in the birth\l"
+    "of final life forms."
 }
 
 text InsideOfTruck_Text_WorldShaped {
@@ -138,19 +137,19 @@ text InsideOfTruck_Text_WorldShaped {
 }
 
 text InsideOfTruck_Text_ArceusCreatedUnownKing {
-    "But the Unown wished for a\n"
-    "leader to command them, for they\l"
-    "did not know how to best combine\l"
-    "their waves to affect the true\l"
-    "life forms.\p"
-    "Arceus granted their wish by\n"
-    "gifting them the Unown King."
+    "But the Unown wished for a leader\n"
+    "to command them,\l"
+    "for they did not know\l"
+    "how to best combine their waves\l"
+    "to affect the true life forms.\p"
+    "Arceus granted their wish\n"
+    "by gifting them the Unown King."
 }
 
 text InsideOfTruck_Text_MoreVariationsCreated {
-    "Thanks to the Unown King's\n"
-    "orders, the world met more\l"
-    "and more variations of the final\l"
-    "life forms, until the Unown\l"
-    "and the Unown King were content."
+    "Thanks to the Unown King's orders,\n"
+    "the world met more and more\l"
+    "variations of the final life forms,\l"
+    "until the Unown and the Unown King\l"
+    "were content."
 }

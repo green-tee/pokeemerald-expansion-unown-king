@@ -111,7 +111,7 @@ InsideOfTruck_EventScript_PlayIntro::
 # 63 "data/maps/InsideOfTruck/scripts.pory"
 	delay 60
 # 64 "data/maps/InsideOfTruck/scripts.pory"
-	warp MAP_ROUTE101, 11, 13
+	warpsilent MAP_ROUTE101, 11, 13
 # 65 "data/maps/InsideOfTruck/scripts.pory"
 	releaseall
 	return
@@ -241,48 +241,47 @@ InsideOfTruck_Text_ArceusCreatedMew::
 InsideOfTruck_Text_ArceusGaveMewPowerToSplit::
 # 109 "data/maps/InsideOfTruck/scripts.pory"
 	.string "However, Arceus desired that\n"
-	.string "there be countless living\l"
-	.string "beings, thus It granted Mew\l"
-	.string "the power to split into two\l"
-	.string "life forms.$"
+	.string "there be countless living beings,\l"
+	.string "thus It granted Mew the power\l"
+	.string "to split into two life forms.$"
 
 InsideOfTruck_Text_ArceusCreatedUnown::
-# 117 "data/maps/InsideOfTruck/scripts.pory"
+# 116 "data/maps/InsideOfTruck/scripts.pory"
 	.string "At last, Arceus brought\n"
 	.string "the life forms known as Unown.\p"
-	.string "They appeared in a number of\n"
-	.string "shapes called Glyphs.\p"
+	.string "They appeared in a number of shapes\n"
+	.string "called Glyphs.\p"
 	.string "Every Glyph could radiate a wave\n"
 	.string "in its own image.$"
 
 InsideOfTruck_Text_MewBeganToMutate::
-# 126 "data/maps/InsideOfTruck/scripts.pory"
-	.string "Expoosed to those waves,\n"
+# 125 "data/maps/InsideOfTruck/scripts.pory"
+	.string "Exposed to those waves,\n"
 	.string "the true life forms began\l"
 	.string "to alter their appearence,\l"
-	.string "resulting in the birth of\l"
-	.string "final life forms.$"
+	.string "resulting in the birth\l"
+	.string "of final life forms.$"
 
 InsideOfTruck_Text_WorldShaped::
-# 134 "data/maps/InsideOfTruck/scripts.pory"
+# 133 "data/maps/InsideOfTruck/scripts.pory"
 	.string "The earliest final life forms\n"
 	.string "set out to shape the world\l"
 	.string "in which life would proliferate.$"
 
 InsideOfTruck_Text_ArceusCreatedUnownKing::
-# 140 "data/maps/InsideOfTruck/scripts.pory"
-	.string "But the Unown wished for a\n"
-	.string "leader to command them, for they\l"
-	.string "did not know how to best combine\l"
-	.string "their waves to affect the true\l"
-	.string "life forms.\p"
-	.string "Arceus granted their wish by\n"
-	.string "gifting them the Unown King.$"
+# 139 "data/maps/InsideOfTruck/scripts.pory"
+	.string "But the Unown wished for a leader\n"
+	.string "to command them,\l"
+	.string "for they did not know\l"
+	.string "how to best combine their waves\l"
+	.string "to affect the true life forms.\p"
+	.string "Arceus granted their wish\n"
+	.string "by gifting them the Unown King.$"
 
 InsideOfTruck_Text_MoreVariationsCreated::
-# 150 "data/maps/InsideOfTruck/scripts.pory"
-	.string "Thanks to the Unown King's\n"
-	.string "orders, the world met more\l"
-	.string "and more variations of the final\l"
-	.string "life forms, until the Unown\l"
-	.string "and the Unown King were content.$"
+# 149 "data/maps/InsideOfTruck/scripts.pory"
+	.string "Thanks to the Unown King's orders,\n"
+	.string "the world met more and more\l"
+	.string "variations of the final life forms,\l"
+	.string "until the Unown and the Unown King\l"
+	.string "were content.$"
