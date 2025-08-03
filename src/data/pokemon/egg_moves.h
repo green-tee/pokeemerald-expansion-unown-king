@@ -288,7 +288,7 @@ static const u16 sVulpixEggMoveLearnset[] = {
     MOVE_CAPTIVATE,
     MOVE_UNAVAILABLE,
 };
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
 static const u16 sVulpixAlolaEggMoveLearnset[] = {
     MOVE_AGILITY,
     MOVE_CHARM,
@@ -306,7 +306,7 @@ static const u16 sVulpixAlolaEggMoveLearnset[] = {
     MOVE_TAIL_SLAP,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLAN_FORMS
+//#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF

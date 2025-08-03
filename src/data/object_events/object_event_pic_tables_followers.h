@@ -333,14 +333,14 @@ static const struct SpriteFrameImage sPicTable_Vulpix[] = {
 static const struct SpriteFrameImage sPicTable_Ninetales[] = {
     overworld_ascending_frames(gObjectEventPic_Ninetales, 4, 4),
 };
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
 static const struct SpriteFrameImage sPicTable_VulpixAlola[] = {
     overworld_ascending_frames(gObjectEventPic_VulpixAlola, 4, 4),
 };
 static const struct SpriteFrameImage sPicTable_NinetalesAlola[] = {
     overworld_ascending_frames(gObjectEventPic_NinetalesAlola, 4, 4),
 };
-#endif //P_ALOLAN_FORMS
+//#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF

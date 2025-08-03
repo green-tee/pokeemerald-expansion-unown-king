@@ -114,7 +114,7 @@ static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
     SPECIES_ELECTRIKE,
     SPECIES_HOUNDOUR,
-    SPECIES_VULPIX,
+    SPECIES_VULPIX_ALOLA,
 };
 
 static const struct BgTemplate sBgTemplates[3] =

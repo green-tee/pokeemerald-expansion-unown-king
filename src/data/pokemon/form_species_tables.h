@@ -153,17 +153,17 @@ static const u16 sSandslashFormSpeciesIdTable[] = {
 #if P_FAMILY_VULPIX
 static const u16 sVulpixFormSpeciesIdTable[] = {
     SPECIES_VULPIX,
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
     SPECIES_VULPIX_ALOLA,
-#endif
+//#endif
     FORM_SPECIES_END,
 };
 
 static const u16 sNinetalesFormSpeciesIdTable[] = {
     SPECIES_NINETALES,
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
     SPECIES_NINETALES_ALOLA,
-#endif
+//#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_VULPIX

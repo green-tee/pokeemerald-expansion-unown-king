@@ -44,6 +44,7 @@ static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
+static void QueueAnimTiles_General_PondWater(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
 static void QueueAnimTiles_General_Waterfall(u16);
 static void QueueAnimTiles_General_LandWaterEdge(u16);
@@ -102,6 +103,22 @@ const u16 *const gTilesetAnims_General_Water[] = {
     gTilesetAnims_General_Water_Frame5,
     gTilesetAnims_General_Water_Frame6,
     gTilesetAnims_General_Water_Frame7
+};
+
+const u16 gTilesetAnims_General_PondWater_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/pond_water/0.4bpp");
+const u16 gTilesetAnims_General_PondWater_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/pond_water/1.4bpp");
+const u16 gTilesetAnims_General_PondWater_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/pond_water/2.4bpp");
+const u16 gTilesetAnims_General_PondWater_Frame3[] = INCBIN_U16("data/tilesets/primary/general/anim/pond_water/3.4bpp");
+
+const u16 *const gTilesetAnims_General_PondWater[] = {
+    gTilesetAnims_General_PondWater_Frame0,
+    gTilesetAnims_General_PondWater_Frame1,
+    gTilesetAnims_General_PondWater_Frame2,
+    gTilesetAnims_General_PondWater_Frame3,
+    gTilesetAnims_General_PondWater_Frame3,
+    gTilesetAnims_General_PondWater_Frame2,
+    gTilesetAnims_General_PondWater_Frame1,
+    gTilesetAnims_General_PondWater_Frame0
 };
 
 const u16 gTilesetAnims_General_SandWaterEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/sand_water_edge/0.4bpp");
@@ -618,6 +635,8 @@ static void TilesetAnim_General(u16 timer)
         QueueAnimTiles_General_Flower(timer / 16);
     if (timer % 16 == 1)
         QueueAnimTiles_General_Water(timer / 16);
+    if (timer % 16 == 0)
+        QueueAnimTiles_General_PondWater(timer / 16);
     if (timer % 16 == 2)
         QueueAnimTiles_General_SandWaterEdge(timer / 16);
     if (timer % 16 == 3)
@@ -636,6 +655,12 @@ static void QueueAnimTiles_General_Water(u16 timer)
 {
     u8 i = timer % ARRAY_COUNT(gTilesetAnims_General_Water);
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(432)), 30 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_General_PondWater(u16 timer)
+{
+    u8 i = timer % ARRAY_COUNT(gTilesetAnims_General_PondWater);
+    AppendTilesetAnimToBuffer(gTilesetAnims_General_PondWater[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(146)), 8 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_General_SandWaterEdge(u16 timer)

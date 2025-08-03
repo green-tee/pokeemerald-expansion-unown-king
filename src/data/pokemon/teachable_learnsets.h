@@ -1730,7 +1730,7 @@ static const u16 sNinetalesTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
 static const u16 sVulpixAlolaTeachableLearnset[] = {
     MOVE_ATTRACT,
     MOVE_BLIZZARD,
@@ -1790,7 +1790,7 @@ static const u16 sNinetalesAlolaTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_UNAVAILABLE,
 };
-#endif //P_ALOLAN_FORMS
+//#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF
