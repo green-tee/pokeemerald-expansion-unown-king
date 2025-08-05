@@ -398,10 +398,6 @@ static const struct SpriteFrameImage sPicTable_VigorothFacingAway[] = {
     overworld_frame(gObjectEventPic_VigorothMover, 4, 4, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_BirchsBag[] = {
-    obj_frame_tiles(gObjectEventPic_BirchsBag),
-};
-
 static const struct SpriteFrameImage sPicTable_EnemyZigzagoon[] = {
     overworld_ascending_frames(gObjectEventPic_EnemyZigzagoon, 4, 4),
 };
@@ -457,8 +453,42 @@ static const struct SpriteFrameImage sPicTable_Cameraman[] = {
     overworld_ascending_frames(gObjectEventPic_Cameraman, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_MovingBox[] = {
-    obj_frame_tiles(gObjectEventPic_MovingBox),
+static const struct SpriteFrameImage sPicTable_CrystalHeal[] = {
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  0),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  1),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  2),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  3),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  4),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  5),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  6),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  7),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  8),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4,  9),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4, 10),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4, 11),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4, 12),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4, 13),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4, 14),
+    overworld_frame(gObjectEventPic_CrystalHeal, 2, 4, 15),
+};
+
+static const struct SpriteFrameImage sPicTable_CrystalParty[] = {
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  0),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  1),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  2),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  3),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  4),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  5),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  6),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  7),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  8),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4,  9),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4, 10),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4, 11),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4, 12),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4, 13),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4, 14),
+    overworld_frame(gObjectEventPic_CrystalParty, 2, 4, 15),
 };
 
 static const struct SpriteFrameImage sPicTable_CableCar[] = {

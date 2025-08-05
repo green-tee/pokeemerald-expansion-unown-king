@@ -1032,6 +1032,27 @@ static const union AnimCmd sAnim_HookedPokemonEast[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_RotateInPlace[] =
+{
+    ANIMCMD_FRAME( 0, 10),
+    ANIMCMD_FRAME( 1, 10),
+    ANIMCMD_FRAME( 2, 10),
+    ANIMCMD_FRAME( 3, 10),
+    ANIMCMD_FRAME( 4, 10),
+    ANIMCMD_FRAME( 5, 10),
+    ANIMCMD_FRAME( 6, 10),
+    ANIMCMD_FRAME( 7, 10),
+    ANIMCMD_FRAME( 8, 10),
+    ANIMCMD_FRAME( 9, 10),
+    ANIMCMD_FRAME(10, 10),
+    ANIMCMD_FRAME(11, 10),
+    ANIMCMD_FRAME(12, 10),
+    ANIMCMD_FRAME(13, 10),
+    ANIMCMD_FRAME(14, 10),
+    ANIMCMD_FRAME(15, 10),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AffineAnimCmd sAffineAnim_KyogreGroudon_GoSouthStart[] =
 {
     AFFINEANIMCMD_FRAME(0x0, 0x0, 1, 1),
@@ -1229,6 +1250,29 @@ static const union AnimCmd *const sAnimTable_GroudonSide[] = {
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
     [ANIM_STD_FACE_WEST] = sAnim_FaceWest,
     [ANIM_STD_FACE_EAST] = sAnim_FaceEast,
+    [ANIM_STD_GO_SOUTH] = sAnim_GoSouth,
+    [ANIM_STD_GO_NORTH] = sAnim_GoEast,
+    [ANIM_STD_GO_WEST] = sAnim_GoWest,
+    [ANIM_STD_GO_EAST] = sAnim_GoEast,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_GoFastSouth,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_GoFastEast,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_GoFastWest,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_GoFastEast,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_GoFasterSouth,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_GoFasterEast,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_GoFasterWest,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_GoFasterEast,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_GoFastestSouth,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_GoFastestEast,
+    [ANIM_STD_GO_FASTEST_WEST] = sAnim_GoFastestWest,
+    [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
+};
+
+static const union AnimCmd *const sAnimTable_Crystal[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_RotateInPlace,
+    [ANIM_STD_FACE_NORTH] = sAnim_RotateInPlace,
+    [ANIM_STD_FACE_WEST] = sAnim_RotateInPlace,
+    [ANIM_STD_FACE_EAST] = sAnim_RotateInPlace,
     [ANIM_STD_GO_SOUTH] = sAnim_GoSouth,
     [ANIM_STD_GO_NORTH] = sAnim_GoEast,
     [ANIM_STD_GO_WEST] = sAnim_GoWest,
@@ -1533,6 +1577,10 @@ static const struct StepAnimTable sStepAnimTables[] = {
     {
         .anims = sAnimTable_Fishing,
         .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_Crystal,
+        .animPos = {0, 0, 0, 0},
     },
     {},
 };

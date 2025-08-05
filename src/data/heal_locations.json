@@ -131,6 +131,18 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE101",
+      "map": "MAP_ROUTE101",
+      "x": 11,
+      "y": 26
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE101_ROOFTOP",
+      "map": "MAP_ROUTE101",
+      "x": 12,
+      "y": 9
     }
   ]
 }

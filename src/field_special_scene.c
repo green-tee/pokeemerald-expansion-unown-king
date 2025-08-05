@@ -76,6 +76,7 @@ static s16 GetTruckCameraBobbingY(int time)
 // Box 1 has 30 added to the time so it jumps earlier, and
 // box 2 has the return value multiplied by less, so it doesn't
 // jump as high.
+/*
 static s16 GetTruckBoxYMovement(int time)
 {
     if (!((time + 120) % 180))
@@ -83,6 +84,7 @@ static s16 GetTruckBoxYMovement(int time)
 
     return 0;
 }
+*/
 
 #define tTimer data[0]
 

@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE103",
   "name": "Route103",
   "layout": "LAYOUT_ROUTE103",
-  "music": "MUS_VS_ELITE_FOUR",
+  "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_ROUTE_103",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE101",
-      "offset": 43,
+      "offset": 31,
       "direction": "right"
     }
   ],

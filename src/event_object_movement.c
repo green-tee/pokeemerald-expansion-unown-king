@@ -509,7 +509,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_EnemyZigzagoon,        OBJ_EVENT_PAL_TAG_ZIGZAGOON},
     {gObjectEventPal_May,                   OBJ_EVENT_PAL_TAG_MAY},
     {gObjectEventPal_MayReflection,         OBJ_EVENT_PAL_TAG_MAY_REFLECTION},
-    {gObjectEventPal_MovingBox,             OBJ_EVENT_PAL_TAG_MOVING_BOX},
+    {gObjectEventPal_Crystal,               OBJ_EVENT_PAL_TAG_CRYSTAL},
     {gObjectEventPal_CableCar,              OBJ_EVENT_PAL_TAG_CABLE_CAR},
     {gObjectEventPal_SSTidal,               OBJ_EVENT_PAL_TAG_SSTIDAL},
     {gObjectEventPal_Kyogre,                OBJ_EVENT_PAL_TAG_KYOGRE},
@@ -620,10 +620,10 @@ static const u16 sReflectionPaletteTags_VigorothMover[] = {
 };
 
 static const u16 sReflectionPaletteTags_MovingBox[] = {
-    OBJ_EVENT_PAL_TAG_MOVING_BOX,
-    OBJ_EVENT_PAL_TAG_MOVING_BOX,
-    OBJ_EVENT_PAL_TAG_MOVING_BOX,
-    OBJ_EVENT_PAL_TAG_MOVING_BOX,
+    OBJ_EVENT_PAL_TAG_CRYSTAL,
+    OBJ_EVENT_PAL_TAG_CRYSTAL,
+    OBJ_EVENT_PAL_TAG_CRYSTAL,
+    OBJ_EVENT_PAL_TAG_CRYSTAL,
 };
 
 static const u16 sReflectionPaletteTags_CableCar[] = {
@@ -681,7 +681,7 @@ static const struct PairedPalettes sSpecialObjectReflectionPaletteSets[] = {
     {OBJ_EVENT_PAL_TAG_QUINTY_PLUMP,     sReflectionPaletteTags_QuintyPlump},
     {OBJ_EVENT_PAL_TAG_TRUCK,            sReflectionPaletteTags_Truck},
     {OBJ_EVENT_PAL_TAG_VIGOROTH,         sReflectionPaletteTags_VigorothMover},
-    {OBJ_EVENT_PAL_TAG_MOVING_BOX,       sReflectionPaletteTags_MovingBox},
+    {OBJ_EVENT_PAL_TAG_CRYSTAL,          sReflectionPaletteTags_MovingBox},
     {OBJ_EVENT_PAL_TAG_CABLE_CAR,        sReflectionPaletteTags_CableCar},
     {OBJ_EVENT_PAL_TAG_SSTIDAL,          sReflectionPaletteTags_SSTidal},
     {OBJ_EVENT_PAL_TAG_KYOGRE,           sReflectionPaletteTags_Kyogre},

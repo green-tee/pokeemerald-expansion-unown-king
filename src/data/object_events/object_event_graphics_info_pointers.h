@@ -94,7 +94,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFieldMov
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothCarryingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirchsBag;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CrystalParty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EnemyZigzagoon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Artist;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalBrendanNormal;
@@ -110,7 +110,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RivalMayFie
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cameraman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanUnderwater;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayUnderwater;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MovingBox;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CrystalHeal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CableCar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DevonEmployee;
@@ -347,7 +347,6 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TRUCK] =                    &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX] =    &gObjectEventGraphicsInfo_VigorothCarryingBox,
     [OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY] =     &gObjectEventGraphicsInfo_VigorothFacingAway,
-    [OBJ_EVENT_GFX_BIRCHS_BAG] =               &gObjectEventGraphicsInfo_BirchsBag,
     [OBJ_EVENT_GFX_ZIGZAGOON_1] =              &gObjectEventGraphicsInfo_EnemyZigzagoon,
     [OBJ_EVENT_GFX_ARTIST] =                   &gObjectEventGraphicsInfo_Artist,
     [OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL] =     &gObjectEventGraphicsInfo_RivalBrendanNormal,
@@ -363,7 +362,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CAMERAMAN] =                &gObjectEventGraphicsInfo_Cameraman,
     [OBJ_EVENT_GFX_BRENDAN_UNDERWATER] =       &gObjectEventGraphicsInfo_BrendanUnderwater,
     [OBJ_EVENT_GFX_MAY_UNDERWATER] =           &gObjectEventGraphicsInfo_MayUnderwater,
-    [OBJ_EVENT_GFX_MOVING_BOX] =               &gObjectEventGraphicsInfo_MovingBox,
+    [OBJ_EVENT_GFX_CRYSTAL_HEAL] =             &gObjectEventGraphicsInfo_CrystalHeal,
+    [OBJ_EVENT_GFX_CRYSTAL_PARTY] =            &gObjectEventGraphicsInfo_CrystalParty,
     [OBJ_EVENT_GFX_CABLE_CAR] =                &gObjectEventGraphicsInfo_CableCar,
     [OBJ_EVENT_GFX_SCIENTIST_2] =              &gObjectEventGraphicsInfo_Scientist2,
     [OBJ_EVENT_GFX_DEVON_EMPLOYEE] =           &gObjectEventGraphicsInfo_DevonEmployee,

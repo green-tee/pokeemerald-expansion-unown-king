@@ -111,7 +111,7 @@ InsideOfTruck_EventScript_PlayIntro::
 # 63 "data/maps/InsideOfTruck/scripts.pory"
 	delay 60
 # 64 "data/maps/InsideOfTruck/scripts.pory"
-	warpsilent MAP_ROUTE101, 11, 13
+	warpsilent MAP_ROUTE101, 11, 25
 # 65 "data/maps/InsideOfTruck/scripts.pory"
 	releaseall
 	return

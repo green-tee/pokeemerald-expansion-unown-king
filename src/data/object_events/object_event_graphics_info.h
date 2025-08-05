@@ -1822,25 +1822,6 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VigorothFacingAway
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BirchsBag = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 128,
-    .width = 16,
-    .height = 16,
-    .paletteSlot = PALSLOT_NPC_2,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x16,
-    .subspriteTables = sOamTables_16x16,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_BirchsBag,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EnemyZigzagoon = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_ZIGZAGOON,
@@ -2145,22 +2126,41 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayUnderwater = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MovingBox = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CrystalHeal = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MOVING_BOX,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CRYSTAL,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 128,
+    .size = 256,
     .width = 16,
-    .height = 16,
+    .height = 32,
     .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
+    .inanimate = FALSE,
     .compressed = FALSE,
     .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x16,
-    .subspriteTables = sOamTables_16x16,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_MovingBox,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Crystal,
+    .images = sPicTable_CrystalHeal,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CrystalParty = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CRYSTAL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Crystal,
+    .images = sPicTable_CrystalParty,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
