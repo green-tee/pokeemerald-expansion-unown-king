@@ -1299,16 +1299,13 @@ static const struct SpriteFrameImage sPicTable_WingullOld[] = {
     overworld_frame(gObjectEventPic_WingullOld, 2, 2, 5),
 };
 
-static const struct SpriteFrameImage sPicTable_AzumarillOld[] = {
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 0),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 1),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 2),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 0),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 0),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 1),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 1),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 2),
-    overworld_frame(gObjectEventPic_AzumarillOld, 2, 2, 2),
+static const struct SpriteFrameImage sPicTable_MiloticBoss[] = {
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 0),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 1),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 2),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 3),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 4),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 5),
 };
 
 static const struct SpriteFrameImage sPicTable_PikachuOld[] = {

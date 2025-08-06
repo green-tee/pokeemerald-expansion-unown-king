@@ -223,6 +223,30 @@ static const union AnimCmd sAnim_FaceEast2F_Asym[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_BobSouth[] = {
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BobNorth[] = {
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(3, 20),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BobWest[] = {
+    ANIMCMD_FRAME(4, 20),
+    ANIMCMD_FRAME(5, 20),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BobEast[] = {
+    ANIMCMD_FRAME(4, 20, .hFlip = TRUE),
+    ANIMCMD_FRAME(5, 20, .hFlip = TRUE),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_GoSouth[] =
 {
     ANIMCMD_FRAME(3, 8),
@@ -1219,6 +1243,29 @@ const union AnimCmd *const sAnimTable_Following_Asym[] = {
     [ANIM_EXIT_POKEBALL_FAST_NORTH] = sAnim_ExitPokeballFastNorth,
     [ANIM_EXIT_POKEBALL_FAST_WEST] = sAnim_ExitPokeballFastWest,
     [ANIM_EXIT_POKEBALL_FAST_EAST] = sAnim_ExitPokeballFastEast_Asym,
+};
+
+static const union AnimCmd *const sAnimTable_Milotic[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_BobSouth,
+    [ANIM_STD_FACE_NORTH] = sAnim_BobNorth,
+    [ANIM_STD_FACE_WEST] = sAnim_BobWest,
+    [ANIM_STD_FACE_EAST] = sAnim_BobEast,
+    [ANIM_STD_GO_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_NORTH] = sAnim_FaceNorth2F,
+    [ANIM_STD_GO_WEST] = sAnim_FaceWest2F,
+    [ANIM_STD_GO_EAST] = sAnim_FaceEast2F,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_FaceNorth2F,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_FaceWest2F,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_FaceEast2F,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_FaceNorth2F,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_FaceWest2F,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_FaceEast2F,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_FaceSouth,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_FaceNorth2F,
+    [ANIM_STD_GO_FASTEST_WEST] = sAnim_FaceWest2F,
+    [ANIM_STD_GO_FASTEST_EAST] = sAnim_FaceEast2F,
 };
 
 static const union AnimCmd *const sAnimTable_HoOh[] = {
