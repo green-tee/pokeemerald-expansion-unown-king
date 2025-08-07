@@ -1263,16 +1263,16 @@ static const struct SpriteFrameImage sPicTable_DusclopsOld[] = {
     overworld_ascending_frames(gObjectEventPic_DusclopsOld, 2, 4),
 };
 
-static const struct SpriteFrameImage sPicTable_AzurillOld[] = {
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 0),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 1),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 2),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 0),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 0),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 1),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 1),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 2),
-    overworld_frame(gObjectEventPic_AzurillOld, 2, 2, 2),
+static const struct SpriteFrameImage sPicTable_TornadusBoss[] = {
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 0),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 1),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 2),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 3),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 4),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 5),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 6),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 7),
+    overworld_frame(gObjectEventPic_TornadusBoss, 8, 8, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_KecleonOld[] = {

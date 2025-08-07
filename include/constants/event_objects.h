@@ -218,7 +218,7 @@
 #define OBJ_EVENT_GFX_WINGULL                    211
 #define OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW      212
 #define OBJ_EVENT_GFX_TUBER_M_SWIMMING           213
-#define OBJ_EVENT_GFX_AZURILL                    214
+#define OBJ_EVENT_GFX_TORNADUS                   214
 #define OBJ_EVENT_GFX_MOM                        215
 #define OBJ_EVENT_GFX_LINK_BRENDAN               216
 #define OBJ_EVENT_GFX_LINK_MAY                   217
@@ -296,7 +296,8 @@
     (obj)->graphicsId == OBJ_EVENT_GFX_MILOTIC \
     || (obj)->graphicsId == OBJ_EVENT_GFX_DARKRAI \
     || (obj)->graphicsId == OBJ_EVENT_GFX_KYOGRE \
-    || (obj)->graphicsId == OBJ_EVENT_GFX_LUGIA\
+    || (obj)->graphicsId == OBJ_EVENT_GFX_LUGIA \
+    || (obj)->graphicsId == OBJ_EVENT_GFX_TORNADUS\
 )
 
 #define SHADOW_SIZE_S       0
@@ -382,7 +383,7 @@
 #define OBJ_EVENT_PAL_TAG_DARKRAI                 0x111E
 #define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE      0x111F
 #define OBJ_EVENT_PAL_TAG_HO_OH                   0x1120
-#define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
+#define OBJ_EVENT_PAL_TAG_TORNADUS                0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124

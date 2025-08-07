@@ -362,7 +362,7 @@ const u32 gObjectEventPic_DarkraiBoss[] = INCBIN_U32("graphics/object_events/pic
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");
 const u32 gObjectEventPic_DusclopsOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/dusclops.4bpp");
 const u32 gObjectEventPic_KirliaOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/kirlia.4bpp");
-const u32 gObjectEventPic_AzurillOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/azurill.4bpp");
+const u32 gObjectEventPic_TornadusBoss[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/tornadus.4bpp");
 const u32 gObjectEventPic_KecleonOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/kecleon.4bpp");
 const u32 gObjectEventPic_WingullOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/wingull.4bpp");
 const u32 gObjectEventPic_MiloticBoss[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/milotic.4bpp");
@@ -380,7 +380,7 @@ const u32 gObjectEventPic_SudowoodoTree[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_RayquazaCutscene[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/rayquaza_cutscene.4bpp");
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
-const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");
+const u16 gObjectEventPal_Tornadus[] = INCBIN_U16("graphics/object_events/palettes/tornadus.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");
