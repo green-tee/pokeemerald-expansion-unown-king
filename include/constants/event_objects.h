@@ -201,7 +201,7 @@
 #define OBJ_EVENT_GFX_MAY_DECORATING             194
 #define OBJ_EVENT_GFX_ARCHIE                     195
 #define OBJ_EVENT_GFX_MAXIE                      196
-#define OBJ_EVENT_GFX_KYOGRE_FRONT               197
+#define OBJ_EVENT_GFX_KYOGRE                     197
 #define OBJ_EVENT_GFX_GROUDON_FRONT              198
 #define OBJ_EVENT_GFX_FOSSIL                     199
 #define OBJ_EVENT_GFX_REGIROCK                   200
@@ -292,7 +292,11 @@
 
 // Whether Object Event is an OW pokemon
 #define IS_OW_MON_OBJ(obj) ((obj)->graphicsId & OBJ_EVENT_MON)
-#define IS_OW_BOSS_OBJ(obj) ((obj)->graphicsId == OBJ_EVENT_GFX_MILOTIC || (obj)->graphicsId == OBJ_EVENT_GFX_DARKRAI)
+#define IS_OW_BOSS_OBJ(obj) (\
+    (obj)->graphicsId == OBJ_EVENT_GFX_MILOTIC \
+    || (obj)->graphicsId == OBJ_EVENT_GFX_DARKRAI \
+    || (obj)->graphicsId == OBJ_EVENT_GFX_KYOGRE\
+)
 
 #define SHADOW_SIZE_S       0
 #define SHADOW_SIZE_M       1

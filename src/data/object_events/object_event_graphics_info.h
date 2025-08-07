@@ -3741,23 +3741,23 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maxie = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreFront = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kyogre = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
+    .size = 2048,
+    .width = 64,
+    .height = 64,
     .paletteSlot = PALSLOT_NPC_4,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
     .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_KyogreFront,
-    .affineAnims = sAffineAnimTable_KyogreGroudon,
+    .oam = &gObjectEventBaseOam_64x64,
+    .subspriteTables = sOamTables_64x64,
+    .anims = sAnimTable_Milotic,
+    .images = sPicTable_KyogreBoss,
+    .affineAnims = gDummySpriteAffineAnimTable,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonFront = {
@@ -3946,7 +3946,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreAsleep = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_KyogreFront,
+    .images = sPicTable_KyogreBoss,
     .affineAnims = sAffineAnimTable_KyogreGroudon,
 };
 

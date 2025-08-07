@@ -1,0 +1,13 @@
+mapscripts Route103_MapScripts {}
+
+script Route103_EventScript_ImHereForTesting {
+    lock
+    faceplayer
+    msgbox(Route103_Text_ImHereForTesting, MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+text Route103_Text_ImHereForTesting {
+    "I'm here for testing purposes."
+}
