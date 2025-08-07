@@ -295,7 +295,8 @@
 #define IS_OW_BOSS_OBJ(obj) (\
     (obj)->graphicsId == OBJ_EVENT_GFX_MILOTIC \
     || (obj)->graphicsId == OBJ_EVENT_GFX_DARKRAI \
-    || (obj)->graphicsId == OBJ_EVENT_GFX_KYOGRE\
+    || (obj)->graphicsId == OBJ_EVENT_GFX_KYOGRE \
+    || (obj)->graphicsId == OBJ_EVENT_GFX_LUGIA\
 )
 
 #define SHADOW_SIZE_S       0
