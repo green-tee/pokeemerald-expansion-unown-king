@@ -1243,16 +1243,16 @@ static const struct SpriteFrameImage sPicTable_Ball_STRANGE[] = {
 #endif //ITEM_STRANGE_BALL
 #endif //OW_FOLLOWERS_POKEBALLS
 
-static const struct SpriteFrameImage sPicTable_DeoxysOld[] = {
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 1),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
-    overworld_frame(gObjectEventPic_DeoxysOld, 4, 4, 0),
+static const struct SpriteFrameImage sPicTable_DarkraiBoss[] = {
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 0),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 1),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 2),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 3),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 4),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 5),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 6),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 7),
+    overworld_frame(gObjectEventPic_DarkraiBoss, 4, 4, 8),
 };
 
 static const struct SpriteFrameImage sPicTable_MewOld[] = {
@@ -1301,10 +1301,13 @@ static const struct SpriteFrameImage sPicTable_WingullOld[] = {
 
 static const struct SpriteFrameImage sPicTable_MiloticBoss[] = {
     overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 0),
-    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 1),
     overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 2),
-    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 3),
     overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 4),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 1),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 1),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 3),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 3),
+    overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 5),
     overworld_frame(gObjectEventPic_MiloticBoss, 8, 8, 5),
 };
 

@@ -236,7 +236,7 @@
 #define OBJ_EVENT_GFX_MEW                        229
 #define OBJ_EVENT_GFX_RED                        230
 #define OBJ_EVENT_GFX_LEAF                       231
-#define OBJ_EVENT_GFX_DEOXYS                     232
+#define OBJ_EVENT_GFX_DARKRAI                    232
 #define OBJ_EVENT_GFX_DEOXYS_TRIANGLE            233
 #define OBJ_EVENT_GFX_BRANDON                    234
 #define OBJ_EVENT_GFX_LINK_RS_BRENDAN            235
@@ -292,6 +292,7 @@
 
 // Whether Object Event is an OW pokemon
 #define IS_OW_MON_OBJ(obj) ((obj)->graphicsId & OBJ_EVENT_MON)
+#define IS_OW_BOSS_OBJ(obj) ((obj)->graphicsId == OBJ_EVENT_GFX_MILOTIC || (obj)->graphicsId == OBJ_EVENT_GFX_DARKRAI)
 
 #define SHADOW_SIZE_S       0
 #define SHADOW_SIZE_M       1
@@ -361,7 +362,7 @@
 #define OBJ_EVENT_PAL_TAG_ZIGZAGOON               0x110F
 #define OBJ_EVENT_PAL_TAG_MAY                     0x1110
 #define OBJ_EVENT_PAL_TAG_MAY_REFLECTION          0x1111
-#define OBJ_EVENT_PAL_TAG_CRYSTAL              0x1112
+#define OBJ_EVENT_PAL_TAG_CRYSTAL                 0x1112
 #define OBJ_EVENT_PAL_TAG_CABLE_CAR               0x1113
 #define OBJ_EVENT_PAL_TAG_SSTIDAL                 0x1114
 #define OBJ_EVENT_PAL_TAG_PLAYER_UNDERWATER       0x1115
@@ -373,7 +374,7 @@
 #define OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW        0x111B
 #define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111C
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
-#define OBJ_EVENT_PAL_TAG_DEOXYS                  0x111E
+#define OBJ_EVENT_PAL_TAG_DARKRAI                 0x111E
 #define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE      0x111F
 #define OBJ_EVENT_PAL_TAG_HO_OH                   0x1120
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121

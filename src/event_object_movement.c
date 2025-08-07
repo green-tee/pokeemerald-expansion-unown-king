@@ -519,7 +519,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SubmarineShadow,       OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW},
     {gObjectEventPal_Poochyena,             OBJ_EVENT_PAL_TAG_POOCHYENA},
     {gObjectEventPal_RedLeaf,               OBJ_EVENT_PAL_TAG_RED_LEAF},
-    {gObjectEventPal_Deoxys,                OBJ_EVENT_PAL_TAG_DEOXYS},
+    {gObjectEventPal_Darkrai,               OBJ_EVENT_PAL_TAG_DARKRAI},
     {gObjectEventPal_BirthIslandStone,      OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE},
     {gObjectEventPal_HoOh,                  OBJ_EVENT_PAL_TAG_HO_OH},
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
@@ -3761,7 +3761,7 @@ bool8 MovementType_Wander_Step3(struct ObjectEvent *objectEvent, struct Sprite *
         sprite->sTypeFuncId = 4;
         return TRUE;
     }
-    else if (OW_MON_WANDER_WALK == TRUE && IS_OW_MON_OBJ(objectEvent))
+    else if (OW_MON_WANDER_WALK == TRUE && (IS_OW_BOSS_OBJ(objectEvent) || IS_OW_MON_OBJ(objectEvent)))
     {
         UpdateMonMoveInPlace(objectEvent, sprite);
     }

@@ -348,7 +348,7 @@ const u32 gObjectEventPic_Red[] = INCBIN_U32("graphics/object_events/pics/people
 const u32 gObjectEventPic_Leaf[] = INCBIN_U32("graphics/object_events/pics/people/leaf.4bpp");
 const u16 gObjectEventPal_BirthIslandStone[] = INCBIN_U16("graphics/object_events/palettes/birth_island_stone.gbapal");
 const u32 gObjectEventPic_BirthIslandStone[] = INCBIN_U32("graphics/object_events/pics/misc/birth_island_stone.4bpp");
-const u16 gObjectEventPal_Deoxys[] = INCBIN_U16("graphics/object_events/palettes/deoxys.gbapal");
+const u16 gObjectEventPal_Darkrai[] = INCBIN_U16("graphics/object_events/palettes/darkrai.gbapal");
 const u32 gObjectEventPic_Anabel[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/anabel.4bpp");
 const u32 gObjectEventPic_Tucker[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/tucker.4bpp");
 const u32 gObjectEventPic_Spenser[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/spenser.4bpp");
@@ -358,7 +358,7 @@ const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Brandon[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 
-const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
+const u32 gObjectEventPic_DarkraiBoss[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/darkrai.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");
 const u32 gObjectEventPic_DusclopsOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/dusclops.4bpp");
 const u32 gObjectEventPic_KirliaOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/kirlia.4bpp");
