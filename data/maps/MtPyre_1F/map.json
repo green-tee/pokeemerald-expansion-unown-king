@@ -2,7 +2,7 @@
   "id": "MAP_MT_PYRE_1F",
   "name": "MtPyre_1F",
   "layout": "LAYOUT_MT_PYRE_1F",
-  "music": "MUS_MT_PYRE",
+  "music": "MUS_VICTORY_ROAD",
   "region_map_section": "MAPSEC_MT_PYRE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -56,46 +56,46 @@
   ],
   "warp_events": [
     {
-      "x": 17,
+      "x": 12,
       "y": 18,
       "elevation": 3,
-      "dest_map": "MAP_ROUTE122",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 3,
-      "y": 6,
-      "elevation": 3,
-      "dest_map": "MAP_MT_PYRE_EXTERIOR",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 18,
-      "y": 18,
-      "elevation": 3,
-      "dest_map": "MAP_ROUTE122",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 4,
-      "y": 6,
-      "elevation": 3,
-      "dest_map": "MAP_MT_PYRE_EXTERIOR",
+      "dest_map": "MAP_ROUTE101",
       "dest_warp_id": "0"
     },
     {
       "x": 11,
-      "y": 1,
+      "y": 18,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE101",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 18,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE101",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 12,
+      "y": 9,
       "elevation": 3,
       "dest_map": "MAP_MT_PYRE_2F",
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
+      "x": 11,
       "y": 9,
       "elevation": 3,
       "dest_map": "MAP_MT_PYRE_2F",
-      "dest_warp_id": "4"
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 9,
+      "elevation": 3,
+      "dest_map": "MAP_MT_PYRE_2F",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

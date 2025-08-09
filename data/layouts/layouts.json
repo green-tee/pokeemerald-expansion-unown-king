@@ -1636,8 +1636,8 @@
     {
       "id": "LAYOUT_MT_PYRE_1F",
       "name": "MtPyre_1F_Layout",
-      "width": 22,
-      "height": 19,
+      "width": 25,
+      "height": 20,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -1648,8 +1648,8 @@
     {
       "id": "LAYOUT_MT_PYRE_2F",
       "name": "MtPyre_2F_Layout",
-      "width": 13,
-      "height": 13,
+      "width": 34,
+      "height": 34,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -1660,8 +1660,8 @@
     {
       "id": "LAYOUT_MT_PYRE_3F",
       "name": "MtPyre_3F_Layout",
-      "width": 13,
-      "height": 13,
+      "width": 52,
+      "height": 34,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
