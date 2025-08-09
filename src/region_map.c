@@ -110,6 +110,7 @@ static void SetFlyMapCallback(void callback(void));
 static void DrawFlyDestTextWindow(void);
 static void LoadFlyDestIcons(void);
 static void CreateFlyDestIcons(void);
+static void CreateFlyDestIcon(u16 mapSecId);
 static void TryCreateRedOutlineFlyDestIcons(void);
 static void SpriteCB_FlyDestIcon(struct Sprite *sprite);
 static void CB_FadeInFlyMap(void);
@@ -288,6 +289,8 @@ static const u32 sFlyTargetIcons_Gfx[] = INCBIN_U32("graphics/pokenav/region_map
 
 static const u8 sMapHealLocations[][3] =
 {
+    [MAPSEC_ENTRANCE] = {MAP_GROUP(MAP_ROUTE101), MAP_NUM(MAP_ROUTE101), HEAL_LOCATION_ROUTE101},
+    [MAPSEC_ROOFTOP] = {MAP_GROUP(MAP_ROUTE101), MAP_NUM(MAP_ROUTE101), HEAL_LOCATION_ROUTE101},
     [MAPSEC_LITTLEROOT_TOWN] = {MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F},
     [MAPSEC_OLDALE_TOWN] = {MAP_GROUP(MAP_OLDALE_TOWN), MAP_NUM(MAP_OLDALE_TOWN), HEAL_LOCATION_OLDALE_TOWN},
     [MAPSEC_DEWFORD_TOWN] = {MAP_GROUP(MAP_DEWFORD_TOWN), MAP_NUM(MAP_DEWFORD_TOWN), HEAL_LOCATION_DEWFORD_TOWN},
@@ -652,16 +655,17 @@ static u8 ProcessRegionMapInput_Full(void)
     input = MAP_INPUT_NONE;
     sRegionMap->cursorDeltaX = 0;
     sRegionMap->cursorDeltaY = 0;
-    if (JOY_HELD(DPAD_UP) && sRegionMap->cursorPosY > MAPCURSOR_Y_MIN)
+    if (JOY_HELD(DPAD_UP) && sRegionMap->cursorPosY > 10)
     {
-        sRegionMap->cursorDeltaY = -1;
+        sRegionMap->cursorDeltaY = -8;
         input = MAP_INPUT_MOVE_START;
     }
-    if (JOY_HELD(DPAD_DOWN) && sRegionMap->cursorPosY < MAPCURSOR_Y_MAX)
+    if (JOY_HELD(DPAD_DOWN) && sRegionMap->cursorPosY < 10)
     {
-        sRegionMap->cursorDeltaY = +1;
+        sRegionMap->cursorDeltaY = +8;
         input = MAP_INPUT_MOVE_START;
     }
+    /*
     if (JOY_HELD(DPAD_LEFT) && sRegionMap->cursorPosX > MAPCURSOR_X_MIN)
     {
         sRegionMap->cursorDeltaX = -1;
@@ -672,6 +676,7 @@ static u8 ProcessRegionMapInput_Full(void)
         sRegionMap->cursorDeltaX = +1;
         input = MAP_INPUT_MOVE_START;
     }
+    */
     if (JOY_NEW(A_BUTTON))
     {
         input = MAP_INPUT_A_BUTTON;
@@ -698,7 +703,11 @@ static u8 MoveRegionMapCursor_Full(void)
 
     if (sRegionMap->cursorMovementFrameCounter != 0)
         return MAP_INPUT_MOVE_CONT;
+    
+    sRegionMap->cursorPosX += sRegionMap->cursorDeltaX;
+    sRegionMap->cursorPosY += sRegionMap->cursorDeltaY;
 
+    /*
     if (sRegionMap->cursorDeltaX > 0)
     {
         sRegionMap->cursorPosX++;
@@ -715,6 +724,7 @@ static u8 MoveRegionMapCursor_Full(void)
     {
         sRegionMap->cursorPosY--;
     }
+    */
 
     mapSecId = GetMapSecIdAt(sRegionMap->cursorPosX, sRegionMap->cursorPosY);
     sRegionMap->mapSecType = GetMapsecType(mapSecId);
@@ -1001,12 +1011,20 @@ static void InitMapBasedOnPlayerLocation(void)
     case MAP_TYPE_ROUTE:
     case MAP_TYPE_UNDERWATER:
     case MAP_TYPE_OCEAN_ROUTE:
-        sRegionMap->mapSecId = gMapHeader.regionMapSectionId;
+        //sRegionMap->mapSecId = gMapHeader.regionMapSectionId;
+        sRegionMap->mapSecId = MAPSEC_ENTRANCE;
         sRegionMap->playerIsInCave = FALSE;
         mapWidth = gMapHeader.mapLayout->width;
         mapHeight = gMapHeader.mapLayout->height;
         x = gSaveBlock1Ptr->pos.x;
         y = gSaveBlock1Ptr->pos.y;
+        // TODO: If we're on the rooftop, sRegionMap->mapSecId should be MAPSEC_ROOFTOP
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE101) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE101)) {
+            if (y < 11)
+                sRegionMap->mapSecId = MAPSEC_ROOFTOP;
+            else
+                sRegionMap->mapSecId = MAPSEC_ENTRANCE;
+        }
         if (sRegionMap->mapSecId == MAPSEC_UNDERWATER_SEAFLOOR_CAVERN || sRegionMap->mapSecId == MAPSEC_UNDERWATER_MARINE_CAVE)
             sRegionMap->playerIsInCave = TRUE;
         break;
@@ -1584,7 +1602,10 @@ u8 *GetMapName(u8 *dest, u16 regionMapId, u16 padLength)
     }
     else if (regionMapId < MAPSEC_NONE)
     {
-        str = StringCopy(dest, gRegionMapEntries[regionMapId].name);
+        if (regionMapId == MAPSEC_ENTRANCE && gSaveBlock1Ptr->pos.y < 11)
+            str = StringCopy(dest, gRegionMapEntries[MAPSEC_ROOFTOP].name);
+        else
+            str = StringCopy(dest, gRegionMapEntries[regionMapId].name);
     }
     else
     {
@@ -1699,7 +1720,7 @@ void CB2_OpenFlyMap(void)
     case 4:
         InitRegionMap(&sFlyMap->regionMap, FALSE);
         CreateRegionMapCursor(TAG_CURSOR, TAG_CURSOR);
-        CreateRegionMapPlayerIcon(TAG_PLAYER_ICON, TAG_PLAYER_ICON);
+        //CreateRegionMapPlayerIcon(TAG_PLAYER_ICON, TAG_PLAYER_ICON);
         sFlyMap->mapSecId = sFlyMap->regionMap.mapSecId;
         StringFill(sFlyMap->nameBuffer, CHAR_SPACE, MAP_NAME_LENGTH);
         sDrawFlyDestTextWindow = TRUE;
@@ -1846,6 +1867,10 @@ static void LoadFlyDestIcons(void)
 
 static void CreateFlyDestIcons(void)
 {
+    CreateFlyDestIcon(MAPSEC_ENTRANCE);
+    CreateFlyDestIcon(MAPSEC_ROOFTOP);
+
+    /*
     u16 canFlyFlag;
     u16 mapSecId;
     u16 x;
@@ -1874,15 +1899,45 @@ static void CreateFlyDestIcons(void)
         {
             gSprites[spriteId].oam.shape = shape;
 
-            if (FlagGet(canFlyFlag))
+            //if (FlagGet(canFlyFlag))
                 gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
-            else
-                shape += 3;
+            //else
+            //    shape += 3;
 
             StartSpriteAnim(&gSprites[spriteId], shape);
             gSprites[spriteId].sIconMapSec = mapSecId;
         }
         canFlyFlag++;
+    }
+    */
+}
+
+static void CreateFlyDestIcon(u16 mapSecId)
+{
+    u16 x;
+    u16 y;
+    u16 width;
+    u16 height;
+    u16 shape;
+    u8 spriteId;
+
+    GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
+    x = (x + MAPCURSOR_X_MIN) * 8 + 4;
+    y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
+
+    if (width == 2)
+        shape = SPRITE_SHAPE(16x8);
+    else if (height == 2)
+        shape = SPRITE_SHAPE(8x16);
+    else
+        shape = SPRITE_SHAPE(8x8);
+
+    spriteId = CreateSprite(&sFlyDestIconSpriteTemplate, x, y, 10);
+    if (spriteId != MAX_SPRITES) {
+        gSprites[spriteId].oam.shape = shape;
+        gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
+        StartSpriteAnim(&gSprites[spriteId], shape);
+        gSprites[spriteId].sIconMapSec = mapSecId;
     }
 }
 
@@ -1921,6 +1976,8 @@ static void TryCreateRedOutlineFlyDestIcons(void)
 // Flickers fly destination icon color (by hiding the fly icon sprite) if the cursor is currently on it
 static void SpriteCB_FlyDestIcon(struct Sprite *sprite)
 {
+    sprite->invisible = FALSE;
+    /*
     if (sFlyMap->regionMap.mapSecId == sprite->sIconMapSec)
     {
         if (++sprite->sFlickerTimer > 16)
@@ -1934,6 +1991,7 @@ static void SpriteCB_FlyDestIcon(struct Sprite *sprite)
         sprite->sFlickerTimer = 16;
         sprite->invisible = FALSE;
     }
+    */
 }
 
 #undef sIconMapSec
@@ -1970,7 +2028,7 @@ static void CB_HandleFlyMapInput(void)
             DrawFlyDestTextWindow();
             break;
         case MAP_INPUT_A_BUTTON:
-            if (sFlyMap->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY || sFlyMap->regionMap.mapSecType == MAPSECTYPE_BATTLE_FRONTIER)
+            //if (sFlyMap->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY || sFlyMap->regionMap.mapSecType == MAPSECTYPE_BATTLE_FRONTIER)
             {
                 m4aSongNumStart(SE_SELECT);
                 sFlyMap->choseFlyLocation = TRUE;
@@ -2020,6 +2078,10 @@ u32 FilterFlyDestination(struct RegionMap* regionMap)
 {
     switch (regionMap->mapSecId)
     {
+    case MAPSEC_ENTRANCE:
+        return HEAL_LOCATION_ROUTE101;
+    case MAPSEC_ROOFTOP:
+        return HEAL_LOCATION_ROUTE101_ROOFTOP;
     case MAPSEC_SOUTHERN_ISLAND:
         return HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR;
     case MAPSEC_BATTLE_FRONTIER:

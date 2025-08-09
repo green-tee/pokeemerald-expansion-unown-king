@@ -86,6 +86,8 @@ static const u16 sMapPopUp_Palette_Underwater[16] = INCBIN_U16("graphics/map_pop
 // and this is then handled by subtracting KANTO_MAPSEC_COUNT here and in LoadMapNamePopUpWindowBg.
 static const u8 sMapSectionToThemeId[MAPSEC_COUNT - KANTO_MAPSEC_COUNT - 1] =
 {
+    [MAPSEC_ENTRANCE] = MAPPOPUP_THEME_MARBLE,
+    [MAPSEC_ROOFTOP] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_LITTLEROOT_TOWN] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_OLDALE_TOWN] = MAPPOPUP_THEME_WOOD,
     [MAPSEC_DEWFORD_TOWN] = MAPPOPUP_THEME_WOOD,
