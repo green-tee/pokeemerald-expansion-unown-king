@@ -66,23 +66,23 @@
     {
       "x": 12,
       "y": 6,
-      "elevation": 3,
-      "dest_map": "MAP_MT_PYRE_4F",
-      "dest_warp_id": "2"
+      "elevation": 0,
+      "dest_map": "MAP_FIERY_PATH",
+      "dest_warp_id": "0"
     },
     {
       "x": 12,
       "y": 7,
-      "elevation": 3,
-      "dest_map": "MAP_MT_PYRE_4F",
-      "dest_warp_id": "3"
+      "elevation": 0,
+      "dest_map": "MAP_FIERY_PATH",
+      "dest_warp_id": "1"
     },
     {
       "x": 12,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_MT_PYRE_5F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_FIERY_PATH",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

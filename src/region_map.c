@@ -94,7 +94,7 @@ static u8 GetMapsecType(u16 mapSecId);
 static u16 CorrectSpecialMapSecId_Internal(u16 mapSecId);
 static u16 GetTerraOrMarineCaveMapSecId(void);
 static void GetMarineCaveCoords(u16 *x, u16 *y);
-static bool32 IsPlayerInAquaHideout(u8 mapSecId);
+//static bool32 IsPlayerInAquaHideout(u8 mapSecId);
 static void GetPositionOfCursorWithinMapSec(void);
 static bool8 RegionMap_IsMapSecIdInNextRow(u16 y);
 static void SpriteCB_CursorMapFull(struct Sprite *sprite);
@@ -992,7 +992,7 @@ static void InitMapBasedOnPlayerLocation(void)
     u16 y;
     u16 dimensionScale;
     u16 xOnMap;
-    struct WarpData *warp;
+    //struct WarpData *warp;
 
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SS_TIDAL_CORRIDOR)
         && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SS_TIDAL_CORRIDOR)
@@ -1011,6 +1011,7 @@ static void InitMapBasedOnPlayerLocation(void)
     case MAP_TYPE_ROUTE:
     case MAP_TYPE_UNDERWATER:
     case MAP_TYPE_OCEAN_ROUTE:
+    case MAP_TYPE_INDOOR:
         //sRegionMap->mapSecId = gMapHeader.regionMapSectionId;
         sRegionMap->mapSecId = MAPSEC_ENTRANCE;
         sRegionMap->playerIsInCave = FALSE;
@@ -1059,7 +1060,8 @@ static void InitMapBasedOnPlayerLocation(void)
         x = gSaveBlock1Ptr->dynamicWarp.x;
         y = gSaveBlock1Ptr->dynamicWarp.y;
         break;
-    case MAP_TYPE_INDOOR:
+    /*
+    default:
         sRegionMap->mapSecId = gMapHeader.regionMapSectionId;
         if (sRegionMap->mapSecId != MAPSEC_DYNAMIC)
         {
@@ -1083,6 +1085,7 @@ static void InitMapBasedOnPlayerLocation(void)
         x = warp->x;
         y = warp->y;
         break;
+    */
     }
 
     xOnMap = x;
@@ -1300,6 +1303,7 @@ static void GetMarineCaveCoords(u16 *x, u16 *y)
 
 // Probably meant to be an "IsPlayerInIndoorDungeon" function, but in practice it only has the one mapsec
 // Additionally, because the mapsec doesnt exist in Emerald, this function always returns FALSE
+/*
 static bool32 IsPlayerInAquaHideout(u8 mapSecId)
 {
     u32 i;
@@ -1311,6 +1315,7 @@ static bool32 IsPlayerInAquaHideout(u8 mapSecId)
     }
     return FALSE;
 }
+*/
 
 u16 CorrectSpecialMapSecId(u16 mapSecId)
 {
