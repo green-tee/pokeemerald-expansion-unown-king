@@ -22,11 +22,6 @@
       "map": "MAP_ROUTE130",
       "offset": 0,
       "direction": "left"
-    },
-    {
-      "map": "MAP_UNDERWATER_ROUTE129",
-      "offset": 0,
-      "direction": "dive"
     }
   ],
   "object_events": [

@@ -2,7 +2,7 @@
   "id": "MAP_UNDERWATER_ROUTE105",
   "name": "Underwater_Route105",
   "layout": "LAYOUT_UNDERWATER_ROUTE105",
-  "music": "MUS_UNDERWATER",
+  "music": "MUS_SURF",
   "region_map_section": "MAPSEC_UNDERWATER_105",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
@@ -14,7 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE105",
+      "map": "MAP_ROUTE102",
       "offset": 0,
       "direction": "emerge"
     }
@@ -22,18 +22,11 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 13,
-      "y": 4,
+      "x": 8,
+      "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 17,
-      "y": 66,
-      "elevation": 0,
-      "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_UNDERWATER_ROUTE125",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],

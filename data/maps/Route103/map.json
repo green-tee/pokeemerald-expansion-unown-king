@@ -17,12 +17,17 @@
       "map": "MAP_ROUTE101",
       "offset": 31,
       "direction": "right"
+    },
+    {
+      "map": "MAP_UNDERWATER_ROUTE129",
+      "offset": 0,
+      "direction": "dive"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MILOTIC",
-      "x": 13,
+      "x": 19,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -35,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DARKRAI",
-      "x": 13,
+      "x": 19,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -48,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 13,
+      "x": 19,
       "y": 28,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -61,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KYOGRE",
-      "x": 8,
+      "x": 14,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -74,7 +79,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LUGIA",
-      "x": 19,
+      "x": 25,
       "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -87,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TORNADUS",
-      "x": 11,
+      "x": 17,
       "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",

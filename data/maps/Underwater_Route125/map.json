@@ -2,7 +2,7 @@
   "id": "MAP_UNDERWATER_ROUTE125",
   "name": "Underwater_Route125",
   "layout": "LAYOUT_UNDERWATER_ROUTE125",
-  "music": "MUS_UNDERWATER",
+  "music": "MUS_SURF",
   "region_map_section": "MAPSEC_UNDERWATER_125",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
@@ -12,28 +12,57 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_ROUTE125",
-      "offset": 0,
-      "direction": "emerge"
-    }
-  ],
+  "connections": null,
   "object_events": [],
   "warp_events": [
     {
-      "x": 22,
-      "y": 10,
+      "x": 9,
+      "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
+      "dest_map": "MAP_UNDERWATER_ROUTE129",
       "dest_warp_id": "0"
     },
     {
-      "x": 45,
-      "y": 30,
+      "x": 8,
+      "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_UNDERWATER_MARINE_CAVE",
+      "dest_map": "MAP_UNDERWATER_ROUTE129",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 10,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE129",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 70,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE105",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 48,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE134",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SEALED_CHAMBER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_SEALED_CHAMBER",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

@@ -1237,8 +1237,8 @@ void Overworld_PlaySpecialMapMusic(void)
     {
         if (gSaveBlock1Ptr->savedMusic)
             music = gSaveBlock1Ptr->savedMusic;
-        else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
-            music = MUS_UNDERWATER;
+        //else if (GetCurrentMapType() == MAP_TYPE_UNDERWATER)
+        //    music = MUS_UNDERWATER;
         else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
             music = MUS_SURF;
     }
@@ -1309,14 +1309,18 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (FlagGet(FLAG_DONT_TRANSITION_MUSIC) != TRUE && warpMusic != GetCurrentMapMusic())
     {
-        if (currentMusic == MUS_SURF
+        if (
+            currentMusic == MUS_SURF
+            /*
             && VarGet(VAR_SKY_PILLAR_STATE) == 2
             && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
             && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)
             && sWarpDestination.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY)
             && sWarpDestination.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY)
             && sWarpDestination.x == 29
-            && sWarpDestination.y == 53)
+            && sWarpDestination.y == 53
+            */
+        )
             return;
         FadeOutMapMusic(GetMapMusicFadeoutSpeed());
     }

@@ -2,7 +2,7 @@
   "id": "MAP_UNDERWATER_ROUTE134",
   "name": "Underwater_Route134",
   "layout": "LAYOUT_UNDERWATER_ROUTE134",
-  "music": "MUS_UNDERWATER",
+  "music": "MUS_SURF",
   "region_map_section": "MAPSEC_UNDERWATER_SEALED_CHAMBER",
   "requires_flash": false,
   "weather": "WEATHER_UNDERWATER_BUBBLES",
@@ -13,14 +13,28 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KYOGRE",
+      "x": 15,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 6,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
   "warp_events": [
     {
-      "x": 8,
-      "y": 8,
+      "x": 15,
+      "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_UNDERWATER_SEALED_CHAMBER",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_UNDERWATER_ROUTE125",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],
