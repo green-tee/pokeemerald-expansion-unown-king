@@ -1,0 +1,34 @@
+script EventScript_UseSurf {
+    lockall
+    checkpartymove(MOVE_SURF)
+    if (var(VAR_RESULT) == PARTY_SIZE) {
+        checkpartylearnable(MOVE_SURF)
+        if (var(VAR_RESULT) == PARTY_SIZE) {
+            msgbox(gText_CantUseSurf, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            call(EventScript_PrepareSurf)
+        }
+    } else {
+        call(EventScript_PrepareSurf)
+    }
+    releaseall
+}
+
+script EventScript_PrepareSurf {
+    setfieldeffectargument(0, VAR_RESULT)
+    msgbox(gText_WantToUseSurf, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        closemessage
+        dofieldeffect(FLDEFF_USE_SURF)
+    } else {
+        closemessage
+    }
+}
+
+script EventScript_CannotUseSurf {
+    lockall
+    msgbox(gText_CantUseSurf, MSGBOX_DEFAULT)
+    closemessage
+    releaseall
+}

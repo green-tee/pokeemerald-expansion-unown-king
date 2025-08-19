@@ -61,7 +61,7 @@ script InsideOfTruck_EventScript_PlayIntro {
     msgbox(InsideOfTruck_Text_MoreVariationsCreated, MSGBOX_DEFAULT)
     closemessage
     delay(60)
-    warpsilent(MAP_ROUTE101, 11, 25)
+    warpsilent(MAP_ROUTE101, 11, 27)
     releaseall
 }
 

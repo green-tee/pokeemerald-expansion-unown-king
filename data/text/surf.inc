@@ -1,3 +1,6 @@
+gText_CantUseSurf::
+	.string "The water is dyed a deep blue…$"
+
 gText_WantToUseSurf::
 	.string "The water is dyed a deep blue…\n"
 	.string "Would you like to SURF?$"
