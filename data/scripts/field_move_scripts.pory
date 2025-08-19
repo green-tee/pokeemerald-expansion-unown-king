@@ -159,30 +159,6 @@ Text_StrengthActivated:
 	.string "STRENGTH made it possible to move\n"
 	.string "boulders around.$"
 
-EventScript_UseWaterfall::
-	lockall
-	checkpartymove MOVE_WATERFALL
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_WantToWaterfall, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
-	msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
-	hidefollowernpc
-	dofieldeffect FLDEFF_USE_WATERFALL
-	callnative FollowerNPC_WarpSetEnd
-	goto EventScript_EndWaterfall
-
-EventScript_CannotUseWaterfall::
-	lockall
-
-EventScript_CantWaterfall::
-	msgbox Text_CantWaterfall, MSGBOX_DEFAULT
-
-EventScript_EndWaterfall::
-	releaseall
-	end
-
 Text_CantWaterfall:
 	.string "A wall of water is crashing down with\n"
 	.string "a mighty roar.$"
@@ -531,3 +507,47 @@ script EventScript_CannotUseDiveUnderwater {
 	closemessage
 	releaseall
 }
+
+
+//
+// WATERFALL
+//
+
+
+script EventScript_UseWaterfall {
+	lockall
+	checkpartymove(MOVE_WATERFALL)
+	if (var(VAR_RESULT) == PARTY_SIZE) {
+		checkpartylearnable(MOVE_WATERFALL)
+		if (var(VAR_RESULT) == PARTY_SIZE) {
+			msgbox(Text_CantWaterfall, MSGBOX_DEFAULT)
+			closemessage
+		} else {
+			call(EventScript_PrepareWaterfall)
+		}
+	} else {
+		call(EventScript_PrepareWaterfall)
+	}
+	releaseall
+}
+
+
+script EventScript_PrepareWaterfall {
+	setfieldeffectargument(0, VAR_RESULT)
+	msgbox(Text_WantToWaterfall, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		dofieldeffect(FLDEFF_USE_WATERFALL)
+	} else {
+		closemessage
+	}
+}
+
+
+script EventScript_CannotUseWaterfall {
+	lockall
+	msgbox(Text_CantWaterfall, MSGBOX_DEFAULT)
+	closemessage
+	releaseall
+}
+
