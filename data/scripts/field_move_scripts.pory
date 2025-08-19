@@ -1,49 +1,8 @@
 raw `
-@ Interact with cuttable tree
-EventScript_CutTree::
-	lockall
-	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
-	checkpartymove MOVE_CUT
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
-	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_CUT
-	msgbox Text_WantToCut, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
-	closemessage
-EventScript_CutTreeCommon:
-	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
-	dofieldeffect FLDEFF_USE_CUT_ON_TREE
-	waitstate
-EventScript_CutTreeDown:: @ fallthrough
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
-	waitmovement 0
-	removeobject VAR_LAST_TALKED
-	releaseall
-	end
-
-@ Use cut from party menu
-EventScript_UseCut::
-	lockall
-	goto EventScript_CutTreeCommon
 
 Movement_CutTreeDown:
 	cut_tree
 	step_end
-
-EventScript_CheckTreeCantCut::
-	msgbox Text_CantCut, MSGBOX_DEFAULT
-	releaseall
-	end
-
-EventScript_CancelCut::
-	closemessage
-	releaseall
-	end
 
 Text_WantToCut:
 	.string "This tree looks like it can be\n"
@@ -415,6 +374,58 @@ EventScript_UseDefog::
 
 `
 
+script EventScript_CutTree {
+	lockall
+	if (flag(FLAG_BADGE01_GET)) {
+		checkpartymove(MOVE_CUT)
+		if (var(VAR_RESULT) == PARTY_SIZE) {
+			checkpartylearnable(MOVE_CUT)
+			if (var(VAR_RESULT) == PARTY_SIZE) {
+				msgbox(Text_CantCut, MSGBOX_DEFAULT)
+				closemessage
+			} else {
+				call(EventScript_PrepareCut)
+			}
+		} else {
+			call(EventScript_PrepareCut)
+		}
+	} else {
+		msgbox(Text_CantCut, MSGBOX_DEFAULT)
+		closemessage
+	}
+	releaseall
+}
+
+
+script EventScript_PrepareCut {
+	setfieldeffectargument(0, VAR_RESULT)
+	msgbox(Text_WantToCut, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		call(EventScript_CutTreeCommon)
+	} else {
+		closemessage
+	}
+}
+
+
+script EventScript_CutTreeCommon {
+	setfieldeffectargument(3, FALSE)
+	dofieldeffect(FLDEFF_USE_CUT_ON_TREE)
+	waitstate
+	applymovement(VAR_LAST_TALKED, Movement_CutTreeDown)
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+}
+
+
+script EventScript_UseCut {
+	lockall
+	call(EventScript_CutTreeCommon)
+	releaseall
+}
+
+
 script EventScript_StrengthBoulder {
     lockall
     if (flag(FLAG_BADGE04_GET)) {
@@ -442,6 +453,7 @@ script EventScript_StrengthBoulder {
     releaseall
 }
 
+
 script EventScript_PrepareStrength {
     setfieldeffectargument(0, VAR_RESULT)
     msgbox(Text_WantToStrength, MSGBOX_YESNO)
@@ -455,6 +467,7 @@ script EventScript_PrepareStrength {
     }
 }
 
+
 script EventScript_UseStrength {
 	lockall
 	dofieldeffect(FLDEFF_USE_STRENGTH)
@@ -462,6 +475,7 @@ script EventScript_UseStrength {
 	call(EventScript_ActivateStrength)
     releaseall
 }
+
 
 script EventScript_ActivateStrength {
 	setflag(FLAG_SYS_USE_STRENGTH)
