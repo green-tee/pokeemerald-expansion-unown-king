@@ -60,6 +60,9 @@
     "checkpartymove": {
       "var_name": "VAR_RESULT"
     },
+    "checkpartylearnable": {
+      "var_name": "VAR_RESULT"
+    },
     "choosecontestmon": {
       "var_name": "VAR_0x8004"
     },

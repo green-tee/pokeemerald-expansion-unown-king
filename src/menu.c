@@ -51,6 +51,7 @@ static u16 AddWindowParameterized(u8, u8, u8, u8, u8, u8, u16);
 static void WindowFunc_DrawStandardFrame(u8, u8, u8, u8, u8, u8);
 static void WindowFunc_DrawSignFrame(u8, u8, u8, u8, u8, u8);
 static inline void *GetWindowFunc_DialogueFrame(void);
+static void GetPosRectOriginBasedOnColumns(u32 *dstLeft, u32 *dstTop, u8 pos, u8 numColumns, u32 columnsWidthPx);
 static void WindowFunc_DrawDialogueFrame(u8, u8, u8, u8, u8, u8);
 static void WindowFunc_ClearStdWindowAndFrame(u8, u8, u8, u8, u8, u8);
 static void WindowFunc_ClearDialogWindowAndFrame(u8, u8, u8, u8, u8, u8);
@@ -1068,6 +1069,20 @@ void RedrawMenuCursor(u8 oldPos, u8 newPos)
     AddTextPrinterParameterized(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0);
 }
 
+void RedrawMenuCursor_Multicolumn(u8 oldPos, u8 newPos, u8 numColumns, u32 columnWidthPx)
+{
+    u8 width, height;
+    u32 oldLeft, oldTop;
+    u32 newLeft, newTop;
+
+    width = GetMenuCursorDimensionByFont(sMenu.fontId, 0);
+    height = GetMenuCursorDimensionByFont(sMenu.fontId, 1);
+    GetPosRectOriginBasedOnColumns(&oldLeft, &oldTop, oldPos, numColumns, columnWidthPx);
+    GetPosRectOriginBasedOnColumns(&newLeft, &newTop, newPos, numColumns, columnWidthPx);
+    FillWindowPixelRect(sMenu.windowId, PIXEL_FILL(1), oldLeft, oldTop, width, height);
+    AddTextPrinterParameterized(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, newLeft, newTop, 0, 0);
+}
+
 u8 Menu_MoveCursor(s8 cursorDelta)
 {
     u8 oldPos = sMenu.cursorPos;
@@ -1081,6 +1096,21 @@ u8 Menu_MoveCursor(s8 cursorDelta)
         sMenu.cursorPos += cursorDelta;
 
     RedrawMenuCursor(oldPos, sMenu.cursorPos);
+    return sMenu.cursorPos;
+}
+
+u8 Menu_MoveCursor_MultiColumn(s8 cursorDelta, u8 numColumns, u32 columnWidthPx) {
+    u8 oldPos = sMenu.cursorPos;
+    int newPos = sMenu.cursorPos + cursorDelta;
+
+    if (newPos < sMenu.minCursorPos)
+        sMenu.cursorPos = sMenu.maxCursorPos;
+    else if (newPos > sMenu.maxCursorPos)
+        sMenu.cursorPos = sMenu.minCursorPos;
+    else
+        sMenu.cursorPos += cursorDelta;
+
+    RedrawMenuCursor_Multicolumn(oldPos, sMenu.cursorPos, numColumns, columnWidthPx);
     return sMenu.cursorPos;
 }
 
@@ -1189,6 +1219,81 @@ s8 ProcessMenuInput_other(void)
     }
 
     return MENU_NOTHING_CHOSEN;
+}
+
+s8 ProcessMenuInput_MultiColumn(u8 numColumns, u32 columnWidthPx) {
+    s8 newCursorPos = sMenu.cursorPos;
+
+    if (JOY_NEW(A_BUTTON)) {
+        if (!sMenu.APressMuted)
+            PlaySE(SE_SELECT);
+        return sMenu.cursorPos;
+    }
+    else if (JOY_NEW(B_BUTTON)) {
+        return MENU_B_PRESSED;
+    }
+    else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_UP) {
+
+        if (sMenu.cursorPos - numColumns < sMenu.minCursorPos) {
+            newCursorPos = sMenu.maxCursorPos;
+            while (newCursorPos % numColumns != sMenu.cursorPos % numColumns) {
+                newCursorPos--;
+            }
+        } else {
+            newCursorPos = sMenu.cursorPos - numColumns;
+        }
+        PlaySE(SE_SELECT);
+        Menu_MoveCursor_MultiColumn(newCursorPos - sMenu.cursorPos, numColumns, columnWidthPx);
+        return MENU_NOTHING_CHOSEN;
+
+    }
+    else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_DOWN) {
+
+        if (sMenu.cursorPos + numColumns > sMenu.maxCursorPos) {
+            newCursorPos = sMenu.minCursorPos;
+            while (newCursorPos % numColumns != sMenu.cursorPos % numColumns) {
+                newCursorPos++;
+            }
+        } else {
+            newCursorPos = sMenu.cursorPos + numColumns;
+        }
+        PlaySE(SE_SELECT);
+        Menu_MoveCursor_MultiColumn(newCursorPos - sMenu.cursorPos, numColumns, columnWidthPx);
+        return MENU_NOTHING_CHOSEN;
+
+    } else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_LEFT) {
+
+        if (sMenu.cursorPos % numColumns == 0) {
+            newCursorPos = sMenu.cursorPos + numColumns - 1;
+        } else {
+            newCursorPos = sMenu.cursorPos - 1;
+        }
+        PlaySE(SE_SELECT);
+        Menu_MoveCursor_MultiColumn(newCursorPos - sMenu.cursorPos, numColumns, columnWidthPx);
+        return MENU_NOTHING_CHOSEN;
+
+    } else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_RIGHT) {
+
+        if ((sMenu.cursorPos + 1) % numColumns == 0) {
+            newCursorPos = sMenu.cursorPos + 1 - numColumns;
+        } else {
+            newCursorPos = sMenu.cursorPos + 1;
+        }
+        PlaySE(SE_SELECT);
+        Menu_MoveCursor_MultiColumn(newCursorPos - sMenu.cursorPos, numColumns, columnWidthPx);
+        return MENU_NOTHING_CHOSEN;
+
+    }
+
+    return MENU_NOTHING_CHOSEN;
+}
+
+static void GetPosRectOriginBasedOnColumns(u32 *dstLeft, u32 *dstTop, u8 pos, u8 numColumns, u32 columnsWidthPx) {
+    u8 posX = pos % numColumns;
+    u8 posY = pos / numColumns;
+
+    *dstLeft = posX * columnsWidthPx;
+    *dstTop = sMenu.optionHeight * posY + sMenu.top;
 }
 
 s8 Menu_ProcessInputNoWrapAround_other(void)

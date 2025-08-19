@@ -85,6 +85,7 @@ void CreateYesNoMenu(const struct WindowTemplate *window, u16 baseTileNum, u8 pa
 void DecompressAndLoadBgGfxUsingHeap(u8 bgId, const void *src, u32 size, u16 offset, u8 mode);
 s8 Menu_ProcessInputNoWrapClearOnChoose(void);
 s8 ProcessMenuInput_other(void);
+s8 ProcessMenuInput_MultiColumn(u8 numColumns, u32 columnWidthPx);
 void DoScheduledBgTilemapCopiesToVram(void);
 void ClearScheduledBgCopiesToVram(void);
 void AddTextPrinterParameterized4(u8 windowId, u8 fontId, u8 left, u8 top, u8 letterSpacing, u8 lineSpacing, const u8 *color, s8 speed, const u8 *str);
@@ -101,6 +102,7 @@ u8 ChangeMenuGridCursorPosition(s8 deltaX, s8 deltaY);
 u8 GetStartMenuWindowId(void);
 void ListMenuLoadStdPalAt(u8 palOffset, u8 palId);
 u8 Menu_MoveCursor(s8 cursorDelta);
+u8 Menu_MoveCursor_MultiColumn(s8 cursorDelta, u8 numColumns, u32 columnWidthPx);
 u8 Menu_MoveCursorNoWrapAround(s8 cursorDelta);
 void DrawStdWindowFrame(u8 windowId, bool8 copyToVram);
 u8 AddStartMenuWindow(u8 numActions);

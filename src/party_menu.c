@@ -152,6 +152,9 @@ enum {
     FIELD_MOVES_COUNT
 };
 
+#define NUM_HM_MOVES 8
+#define MAX_ACTIONS_PER_COLUMN 6
+
 enum {
     PARTY_BOX_LEFT_COLUMN,
     PARTY_BOX_RIGHT_COLUMN,
@@ -219,8 +222,10 @@ struct PartyMenuInternal
     u32 spriteIdCancelPokeball:7;
     u32 messageId:14;
     u8 windowId[3];
-    u8 actions[8];
+    u8 actions[16];
     u8 numActions;
+    u8 numActionRows;
+    u8 numActionColumns;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
     // However, a full 0x100 hwords (0x200 bytes) are allocated.
     // It is likely that the 0x160 value used below is a constant defined by
@@ -1549,6 +1554,7 @@ static void HandleChooseMonSelection(u8 taskId, s8 *slotPtr)
                 // Can't select if mon is currently on the field, or doesn't belong to you
                 PlaySE(SE_FAILURE);
             }
+            /*
             else if (DoesSelectedMonKnowHM((u8 *)slotPtr))
             {
                 PlaySE(SE_FAILURE);
@@ -1556,6 +1562,7 @@ static void HandleChooseMonSelection(u8 taskId, s8 *slotPtr)
                 ScheduleBgCopyTilemapToVram(2);
                 gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
             }
+            */
             else
             {
                 PlaySE(SE_SELECT);
@@ -2773,11 +2780,28 @@ static u8 DisplaySelectionWindow(u8 windowType)
     u8 cursorDimension;
     u8 letterSpacing;
     u8 i;
+    const u8 numActions       = sPartyMenuInternal->numActions;
+    const u8 numActionColumns = (numActions - 1) / MAX_ACTIONS_PER_COLUMN + 1; // Unexpected behaviour if numActions is 0, but it should never be
+    const u8 numActionRows    = (numActions - 1) / numActionColumns + 1;       // Unexpected behaviour if numActions is 0, but it should never be
+
+    sPartyMenuInternal->numActionRows = sPartyMenuInternal->numActions;
+    sPartyMenuInternal->numActionColumns = 1;
 
     switch (windowType)
     {
     case SELECTWINDOW_ACTIONS:
-        SetWindowTemplateFields(&window, 2, 19, 19 - (sPartyMenuInternal->numActions * 2), 10, sPartyMenuInternal->numActions * 2, 14, 0x2E9);
+        SetWindowTemplateFields(
+            &window,
+            2,
+            30 - 10 * numActionColumns,
+            15 - (numActionRows * 2),
+            10 * numActionColumns - 1,
+            numActionRows * 2,
+            14,
+            0x2E9
+        );
+        sPartyMenuInternal->numActionRows    = numActionRows;
+        sPartyMenuInternal->numActionColumns = numActionColumns;
         break;
     case SELECTWINDOW_ITEM:
         window = sItemGiveTakeWindowTemplate;
@@ -2803,7 +2827,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
     cursorDimension = GetMenuCursorDimensionByFont(FONT_NORMAL, 0);
     letterSpacing = GetFontAttribute(FONT_NORMAL, FONTATTR_LETTER_SPACING);
 
-    for (i = 0; i < sPartyMenuInternal->numActions; i++)
+    for (i = 0; i < numActions; i++)
     {
         const u8 *text;
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
@@ -2812,10 +2836,35 @@ static u8 DisplaySelectionWindow(u8 windowType)
         else
             text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
-        AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
+        if (windowType == SELECTWINDOW_ACTIONS) {
+            AddTextPrinterParameterized4(
+                sPartyMenuInternal->windowId[0],
+                FONT_NORMAL,
+                cursorDimension + 80 * (i % numActionColumns),
+                (i / numActionColumns) * 16 + 1,
+                letterSpacing,
+                0,
+                sFontColorTable[fontColorsId],
+                0,
+                text
+            );
+        }
+        else {
+            AddTextPrinterParameterized4(
+                sPartyMenuInternal->windowId[0],
+                FONT_NORMAL,
+                cursorDimension,
+                (i * 16) + 1,
+                letterSpacing,
+                0,
+                sFontColorTable[fontColorsId],
+                0,
+                text
+            );
+        }
     }
 
-    InitMenuInUpperLeftCorner(sPartyMenuInternal->windowId[0], sPartyMenuInternal->numActions, 0, TRUE);
+    InitMenuInUpperLeftCorner(sPartyMenuInternal->windowId[0], numActions, 0, TRUE);
     ScheduleBgCopyTilemapToVram(2);
 
     return sPartyMenuInternal->windowId[0];
@@ -2865,16 +2914,28 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
+    bool32 appendedHms[NUM_HM_MOVES] = { FALSE };
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
     // Add field moves to action list
+    // HMs are added if the mon can learn them
+    for (j = 0; j < NUM_HM_MOVES; j++) {
+        if (CanLearnTeachableMove(GetMonData(&mons[slotId], MON_DATA_SPECIES), sFieldMoves[j])) {
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+            appendedHms[j] = TRUE;
+        } else {
+            appendedHms[j] = FALSE;
+        }
+    }
+    // If a mon cannot learn a HM but knows it anyway, it should be added as well
+    // Other moves are added if the mon knows them
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        for (j = 0; j != FIELD_MOVES_COUNT; j++)
+        for (j = 0; j < FIELD_MOVES_COUNT; j++)
         {
-            if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
+            if ((j >= NUM_HM_MOVES || !appendedHms[j]) && GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == sFieldMoves[j])
             {
                 AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
                 break;
@@ -3004,6 +3065,8 @@ static void Task_HandleSelectionMenuInput(u8 taskId)
 
         if (sPartyMenuInternal->numActions <= 3)
             input = Menu_ProcessInputNoWrapAround_other();
+        else if (sPartyMenuInternal->numActionColumns > 1)
+            input = ProcessMenuInput_MultiColumn(sPartyMenuInternal->numActionColumns, 80);
         else
             input = ProcessMenuInput_other();
 
