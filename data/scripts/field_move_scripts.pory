@@ -16,44 +16,6 @@ Text_CantCut:
 	.string "This tree looks like it can be\n"
 	.string "CUT down!$"
 
-@ Use rock smash from party menu
-EventScript_UseRockSmash::
-	lockall
-	goto EventScript_RockSmashCommon
-
-@ Interact with smashable rock
-EventScript_RockSmash::
-	lockall
-	goto_if_unset FLAG_BADGE03_GET, EventScript_CantSmashRock
-	checkpartymove MOVE_ROCK_SMASH
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
-	setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
-	msgbox Text_WantToSmash, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
-	closemessage
-EventScript_RockSmashCommon:
-	@ check if follower should use the field move
-	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
-	dofieldeffect FLDEFF_USE_ROCK_SMASH
-	waitstate
-EventScript_SmashRock:: @ fallthrough
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-	applymovement VAR_LAST_TALKED, Movement_SmashRock
-	waitmovement 0
-	removeobject VAR_LAST_TALKED
-	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
-	goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
-	special RockSmashWildEncounter
-	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
-	waitstate
-	releaseall
-	end
-
 EventScript_FollowerFieldMove:
 	getdirectiontoface VAR_0x8005, OBJ_EVENT_ID_FOLLOWER, OBJ_EVENT_ID_PLAYER
 	specialvar VAR_0x8006, GetPlayerFacingDirection
@@ -125,10 +87,6 @@ EventScript_FollowerJumpWest:
 	waitmovement 0
 	return
 
-EventScript_EndSmash::
-	releaseall
-	end
-
 Movement_WalkUp:
 	walk_up
 	step_end
@@ -164,16 +122,6 @@ Movement_JumpLeft:
 Movement_SmashRock:
 	rock_smash_break
 	step_end
-
-EventScript_CantSmashRock::
-	msgbox Text_CantSmash, MSGBOX_DEFAULT
-	releaseall
-	end
-
-EventScript_CancelSmash::
-	closemessage
-	releaseall
-	end
 
 Text_WantToSmash:
 	.string "This rock appears to be breakable.\n"
@@ -374,6 +322,11 @@ EventScript_UseDefog::
 
 `
 
+//
+// CUT
+//
+
+
 script EventScript_CutTree {
 	lockall
 	if (flag(FLAG_BADGE01_GET)) {
@@ -424,6 +377,72 @@ script EventScript_UseCut {
 	call(EventScript_CutTreeCommon)
 	releaseall
 }
+
+
+//
+// ROCK SMASH
+//
+
+
+script EventScript_RockSmash {
+	lockall
+	if (flag(FLAG_BADGE03_GET)) {
+		checkpartymove(MOVE_ROCK_SMASH)
+		if (var(VAR_RESULT) == PARTY_SIZE) {
+			checkpartylearnable(MOVE_ROCK_SMASH)
+			if (var(VAR_RESULT) == PARTY_SIZE) {
+				msgbox(Text_CantSmash, MSGBOX_DEFAULT)
+				closemessage
+			} else {
+				call(EventScript_PrepareRockSmash)
+			}
+		} else {
+			call(EventScript_PrepareRockSmash)
+		}
+	} else {
+		msgbox(Text_CantSmash, MSGBOX_DEFAULT)
+		closemessage
+	}
+	releaseall
+}
+
+
+script EventScript_PrepareRockSmash {
+	setfieldeffectargument(0, VAR_RESULT)
+	msgbox(Text_WantToSmash, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		call(EventScript_RockSmashCommon)
+	} else {
+		closemessage
+	}
+}
+
+
+script EventScript_RockSmashCommon {
+	setfieldeffectargument(3, FALSE)
+	dofieldeffect(FLDEFF_USE_ROCK_SMASH)
+	waitstate
+	applymovement(VAR_LAST_TALKED, Movement_SmashRock)
+	waitmovement(0)
+	removeobject(VAR_LAST_TALKED)
+	special(RockSmashWildEncounter)
+	if (var(VAR_RESULT) == TRUE) {
+		waitstate
+	}
+}
+
+
+script EventScript_UseRockSmash {
+	lockall
+	call(EventScript_RockSmashCommon)
+	releaseall
+}
+
+
+//
+// STRENGTH
+//
 
 
 script EventScript_StrengthBoulder {
