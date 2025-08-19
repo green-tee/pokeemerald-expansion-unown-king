@@ -176,7 +176,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (TryRunOnFrameMapScript() == TRUE)
         return TRUE;
 
-    if (input->pressedBButton && TrySetupDiveEmergeScript() == TRUE)
+    if ((input->pressedBButton || input->pressedAButton) && TrySetupDiveEmergeScript() == TRUE)
         return TRUE;
     if (input->tookStep)
     {
@@ -585,9 +585,13 @@ static bool32 TrySetupDiveDownScript(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_DIVE))
         return FALSE;
 
-    if (FlagGet(FLAG_BADGE07_GET) && TrySetDiveWarp() == 2)
+    if (TrySetDiveWarp() == 2)
     {
-        ScriptContext_SetupScript(EventScript_UseDive);
+        if (FlagGet(FLAG_BADGE07_GET)) {
+            ScriptContext_SetupScript(EventScript_UseDive);
+        } else {
+            ScriptContext_SetupScript(EventScript_CannotUseDive);
+        }
         return TRUE;
     }
     return FALSE;
@@ -598,9 +602,13 @@ static bool32 TrySetupDiveEmergeScript(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_DIVE))
         return FALSE;
 
-    if (FlagGet(FLAG_BADGE07_GET) && gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
     {
-        ScriptContext_SetupScript(EventScript_UseDiveUnderwater);
+        if (FlagGet(FLAG_BADGE07_GET)) {
+            ScriptContext_SetupScript(EventScript_UseDiveUnderwater);
+        } else {
+            ScriptContext_SetupScript(EventScript_CannotUseDiveUnderwater);
+        }
         return TRUE;
     }
     return FALSE;

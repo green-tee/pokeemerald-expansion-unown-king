@@ -391,535 +391,561 @@ Text_MonUsedWaterfall:
 # 196 "data/scripts/field_move_scripts.pory"
 
 # 197 "data/scripts/field_move_scripts.pory"
-EventScript_UseDive::
+EventScript_DigCommon:
 # 198 "data/scripts/field_move_scripts.pory"
-	lockall
+	isfollowerfieldmoveuser VAR_0x8004
 # 199 "data/scripts/field_move_scripts.pory"
-	checkpartymove MOVE_DIVE
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
 # 200 "data/scripts/field_move_scripts.pory"
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
+	dofieldeffect FLDEFF_USE_DIG
 # 201 "data/scripts/field_move_scripts.pory"
-	copyvar 0x8004 VAR_RESULT
+	waitstate
 # 202 "data/scripts/field_move_scripts.pory"
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
+EventScript_DigSealedChamber:: @ fallthrough
 # 203 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 0, VAR_RESULT
+	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 204 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 1, 1
+	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
 # 205 "data/scripts/field_move_scripts.pory"
-	msgbox Text_WantToDive, MSGBOX_YESNO
+	callnative DoBrailleDigEffect
 # 206 "data/scripts/field_move_scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
+	releaseall
 # 207 "data/scripts/field_move_scripts.pory"
-	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
-# 208 "data/scripts/field_move_scripts.pory"
-	hidefollowernpc
-# 209 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 0, VAR_0x8004
-# 210 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 1, 1
-# 211 "data/scripts/field_move_scripts.pory"
-	dofieldeffect FLDEFF_USE_DIVE
-# 212 "data/scripts/field_move_scripts.pory"
-	goto EventScript_EndDive
-# 213 "data/scripts/field_move_scripts.pory"
 	end
+# 208 "data/scripts/field_move_scripts.pory"
+
+# 209 "data/scripts/field_move_scripts.pory"
+@ Use Dig from party menu
+# 210 "data/scripts/field_move_scripts.pory"
+EventScript_UseDig::
+# 211 "data/scripts/field_move_scripts.pory"
+	lockall
+# 212 "data/scripts/field_move_scripts.pory"
+	goto EventScript_DigCommon
+# 213 "data/scripts/field_move_scripts.pory"
+
 # 214 "data/scripts/field_move_scripts.pory"
 
 # 215 "data/scripts/field_move_scripts.pory"
-EventScript_CantDive::
+EventScript_CutGrassCommon:
 # 216 "data/scripts/field_move_scripts.pory"
-	msgbox Text_CantDive, MSGBOX_DEFAULT
+	isfollowerfieldmoveuser VAR_0x8004
 # 217 "data/scripts/field_move_scripts.pory"
-	releaseall
+	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
 # 218 "data/scripts/field_move_scripts.pory"
-	end
+	dofieldeffect FLDEFF_USE_CUT_ON_GRASS
 # 219 "data/scripts/field_move_scripts.pory"
-
+	waitstate
 # 220 "data/scripts/field_move_scripts.pory"
-EventScript_EndDive::
+
 # 221 "data/scripts/field_move_scripts.pory"
-	releaseall
+@ Use Cut grass from party menu
 # 222 "data/scripts/field_move_scripts.pory"
-	end
+EventScript_UseCutGrass::
 # 223 "data/scripts/field_move_scripts.pory"
-
+	lockall
 # 224 "data/scripts/field_move_scripts.pory"
-EventScript_UseDiveUnderwater::
+	goto EventScript_CutGrassCommon
 # 225 "data/scripts/field_move_scripts.pory"
-	lockall
-# 226 "data/scripts/field_move_scripts.pory"
-	checkpartymove MOVE_DIVE
-# 227 "data/scripts/field_move_scripts.pory"
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSurface
-# 228 "data/scripts/field_move_scripts.pory"
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-# 229 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 0, VAR_RESULT
-# 230 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 1, 1
-# 231 "data/scripts/field_move_scripts.pory"
-	msgbox Text_WantToSurface, MSGBOX_YESNO
-# 232 "data/scripts/field_move_scripts.pory"
-	goto_if_eq VAR_RESULT, NO, EventScript_NoSurface
-# 233 "data/scripts/field_move_scripts.pory"
-	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
-# 234 "data/scripts/field_move_scripts.pory"
-	hidefollowernpc
-# 235 "data/scripts/field_move_scripts.pory"
-	dofieldeffect FLDEFF_USE_DIVE
-# 236 "data/scripts/field_move_scripts.pory"
-	goto EventScript_EndSurface
-# 237 "data/scripts/field_move_scripts.pory"
-	end
-# 238 "data/scripts/field_move_scripts.pory"
 
+# 226 "data/scripts/field_move_scripts.pory"
+Text_CantDive:
+# 227 "data/scripts/field_move_scripts.pory"
+	.string "The sea is deep here. A POKéMON\n"
+# 228 "data/scripts/field_move_scripts.pory"
+	.string "may be able to go underwater.$"
+# 229 "data/scripts/field_move_scripts.pory"
+
+# 230 "data/scripts/field_move_scripts.pory"
+Text_WantToDive:
+# 231 "data/scripts/field_move_scripts.pory"
+	.string "The sea is deep here.\n"
+# 232 "data/scripts/field_move_scripts.pory"
+	.string "Would you like to use DIVE?$"
+# 233 "data/scripts/field_move_scripts.pory"
+
+# 234 "data/scripts/field_move_scripts.pory"
+Text_MonUsedDive:
+# 235 "data/scripts/field_move_scripts.pory"
+	.string "{STR_VAR_1} used DIVE.$"
+# 236 "data/scripts/field_move_scripts.pory"
+
+# 237 "data/scripts/field_move_scripts.pory"
+Text_CantSurface:
+# 238 "data/scripts/field_move_scripts.pory"
+	.string "Light is filtering down from above.\n"
 # 239 "data/scripts/field_move_scripts.pory"
-EventScript_CantSurface::
+	.string "A POKéMON may be able to surface.$"
 # 240 "data/scripts/field_move_scripts.pory"
-	lockall
+
 # 241 "data/scripts/field_move_scripts.pory"
-	msgbox Text_CantSurface, MSGBOX_DEFAULT
+Text_WantToSurface:
 # 242 "data/scripts/field_move_scripts.pory"
-	goto EventScript_EndSurface
+	.string "Light is filtering down from above.\n"
 # 243 "data/scripts/field_move_scripts.pory"
-	end
+	.string "Would you like to use DIVE?$"
 # 244 "data/scripts/field_move_scripts.pory"
 
 # 245 "data/scripts/field_move_scripts.pory"
-EventScript_EndSurface::
-# 246 "data/scripts/field_move_scripts.pory"
-	callnative SetFollowerNPCSurfSpriteAfterDive
-# 247 "data/scripts/field_move_scripts.pory"
-EventScript_NoSurface::
-# 248 "data/scripts/field_move_scripts.pory"
-	releaseall
-# 249 "data/scripts/field_move_scripts.pory"
-	end
-# 250 "data/scripts/field_move_scripts.pory"
-
-# 251 "data/scripts/field_move_scripts.pory"
-EventScript_DigCommon:
-# 252 "data/scripts/field_move_scripts.pory"
-	isfollowerfieldmoveuser VAR_0x8004
-# 253 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
-# 254 "data/scripts/field_move_scripts.pory"
-	dofieldeffect FLDEFF_USE_DIG
-# 255 "data/scripts/field_move_scripts.pory"
-	waitstate
-# 256 "data/scripts/field_move_scripts.pory"
-EventScript_DigSealedChamber:: @ fallthrough
-# 257 "data/scripts/field_move_scripts.pory"
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 258 "data/scripts/field_move_scripts.pory"
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-# 259 "data/scripts/field_move_scripts.pory"
-	callnative DoBrailleDigEffect
-# 260 "data/scripts/field_move_scripts.pory"
-	releaseall
-# 261 "data/scripts/field_move_scripts.pory"
-	end
-# 262 "data/scripts/field_move_scripts.pory"
-
-# 263 "data/scripts/field_move_scripts.pory"
-@ Use Dig from party menu
-# 264 "data/scripts/field_move_scripts.pory"
-EventScript_UseDig::
-# 265 "data/scripts/field_move_scripts.pory"
-	lockall
-# 266 "data/scripts/field_move_scripts.pory"
-	goto EventScript_DigCommon
-# 267 "data/scripts/field_move_scripts.pory"
-
-# 268 "data/scripts/field_move_scripts.pory"
-
-# 269 "data/scripts/field_move_scripts.pory"
-EventScript_CutGrassCommon:
-# 270 "data/scripts/field_move_scripts.pory"
-	isfollowerfieldmoveuser VAR_0x8004
-# 271 "data/scripts/field_move_scripts.pory"
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
-# 272 "data/scripts/field_move_scripts.pory"
-	dofieldeffect FLDEFF_USE_CUT_ON_GRASS
-# 273 "data/scripts/field_move_scripts.pory"
-	waitstate
-# 274 "data/scripts/field_move_scripts.pory"
-
-# 275 "data/scripts/field_move_scripts.pory"
-@ Use Cut grass from party menu
-# 276 "data/scripts/field_move_scripts.pory"
-EventScript_UseCutGrass::
-# 277 "data/scripts/field_move_scripts.pory"
-	lockall
-# 278 "data/scripts/field_move_scripts.pory"
-	goto EventScript_CutGrassCommon
-# 279 "data/scripts/field_move_scripts.pory"
-
-# 280 "data/scripts/field_move_scripts.pory"
-Text_CantDive:
-# 281 "data/scripts/field_move_scripts.pory"
-	.string "The sea is deep here. A POKéMON\n"
-# 282 "data/scripts/field_move_scripts.pory"
-	.string "may be able to go underwater.$"
-# 283 "data/scripts/field_move_scripts.pory"
-
-# 284 "data/scripts/field_move_scripts.pory"
-Text_WantToDive:
-# 285 "data/scripts/field_move_scripts.pory"
-	.string "The sea is deep here.\n"
-# 286 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use DIVE?$"
-# 287 "data/scripts/field_move_scripts.pory"
-
-# 288 "data/scripts/field_move_scripts.pory"
-Text_MonUsedDive:
-# 289 "data/scripts/field_move_scripts.pory"
-	.string "{STR_VAR_1} used DIVE.$"
-# 290 "data/scripts/field_move_scripts.pory"
-
-# 291 "data/scripts/field_move_scripts.pory"
-Text_CantSurface:
-# 292 "data/scripts/field_move_scripts.pory"
-	.string "Light is filtering down from above.\n"
-# 293 "data/scripts/field_move_scripts.pory"
-	.string "A POKéMON may be able to surface.$"
-# 294 "data/scripts/field_move_scripts.pory"
-
-# 295 "data/scripts/field_move_scripts.pory"
-Text_WantToSurface:
-# 296 "data/scripts/field_move_scripts.pory"
-	.string "Light is filtering down from above.\n"
-# 297 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use DIVE?$"
-# 298 "data/scripts/field_move_scripts.pory"
-
-# 299 "data/scripts/field_move_scripts.pory"
 EventScript_FailSweetScent::
-# 300 "data/scripts/field_move_scripts.pory"
+# 246 "data/scripts/field_move_scripts.pory"
 	msgbox Text_FailSweetScent, MSGBOX_SIGN
-# 301 "data/scripts/field_move_scripts.pory"
+# 247 "data/scripts/field_move_scripts.pory"
 	end
-# 302 "data/scripts/field_move_scripts.pory"
+# 248 "data/scripts/field_move_scripts.pory"
 
-# 303 "data/scripts/field_move_scripts.pory"
+# 249 "data/scripts/field_move_scripts.pory"
 Text_FailSweetScent:
-# 304 "data/scripts/field_move_scripts.pory"
+# 250 "data/scripts/field_move_scripts.pory"
 	.string "Looks like there's nothing here…$"
-# 305 "data/scripts/field_move_scripts.pory"
+# 251 "data/scripts/field_move_scripts.pory"
 
-# 306 "data/scripts/field_move_scripts.pory"
+# 252 "data/scripts/field_move_scripts.pory"
 EventScript_UseDefog::
-# 307 "data/scripts/field_move_scripts.pory"
+# 253 "data/scripts/field_move_scripts.pory"
 	lockall
-# 308 "data/scripts/field_move_scripts.pory"
+# 254 "data/scripts/field_move_scripts.pory"
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
-# 309 "data/scripts/field_move_scripts.pory"
+# 255 "data/scripts/field_move_scripts.pory"
 	buffermovename STR_VAR_2, MOVE_DEFOG
-# 310 "data/scripts/field_move_scripts.pory"
+# 256 "data/scripts/field_move_scripts.pory"
 	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
-# 311 "data/scripts/field_move_scripts.pory"
+# 257 "data/scripts/field_move_scripts.pory"
 	closemessage
-# 312 "data/scripts/field_move_scripts.pory"
+# 258 "data/scripts/field_move_scripts.pory"
 	isfollowerfieldmoveuser VAR_0x8004
-# 313 "data/scripts/field_move_scripts.pory"
+# 259 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
-# 314 "data/scripts/field_move_scripts.pory"
+# 260 "data/scripts/field_move_scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-# 315 "data/scripts/field_move_scripts.pory"
+# 261 "data/scripts/field_move_scripts.pory"
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
-# 316 "data/scripts/field_move_scripts.pory"
+# 262 "data/scripts/field_move_scripts.pory"
 	waitmovement 0
-# 317 "data/scripts/field_move_scripts.pory"
+# 263 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 0, VAR_RESULT
-# 318 "data/scripts/field_move_scripts.pory"
+# 264 "data/scripts/field_move_scripts.pory"
 	dofieldeffect FLDEFF_DEFOG
-# 319 "data/scripts/field_move_scripts.pory"
+# 265 "data/scripts/field_move_scripts.pory"
 	waitstate
-# 320 "data/scripts/field_move_scripts.pory"
+# 266 "data/scripts/field_move_scripts.pory"
 	releaseall
-# 321 "data/scripts/field_move_scripts.pory"
+# 267 "data/scripts/field_move_scripts.pory"
 	end
 
 EventScript_CutTree::
-# 331 "data/scripts/field_move_scripts.pory"
+# 277 "data/scripts/field_move_scripts.pory"
 	lockall
-# 332 "data/scripts/field_move_scripts.pory"
+# 278 "data/scripts/field_move_scripts.pory"
 	goto_if_set FLAG_BADGE01_GET, EventScript_CutTree_2
-# 346 "data/scripts/field_move_scripts.pory"
+# 292 "data/scripts/field_move_scripts.pory"
 	msgbox Text_CantCut, MSGBOX_DEFAULT
-# 347 "data/scripts/field_move_scripts.pory"
+# 293 "data/scripts/field_move_scripts.pory"
 	closemessage
 EventScript_CutTree_1:
-# 349 "data/scripts/field_move_scripts.pory"
+# 295 "data/scripts/field_move_scripts.pory"
 	releaseall
 	return
 
 EventScript_CutTree_2:
-# 333 "data/scripts/field_move_scripts.pory"
+# 279 "data/scripts/field_move_scripts.pory"
 	checkpartymove MOVE_CUT
-# 334 "data/scripts/field_move_scripts.pory"
+# 280 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_CutTree_5
-# 343 "data/scripts/field_move_scripts.pory"
+# 289 "data/scripts/field_move_scripts.pory"
 	call EventScript_PrepareCut
 	goto EventScript_CutTree_1
 
 EventScript_CutTree_5:
-# 335 "data/scripts/field_move_scripts.pory"
+# 281 "data/scripts/field_move_scripts.pory"
 	checkpartylearnable MOVE_CUT
-# 336 "data/scripts/field_move_scripts.pory"
+# 282 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_CutTree_8
-# 340 "data/scripts/field_move_scripts.pory"
+# 286 "data/scripts/field_move_scripts.pory"
 	call EventScript_PrepareCut
 	goto EventScript_CutTree_1
 
 EventScript_CutTree_8:
-# 337 "data/scripts/field_move_scripts.pory"
+# 283 "data/scripts/field_move_scripts.pory"
 	msgbox Text_CantCut, MSGBOX_DEFAULT
-# 338 "data/scripts/field_move_scripts.pory"
+# 284 "data/scripts/field_move_scripts.pory"
 	closemessage
 	goto EventScript_CutTree_1
 
 
 EventScript_PrepareCut::
-# 354 "data/scripts/field_move_scripts.pory"
+# 300 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 0, VAR_RESULT
-# 355 "data/scripts/field_move_scripts.pory"
+# 301 "data/scripts/field_move_scripts.pory"
 	msgbox Text_WantToCut, MSGBOX_YESNO
-# 356 "data/scripts/field_move_scripts.pory"
+# 302 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_PrepareCut_1
-# 360 "data/scripts/field_move_scripts.pory"
+# 306 "data/scripts/field_move_scripts.pory"
 	closemessage
 	return
 
 EventScript_PrepareCut_1:
-# 357 "data/scripts/field_move_scripts.pory"
+# 303 "data/scripts/field_move_scripts.pory"
 	closemessage
-# 358 "data/scripts/field_move_scripts.pory"
+# 304 "data/scripts/field_move_scripts.pory"
 	call EventScript_CutTreeCommon
 	return
 
 
 EventScript_CutTreeCommon::
-# 366 "data/scripts/field_move_scripts.pory"
+# 312 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 3, FALSE
-# 367 "data/scripts/field_move_scripts.pory"
+# 313 "data/scripts/field_move_scripts.pory"
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
-# 368 "data/scripts/field_move_scripts.pory"
+# 314 "data/scripts/field_move_scripts.pory"
 	waitstate
-# 369 "data/scripts/field_move_scripts.pory"
+# 315 "data/scripts/field_move_scripts.pory"
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
-# 370 "data/scripts/field_move_scripts.pory"
+# 316 "data/scripts/field_move_scripts.pory"
 	waitmovement 0
-# 371 "data/scripts/field_move_scripts.pory"
+# 317 "data/scripts/field_move_scripts.pory"
 	removeobject VAR_LAST_TALKED
 	return
 
 
 EventScript_UseCut::
-# 376 "data/scripts/field_move_scripts.pory"
+# 322 "data/scripts/field_move_scripts.pory"
 	lockall
-# 377 "data/scripts/field_move_scripts.pory"
+# 323 "data/scripts/field_move_scripts.pory"
 	call EventScript_CutTreeCommon
-# 378 "data/scripts/field_move_scripts.pory"
+# 324 "data/scripts/field_move_scripts.pory"
 	releaseall
 	return
 
 
 EventScript_RockSmash::
-# 388 "data/scripts/field_move_scripts.pory"
+# 334 "data/scripts/field_move_scripts.pory"
 	lockall
-# 389 "data/scripts/field_move_scripts.pory"
+# 335 "data/scripts/field_move_scripts.pory"
 	goto_if_set FLAG_BADGE03_GET, EventScript_RockSmash_2
-# 403 "data/scripts/field_move_scripts.pory"
+# 349 "data/scripts/field_move_scripts.pory"
 	msgbox Text_CantSmash, MSGBOX_DEFAULT
-# 404 "data/scripts/field_move_scripts.pory"
+# 350 "data/scripts/field_move_scripts.pory"
 	closemessage
 EventScript_RockSmash_1:
-# 406 "data/scripts/field_move_scripts.pory"
+# 352 "data/scripts/field_move_scripts.pory"
 	releaseall
 	return
 
 EventScript_RockSmash_2:
-# 390 "data/scripts/field_move_scripts.pory"
+# 336 "data/scripts/field_move_scripts.pory"
 	checkpartymove MOVE_ROCK_SMASH
-# 391 "data/scripts/field_move_scripts.pory"
+# 337 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_RockSmash_5
-# 400 "data/scripts/field_move_scripts.pory"
+# 346 "data/scripts/field_move_scripts.pory"
 	call EventScript_PrepareRockSmash
 	goto EventScript_RockSmash_1
 
 EventScript_RockSmash_5:
-# 392 "data/scripts/field_move_scripts.pory"
+# 338 "data/scripts/field_move_scripts.pory"
 	checkpartylearnable MOVE_ROCK_SMASH
-# 393 "data/scripts/field_move_scripts.pory"
+# 339 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_RockSmash_8
-# 397 "data/scripts/field_move_scripts.pory"
+# 343 "data/scripts/field_move_scripts.pory"
 	call EventScript_PrepareRockSmash
 	goto EventScript_RockSmash_1
 
 EventScript_RockSmash_8:
-# 394 "data/scripts/field_move_scripts.pory"
+# 340 "data/scripts/field_move_scripts.pory"
 	msgbox Text_CantSmash, MSGBOX_DEFAULT
-# 395 "data/scripts/field_move_scripts.pory"
+# 341 "data/scripts/field_move_scripts.pory"
 	closemessage
 	goto EventScript_RockSmash_1
 
 
 EventScript_PrepareRockSmash::
-# 411 "data/scripts/field_move_scripts.pory"
+# 357 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 0, VAR_RESULT
-# 412 "data/scripts/field_move_scripts.pory"
+# 358 "data/scripts/field_move_scripts.pory"
 	msgbox Text_WantToSmash, MSGBOX_YESNO
-# 413 "data/scripts/field_move_scripts.pory"
+# 359 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_PrepareRockSmash_1
-# 417 "data/scripts/field_move_scripts.pory"
+# 363 "data/scripts/field_move_scripts.pory"
 	closemessage
 	return
 
 EventScript_PrepareRockSmash_1:
-# 414 "data/scripts/field_move_scripts.pory"
+# 360 "data/scripts/field_move_scripts.pory"
 	closemessage
-# 415 "data/scripts/field_move_scripts.pory"
+# 361 "data/scripts/field_move_scripts.pory"
 	call EventScript_RockSmashCommon
 	return
 
 
 EventScript_RockSmashCommon::
-# 423 "data/scripts/field_move_scripts.pory"
+# 369 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 3, FALSE
-# 424 "data/scripts/field_move_scripts.pory"
+# 370 "data/scripts/field_move_scripts.pory"
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
-# 425 "data/scripts/field_move_scripts.pory"
+# 371 "data/scripts/field_move_scripts.pory"
 	waitstate
-# 426 "data/scripts/field_move_scripts.pory"
+# 372 "data/scripts/field_move_scripts.pory"
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
-# 427 "data/scripts/field_move_scripts.pory"
+# 373 "data/scripts/field_move_scripts.pory"
 	waitmovement 0
-# 428 "data/scripts/field_move_scripts.pory"
+# 374 "data/scripts/field_move_scripts.pory"
 	removeobject VAR_LAST_TALKED
-# 429 "data/scripts/field_move_scripts.pory"
+# 375 "data/scripts/field_move_scripts.pory"
 	special RockSmashWildEncounter
-# 430 "data/scripts/field_move_scripts.pory"
+# 376 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq EventScript_RockSmashCommon_1
 	return
 
 EventScript_RockSmashCommon_1:
-# 431 "data/scripts/field_move_scripts.pory"
+# 377 "data/scripts/field_move_scripts.pory"
 	waitstate
 	return
 
 
 EventScript_UseRockSmash::
-# 437 "data/scripts/field_move_scripts.pory"
+# 383 "data/scripts/field_move_scripts.pory"
 	lockall
-# 438 "data/scripts/field_move_scripts.pory"
+# 384 "data/scripts/field_move_scripts.pory"
 	call EventScript_RockSmashCommon
-# 439 "data/scripts/field_move_scripts.pory"
+# 385 "data/scripts/field_move_scripts.pory"
 	releaseall
 	return
 
 
 EventScript_StrengthBoulder::
-# 449 "data/scripts/field_move_scripts.pory"
+# 395 "data/scripts/field_move_scripts.pory"
 	lockall
-# 450 "data/scripts/field_move_scripts.pory"
+# 396 "data/scripts/field_move_scripts.pory"
 	goto_if_set FLAG_BADGE04_GET, EventScript_StrengthBoulder_2
-# 469 "data/scripts/field_move_scripts.pory"
+# 415 "data/scripts/field_move_scripts.pory"
 	msgbox Text_CantStrength, MSGBOX_DEFAULT
-# 470 "data/scripts/field_move_scripts.pory"
+# 416 "data/scripts/field_move_scripts.pory"
 	closemessage
 EventScript_StrengthBoulder_1:
-# 472 "data/scripts/field_move_scripts.pory"
+# 418 "data/scripts/field_move_scripts.pory"
 	releaseall
 	return
 
 EventScript_StrengthBoulder_2:
-# 451 "data/scripts/field_move_scripts.pory"
+# 397 "data/scripts/field_move_scripts.pory"
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_StrengthBoulder_5
-# 455 "data/scripts/field_move_scripts.pory"
+# 401 "data/scripts/field_move_scripts.pory"
 	checkpartymove MOVE_STRENGTH
-# 456 "data/scripts/field_move_scripts.pory"
+# 402 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_StrengthBoulder_8
-# 465 "data/scripts/field_move_scripts.pory"
+# 411 "data/scripts/field_move_scripts.pory"
 	call EventScript_PrepareStrength
 	goto EventScript_StrengthBoulder_1
 
 EventScript_StrengthBoulder_5:
-# 452 "data/scripts/field_move_scripts.pory"
+# 398 "data/scripts/field_move_scripts.pory"
 	msgbox Text_StrengthActivated, MSGBOX_DEFAULT
-# 453 "data/scripts/field_move_scripts.pory"
+# 399 "data/scripts/field_move_scripts.pory"
 	closemessage
 	goto EventScript_StrengthBoulder_1
 
 EventScript_StrengthBoulder_8:
-# 457 "data/scripts/field_move_scripts.pory"
+# 403 "data/scripts/field_move_scripts.pory"
 	checkpartylearnable MOVE_STRENGTH
-# 458 "data/scripts/field_move_scripts.pory"
+# 404 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, PARTY_SIZE
 	goto_if_eq EventScript_StrengthBoulder_11
-# 462 "data/scripts/field_move_scripts.pory"
+# 408 "data/scripts/field_move_scripts.pory"
 	call EventScript_PrepareStrength
 	goto EventScript_StrengthBoulder_1
 
 EventScript_StrengthBoulder_11:
-# 459 "data/scripts/field_move_scripts.pory"
+# 405 "data/scripts/field_move_scripts.pory"
 	msgbox Text_CantStrength, MSGBOX_DEFAULT
-# 460 "data/scripts/field_move_scripts.pory"
+# 406 "data/scripts/field_move_scripts.pory"
 	closemessage
 	goto EventScript_StrengthBoulder_1
 
 
 EventScript_PrepareStrength::
-# 477 "data/scripts/field_move_scripts.pory"
+# 423 "data/scripts/field_move_scripts.pory"
 	setfieldeffectargument 0, VAR_RESULT
-# 478 "data/scripts/field_move_scripts.pory"
+# 424 "data/scripts/field_move_scripts.pory"
 	msgbox Text_WantToStrength, MSGBOX_YESNO
-# 479 "data/scripts/field_move_scripts.pory"
+# 425 "data/scripts/field_move_scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EventScript_PrepareStrength_1
-# 485 "data/scripts/field_move_scripts.pory"
+# 431 "data/scripts/field_move_scripts.pory"
 	closemessage
 	return
 
 EventScript_PrepareStrength_1:
-# 480 "data/scripts/field_move_scripts.pory"
+# 426 "data/scripts/field_move_scripts.pory"
 	closemessage
-# 481 "data/scripts/field_move_scripts.pory"
+# 427 "data/scripts/field_move_scripts.pory"
 	dofieldeffect FLDEFF_USE_STRENGTH
-# 482 "data/scripts/field_move_scripts.pory"
+# 428 "data/scripts/field_move_scripts.pory"
 	waitstate
-# 483 "data/scripts/field_move_scripts.pory"
+# 429 "data/scripts/field_move_scripts.pory"
 	call EventScript_ActivateStrength
 	return
 
 
 EventScript_UseStrength::
-# 491 "data/scripts/field_move_scripts.pory"
+# 437 "data/scripts/field_move_scripts.pory"
 	lockall
-# 492 "data/scripts/field_move_scripts.pory"
+# 438 "data/scripts/field_move_scripts.pory"
 	dofieldeffect FLDEFF_USE_STRENGTH
-# 493 "data/scripts/field_move_scripts.pory"
+# 439 "data/scripts/field_move_scripts.pory"
 	waitstate
-# 494 "data/scripts/field_move_scripts.pory"
+# 440 "data/scripts/field_move_scripts.pory"
 	call EventScript_ActivateStrength
-# 495 "data/scripts/field_move_scripts.pory"
+# 441 "data/scripts/field_move_scripts.pory"
 	releaseall
 	return
 
 
 EventScript_ActivateStrength::
-# 500 "data/scripts/field_move_scripts.pory"
+# 446 "data/scripts/field_move_scripts.pory"
 	setflag FLAG_SYS_USE_STRENGTH
-# 501 "data/scripts/field_move_scripts.pory"
+# 447 "data/scripts/field_move_scripts.pory"
 	msgbox Text_MonUsedStrength, MSGBOX_DEFAULT
+	return
+
+
+EventScript_UseDive::
+# 457 "data/scripts/field_move_scripts.pory"
+	lockall
+# 458 "data/scripts/field_move_scripts.pory"
+	checkpartymove MOVE_DIVE
+# 459 "data/scripts/field_move_scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_UseDive_2
+# 468 "data/scripts/field_move_scripts.pory"
+	call EventScript_PrepareDive
+EventScript_UseDive_1:
+# 470 "data/scripts/field_move_scripts.pory"
+	releaseall
+	return
+
+EventScript_UseDive_2:
+# 460 "data/scripts/field_move_scripts.pory"
+	checkpartylearnable MOVE_DIVE
+# 461 "data/scripts/field_move_scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_UseDive_5
+# 465 "data/scripts/field_move_scripts.pory"
+	call EventScript_PrepareDive
+	goto EventScript_UseDive_1
+
+EventScript_UseDive_5:
+# 462 "data/scripts/field_move_scripts.pory"
+	msgbox Text_CantDive, MSGBOX_DEFAULT
+# 463 "data/scripts/field_move_scripts.pory"
+	closemessage
+	goto EventScript_UseDive_1
+
+
+EventScript_PrepareDive::
+# 475 "data/scripts/field_move_scripts.pory"
+	setfieldeffectargument 0, VAR_RESULT
+# 476 "data/scripts/field_move_scripts.pory"
+	setfieldeffectargument 1, 1
+# 477 "data/scripts/field_move_scripts.pory"
+	msgbox Text_WantToDive, MSGBOX_YESNO
+# 478 "data/scripts/field_move_scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq EventScript_PrepareDive_1
+# 484 "data/scripts/field_move_scripts.pory"
+	closemessage
+	return
+
+EventScript_PrepareDive_1:
+# 479 "data/scripts/field_move_scripts.pory"
+	closemessage
+# 482 "data/scripts/field_move_scripts.pory"
+	dofieldeffect FLDEFF_USE_DIVE
+	return
+
+
+EventScript_CannotUseDive::
+# 490 "data/scripts/field_move_scripts.pory"
+	lockall
+# 491 "data/scripts/field_move_scripts.pory"
+	msgbox Text_CantDive, MSGBOX_DEFAULT
+# 492 "data/scripts/field_move_scripts.pory"
+	closemessage
+# 493 "data/scripts/field_move_scripts.pory"
+	releaseall
+	return
+
+
+EventScript_UseDiveUnderwater::
+# 498 "data/scripts/field_move_scripts.pory"
+	lockall
+# 499 "data/scripts/field_move_scripts.pory"
+	checkpartymove MOVE_DIVE
+# 500 "data/scripts/field_move_scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_UseDiveUnderwater_2
+# 509 "data/scripts/field_move_scripts.pory"
+	call EventScript_PrepareDiveUnderwater
+EventScript_UseDiveUnderwater_1:
+# 511 "data/scripts/field_move_scripts.pory"
+	releaseall
+	return
+
+EventScript_UseDiveUnderwater_2:
+# 501 "data/scripts/field_move_scripts.pory"
+	checkpartylearnable MOVE_DIVE
+# 502 "data/scripts/field_move_scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq EventScript_UseDiveUnderwater_5
+# 506 "data/scripts/field_move_scripts.pory"
+	call EventScript_PrepareDiveUnderwater
+	goto EventScript_UseDiveUnderwater_1
+
+EventScript_UseDiveUnderwater_5:
+# 503 "data/scripts/field_move_scripts.pory"
+	msgbox Text_CantSurface, MSGBOX_DEFAULT
+# 504 "data/scripts/field_move_scripts.pory"
+	closemessage
+	goto EventScript_UseDiveUnderwater_1
+
+
+EventScript_PrepareDiveUnderwater::
+# 516 "data/scripts/field_move_scripts.pory"
+	setfieldeffectargument 0, VAR_RESULT
+# 517 "data/scripts/field_move_scripts.pory"
+	setfieldeffectargument 1, 1
+# 518 "data/scripts/field_move_scripts.pory"
+	msgbox Text_WantToSurface, MSGBOX_YESNO
+# 519 "data/scripts/field_move_scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq EventScript_PrepareDiveUnderwater_1
+# 523 "data/scripts/field_move_scripts.pory"
+	closemessage
+	return
+
+EventScript_PrepareDiveUnderwater_1:
+# 520 "data/scripts/field_move_scripts.pory"
+	closemessage
+# 521 "data/scripts/field_move_scripts.pory"
+	dofieldeffect FLDEFF_USE_DIVE
+	return
+
+
+EventScript_CannotUseDiveUnderwater::
+# 529 "data/scripts/field_move_scripts.pory"
+	lockall
+# 530 "data/scripts/field_move_scripts.pory"
+	msgbox Text_CantSurface, MSGBOX_DEFAULT
+# 531 "data/scripts/field_move_scripts.pory"
+	closemessage
+# 532 "data/scripts/field_move_scripts.pory"
+	releaseall
 	return
 

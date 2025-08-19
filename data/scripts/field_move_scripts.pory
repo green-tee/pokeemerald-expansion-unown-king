@@ -194,60 +194,6 @@ Text_WantToWaterfall:
 Text_MonUsedWaterfall:
 	.string "{STR_VAR_1} used WATERFALL.$"
 
-EventScript_UseDive::
-	lockall
-	checkpartymove MOVE_DIVE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantDive
-	copyvar 0x8004 VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
-	setfieldeffectargument 1, 1
-	msgbox Text_WantToDive, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
-	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
-	hidefollowernpc
-	setfieldeffectargument 0, VAR_0x8004
-	setfieldeffectargument 1, 1
-	dofieldeffect FLDEFF_USE_DIVE
-	goto EventScript_EndDive
-	end
-
-EventScript_CantDive::
-	msgbox Text_CantDive, MSGBOX_DEFAULT
-	releaseall
-	end
-
-EventScript_EndDive::
-	releaseall
-	end
-
-EventScript_UseDiveUnderwater::
-	lockall
-	checkpartymove MOVE_DIVE
-	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSurface
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	setfieldeffectargument 0, VAR_RESULT
-	setfieldeffectargument 1, 1
-	msgbox Text_WantToSurface, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_NoSurface
-	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
-	hidefollowernpc
-	dofieldeffect FLDEFF_USE_DIVE
-	goto EventScript_EndSurface
-	end
-
-EventScript_CantSurface::
-	lockall
-	msgbox Text_CantSurface, MSGBOX_DEFAULT
-	goto EventScript_EndSurface
-	end
-
-EventScript_EndSurface::
-	callnative SetFollowerNPCSurfSpriteAfterDive
-EventScript_NoSurface::
-	releaseall
-	end
-
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
@@ -499,4 +445,89 @@ script EventScript_UseStrength {
 script EventScript_ActivateStrength {
 	setflag(FLAG_SYS_USE_STRENGTH)
 	msgbox(Text_MonUsedStrength, MSGBOX_DEFAULT)
+}
+
+
+//
+// DIVE
+//
+
+
+script EventScript_UseDive {
+	lockall
+	checkpartymove(MOVE_DIVE)
+	if (var(VAR_RESULT) == PARTY_SIZE) {
+		checkpartylearnable(MOVE_DIVE)
+		if (var(VAR_RESULT) == PARTY_SIZE) {
+			msgbox(Text_CantDive, MSGBOX_DEFAULT)
+			closemessage
+		} else {
+			call(EventScript_PrepareDive)
+		}
+	} else {
+		call(EventScript_PrepareDive)
+	}
+	releaseall
+}
+
+
+script EventScript_PrepareDive {
+	setfieldeffectargument(0, VAR_RESULT)
+	setfieldeffectargument(1, 1)
+	msgbox(Text_WantToDive, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		//setfieldeffectargument(0, VAR_0x8004)
+		//setfieldeffectargument(1, 1)
+		dofieldeffect(FLDEFF_USE_DIVE)
+	} else {
+		closemessage
+	}
+}
+
+
+script EventScript_CannotUseDive {
+	lockall
+	msgbox(Text_CantDive, MSGBOX_DEFAULT)
+	closemessage
+	releaseall
+}
+
+
+script EventScript_UseDiveUnderwater {
+	lockall
+	checkpartymove(MOVE_DIVE)
+	if (var(VAR_RESULT) == PARTY_SIZE) {
+		checkpartylearnable(MOVE_DIVE)
+		if (var(VAR_RESULT) == PARTY_SIZE) {
+			msgbox(Text_CantSurface, MSGBOX_DEFAULT)
+			closemessage
+		} else {
+			call(EventScript_PrepareDiveUnderwater)
+		}
+	} else {
+		call(EventScript_PrepareDiveUnderwater)
+	}
+	releaseall
+}
+
+
+script EventScript_PrepareDiveUnderwater {
+	setfieldeffectargument(0, VAR_RESULT)
+	setfieldeffectargument(1, 1)
+	msgbox(Text_WantToSurface, MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		closemessage
+		dofieldeffect(FLDEFF_USE_DIVE)
+	} else {
+		closemessage
+	}
+}
+
+
+script EventScript_CannotUseDiveUnderwater {
+	lockall
+	msgbox(Text_CantSurface, MSGBOX_DEFAULT)
+	closemessage
+	releaseall
 }
