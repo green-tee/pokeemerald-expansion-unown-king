@@ -268,6 +268,13 @@ static void CreateBattleStartTask(u8 transition, u16 song)
     PlayMapChosenOrBattleBGM(song);
 }
 
+static void CreateBattleStartTaskKeepMusic(u8 transition)
+{
+    u8 taskId = CreateTask(Task_BattleStart, 1);
+
+    gTasks[taskId].tTransition = transition;
+}
+
 static void Task_BattleStart_Debug(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
@@ -408,7 +415,7 @@ static void DoBattlePikeWildBattle(void)
 
 static void DoTrainerBattle(void)
 {
-    CreateBattleStartTask(GetTrainerBattleTransition(), 0);
+    CreateBattleStartTaskKeepMusic(GetTrainerBattleTransition());
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
     TryUpdateGymLeaderRematchFromTrainer();
@@ -1422,17 +1429,20 @@ void ShowTrainerCantBattleSpeech(void)
 
 void PlayTrainerEncounterMusic(void)
 {
-    u16 trainerId;
+    //u16 trainerId;
     u16 music;
 
+    /*
     if (gApproachingTrainerId == 0)
         trainerId = TRAINER_BATTLE_PARAM.opponentA;
     else
         trainerId = TRAINER_BATTLE_PARAM.opponentB;
+    */
 
     if (TRAINER_BATTLE_PARAM.mode != TRAINER_BATTLE_CONTINUE_SCRIPT_NO_MUSIC
         && TRAINER_BATTLE_PARAM.mode != TRAINER_BATTLE_CONTINUE_SCRIPT_DOUBLE_NO_MUSIC)
     {
+        /*
         switch (GetTrainerEncounterMusicId(trainerId))
         {
         case TRAINER_ENCOUNTER_MUSIC_MALE:
@@ -1477,6 +1487,8 @@ void PlayTrainerEncounterMusic(void)
         default:
             music = MUS_ENCOUNTER_SUSPICIOUS;
         }
+        */
+        music = MUS_VS_WILD;
         PlayNewMapMusic(music);
     }
 }

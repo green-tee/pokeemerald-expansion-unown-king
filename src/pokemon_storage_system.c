@@ -856,11 +856,11 @@ struct {
     const u8 *desc;
 } static const sMainMenuTexts[OPTIONS_COUNT] =
 {
-    [OPTION_WITHDRAW]   = {COMPOUND_STRING("WITHDRAW POKéMON"), COMPOUND_STRING("Move POKéMON stored in BOXES to\nyour party.")},
-    [OPTION_DEPOSIT]    = {COMPOUND_STRING("DEPOSIT POKéMON"),  COMPOUND_STRING("Store POKéMON in your party in BOXES.")},
-    [OPTION_MOVE_MONS]  = {COMPOUND_STRING("MOVE POKéMON"),     COMPOUND_STRING("Organize the POKéMON in BOXES and\nin your party.")},
-    [OPTION_MOVE_ITEMS] = {COMPOUND_STRING("MOVE ITEMS"),       COMPOUND_STRING("Move items held by any POKéMON\nin a BOX or your party.")},
-    [OPTION_EXIT]       = {COMPOUND_STRING("SEE YA!"),          COMPOUND_STRING("Return to the previous menu.")}
+    [OPTION_WITHDRAW]   = {COMPOUND_STRING("Withdraw Pokémon"), COMPOUND_STRING("Move Pokémon stored in boxes to\nyour party.")},
+    [OPTION_DEPOSIT]    = {COMPOUND_STRING("Deposit Pokémon"),  COMPOUND_STRING("Store Pokémon in your party in boxes.")},
+    [OPTION_MOVE_MONS]  = {COMPOUND_STRING("Move Pokémon"),     COMPOUND_STRING("Organize the Pokémon in boxes and\nin your party.")},
+    [OPTION_MOVE_ITEMS] = {COMPOUND_STRING("Move items"),       COMPOUND_STRING("Move items held by any Pokémon\nin a box or your party.")},
+    [OPTION_EXIT]       = {COMPOUND_STRING("Cancel"),           COMPOUND_STRING("Leave the Crystal.")}
 };
 
 static const struct WindowTemplate sWindowTemplate_MainMenu =
@@ -2182,7 +2182,7 @@ static void Task_ShowPokeStorage(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        PlaySE(SE_PC_LOGIN);
+        //PlaySE(SE_PC_LOGIN);
         ComputerScreenOpenEffect(20, 0, 1);
         sStorage->state++;
         break;
@@ -3625,7 +3625,7 @@ static void Task_OnCloseBoxPressed(u8 taskId)
             SetPokeStorageTask(Task_PokeStorageMain);
             break;
         case 0:
-            PlaySE(SE_PC_OFF);
+            //PlaySE(SE_PC_OFF);
             ClearBottomWindow();
             sStorage->state++;
             break;
@@ -3698,7 +3698,7 @@ static void Task_OnBPressed(u8 taskId)
             break;
         case 1:
         case MENU_B_PRESSED:
-            PlaySE(SE_PC_OFF);
+            //PlaySE(SE_PC_OFF);
             ClearBottomWindow();
             sStorage->state++;
             break;

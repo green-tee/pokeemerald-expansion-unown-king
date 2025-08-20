@@ -1,6 +1,10 @@
 Text_BootUpPC:
 	.string "{PLAYER} booted up the PC.$"
 
+Text_CrystalPC:
+	.string "The Red Crystal gave shelter\n"
+	.string "to your party.$"
+
 gText_WhichPCShouldBeAccessed::
 	.string "Which PC should be accessed?$"
 

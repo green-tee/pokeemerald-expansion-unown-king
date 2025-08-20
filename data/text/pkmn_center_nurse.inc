@@ -5,6 +5,10 @@ gText_WouldYouLikeToRestYourPkmn::
 	.string "to full health.\p"
 	.string "Would you like to rest your POKéMON?$"
 
+gText_CrystalHeal::
+	.string "The Blue Crystal fully healed\n"
+	.string "your party.$"
+
 gText_IllTakeYourPkmn::
 	.string "Okay, I'll take your POKéMON\n"
 	.string "for a few seconds.$"

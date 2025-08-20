@@ -5813,6 +5813,7 @@ u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
+        /*
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
         case SPECIES_RAYQUAZA:
@@ -5830,6 +5831,8 @@ u16 GetBattleBGM(void)
         default:
             return MUS_RG_VS_LEGEND;
         }
+        */
+        return MUS_VS_GYM_LEADER;
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
     {

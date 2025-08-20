@@ -5389,6 +5389,7 @@ static void HandleEndTurn_BattleWon(void)
         BattleStopLowHpSound();
         gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
 
+        /*
         switch (GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_CLASS_ELITE_FOUR:
@@ -5410,6 +5411,8 @@ static void HandleEndTurn_BattleWon(void)
             PlayBGM(MUS_VICTORY_TRAINER);
             break;
         }
+        */
+        PlayBGM(MUS_VICTORY_WILD);
     }
     else
     {
