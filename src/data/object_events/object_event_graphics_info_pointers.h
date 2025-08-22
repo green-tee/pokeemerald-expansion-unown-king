@@ -249,6 +249,33 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownA;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownB;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownC;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownD;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownE;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownG;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownH;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownI;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownJ;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownK;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownL;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownN;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownO;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownP;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownQ;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownR;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownS;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownT;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownU;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownV;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownW;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownX;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownY;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownZ;
+
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
@@ -492,6 +519,32 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
+    [OBJ_EVENT_GFX_UNOWN_A] =                  &gObjectEventGraphicsInfo_UnownA,
+    [OBJ_EVENT_GFX_UNOWN_B] =                  &gObjectEventGraphicsInfo_UnownB,
+    [OBJ_EVENT_GFX_UNOWN_C] =                  &gObjectEventGraphicsInfo_UnownC,
+    [OBJ_EVENT_GFX_UNOWN_D] =                  &gObjectEventGraphicsInfo_UnownD,
+    [OBJ_EVENT_GFX_UNOWN_E] =                  &gObjectEventGraphicsInfo_UnownE,
+    [OBJ_EVENT_GFX_UNOWN_F] =                  &gObjectEventGraphicsInfo_UnownF,
+    [OBJ_EVENT_GFX_UNOWN_G] =                  &gObjectEventGraphicsInfo_UnownG,
+    [OBJ_EVENT_GFX_UNOWN_H] =                  &gObjectEventGraphicsInfo_UnownH,
+    [OBJ_EVENT_GFX_UNOWN_I] =                  &gObjectEventGraphicsInfo_UnownI,
+    [OBJ_EVENT_GFX_UNOWN_J] =                  &gObjectEventGraphicsInfo_UnownJ,
+    [OBJ_EVENT_GFX_UNOWN_K] =                  &gObjectEventGraphicsInfo_UnownK,
+    [OBJ_EVENT_GFX_UNOWN_L] =                  &gObjectEventGraphicsInfo_UnownL,
+    [OBJ_EVENT_GFX_UNOWN_M] =                  &gObjectEventGraphicsInfo_UnownM,
+    [OBJ_EVENT_GFX_UNOWN_N] =                  &gObjectEventGraphicsInfo_UnownN,
+    [OBJ_EVENT_GFX_UNOWN_O] =                  &gObjectEventGraphicsInfo_UnownO,
+    [OBJ_EVENT_GFX_UNOWN_P] =                  &gObjectEventGraphicsInfo_UnownP,
+    [OBJ_EVENT_GFX_UNOWN_Q] =                  &gObjectEventGraphicsInfo_UnownQ,
+    [OBJ_EVENT_GFX_UNOWN_R] =                  &gObjectEventGraphicsInfo_UnownR,
+    [OBJ_EVENT_GFX_UNOWN_S] =                  &gObjectEventGraphicsInfo_UnownS,
+    [OBJ_EVENT_GFX_UNOWN_T] =                  &gObjectEventGraphicsInfo_UnownT,
+    [OBJ_EVENT_GFX_UNOWN_U] =                  &gObjectEventGraphicsInfo_UnownU,
+    [OBJ_EVENT_GFX_UNOWN_V] =                  &gObjectEventGraphicsInfo_UnownV,
+    [OBJ_EVENT_GFX_UNOWN_W] =                  &gObjectEventGraphicsInfo_UnownW,
+    [OBJ_EVENT_GFX_UNOWN_X] =                  &gObjectEventGraphicsInfo_UnownX,
+    [OBJ_EVENT_GFX_UNOWN_Y] =                  &gObjectEventGraphicsInfo_UnownY,
+    [OBJ_EVENT_GFX_UNOWN_Z] =                  &gObjectEventGraphicsInfo_UnownZ,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

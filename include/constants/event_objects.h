@@ -246,11 +246,37 @@
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
+#define OBJ_EVENT_GFX_UNOWN_A                    242
+#define OBJ_EVENT_GFX_UNOWN_B                    243
+#define OBJ_EVENT_GFX_UNOWN_C                    244
+#define OBJ_EVENT_GFX_UNOWN_D                    245
+#define OBJ_EVENT_GFX_UNOWN_E                    246
+#define OBJ_EVENT_GFX_UNOWN_F                    247
+#define OBJ_EVENT_GFX_UNOWN_G                    248
+#define OBJ_EVENT_GFX_UNOWN_H                    249
+#define OBJ_EVENT_GFX_UNOWN_I                    250
+#define OBJ_EVENT_GFX_UNOWN_J                    251
+#define OBJ_EVENT_GFX_UNOWN_K                    252
+#define OBJ_EVENT_GFX_UNOWN_L                    253
+#define OBJ_EVENT_GFX_UNOWN_M                    254
+#define OBJ_EVENT_GFX_UNOWN_N                    255
+#define OBJ_EVENT_GFX_UNOWN_O                    256
+#define OBJ_EVENT_GFX_UNOWN_P                    257
+#define OBJ_EVENT_GFX_UNOWN_Q                    258
+#define OBJ_EVENT_GFX_UNOWN_R                    259
+#define OBJ_EVENT_GFX_UNOWN_S                    260
+#define OBJ_EVENT_GFX_UNOWN_T                    261
+#define OBJ_EVENT_GFX_UNOWN_U                    262
+#define OBJ_EVENT_GFX_UNOWN_V                    263
+#define OBJ_EVENT_GFX_UNOWN_W                    264
+#define OBJ_EVENT_GFX_UNOWN_X                    265
+#define OBJ_EVENT_GFX_UNOWN_Y                    266
+#define OBJ_EVENT_GFX_UNOWN_Z                    267
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        242
+#define NUM_OBJ_EVENT_GFX                        268
 
 
 // These are dynamic object gfx ids.

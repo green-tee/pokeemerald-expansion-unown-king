@@ -4690,3 +4690,49 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight = {
     .images = gFieldEffectObjectPicTable_BallLight,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+#define gObjectEventGraphicsInfoUnown(XYZ) const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Unown ## XYZ = {\
+    .tileTag = TAG_NONE,\
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,\
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,\
+    .size = 256,\
+    .width = 16,\
+    .height = 32,\
+    .paletteSlot = PALSLOT_NPC_4,\
+    .shadowSize = SHADOW_SIZE_S,\
+    .inanimate = FALSE,\
+    .compressed = FALSE,\
+    .tracks = TRACKS_NONE,\
+    .oam = &gObjectEventBaseOam_16x32,\
+    .subspriteTables = sOamTables_16x32,\
+    .anims = sAnimTable_Standard,\
+    .images = sPicTable_NpcUnown ## XYZ,\
+    .affineAnims = gDummySpriteAffineAnimTable,\
+}
+
+gObjectEventGraphicsInfoUnown(A); // gObjectEventGraphicsInfo_UnownA
+gObjectEventGraphicsInfoUnown(B); // gObjectEventGraphicsInfo_UnownB
+gObjectEventGraphicsInfoUnown(C); // gObjectEventGraphicsInfo_UnownC
+gObjectEventGraphicsInfoUnown(D); // gObjectEventGraphicsInfo_UnownD
+gObjectEventGraphicsInfoUnown(E); // gObjectEventGraphicsInfo_UnownE
+gObjectEventGraphicsInfoUnown(F); // gObjectEventGraphicsInfo_UnownF
+gObjectEventGraphicsInfoUnown(G); // gObjectEventGraphicsInfo_UnownG
+gObjectEventGraphicsInfoUnown(H); // gObjectEventGraphicsInfo_UnownH
+gObjectEventGraphicsInfoUnown(I); // gObjectEventGraphicsInfo_UnownI
+gObjectEventGraphicsInfoUnown(J); // gObjectEventGraphicsInfo_UnownJ
+gObjectEventGraphicsInfoUnown(K); // gObjectEventGraphicsInfo_UnownK
+gObjectEventGraphicsInfoUnown(L); // gObjectEventGraphicsInfo_UnownL
+gObjectEventGraphicsInfoUnown(M); // gObjectEventGraphicsInfo_UnownM
+gObjectEventGraphicsInfoUnown(N); // gObjectEventGraphicsInfo_UnownN
+gObjectEventGraphicsInfoUnown(O); // gObjectEventGraphicsInfo_UnownO
+gObjectEventGraphicsInfoUnown(P); // gObjectEventGraphicsInfo_UnownP
+gObjectEventGraphicsInfoUnown(Q); // gObjectEventGraphicsInfo_UnownQ
+gObjectEventGraphicsInfoUnown(R); // gObjectEventGraphicsInfo_UnownR
+gObjectEventGraphicsInfoUnown(S); // gObjectEventGraphicsInfo_UnownS
+gObjectEventGraphicsInfoUnown(T); // gObjectEventGraphicsInfo_UnownT
+gObjectEventGraphicsInfoUnown(U); // gObjectEventGraphicsInfo_UnownU
+gObjectEventGraphicsInfoUnown(V); // gObjectEventGraphicsInfo_UnownV
+gObjectEventGraphicsInfoUnown(W); // gObjectEventGraphicsInfo_UnownW
+gObjectEventGraphicsInfoUnown(X); // gObjectEventGraphicsInfo_UnownX
+gObjectEventGraphicsInfoUnown(Y); // gObjectEventGraphicsInfo_UnownY
+gObjectEventGraphicsInfoUnown(Z); // gObjectEventGraphicsInfo_UnownZ
