@@ -59,6 +59,7 @@
 #include "malloc.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "constants/pokemon.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -2136,6 +2137,25 @@ bool8 ScrCmd_bufferpartymonnick(struct ScriptContext *ctx)
 
     GetMonData(&gPlayerParty[partyIndex], MON_DATA_NICKNAME, sScriptStringVars[stringVarIndex]);
     StringGet_Nickname(sScriptStringVars[stringVarIndex]);
+    return FALSE;
+}
+
+bool8 ScrCmd_bufferunownform(struct ScriptContext *ctx)
+{
+    u8 stringVarIndex = ScriptReadByte(ctx);
+    u16 formId = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1);
+
+    if (UNOWN_FORM_A <= formId && formId <= UNOWN_FORM_Z)
+        sScriptStringVars[stringVarIndex][0] = CHAR_A + formId;
+    else if (formId == UNONW_FORM_QSTM)
+        sScriptStringVars[stringVarIndex][0] = CHAR_QUESTION_MARK;
+    else if (formId == UNOWN_FORM_EXCM)
+        sScriptStringVars[stringVarIndex][0] = CHAR_EXCL_MARK;
+    else
+        sScriptStringVars[stringVarIndex][0] = CHAR_BULLET;
+    sScriptStringVars[stringVarIndex][1] = EOS;
     return FALSE;
 }
 

@@ -242,6 +242,36 @@
 #define BODY_COLOR_WHITE    8
 #define BODY_COLOR_PINK     9
 
+// Forms of Unown
+#define UNOWN_FORM_A     0
+#define UNOWN_FORM_B     1
+#define UNOWN_FORM_C     2
+#define UNOWN_FORM_D     3
+#define UNOWN_FORM_E     4
+#define UNOWN_FORM_F     5
+#define UNOWN_FORM_G     6
+#define UNOWN_FORM_H     7
+#define UNOWN_FORM_I     8
+#define UNOWN_FORM_J     9
+#define UNOWN_FORM_K    10
+#define UNOWN_FORM_L    11
+#define UNOWN_FORM_M    12
+#define UNOWN_FORM_N    13
+#define UNOWN_FORM_O    14
+#define UNOWN_FORM_P    15
+#define UNOWN_FORM_Q    16
+#define UNOWN_FORM_R    17
+#define UNOWN_FORM_S    18
+#define UNOWN_FORM_T    19
+#define UNOWN_FORM_U    20
+#define UNOWN_FORM_V    21
+#define UNOWN_FORM_W    22
+#define UNOWN_FORM_X    23
+#define UNOWN_FORM_Y    24
+#define UNOWN_FORM_Z    25
+#define UNONW_FORM_QSTM 26
+#define UNOWN_FORM_EXCM 27
+
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80
 
 #define EVOLUTIONS_END                    0xFFFF // Not an actual evolution, used to mark the end of an evolution array.

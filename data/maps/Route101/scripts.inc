@@ -72,6 +72,30 @@ Route101_EventScript_GiveEmergencyMon::
 	return
 
 
+Route101_EventScript_CannotLeave::
+# 65 "data/maps/Route101/scripts.pory"
+	lockall
+# 66 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_CannotLeave, MSGBOX_DEFAULT
+# 67 "data/maps/Route101/scripts.pory"
+	closemessage
+# 68 "data/maps/Route101/scripts.pory"
+	applymovement LOCALID_PLAYER, Route101_Movement_WalkUp2
+# 69 "data/maps/Route101/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 70 "data/maps/Route101/scripts.pory"
+	releaseall
+	return
+
+
+# 77 "data/maps/Route101/scripts.pory"
+Route101_Movement_WalkUp2:
+# 78 "data/maps/Route101/scripts.pory"
+	walk_up
+# 78 "data/maps/Route101/scripts.pory"
+	walk_up
+	step_end
+
 Route101_Text_RestOfTheStory::
 # 33 "data/maps/Route101/scripts.pory"
 	.string "The rest of this story is for you\n"
@@ -92,3 +116,7 @@ Route101_Text_TakeThisMon::
 # 59 "data/maps/Route101/scripts.pory"
 	.string "You don't have a Pokémon\n"
 	.string "with you. Take this.$"
+
+Route101_Text_CannotLeave::
+# 73 "data/maps/Route101/scripts.pory"
+	.string "You cannot leave this area.$"

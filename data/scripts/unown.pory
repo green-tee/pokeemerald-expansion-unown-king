@@ -1,0 +1,146 @@
+script(local) EventScript_FoundUnownCommon {
+    lock
+    turnobject(VAR_LAST_TALKED, DIR_SOUTH)
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    bufferunownform(STR_VAR_1, VAR_0x8004)
+    msgbox(Text_FoundUnownForm, MSGBOX_DEFAULT)
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    removeobject(VAR_LAST_TALKED)
+    fadescreen(FADE_FROM_BLACK)
+    release
+}
+
+text Text_FoundUnownForm {
+    "You found an Unown: form {STR_VAR_1}."
+}
+
+script EventScript_FoundUnown_A {
+    setvar(VAR_0x8004, UNOWN_FORM_A)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_B {
+    setvar(VAR_0x8004, UNOWN_FORM_B)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_C {
+    setvar(VAR_0x8004, UNOWN_FORM_C)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_D {
+    setvar(VAR_0x8004, UNOWN_FORM_D)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_E {
+    setvar(VAR_0x8004, UNOWN_FORM_E)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_F {
+    setvar(VAR_0x8004, UNOWN_FORM_F)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_G {
+    setvar(VAR_0x8004, UNOWN_FORM_G)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_H {
+    setvar(VAR_0x8004, UNOWN_FORM_H)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_I {
+    setvar(VAR_0x8004, UNOWN_FORM_I)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_J {
+    setvar(VAR_0x8004, UNOWN_FORM_J)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_K {
+    setvar(VAR_0x8004, UNOWN_FORM_K)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_L {
+    setvar(VAR_0x8004, UNOWN_FORM_L)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_M {
+    setvar(VAR_0x8004, UNOWN_FORM_M)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_N {
+    setvar(VAR_0x8004, UNOWN_FORM_N)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_O {
+    setvar(VAR_0x8004, UNOWN_FORM_O)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_P {
+    setvar(VAR_0x8004, UNOWN_FORM_P)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_Q {
+    setvar(VAR_0x8004, UNOWN_FORM_Q)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_R {
+    setvar(VAR_0x8004, UNOWN_FORM_R)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_S {
+    setvar(VAR_0x8004, UNOWN_FORM_S)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_T {
+    setvar(VAR_0x8004, UNOWN_FORM_T)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_U {
+    setvar(VAR_0x8004, UNOWN_FORM_U)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_V {
+    setvar(VAR_0x8004, UNOWN_FORM_V)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_W {
+    setvar(VAR_0x8004, UNOWN_FORM_W)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_X {
+    setvar(VAR_0x8004, UNOWN_FORM_X)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_Y {
+    setvar(VAR_0x8004, UNOWN_FORM_Y)
+    call(EventScript_FoundUnownCommon)
+}
+
+script EventScript_FoundUnown_Z {
+    setvar(VAR_0x8004, UNOWN_FORM_Z)
+    call(EventScript_FoundUnownCommon)
+}

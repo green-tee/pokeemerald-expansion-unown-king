@@ -151,6 +151,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_BUFFERSPECIESNAME             ScrCmd_bufferspeciesname,           requests_effects=1  @ 0x7d
 	script_cmd_table_entry SCR_OP_BUFFERLEADMONSPECIESNAME      ScrCmd_bufferleadmonspeciesname,    requests_effects=1  @ 0x7e
 	script_cmd_table_entry SCR_OP_BUFFERPARTYMONNICK            ScrCmd_bufferpartymonnick,          requests_effects=1  @ 0x7f
+	script_cmd_table_entry SCR_OP_BUFFERUNOWNFORM               ScrCmd_bufferunownform,             requests_effects=1  @ This messes up the other comments
 	script_cmd_table_entry SCR_OP_BUFFERITEMNAME                ScrCmd_bufferitemname,              requests_effects=1  @ 0x80
 	script_cmd_table_entry SCR_OP_BUFFERDECORATIONNAME          ScrCmd_bufferdecorationname,        requests_effects=1  @ 0x81
 	script_cmd_table_entry SCR_OP_BUFFERMOVENAME                ScrCmd_buffermovename,              requests_effects=1  @ 0x82

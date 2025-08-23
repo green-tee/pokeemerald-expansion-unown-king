@@ -60,3 +60,20 @@ text Route101_Text_TakeThisMon {
     "You don't have a Pokémon\n"
     "with you. Take this."
 }
+
+script Route101_EventScript_CannotLeave {
+    lockall
+    msgbox(Route101_Text_CannotLeave, MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PLAYER, Route101_Movement_WalkUp2)
+    waitmovement(LOCALID_PLAYER)
+    releaseall
+}
+
+text Route101_Text_CannotLeave {   
+    "You cannot leave this area."
+}
+
+movement Route101_Movement_WalkUp2 {
+    walk_up * 2
+}

@@ -82,6 +82,43 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "1",
+      "script": "Route101_EventScript_CannotLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "1",
+      "script": "Route101_EventScript_CannotLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "1",
+      "script": "Route101_EventScript_CannotLeave"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_ROUTE101_STATE",
+      "var_value": "1",
+      "script": "Route101_EventScript_CannotLeave"
+    }
+  ],
   "bg_events": []
 }

@@ -24,7 +24,34 @@
       "direction": "dive"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOWN_W",
+      "x": 18,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_FoundUnown_W",
+      "flag": "FLAG_FOUND_UNOWN_W"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_UNOWN_X",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_FoundUnown_X",
+      "flag": "FLAG_FOUND_UNOWN_X"
+    }
+  ],
   "warp_events": [],
   "coord_events": [],
   "bg_events": []
