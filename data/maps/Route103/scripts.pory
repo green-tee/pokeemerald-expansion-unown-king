@@ -11,3 +11,21 @@ script Route103_EventScript_ImHereForTesting {
 text Route103_Text_ImHereForTesting {
     "I'm here for testing purposes."
 }
+
+script Route103_EventScript_TestUnowncrypt {
+    lock
+    faceplayer
+    msgbox(Route103_Text_TestUnowncrypt, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text Route103_Text_TestUnowncrypt {
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ\n"
+    "abcdefghijklmnopqrstuvwxyz\p"
+    "0123456789\p"
+    "Never gonna give you up,\n"
+    "Never gonna let you down,\l"
+    "Never gonna run around\l"
+    "And desert you."
+}

@@ -848,6 +848,11 @@
 	.4byte \text
 	.endm
 
+	.macro messageunowncrypt text:req
+	.byte SCR_OP_MESSAGEUNOWNCRYPT
+	.4byte \text
+	.endm
+
 	@ Closes the current message box.
 	.macro closemessage
 	.byte SCR_OP_CLOSEMESSAGE
@@ -2045,6 +2050,7 @@
 	MSGBOX_AUTOCLOSE = 6
 	MSGBOX_GETPOINTS = 9
 	MSGBOX_POKENAV = 10
+	MSGBOX_UNOWNCRYPT = 11
 
 	YES = 1
 	NO  = 0

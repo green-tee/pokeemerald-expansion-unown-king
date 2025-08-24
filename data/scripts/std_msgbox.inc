@@ -23,6 +23,12 @@ Std_MsgboxDefault:
 	waitbuttonpress
 	return
 
+Std_MsgboxUnowncrypt:
+	messageunowncrypt NULL
+	waitmessage
+	waitbuttonpress
+	return
+
 Std_MsgboxYesNo:
 	message NULL
 	waitmessage

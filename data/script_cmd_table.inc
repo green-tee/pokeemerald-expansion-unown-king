@@ -126,6 +126,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_SETOBJECTMOVEMENTTYPE         ScrCmd_setobjectmovementtype,       requests_effects=1  @ 0x65
 	script_cmd_table_entry SCR_OP_WAITMESSAGE                   ScrCmd_waitmessage,                 requests_effects=1  @ 0x66
 	script_cmd_table_entry SCR_OP_MESSAGE                       ScrCmd_message,                     requests_effects=1  @ 0x67
+	script_cmd_table_entry SCR_OP_MESSAGEUNOWNCRYPT             ScrCmd_messageunowncrypt,           requests_effects=1  @ This messes up the other comments
 	script_cmd_table_entry SCR_OP_CLOSEMESSAGE                  ScrCmd_closemessage,                requests_effects=1  @ 0x68
 	script_cmd_table_entry SCR_OP_LOCKALL                       ScrCmd_lockall,                     requests_effects=1  @ 0x69
 	script_cmd_table_entry SCR_OP_LOCK                          ScrCmd_lock,                        requests_effects=1  @ 0x6a

@@ -12,6 +12,7 @@ static EWRAM_DATA u8 sFieldMessageBoxMode = 0;
 EWRAM_DATA u8 gWalkAwayFromSignpostTimer = 0;
 
 static void ExpandStringAndStartDrawFieldMessage(const u8 *, bool32);
+static void ExpandStringAndStartDrawFieldMessageUnowncrypt(const u8 *, bool32);
 static void StartDrawFieldMessage(void);
 
 void InitFieldMessageBox(void)
@@ -74,6 +75,15 @@ bool8 ShowFieldMessage(const u8 *str)
     return TRUE;
 }
 
+bool8 ShowFieldMessageUnowncrypt(const u8 *str)
+{
+    if (sFieldMessageBoxMode != FIELD_MESSAGE_BOX_HIDDEN)
+        return FALSE;
+    ExpandStringAndStartDrawFieldMessageUnowncrypt(str, TRUE);
+    sFieldMessageBoxMode = FIELD_MESSAGE_BOX_NORMAL;
+    return TRUE;
+}
+
 static void Task_HidePokenavMessageWhenDone(u8 taskId)
 {
     if (!IsMatchCallTaskActive())
@@ -124,6 +134,13 @@ bool8 ShowFieldMessageFromBuffer(void)
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
     StringExpandPlaceholders(gStringVar4, str);
+    AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
+    CreateTask_DrawFieldMessage();
+}
+
+static void ExpandStringAndStartDrawFieldMessageUnowncrypt(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
+{
+    StringExpandPlaceholdersUnowncrypt(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
 }

@@ -3,6 +3,7 @@
 #include "text.h"
 #include "strings.h"
 #include "union_room_chat.h"
+#include "event_data.h"
 
 EWRAM_DATA u8 gStringVar1[0x100] = {0};
 EWRAM_DATA u8 gStringVar2[0x100] = {0};
@@ -355,7 +356,18 @@ u8 *ConvertIntToHexStringN(u8 *dest, s32 value, enum StringConvertMode mode, u8 
     return dest;
 }
 
-u8 *StringExpandPlaceholders(u8 *dest, const u8 *src)
+static u8 TryUnowncryptCharacter(u8 c)
+{
+    if (CHAR_A <= c && c <= CHAR_Z && !FlagGet(FLAG_FOUND_UNOWN_A + c - CHAR_A)) {
+        return CHAR_BULLET;
+    } else if (CHAR_a <= c && c <= CHAR_z && !FlagGet(FLAG_FOUND_UNOWN_A + c - CHAR_a)) {
+        return CHAR_BULLET;
+    } else {
+        return c;
+    }
+}
+
+static u8 *StringExpandPlaceholdersCommon(u8 *dest, const u8 *src, bool32 unowncrypt)
 {
     for (;;)
     {
@@ -368,7 +380,7 @@ u8 *StringExpandPlaceholders(u8 *dest, const u8 *src)
         case PLACEHOLDER_BEGIN:
             placeholderId = *src++;
             expandedString = GetExpandedPlaceholder(placeholderId);
-            dest = StringExpandPlaceholders(dest, expandedString);
+            dest = StringExpandPlaceholdersCommon(dest, expandedString, unowncrypt);
             break;
         case EXT_CTRL_CODE_BEGIN:
             *dest++ = c;
@@ -400,9 +412,22 @@ u8 *StringExpandPlaceholders(u8 *dest, const u8 *src)
         case CHAR_PROMPT_CLEAR:
         case CHAR_NEWLINE:
         default:
-            *dest++ = c;
+            if (!unowncrypt)
+                *dest++ = c;
+            else
+                *dest++ = TryUnowncryptCharacter(c);
         }
     }
+}
+
+u8 *StringExpandPlaceholders(u8 *dest, const u8 *src)
+{
+    return StringExpandPlaceholdersCommon(dest, src, FALSE);
+}
+
+u8 *StringExpandPlaceholdersUnowncrypt(u8 *dest, const u8 *src)
+{
+    return StringExpandPlaceholdersCommon(dest, src, TRUE);
 }
 
 u8 *StringBraille(u8 *dest, const u8 *src)
