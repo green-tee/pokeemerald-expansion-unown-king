@@ -58,6 +58,7 @@ void BattleSetup_StartScriptedWildBattle(void);
 void BattleSetup_StartScriptedDoubleWildBattle(void);
 void BattleSetup_StartLatiBattle(void);
 void BattleSetup_StartLegendaryBattle(void);
+void BattleSetup_StartBossBattle(void);
 void StartGroudonKyogreBattle(void);
 void StartRegiBattle(void);
 u8 BattleSetup_GetEnvironmentId(void);

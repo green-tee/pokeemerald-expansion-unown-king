@@ -504,6 +504,7 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_DEOXYS_ATTACK:
     case SPECIES_DEOXYS_DEFENSE:
     case SPECIES_DEOXYS_SPEED:
+    case SPECIES_MILOTIC: // For testing purposes
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
         break;
     case SPECIES_LUGIA:
@@ -515,6 +516,21 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     }
 
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+    IncrementDailyWildBattles();
+    TryUpdateGymLeaderRematchFromWild();
+}
+
+void BattleSetup_StartBossBattle()
+{
+    bool32 isBoss = TRUE;
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_BOSS;
+    SetMonData(&gEnemyParty[0], MON_DATA_IS_BOSS, &isBoss);
+    CalculateMonStats(&gEnemyParty[0]); // Update max HP
+    CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_GYM_LEADER);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();

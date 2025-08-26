@@ -81,6 +81,7 @@ static const u8 sText_PlayerDefeatedLinkTrainerTrainer1[] = _("You defeated {B_T
 static const u8 sText_OpponentMon1Appeared[] = _("{B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_WildPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
 static const u8 sText_LegendaryPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
+static const u8 sText_BossPkmnAppeared[] = _("You encountered a hostile {B_OPPONENT_MON1_NAME}!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!{PAUSE 127}");
 static const u8 sText_TwoWildPkmnAppeared[] = _("Oh! A wild {B_OPPONENT_MON1_NAME} and {B_OPPONENT_MON2_NAME} appeared!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("You are challenged by {B_TRAINER1_NAME_WITH_CLASS}!\p");
@@ -389,6 +390,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_GOTAWAYSAFELY]                        = sText_GotAwaySafely,
     [STRINGID_WILDPKMNFLED]                         = COMPOUND_STRING("{PLAY_SE SE_FLEE}The wild {B_BUFF1} fled!"),
     [STRINGID_NORUNNINGFROMTRAINERS]                = COMPOUND_STRING("No! There's no running from a Trainer battle!\p"),
+    [STRINGID_NORUNNINGFROMBOSSES]                  = COMPOUND_STRING("You can't run from a hostile Pokémon!\p"),
     [STRINGID_CANTESCAPE]                           = COMPOUND_STRING("You can't escape!\p"),
     [STRINGID_DONTLEAVEBIRCH]                       = COMPOUND_STRING("PROF. BIRCH: Don't leave me like this!\p"), //no decapitalize until it is everywhere
     [STRINGID_BUTNOTHINGHAPPENED]                   = COMPOUND_STRING("But nothing happened!"),
@@ -2124,6 +2126,8 @@ void BufferStringBattle(enum StringID stringID, u32 battler)
         {
             if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
                 stringPtr = sText_LegendaryPkmnAppeared;
+            else if (gBattleTypeFlags & BATTLE_TYPE_BOSS)
+                stringPtr = sText_BossPkmnAppeared;
             else if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
                 stringPtr = sText_TwoWildPkmnAppeared;
             else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)

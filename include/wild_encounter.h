@@ -61,7 +61,7 @@ bool8 UpdateRepelCounter(void);
 bool8 TryDoDoubleWildBattle(void);
 bool8 StandardWildEncounter_Debug(void);
 u32 CalculateChainFishingShinyRolls(void);
-void CreateWildMon(u16 species, u8 level);
+void CreateWildMon(u16 species, u8 level, bool32 isBoss);
 u16 GetCurrentMapWildMonHeaderId(void);
 u8 ChooseWildMonIndex_Land(void);
 u8 ChooseWildMonIndex_WaterRock(void);

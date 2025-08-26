@@ -30,6 +30,45 @@ Route103_EventScript_TestUnowncrypt::
 	return
 
 
+Route103_EventScript_TestMiloticBossBattle::
+# 34 "data/maps/Route103/scripts.pory"
+	lock
+# 35 "data/maps/Route103/scripts.pory"
+	faceplayer
+# 36 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_StartingMiloticBattle, MSGBOX_YESNO
+# 37 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Route103_EventScript_TestMiloticBossBattle_2
+# 43 "data/maps/Route103/scripts.pory"
+	closemessage
+# 44 "data/maps/Route103/scripts.pory"
+	setwildbattle SPECIES_MILOTIC, 30
+# 45 "data/maps/Route103/scripts.pory"
+	special BattleSetup_StartLegendaryBattle
+# 46 "data/maps/Route103/scripts.pory"
+	waitstate
+Route103_EventScript_TestMiloticBossBattle_1:
+# 48 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_MiloticBattleOver, MSGBOX_DEFAULT
+# 49 "data/maps/Route103/scripts.pory"
+	closemessage
+# 50 "data/maps/Route103/scripts.pory"
+	release
+	return
+
+Route103_EventScript_TestMiloticBossBattle_2:
+# 38 "data/maps/Route103/scripts.pory"
+	closemessage
+# 39 "data/maps/Route103/scripts.pory"
+	setwildbattle SPECIES_MILOTIC, 30
+# 40 "data/maps/Route103/scripts.pory"
+	special BattleSetup_StartBossBattle
+# 41 "data/maps/Route103/scripts.pory"
+	waitstate
+	goto Route103_EventScript_TestMiloticBossBattle_1
+
+
 Route103_Text_ImHereForTesting::
 # 11 "data/maps/Route103/scripts.pory"
 	.string "I'm here for testing purposes.$"
@@ -43,3 +82,12 @@ Route103_Text_TestUnowncrypt::
 	.string "Never gonna let you down,\l"
 	.string "Never gonna run around\l"
 	.string "And desert you.$"
+
+Route103_Text_StartingMiloticBattle::
+# 53 "data/maps/Route103/scripts.pory"
+	.string "Starting battle against Milotic.\n"
+	.string "Do you want to fight the hostile version?$"
+
+Route103_Text_MiloticBattleOver::
+# 58 "data/maps/Route103/scripts.pory"
+	.string "Milotic battle over.$"

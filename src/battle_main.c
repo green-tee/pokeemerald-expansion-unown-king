@@ -1939,7 +1939,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId, FALSE);
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
             CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
@@ -4398,6 +4398,12 @@ static void HandleTurnActionSelectionState(void)
                       && gBattleResources->bufferB[battler][1] == B_ACTION_RUN)
                 {
                     BattleScriptExecute(BattleScript_PrintCantRunFromTrainer);
+                    gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
+                }
+                else if (gBattleTypeFlags & BATTLE_TYPE_BOSS
+                      && gBattleResources->bufferB[battler][1] == B_ACTION_RUN)
+                {
+                    BattleScriptExecute(BattleScript_PrintCantRunFromBosses);
                     gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
                 }
                 else if ((IsRunningFromBattleImpossible(battler) != BATTLE_RUN_SUCCESS

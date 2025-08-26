@@ -10127,6 +10127,10 @@ static void Cmd_various(void)
                  && !IsOnPlayerSide(gBattlerAttacker)
                  && !IsOnPlayerSide(gBattlerTarget))
             gBattlescriptCurrInstr = cmd->jumpInstr;
+        else if (gBattleTypeFlags & BATTLE_TYPE_BOSS
+                 && IsOnPlayerSide(gBattlerAttacker)
+                 && !IsOnPlayerSide(gBattlerTarget))
+            gBattlescriptCurrInstr = cmd->jumpInstr;
         else if (FlagGet(B_FLAG_NO_RUNNING))
             gBattlescriptCurrInstr = cmd->jumpInstr;
         else
@@ -12692,6 +12696,7 @@ static void Cmd_forcerandomswitch(void)
     // Red card swaps attacker with target to get the animation correct, so here we check attacker which is really the target. Thanks GF...
     if (gBattleScripting.switchCase == B_SWITCH_RED_CARD
       && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+      && !(gBattleTypeFlags & BATTLE_TYPE_BOSS)
       && !IsOnPlayerSide(gBattlerAttacker))   // Check opponent's red card activating
     {
         if (!WILD_DOUBLE_BATTLE)
@@ -12721,6 +12726,7 @@ static void Cmd_forcerandomswitch(void)
     // wild double battles when an opposing pokemon uses it against one of the two alive player mons
     // wild double battle when a player pokemon uses it against its partner
     if ((gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+        || (gBattleTypeFlags & BATTLE_TYPE_BOSS)
         || (WILD_DOUBLE_BATTLE
             && !IsOnPlayerSide(gBattlerAttacker)
             && IsOnPlayerSide(gBattlerTarget)
@@ -15795,6 +15801,12 @@ static void Cmd_handleballthrow(void)
         BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_TrainerBallBlock;
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_BOSS)
+    {
+        BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_TRAINER_BLOCK);
+        MarkBattlerForControllerExec(gBattlerAttacker);
+        gBattlescriptCurrInstr = BattleScript_ItDodgedBall;
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
     {

@@ -29,3 +29,32 @@ text Route103_Text_TestUnowncrypt {
     "Never gonna run around\l"
     "And desert you."
 }
+
+script Route103_EventScript_TestMiloticBossBattle {
+    lock
+    faceplayer
+    msgbox(Route103_Text_StartingMiloticBattle, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        closemessage
+        setwildbattle(SPECIES_MILOTIC, 30)
+        special(BattleSetup_StartBossBattle)
+        waitstate
+    } else {
+        closemessage
+        setwildbattle(SPECIES_MILOTIC, 30)
+        special(BattleSetup_StartLegendaryBattle)
+        waitstate
+    }
+    msgbox(Route103_Text_MiloticBattleOver, MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+text Route103_Text_StartingMiloticBattle {
+    "Starting battle against Milotic.\n"
+    "Do you want to fight the hostile version?"
+}
+
+text Route103_Text_MiloticBattleOver {
+    "Milotic battle over."
+}

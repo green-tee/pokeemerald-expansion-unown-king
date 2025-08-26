@@ -330,6 +330,7 @@ gSpecials::
 	def_special ShakeCamera
 	def_special StartGroudonKyogreBattle
 	def_special BattleSetup_StartLegendaryBattle
+	def_special BattleSetup_StartBossBattle
 	def_special StartRegiBattle
 	def_special SetTrainerFacingDirection
 	def_special DoSealedChamberShakingEffect_Short

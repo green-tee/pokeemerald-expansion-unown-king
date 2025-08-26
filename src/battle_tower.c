@@ -1580,7 +1580,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     }
 
     ModifyPersonalityForNature(&personality, fmon->nature);
-    CreateMon(dst, fmon->species, level, fixedIV, TRUE, personality, OT_ID_PRESET, otID);
+    CreateMon(dst, fmon->species, level, fixedIV, TRUE, personality, OT_ID_PRESET, otID, FALSE);
 
     friendship = MAX_FRIENDSHIP;
     // Give the chosen Pokémon its specified moves.
@@ -3008,7 +3008,7 @@ void FillPartnerParty(u16 trainerId)
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
                 personality = (personality & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
             ModifyPersonalityForNature(&personality, partyData[i].nature);
-            CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
+            CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID, FALSE);
             j = partyData[i].isShiny;
             SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);
