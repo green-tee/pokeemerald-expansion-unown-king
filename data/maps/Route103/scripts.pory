@@ -36,7 +36,8 @@ script Route103_EventScript_TestMiloticBossBattle {
     msgbox(Route103_Text_StartingMiloticBattle, MSGBOX_YESNO)
     if (var(VAR_RESULT) == YES) {
         closemessage
-        setwildbattle(SPECIES_MILOTIC, 30)
+        createmon(1, 0, SPECIES_MILOTIC, 30, move1=MOVE_DRAINING_KISS, move2=MOVE_WATER_PULSE, move3=MOVE_DRAGON_TAIL, move4=MOVE_AVALANCHE, abilityNum=0, isShiny=FALSE)
+        #setwildbattle(SPECIES_MILOTIC, 30)
         special(BattleSetup_StartBossBattle)
         waitstate
     } else {

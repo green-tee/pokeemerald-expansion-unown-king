@@ -40,20 +40,20 @@ Route103_EventScript_TestMiloticBossBattle::
 # 37 "data/maps/Route103/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route103_EventScript_TestMiloticBossBattle_2
-# 43 "data/maps/Route103/scripts.pory"
-	closemessage
 # 44 "data/maps/Route103/scripts.pory"
-	setwildbattle SPECIES_MILOTIC, 30
+	closemessage
 # 45 "data/maps/Route103/scripts.pory"
-	special BattleSetup_StartLegendaryBattle
+	setwildbattle SPECIES_MILOTIC, 30
 # 46 "data/maps/Route103/scripts.pory"
+	special BattleSetup_StartLegendaryBattle
+# 47 "data/maps/Route103/scripts.pory"
 	waitstate
 Route103_EventScript_TestMiloticBossBattle_1:
-# 48 "data/maps/Route103/scripts.pory"
-	msgbox Route103_Text_MiloticBattleOver, MSGBOX_DEFAULT
 # 49 "data/maps/Route103/scripts.pory"
-	closemessage
+	msgbox Route103_Text_MiloticBattleOver, MSGBOX_DEFAULT
 # 50 "data/maps/Route103/scripts.pory"
+	closemessage
+# 51 "data/maps/Route103/scripts.pory"
 	release
 	return
 
@@ -61,10 +61,10 @@ Route103_EventScript_TestMiloticBossBattle_2:
 # 38 "data/maps/Route103/scripts.pory"
 	closemessage
 # 39 "data/maps/Route103/scripts.pory"
-	setwildbattle SPECIES_MILOTIC, 30
-# 40 "data/maps/Route103/scripts.pory"
-	special BattleSetup_StartBossBattle
+	createmon 1, 0, SPECIES_MILOTIC, 30, move1 = MOVE_DRAINING_KISS, move2 = MOVE_WATER_PULSE, move3 = MOVE_DRAGON_TAIL, move4 = MOVE_AVALANCHE, abilityNum = 0, isShiny = FALSE
 # 41 "data/maps/Route103/scripts.pory"
+	special BattleSetup_StartBossBattle
+# 42 "data/maps/Route103/scripts.pory"
 	waitstate
 	goto Route103_EventScript_TestMiloticBossBattle_1
 
@@ -84,10 +84,10 @@ Route103_Text_TestUnowncrypt::
 	.string "And desert you.$"
 
 Route103_Text_StartingMiloticBattle::
-# 53 "data/maps/Route103/scripts.pory"
+# 54 "data/maps/Route103/scripts.pory"
 	.string "Starting battle against Milotic.\n"
 	.string "Do you want to fight the hostile version?$"
 
 Route103_Text_MiloticBattleOver::
-# 58 "data/maps/Route103/scripts.pory"
+# 59 "data/maps/Route103/scripts.pory"
 	.string "Milotic battle over.$"

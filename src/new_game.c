@@ -200,6 +200,7 @@ void NewGameInitData(void)
     WarpToStartingMap();
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     FlagSet(FLAG_SPAWN_INVISIBLE);
+    FlagSet(FLAG_SYS_B_DASH);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
     InitLilycoveLady();
