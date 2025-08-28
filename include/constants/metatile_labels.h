@@ -208,6 +208,11 @@
 #define METATILE_General_BlueCaveIndent           0x1B0
 #define METATILE_General_BlueCaveOpen             0x1B1
 #define METATILE_General_CalmWater                0x170
+#define METATILE_General_CutGrass                 0x005
+#define METATILE_General_CutGrass_TreeSideLeft    0x059
+#define METATILE_General_CutGrass_TreeSideRight   0x058
+#define METATILE_General_CutGrass_TreeTipLeft     0x03E
+#define METATILE_General_CutGrass_TreeTipRight    0x03F
 #define METATILE_General_Door_Contest             0x1DB
 #define METATILE_General_Door_Gym                 0x1CD
 #define METATILE_General_Door_PokeCenter          0x061

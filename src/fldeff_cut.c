@@ -360,7 +360,19 @@ static void SetCutGrassMetatile(s16 x, s16 y)
     case METATILE_Fortree_LongGrass_Root:
     case METATILE_General_LongGrass:
     case METATILE_General_TallGrass:
-        MapGridSetMetatileIdAt(x, y, METATILE_General_Grass);
+        MapGridSetMetatileIdAt(x, y, METATILE_General_CutGrass);
+        break;
+    case METATILE_General_TallGrass_TreeTipLeft:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_CutGrass_TreeTipLeft);
+        break;
+    case METATILE_General_TallGrass_TreeTipRight:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_CutGrass_TreeTipRight);
+        break;
+    case METATILE_General_TallGrass_TreeSideLeft:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_CutGrass_TreeSideLeft);
+        break;
+    case METATILE_General_TallGrass_TreeSideRight:
+        MapGridSetMetatileIdAt(x, y, METATILE_General_CutGrass_TreeSideRight);
         break;
     case METATILE_General_TallGrass_TreeLeft:
         MapGridSetMetatileIdAt(x, y, METATILE_General_Grass_TreeLeft);
