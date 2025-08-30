@@ -266,7 +266,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .conditions =
         {
             MATCH_NOT_TYPES(TYPE_GHOST, TYPE_GHOST),
-            MATCH_MAPSEC(MAPSEC_MT_PYRE),
+            MATCH_MAPSEC(MAPSEC_TEMPLE),
             MATCH_MUSIC(MUS_MT_PYRE),
         },
     },
@@ -336,7 +336,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_PENSIVE,
         .conditions =
         {
-            MATCH_MAPSEC(MAPSEC_PETALBURG_WOODS),
+            MATCH_MAPSEC(MAPSEC_ENCLOSED_GARDEN),
         },
     },
     [COND_MSG_ICE] =

@@ -1210,11 +1210,14 @@ u16 GetCurrLocationDefaultMusic(void)
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_ROUTE118)
-    {
-        return music;
+    if (music == MUS_ROUTE101) {
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MT_PYRE_EXTERIOR)
+         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MT_PYRE_EXTERIOR))
+            return MUS_VICTORY_ROAD;
+        else
+            return MUS_ROUTE101;
     }
-    else
+    if (music == MUS_ROUTE118)
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
@@ -1222,6 +1225,7 @@ u16 GetWarpDestinationMusic(void)
         else
             return MUS_ROUTE119;
     }
+    return music;
 }
 
 void Overworld_ResetMapMusic(void)

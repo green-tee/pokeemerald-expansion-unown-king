@@ -143,10 +143,9 @@ static void LoadHGSSScreenSelectBarSubmenu(void);
 
 static const u16 sSpeciesHiddenFromAreaScreen[] = { SPECIES_WYNAUT };
 
-static const u16 sMovingRegionMapSections[3] =
+static const u16 sMovingRegionMapSections[2] =
 {
     MAPSEC_MARINE_CAVE,
-    MAPSEC_UNDERWATER_MARINE_CAVE,
     MAPSEC_TERRA_CAVE
 };
 

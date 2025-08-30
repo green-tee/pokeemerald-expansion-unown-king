@@ -3,7 +3,7 @@
   "name": "MtPyre_Summit",
   "layout": "LAYOUT_MT_PYRE_SUMMIT",
   "music": "MUS_NONE",
-  "region_map_section": "MAPSEC_MT_PYRE",
+  "region_map_section": "MAPSEC_UNOWN_KING_PRISON",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -216,8 +216,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 37,
-      "y": 7,
+      "x": 14,
+      "y": 6,
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_SUMMIT_RARE_CANDY"

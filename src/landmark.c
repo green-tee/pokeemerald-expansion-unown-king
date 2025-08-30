@@ -338,11 +338,11 @@ static const struct Landmark *const Landmarks_MtChimney_2[]  =
 
 static const struct LandmarkList sLandmarkLists[] =
 {
-    {MAPSEC_ROUTE_103, 2, Landmarks_Route103_2},
-    {MAPSEC_ROUTE_104, 0, Landmarks_Route104_0},
-    {MAPSEC_ROUTE_104, 1, Landmarks_Route104_1},
-    {MAPSEC_ROUTE_105, 0, Landmarks_Route105_0},
-    {MAPSEC_ROUTE_106, 1, Landmarks_Route106_1},
+    {MAPSEC_WEST_OF_TEMPLE, 2, Landmarks_Route103_2},
+    {MAPSEC_WESTERN_WING, 0, Landmarks_Route104_0},
+    {MAPSEC_WESTERN_WING, 1, Landmarks_Route104_1},
+    {MAPSEC_CHAMBER_OF_TRUTH, 0, Landmarks_Route105_0},
+    {MAPSEC_EASTERN_WING, 1, Landmarks_Route106_1},
     {MAPSEC_ROUTE_108, 0, Landmarks_Route108_0},
     {MAPSEC_ROUTE_109, 0, Landmarks_Route109_0},
     {MAPSEC_ROUTE_110, 0, Landmarks_Route110_0},
@@ -388,7 +388,7 @@ static const struct LandmarkList sLandmarkLists[] =
     {MAPSEC_ROUTE_134, 0, Landmarks_OceanCurrent},
     {MAPSEC_ROUTE_134, 1, Landmarks_OceanCurrent},
     {MAPSEC_ROUTE_134, 2, Landmarks_Route134_2},
-    {MAPSEC_MT_CHIMNEY, 2, Landmarks_MtChimney_2},
+    {MAPSEC_ROOM_NINCADA, 2, Landmarks_MtChimney_2},
     {MAPSEC_NONE, 0, NULL},
 };
 

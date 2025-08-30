@@ -145,56 +145,56 @@
       "height": 2
     },
     {
-      "id": "MAPSEC_ROUTE_101",
-      "name": "ROUTE 101",
+      "id": "MAPSEC_WESTERN_HALLWAY",
+      "name": "Western hallway",
       "x": 4,
       "y": 10,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_102",
-      "name": "ROUTE 102",
+      "id": "MAPSEC_EAST_OF_TEMPLE",
+      "name": "East of the Temple",
       "x": 2,
       "y": 9,
       "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_103",
-      "name": "ROUTE 103",
+      "id": "MAPSEC_WEST_OF_TEMPLE",
+      "name": "West of the Temple",
       "x": 4,
       "y": 8,
       "width": 4,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_104",
-      "name": "ROUTE 104",
+      "id": "MAPSEC_WESTERN_WING",
+      "name": "Western wing",
       "x": 0,
       "y": 7,
       "width": 1,
       "height": 3
     },
     {
-      "id": "MAPSEC_ROUTE_105",
-      "name": "ROUTE 105",
+      "id": "MAPSEC_CHAMBER_OF_TRUTH",
+      "name": "Chamber of Truth",
       "x": 0,
       "y": 10,
       "width": 1,
       "height": 3
     },
     {
-      "id": "MAPSEC_ROUTE_106",
-      "name": "ROUTE 106",
+      "id": "MAPSEC_EASTERN_WING",
+      "name": "Eastern wing",
       "x": 0,
       "y": 13,
       "width": 2,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_107",
-      "name": "ROUTE 107",
+      "id": "MAPSEC_EASTERN_HALLWAY",
+      "name": "Eastern hallway",
       "x": 3,
       "y": 14,
       "width": 3,
@@ -457,16 +457,16 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_GRANITE_CAVE",
-      "name": "GRANITE CAVE",
+      "id": "MAPSEC_ROOM_BAGON",
+      "name": "Room of Bagon",
       "x": 1,
       "y": 13,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_MT_CHIMNEY",
-      "name": "MT. CHIMNEY",
+      "id": "MAPSEC_ROOM_NINCADA",
+      "name": "Room of Nincada",
       "x": 6,
       "y": 2,
       "width": 1,
@@ -489,8 +489,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_PETALBURG_WOODS",
-      "name": "PETALBURG WOODS",
+      "id": "MAPSEC_ENCLOSED_GARDEN",
+      "name": "Enclosed garden",
       "x": 0,
       "y": 8,
       "width": 1,
@@ -537,8 +537,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_MT_PYRE",
-      "name": "MT. PYRE",
+      "id": "MAPSEC_TEMPLE",
+      "name": "Temple of the Unown King",
       "x": 16,
       "y": 4,
       "width": 1,
@@ -609,8 +609,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_FIERY_PATH",
-      "name": "FIERY PATH",
+      "id": "MAPSEC_JAGGED_HALLWAY",
+      "name": "Jagged hallway",
       "x": 6,
       "y": 3,
       "width": 1,
@@ -625,16 +625,16 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_JAGGED_PASS",
-      "name": "JAGGED PASS",
+      "id": "MAPSEC_PITCH_BLACK",
+      "name": "Pitch black",
       "x": 6,
       "y": 3,
       "width": 1,
       "height": 1
     },
     {
-      "id": "MAPSEC_JAGGED_PASS2",
-      "name": "JAGGED PASS",
+      "id": "MAPSEC_UNOWN_KING_PRISON",
+      "name": "Unown King's prison",
       "x": 7,
       "y": 2,
       "width": 1,
@@ -649,8 +649,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_UNDERWATER_SEALED_CHAMBER",
-      "name": "UNDERWATER",
+      "id": "MAPSEC_ABYSS_OF_THE_END",
+      "name": "Abyss of the End",
       "x": 11,
       "y": 10,
       "width": 1,
@@ -1648,8 +1648,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_UNDERWATER_MARINE_CAVE",
-      "name": "UNDERWATER",
+      "id": "MAPSEC_UNDERWATER_JAGGED_HALLWAY",
+      "name": "Under the jagged hallway",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1664,24 +1664,24 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_UNDERWATER_105",
-      "name": "UNDERWATER",
+      "id": "MAPSEC_UNDERWATER_ETERNAL_POND",
+      "name": "Under the Eternal Pond",
       "x": 0,
       "y": 10,
       "width": 1,
       "height": 3
     },
     {
-      "id": "MAPSEC_UNDERWATER_125",
-      "name": "UNDERWATER",
+      "id": "MAPSEC_UNDERWATER_TEMPLE",
+      "name": "Below the Temple",
       "x": 24,
       "y": 3,
       "width": 2,
       "height": 2
     },
     {
-      "id": "MAPSEC_UNDERWATER_129",
-      "name": "UNDERWATER",
+      "id": "MAPSEC_UNDERWATER_POND_OF_GRACE",
+      "name": "Under the Pond of Grace",
       "x": 24,
       "y": 10,
       "width": 2,
