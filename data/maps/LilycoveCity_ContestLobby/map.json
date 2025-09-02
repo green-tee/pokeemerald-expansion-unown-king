@@ -44,7 +44,7 @@
     },
     {
       "local_id": "LOCALID_CONTEST_LOBBY_BLENDER_2_LEADER",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_BREEDER",
       "x": 26,
       "y": 9,
       "elevation": 3,
@@ -246,7 +246,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_SCOUNDREL",
       "x": 27,
       "y": 3,
       "elevation": 3,
@@ -298,7 +298,7 @@
       "flag": "FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_1",
       "x": 27,
       "y": 7,
       "elevation": 3,
@@ -324,7 +324,7 @@
       "flag": "FLAG_HIDE_LILYCOVE_CONTEST_HALL_BLEND_MASTER"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_BEAST_TAMER",
       "x": 26,
       "y": 5,
       "elevation": 3,

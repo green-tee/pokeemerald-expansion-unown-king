@@ -83,7 +83,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_2",
       "x": 30,
       "y": 50,
       "elevation": 3,
@@ -306,7 +306,7 @@
       "flag": "FLAG_ITEM_ROUTE_104_PP_UP"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_FIGHTER",
       "x": 8,
       "y": 19,
       "elevation": 3,
@@ -358,7 +358,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_2",
       "x": 11,
       "y": 44,
       "elevation": 3,

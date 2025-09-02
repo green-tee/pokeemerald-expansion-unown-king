@@ -55,7 +55,7 @@
     },
     {
       "local_id": "LOCALID_SMART_MC",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_3",
       "x": 12,
       "y": 22,
       "elevation": 3,
@@ -152,7 +152,7 @@
     },
     {
       "local_id": "LOCALID_SMART_AUDIENCE_4",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_FIGHTER",
       "x": 18,
       "y": 24,
       "elevation": 3,
@@ -180,7 +180,7 @@
     },
     {
       "local_id": "LOCALID_BEAUTY_MC",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_3",
       "x": 24,
       "y": 10,
       "elevation": 3,
@@ -208,7 +208,7 @@
     },
     {
       "local_id": "LOCALID_BEAUTY_CONTESTANT_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_4",
       "x": 22,
       "y": 13,
       "elevation": 3,
@@ -264,7 +264,7 @@
     },
     {
       "local_id": "LOCALID_BEAUTY_AUDIENCE_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_2",
       "x": 20,
       "y": 10,
       "elevation": 3,
@@ -278,7 +278,7 @@
     },
     {
       "local_id": "LOCALID_BEAUTY_AUDIENCE_3",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_1",
       "x": 30,
       "y": 11,
       "elevation": 3,
@@ -320,7 +320,7 @@
     },
     {
       "local_id": "LOCALID_CUTE_MC",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_3",
       "x": 36,
       "y": 22,
       "elevation": 3,
@@ -404,7 +404,7 @@
     },
     {
       "local_id": "LOCALID_CUTE_AUDIENCE_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_MAIDEN_2",
       "x": 32,
       "y": 23,
       "elevation": 3,

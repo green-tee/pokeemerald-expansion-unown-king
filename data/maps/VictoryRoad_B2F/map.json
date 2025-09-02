@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_FIGHTER",
       "x": 2,
       "y": 17,
       "elevation": 3,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_FIGHTER",
       "x": 35,
       "y": 22,
       "elevation": 3,
@@ -80,7 +80,7 @@
       "flag": "FLAG_ITEM_VICTORY_ROAD_B2F_FULL_HEAL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_FIGHTER",
       "x": 25,
       "y": 18,
       "elevation": 4,

@@ -170,9 +170,9 @@ static const u16 sSecretBaseOwnerGfxIds[10] =
     // Female
     OBJ_EVENT_GFX_LASS,
     OBJ_EVENT_GFX_GIRL_3,
-    OBJ_EVENT_GFX_WOMAN_2,
+    OBJ_EVENT_GFX_MAIDEN_2,
     OBJ_EVENT_GFX_PICNICKER,
-    OBJ_EVENT_GFX_WOMAN_5,
+    OBJ_EVENT_GFX_FIGHTER,
 };
 
 static const struct WindowTemplate sRegistryWindowTemplates[] =
