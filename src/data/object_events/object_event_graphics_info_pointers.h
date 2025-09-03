@@ -197,9 +197,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maxie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kyogre;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonFront;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fossil;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regirock;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Regice;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Registeel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownKing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Skitty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kecleon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreAsleep;
@@ -477,9 +475,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KYOGRE] =                   &gObjectEventGraphicsInfo_Kyogre,
     [OBJ_EVENT_GFX_GROUDON_FRONT] =            &gObjectEventGraphicsInfo_GroudonFront,
     [OBJ_EVENT_GFX_FOSSIL] =                   &gObjectEventGraphicsInfo_Fossil,
-    [OBJ_EVENT_GFX_REGIROCK] =                 &gObjectEventGraphicsInfo_Regirock,
-    [OBJ_EVENT_GFX_REGICE] =                   &gObjectEventGraphicsInfo_Regice,
-    [OBJ_EVENT_GFX_REGISTEEL] =                &gObjectEventGraphicsInfo_Registeel,
+    [OBJ_EVENT_GFX_UNOWN_KING] =               &gObjectEventGraphicsInfo_UnownKing,
     [OBJ_EVENT_GFX_SKITTY] =                   &gObjectEventGraphicsInfo_Skitty,
     [OBJ_EVENT_GFX_KECLEON] =                  &gObjectEventGraphicsInfo_Kecleon,
     [OBJ_EVENT_GFX_KYOGRE_ASLEEP] =            &gObjectEventGraphicsInfo_KyogreAsleep,

@@ -229,9 +229,21 @@ static const union AnimCmd sAnim_FaceEast2F_Asym[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_BobSlowSouth[] = {
+    ANIMCMD_FRAME(0, 20),
+    ANIMCMD_FRAME(4, 20),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_BobSouth[] = {
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_FRAME(4, 10),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BobSlowNorth[] = {
+    ANIMCMD_FRAME(1, 20),
+    ANIMCMD_FRAME(6, 20),
     ANIMCMD_JUMP(0),
 };
 
@@ -241,9 +253,21 @@ static const union AnimCmd sAnim_BobNorth[] = {
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_BobSlowWest[] = {
+    ANIMCMD_FRAME(2, 20),
+    ANIMCMD_FRAME(8, 20),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_BobWest[] = {
     ANIMCMD_FRAME(2, 10),
     ANIMCMD_FRAME(8, 10),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_BobSlowEast[] = {
+    ANIMCMD_FRAME(2, 20, .hFlip = TRUE),
+    ANIMCMD_FRAME(8, 20, .hFlip = TRUE),
     ANIMCMD_JUMP(0),
 };
 
@@ -1486,6 +1510,52 @@ static const union AnimCmd *const sAnimTable_Tornadus[] = {
     [ANIM_STD_GO_FASTEST_EAST] = sAnim_GoFastestEast,
 };
 
+static const union AnimCmd *const sAnimTable_LatiosLatias[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_BobSlowSouth,
+    [ANIM_STD_FACE_NORTH] = sAnim_BobSlowNorth,
+    [ANIM_STD_FACE_WEST] = sAnim_BobSlowWest,
+    [ANIM_STD_FACE_EAST] = sAnim_BobSlowEast,
+    [ANIM_STD_GO_SOUTH] = sAnim_BobSlowSouth,
+    [ANIM_STD_GO_NORTH] = sAnim_BobSlowNorth,
+    [ANIM_STD_GO_WEST] = sAnim_BobSlowWest,
+    [ANIM_STD_GO_EAST] = sAnim_BobSlowEast,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_BobSlowSouth,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_BobSlowNorth,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_BobSlowWest,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_BobSlowEast,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_BobSlowSouth,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_BobSlowNorth,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_BobSlowWest,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_BobSlowEast,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_BobSlowSouth,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_BobSlowNorth,
+    [ANIM_STD_GO_FASTEST_WEST] = sAnim_BobSlowWest,
+    [ANIM_STD_GO_FASTEST_EAST] = sAnim_BobSlowEast,
+};
+
+static const union AnimCmd *const sAnimTable_UnownKing[] = {
+    [ANIM_STD_FACE_SOUTH] = sAnim_RotateInPlace,
+    [ANIM_STD_FACE_NORTH] = sAnim_RotateInPlace,
+    [ANIM_STD_FACE_WEST] = sAnim_RotateInPlace,
+    [ANIM_STD_FACE_EAST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_SOUTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_NORTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_WEST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_EAST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FAST_SOUTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FAST_NORTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FAST_WEST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FAST_EAST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTER_SOUTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTER_NORTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTER_WEST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTER_EAST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTEST_SOUTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTEST_NORTH] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTEST_WEST] = sAnim_RotateInPlace,
+    [ANIM_STD_GO_FASTEST_EAST] = sAnim_RotateInPlace,
+};
+
 static const union AnimCmd *const sAnimTable_HoOh[] = {
     [ANIM_STD_FACE_SOUTH] = sAnim_FaceSouth,
     [ANIM_STD_FACE_NORTH] = sAnim_FaceNorth,
@@ -1861,6 +1931,10 @@ static const struct StepAnimTable sStepAnimTables[] = {
     },
     {
         .anims = sAnimTable_Tornadus,
+        .animPos = {1, 3, 0, 2},
+    },
+    {
+        .anims = sAnimTable_LatiosLatias,
         .animPos = {1, 3, 0, 2},
     },
     {},
