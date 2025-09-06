@@ -880,8 +880,7 @@ static const union AnimCmd sAnim_FieldMove[] =
     ANIMCMD_FRAME(0, 4),
     ANIMCMD_FRAME(1, 4),
     ANIMCMD_FRAME(2, 4),
-    ANIMCMD_FRAME(3, 4),
-    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(3, 8),
     ANIMCMD_END,
 };
 

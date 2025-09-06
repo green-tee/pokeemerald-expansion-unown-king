@@ -473,7 +473,7 @@ static const union AffineAnimCmd *const sSpriteAffineAnimTable_PlayerShrink[] =
     sSpriteAffineAnim_PlayerShrink
 };
 
-static const u8 *const sMalePresetName = COMPOUND_STRING("ADAM");
+static const u8 *const sMalePresetName = COMPOUND_STRING("Adam");
 
 static const u8 *const sMalePresetNames[] = {
     COMPOUND_STRING("STU"),
@@ -498,7 +498,7 @@ static const u8 *const sMalePresetNames[] = {
     COMPOUND_STRING("QUINCY")
 };
 
-static const u8 *const sFemalePresetName = COMPOUND_STRING("EVE");
+static const u8 *const sFemalePresetName = COMPOUND_STRING("Eve");
 
 static const u8 *const sFemalePresetNames[] = {
     COMPOUND_STRING("KIMMY"),
