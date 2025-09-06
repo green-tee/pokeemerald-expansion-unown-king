@@ -1358,8 +1358,8 @@ static const struct SpriteFrameImage sPicTable_SkittyOld[] = {
     overworld_frame(gObjectEventPic_SkittyOld, 2, 2, 2),
 };
 
-static const struct SpriteFrameImage sPicTable_PoochyenaOld[] = {
-    overworld_ascending_frames(gObjectEventPic_PoochyenaOld, 4, 4),
+static const struct SpriteFrameImage sPicTable_BagonNPC[] = {
+    overworld_ascending_frames(gObjectEventPic_BagonNPC, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_LugiaBoss[] = {

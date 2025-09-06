@@ -1,119 +1,202 @@
 GraniteCave_StevensRoom_MapScripts::
+# 2 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter
+# 3 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, GraniteCave_StevensRoom_EventScript_TryShowLugia
 	.byte 0
 
-GraniteCave_StevensRoom_EventScript_Steven::
+
+GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter::
+# 7 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	goto_if_set FLAG_SYS_CTRL_OBJ_DELETE, GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter_1
+	return
+
+GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter_1:
+# 8 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 9 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter_3
+# 9 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter_3
+	return
+
+GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter_3:
+# 10 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	removeobject VAR_LAST_TALKED
+	return
+
+
+GraniteCave_StevensRoom_EventScript_TryShowLugia::
+# 16 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	goto_if_unset FLAG_CAUGHT_LUGIA, GraniteCave_StevensRoom_EventScript_TryShowLugia_1
+	return
+
+GraniteCave_StevensRoom_EventScript_TryShowLugia_1:
+# 17 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_HIDE_LUGIA
+	return
+
+
+GraniteCave_StevensRoom_EventScript_Bagon1::
+# 22 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	lock
+# 23 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	faceplayer
-	msgbox GraniteCave_StevensRoom_Text_ImStevenLetterForMe, MSGBOX_DEFAULT
-	setvar VAR_0x8004, ITEM_LETTER
-	call Common_EventScript_PlayerHandedOverTheItem
-	setflag FLAG_DELIVERED_STEVEN_LETTER
-	msgbox GraniteCave_StevensRoom_Text_ThankYouTakeThis, MSGBOX_DEFAULT
-	giveitem ITEM_TM_STEEL_WING
-	call_if_eq VAR_RESULT, FALSE, GraniteCave_StevensRoom_EventScript_BagFull
-	msgbox GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister, MSGBOX_DEFAULT
-	closemessage
-	delay 30
-	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox GraniteCave_StevensRoom_Text_RegisteredSteven, MSGBOX_DEFAULT
-	waitfanfare
-	closemessage
-	delay 30
-	setflag FLAG_REGISTERED_STEVEN_POKENAV
-	msgbox GraniteCave_StevensRoom_Text_IveGotToHurryAlong, MSGBOX_DEFAULT
-	closemessage
-	call_if_eq VAR_FACING, DIR_NORTH, GraniteCave_StevensRoom_EventScript_StevenExitNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, GraniteCave_StevensRoom_EventScript_StevenExitSouth
-	call_if_eq VAR_FACING, DIR_WEST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
-	call_if_eq VAR_FACING, DIR_EAST, GraniteCave_StevensRoom_EventScript_StevenExitWestEast
-	playse SE_EXIT
-	removeobject LOCALID_GRANITE_CAVE_STEVEN
+# 24 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	playmoncry SPECIES_BAGON, CRY_MODE_NORMAL
+# 25 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	waitmoncry
+# 26 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 27 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setwildbattle SPECIES_BAGON, 21, item = ITEM_LUCKY_EGG
+# 28 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	dowildbattle
+# 29 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 30 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	release
-	end
-
-GraniteCave_StevensRoom_EventScript_StevenExitNorth::
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
-	waitmovement 0
 	return
 
-GraniteCave_StevensRoom_EventScript_StevenExitWestEast::
-	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExit
-	waitmovement 0
+
+GraniteCave_StevensRoom_EventScript_Bagon2::
+# 34 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	lock
+# 35 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	faceplayer
+# 36 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	playmoncry SPECIES_BAGON, CRY_MODE_NORMAL
+# 37 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	waitmoncry
+# 38 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 39 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setwildbattle SPECIES_BAGON, 22, item = ITEM_X_DEFENSE
+# 40 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	dowildbattle
+# 41 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 42 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	release
 	return
 
-GraniteCave_StevensRoom_EventScript_StevenExitSouth::
-	applymovement LOCALID_PLAYER, GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit
-	applymovement LOCALID_GRANITE_CAVE_STEVEN, GraniteCave_StevensRoom_Movement_StevenExitSouth
-	waitmovement 0
+
+GraniteCave_StevensRoom_EventScript_Bagon3::
+# 46 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	lock
+# 47 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	faceplayer
+# 48 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	playmoncry SPECIES_BAGON, CRY_MODE_NORMAL
+# 49 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	waitmoncry
+# 50 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 51 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setwildbattle SPECIES_BAGON, 23, item = ITEM_POKE_DOLL
+# 52 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	dowildbattle
+# 53 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 54 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	release
 	return
 
-GraniteCave_StevensRoom_EventScript_BagFull::
-	msgbox GraniteCave_StevensRoom_Text_OhBagIsFull, MSGBOX_DEFAULT
+
+GraniteCave_StevensRoom_EventScript_Bagon4::
+# 58 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	lock
+# 59 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	faceplayer
+# 60 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	playmoncry SPECIES_BAGON, CRY_MODE_NORMAL
+# 61 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	waitmoncry
+# 62 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 63 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setwildbattle SPECIES_BAGON, 24, item = ITEM_RARE_CANDY
+# 64 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	dowildbattle
+# 65 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 66 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	release
 	return
 
-GraniteCave_StevensRoom_Movement_StevenExit:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	delay_8
-	step_end
 
-GraniteCave_StevensRoom_Movement_PlayerTurnTowardExit:
-	delay_16
-	delay_16
-	delay_16
-	walk_in_place_faster_up
-	step_end
+GraniteCave_StevensRoom_EventScript_Bagon5::
+# 70 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	lock
+# 71 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	faceplayer
+# 72 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	playmoncry SPECIES_BAGON, CRY_MODE_NORMAL
+# 73 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	waitmoncry
+# 74 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 75 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setwildbattle SPECIES_BAGON, 25, item = ITEM_FULL_RESTORE
+# 76 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	dowildbattle
+# 77 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 78 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	release
+	return
 
-GraniteCave_StevensRoom_Movement_StevenExitSouth:
-	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_right
-	walk_up
-	walk_up
-	delay_8
-	step_end
 
-GraniteCave_StevensRoom_Text_ImStevenLetterForMe:
-	.string "My name is STEVEN.\p"
-	.string "I'm interested in rare stones,\n"
-	.string "so I travel here and there.\p"
-	.string "Oh?\n"
-	.string "A LETTER for me?$"
+GraniteCave_StevensRoom_EventScript_Lugia::
+# 82 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	lock
+# 83 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	faceplayer
+# 84 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	playmoncry SPECIES_LUGIA, CRY_MODE_NORMAL
+# 85 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	msgbox GraniteCave_StevensRoom_Text_FightLugia, MSGBOX_YESNO
+# 86 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq GraniteCave_StevensRoom_EventScript_Lugia_2
+# 99 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	closemessage
+GraniteCave_StevensRoom_EventScript_Lugia_1:
+# 101 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	release
+	return
 
-GraniteCave_StevensRoom_Text_ThankYouTakeThis:
-	.string "STEVEN: Okay, thank you.\p"
-	.string "You went through all this trouble to\n"
-	.string "deliver that. I need to thank you.\p"
-	.string "Let me see…\n"
-	.string "I'll give you this TM.\p"
-	.string "It contains my favorite move,\n"
-	.string "STEEL WING.$"
+GraniteCave_StevensRoom_EventScript_Lugia_2:
+# 87 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	closemessage
+# 88 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+# 89 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setwildbattle SPECIES_LUGIA, 45, item = ITEM_MAX_REVIVE
+# 90 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	special BattleSetup_StartLegendaryBattle
+# 91 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	waitstate
+# 92 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+# 93 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 94 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq GraniteCave_StevensRoom_EventScript_Lugia_5
+	goto GraniteCave_StevensRoom_EventScript_Lugia_1
 
-GraniteCave_StevensRoom_Text_CouldBecomeChampionLetsRegister:
-	.string "STEVEN: Your POKéMON appear quite\n"
-	.string "capable.\p"
-	.string "If you keep training, you could even\n"
-	.string "become the CHAMPION of the POKéMON\l"
-	.string "LEAGUE one day. That's what I think.\p"
-	.string "I know, since we've gotten to know each\n"
-	.string "other, let's register one another in\l"
-	.string "our POKéNAVS.\p"
-	.string "… … … … … …$"
+GraniteCave_StevensRoom_EventScript_Lugia_5:
+# 95 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	setflag FLAG_CAUGHT_LUGIA
+# 96 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	finditem ITEM_SACRED_ASH, 1
+	goto GraniteCave_StevensRoom_EventScript_Lugia_1
 
-GraniteCave_StevensRoom_Text_RegisteredSteven:
-	.string "Registered STEVEN\n"
-	.string "in the POKéNAV.$"
 
-GraniteCave_StevensRoom_Text_IveGotToHurryAlong:
-	.string "Now, I've got to hurry along.$"
-
-GraniteCave_StevensRoom_Text_OhBagIsFull:
-	.string "Oh, your BAG is full…\n"
-	.string "That's too bad, then.$"
-
+GraniteCave_StevensRoom_Text_FightLugia::
+# 104 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	.string "This Pokémon is staring at you calmly.\n"
+	.string "Will you fight it?$"

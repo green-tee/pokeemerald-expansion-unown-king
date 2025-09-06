@@ -15,20 +15,6 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_GRANITE_CAVE_STEVEN",
-      "graphics_id": "OBJ_EVENT_GFX_STEVEN",
-      "x": 7,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "GraniteCave_StevensRoom_EventScript_Steven",
-      "flag": "FLAG_HIDE_GRANITE_CAVE_STEVEN"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_UNOWN_B",
       "x": 13,
       "y": 7,
@@ -40,6 +26,84 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_FoundUnown_B",
       "flag": "FLAG_FOUND_UNOWN_B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BAGON",
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GraniteCave_StevensRoom_EventScript_Bagon4",
+      "flag": "FLAG_TEMP_1C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BAGON",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GraniteCave_StevensRoom_EventScript_Bagon3",
+      "flag": "FLAG_TEMP_1D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BAGON",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GraniteCave_StevensRoom_EventScript_Bagon1",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BAGON",
+      "x": 13,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GraniteCave_StevensRoom_EventScript_Bagon5",
+      "flag": "FLAG_TEMP_1B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BAGON",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GraniteCave_StevensRoom_EventScript_Bagon2",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LUGIA",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GraniteCave_StevensRoom_EventScript_Lugia",
+      "flag": "FLAG_HIDE_LUGIA"
     }
   ],
   "warp_events": [

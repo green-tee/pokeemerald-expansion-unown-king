@@ -424,6 +424,69 @@ script EventScript_ActivateStrength {
 }
 
 
+script EventScript_FakeBoulder {
+	lockall
+	if (flag(FLAG_BADGE04_GET)) {
+		if (flag(FLAG_SYS_USE_STRENGTH)) {
+			msgbox(Text_StrengthActivated, MSGBOX_DEFAULT)
+            closemessage
+			call(EventScript_FakeBoulderBattle)
+		} else {
+			checkpartymove(MOVE_STRENGTH)
+            if (var(VAR_RESULT) == PARTY_SIZE) {
+				checkpartylearnable(MOVE_STRENGTH)
+                if (var(VAR_RESULT) == PARTY_SIZE) {
+                    msgbox(Text_CantStrength, MSGBOX_DEFAULT)
+                    closemessage
+                } else {
+					call(EventScript_PrepareStrengthFake)
+				}
+			} else {
+				call(EventScript_PrepareStrengthFake)
+			}
+		}
+	} else {
+        msgbox(Text_CantStrength, MSGBOX_DEFAULT)
+        closemessage
+    }
+	releaseall
+}
+
+
+script EventScript_PrepareStrengthFake {
+	setfieldeffectargument(0, VAR_RESULT)
+    msgbox(Text_WantToStrength, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        closemessage
+        dofieldeffect(FLDEFF_USE_STRENGTH)
+        waitstate
+        call(EventScript_ActivateStrength)
+		call(EventScript_FakeBoulderBattle)
+    } else {
+        closemessage
+    }
+}
+
+
+script EventScript_FakeBoulderBattle {
+	playse(SE_PIN)
+	applymovement(VAR_LAST_TALKED, MovementEmoteExclamation)
+	waitmovement(0)
+	waitse
+	playmoncry(SPECIES_CRUSTLE, CRY_MODE_NORMAL)
+	waitmoncry
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	setwildbattle(SPECIES_CRUSTLE, 34, item=ITEM_FOCUS_SASH)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+}
+
+
+movement MovementEmoteExclamation {
+	emote_exclamation_mark
+}
+
+
 //
 // DIVE
 //

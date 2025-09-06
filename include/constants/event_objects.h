@@ -98,7 +98,7 @@
 #define OBJ_EVENT_GFX_MAY_ACRO_BIKE               91
 #define OBJ_EVENT_GFX_MAY_SURFING                 92
 #define OBJ_EVENT_GFX_MAY_FIELD_MOVE              93
-#define OBJ_EVENT_GFX_TRUCK                       94
+#define OBJ_EVENT_GFX_FAKE_BOULDER                94
 #define OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX       95
 #define OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY        96
 #define OBJ_EVENT_GFX_ZIGZAGOON_1                 97
@@ -222,7 +222,7 @@
 #define OBJ_EVENT_GFX_LINK_MAY                   215
 #define OBJ_EVENT_GFX_JUAN                       216
 #define OBJ_EVENT_GFX_SCOTT                      217
-#define OBJ_EVENT_GFX_POOCHYENA                  218
+#define OBJ_EVENT_GFX_BAGON                      218
 #define OBJ_EVENT_GFX_KYOGRE_SIDE                219
 #define OBJ_EVENT_GFX_GROUDON_SIDE               220
 #define OBJ_EVENT_GFX_MYSTERY_GIFT_MAN           221
@@ -407,7 +407,7 @@
 #define OBJ_EVENT_PAL_TAG_GROUDON_REFLECTION      0x111B
 #define OBJ_EVENT_PAL_TAG_UNUSED                  0x111C
 #define OBJ_EVENT_PAL_TAG_SUBMARINE_SHADOW        0x111D
-#define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111E
+#define OBJ_EVENT_PAL_TAG_BAGON                   0x111E
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111F
 #define OBJ_EVENT_PAL_TAG_DARKRAI                 0x1120
 #define OBJ_EVENT_PAL_TAG_LATIOS_LATIAS           0x1121

@@ -411,7 +411,7 @@
 #define P_FAMILY_AMAURA                  P_GEN_6_POKEMON
 #define P_FAMILY_HAWLUCHA                P_GEN_6_POKEMON
 #define P_FAMILY_DEDENNE                 P_GEN_6_POKEMON
-#define P_FAMILY_CARBINK                 P_GEN_6_POKEMON
+#define P_FAMILY_CARBINK                 P_GEN_5_POKEMON // Pretend Carbink is from Gen 5
 #define P_FAMILY_GOOMY                   P_GEN_6_POKEMON
 #define P_FAMILY_KLEFKI                  P_GEN_6_POKEMON
 #define P_FAMILY_PHANTUMP                P_GEN_6_POKEMON

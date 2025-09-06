@@ -1,0 +1,107 @@
+mapscripts GraniteCave_StevensRoom_MapScripts {
+    MAP_SCRIPT_ON_RESUME: GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter
+    MAP_SCRIPT_ON_TRANSITION: GraniteCave_StevensRoom_EventScript_TryShowLugia
+}
+
+script GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_CAUGHT || var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+        }
+    }
+}
+
+script GraniteCave_StevensRoom_EventScript_TryShowLugia {
+    if (!flag(FLAG_CAUGHT_LUGIA)) {
+        clearflag(FLAG_HIDE_LUGIA)
+    }
+}
+
+script GraniteCave_StevensRoom_EventScript_Bagon1 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BAGON, CRY_MODE_NORMAL)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    setwildbattle(SPECIES_BAGON, 21, item=ITEM_LUCKY_EGG)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    release
+}
+
+script GraniteCave_StevensRoom_EventScript_Bagon2 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BAGON, CRY_MODE_NORMAL)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    setwildbattle(SPECIES_BAGON, 22, item=ITEM_X_DEFENSE)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    release
+}
+
+script GraniteCave_StevensRoom_EventScript_Bagon3 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BAGON, CRY_MODE_NORMAL)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    setwildbattle(SPECIES_BAGON, 23, item=ITEM_POKE_DOLL)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    release
+}
+
+script GraniteCave_StevensRoom_EventScript_Bagon4 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BAGON, CRY_MODE_NORMAL)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    setwildbattle(SPECIES_BAGON, 24, item=ITEM_RARE_CANDY)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    release
+}
+
+script GraniteCave_StevensRoom_EventScript_Bagon5 {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BAGON, CRY_MODE_NORMAL)
+    waitmoncry
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    setwildbattle(SPECIES_BAGON, 25, item=ITEM_FULL_RESTORE)
+	dowildbattle
+	clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    release
+}
+
+script GraniteCave_StevensRoom_EventScript_Lugia {
+    lock
+    faceplayer
+    playmoncry(SPECIES_LUGIA, CRY_MODE_NORMAL)
+    msgbox(GraniteCave_StevensRoom_Text_FightLugia, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        closemessage
+        setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+        setwildbattle(SPECIES_LUGIA, 45, item=ITEM_MAX_REVIVE)
+        special(BattleSetup_StartLegendaryBattle)
+        waitstate
+        clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+            setflag(FLAG_CAUGHT_LUGIA)
+            finditem(ITEM_SACRED_ASH, 1)
+        }
+    } else {
+        closemessage
+    }
+    release
+}
+
+text GraniteCave_StevensRoom_Text_FightLugia {
+    "This Pokémon is staring at you calmly.\n"
+    "Will you fight it?"
+}

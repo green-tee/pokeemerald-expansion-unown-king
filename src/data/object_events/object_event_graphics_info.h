@@ -1841,9 +1841,9 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EnemyZigzagoon = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Poochyena = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bagon = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_POOCHYENA,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -1856,7 +1856,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Poochyena = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_PoochyenaOld,
+    .images = sPicTable_BagonNPC,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

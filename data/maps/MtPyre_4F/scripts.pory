@@ -1,0 +1,20 @@
+mapscripts MtPyre_4F_MapScripts {
+    MAP_SCRIPT_ON_RESUME: MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterBattle
+    MAP_SCRIPT_ON_TRANSITION: MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterWarp
+}
+
+script MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterBattle {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_CAUGHT || var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+        }
+    }
+}
+
+script MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterWarp {
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) == 4 && var(VAR_TEMP_1) == 5) {
+        setflag(FLAG_TEMP_1C) // Hide fake boulder
+    }
+}
