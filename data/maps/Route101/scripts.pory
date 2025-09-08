@@ -41,7 +41,7 @@ text Route101_Text_RestOfTheStory {
 text Route101_Text_ThereAre26Unown {
     "There are 26 Unown specimen\n"
     "hiding in the Temple.\l"
-    "They will help you decrypting messages\l"
+    "They will help you decrypt messages\l"
     "written in an unintelligible script.\p"
     "Find them all!"
 }
