@@ -47,3 +47,20 @@ MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterWarp_2:
 	goto_if_eq MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterWarp_1
 	return
 
+
+MtPyre_4F_EventScript_Inscription::
+# 23 "data/maps/MtPyre_4F/scripts.pory"
+	lock
+# 24 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_DefeatTheDarkness, MSGBOX_UNOWNCRYPT
+# 25 "data/maps/MtPyre_4F/scripts.pory"
+	closemessage
+# 26 "data/maps/MtPyre_4F/scripts.pory"
+	release
+	return
+
+
+MtPyre_4F_Text_DefeatTheDarkness::
+# 29 "data/maps/MtPyre_4F/scripts.pory"
+	.string "Those who wish to see clear\n"
+	.string "must put out the darkness.$"

@@ -1,0 +1,20 @@
+mapscripts MeteorFalls_StevensCave_MapScripts {}
+
+script MeteorFalls_StevensCave_EventScript_Tornadus {
+    lock
+    release
+}
+
+script MeteorFalls_StevensCave_EventScript_Inscription {
+    lock
+    msgbox(MeteorFalls_StevensCave_Text_NeedFly, MSGBOX_UNOWNCRYPT)
+    release
+}
+
+text MeteorFalls_StevensCave_Text_NeedFly {
+    "Those who can soar will reach\n"
+    "the place where the Unown King\l"
+    "is imprisoned.\p"
+    "The master of flight appears\n"
+    "when the Melody of Awakening is heard."
+}

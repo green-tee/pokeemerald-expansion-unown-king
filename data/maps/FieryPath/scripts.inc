@@ -25,3 +25,23 @@ FieryPath_EventScript_TryRemoveFakeBoulder_3:
 	removeobject VAR_LAST_TALKED
 	return
 
+
+FieryPath_EventScript_Inscription::
+# 15 "data/maps/FieryPath/scripts.pory"
+	lock
+# 16 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_WaysOfWater, MSGBOX_UNOWNCRYPT
+# 17 "data/maps/FieryPath/scripts.pory"
+	closemessage
+# 18 "data/maps/FieryPath/scripts.pory"
+	release
+	return
+
+
+FieryPath_Text_WaysOfWater::
+# 21 "data/maps/FieryPath/scripts.pory"
+	.string "Only those who truly master the ways\n"
+	.string "of water can explore this temple\l"
+	.string "to the fullest.\p"
+	.string "This hallway is connected to one\n"
+	.string "of the aquatic caverns.$"

@@ -1,0 +1,26 @@
+mapscripts MtPyre_2F_MapScripts {}
+
+script MtPyre_2F_EventScript_Inscription {
+    lock
+    msgbox(MtPyre_2F_Text_UnownList, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text MtPyre_2F_Text_UnownList {
+    "K, C and J - This garden\n"
+    "T and O - The antechamber\p"
+    "M and F - The western wing\n"
+    "V and G - The eastern wing\p"
+    "I - The western hallway\n"
+    "H and Y - The eastern hallway\p"
+    "R, A and E - The longest hallway\n"
+    "B - The sanctuary of dragons\p"
+    "D and S - Where the truth is revealed\n"
+    "L - Shrouded in the deepest dark\p"
+    "Z and P - At the Pond of Grace\n"
+    "W and X - At the Eternal Pond\p"
+    "Q - In the intricate waters\n"
+    "U - Below the longest hallway\p"
+    "N - The bugs' nesting place"
+}

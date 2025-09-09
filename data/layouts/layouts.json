@@ -5164,12 +5164,12 @@
     {
       "id": "LAYOUT_METEOR_FALLS_STEVENS_CAVE",
       "name": "MeteorFalls_StevensCave_Layout",
-      "width": 30,
-      "height": 32,
+      "width": 17,
+      "height": 30,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_MeteorFalls",
+      "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/MeteorFalls_StevensCave/border.bin",
       "blockdata_filepath": "data/layouts/MeteorFalls_StevensCave/map.bin"
     },

@@ -1,69 +1,45 @@
 MtPyre_6F_MapScripts::
+# 2 "data/maps/MtPyre_6F/scripts.pory"
+	map_script MAP_SCRIPT_ON_RESUME, MtPyre_6F_TryRemoveFakeBoulder
 	.byte 0
 
-MtPyre_6F_EventScript_Valerie::
-	trainerbattle_single TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieIntro, MtPyre_6F_Text_ValerieDefeat, MtPyre_6F_EventScript_RegisterValerie
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MtPyre_6F_EventScript_RematchValerie
-	msgbox MtPyre_6F_Text_ValeriePostBattle, MSGBOX_DEFAULT
+
+MtPyre_6F_TryRemoveFakeBoulder::
+# 6 "data/maps/MtPyre_6F/scripts.pory"
+	goto_if_set FLAG_SYS_CTRL_OBJ_DELETE, MtPyre_6F_TryRemoveFakeBoulder_1
+	return
+
+MtPyre_6F_TryRemoveFakeBoulder_1:
+# 7 "data/maps/MtPyre_6F/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 8 "data/maps/MtPyre_6F/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq MtPyre_6F_TryRemoveFakeBoulder_3
+# 8 "data/maps/MtPyre_6F/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq MtPyre_6F_TryRemoveFakeBoulder_3
+	return
+
+MtPyre_6F_TryRemoveFakeBoulder_3:
+# 9 "data/maps/MtPyre_6F/scripts.pory"
+	removeobject VAR_LAST_TALKED
+	return
+
+
+MtPyre_6F_EventScript_Inscription::
+# 15 "data/maps/MtPyre_6F/scripts.pory"
+	lock
+# 16 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_RockSmashTip, MSGBOX_UNOWNCRYPT
+# 17 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+# 18 "data/maps/MtPyre_6F/scripts.pory"
 	release
-	end
+	return
 
-MtPyre_6F_EventScript_RegisterValerie::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox MtPyre_6F_Text_ValerieRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_VALERIE_1
-	release
-	end
 
-MtPyre_6F_EventScript_RematchValerie::
-	trainerbattle_rematch TRAINER_VALERIE_1, MtPyre_6F_Text_ValerieRematchIntro, MtPyre_6F_Text_ValerieRematchDefeat
-	msgbox MtPyre_6F_Text_ValeriePostRematch, MSGBOX_AUTOCLOSE
-	end
-
-MtPyre_6F_EventScript_Cedric::
-	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat
-	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-MtPyre_6F_Text_ValerieIntro:
-	.string "When I'm here…\n"
-	.string "A curious power flows into me…$"
-
-MtPyre_6F_Text_ValerieDefeat:
-	.string "The power is ebbing away…$"
-
-MtPyre_6F_Text_ValeriePostBattle:
-	.string "Perhaps the power is from the spirits\n"
-	.string "of POKéMON in fitful sleep here…$"
-
-MtPyre_6F_Text_ValerieRegister:
-	.string "Fufufu… I lost the match, but…\n"
-	.string "I have this little ability…\p"
-	.string "Without ever laying my hands on\n"
-	.string "your POKéNAV… Hiyah!$"
-
-MtPyre_6F_Text_ValerieRematchIntro:
-	.string "Behind you…\n"
-	.string "What is it…$"
-
-MtPyre_6F_Text_ValerieRematchDefeat:
-	.string "Something faded away…$"
-
-MtPyre_6F_Text_ValeriePostRematch:
-	.string "The POKéMON at rest here…\n"
-	.string "Sometimes, they play…$"
-
-MtPyre_6F_Text_CedricIntro:
-	.string "Have you lost your bearings?\n"
-	.string "Have no fear for I am here!$"
-
-MtPyre_6F_Text_CedricDefeat:
-	.string "Weren't you lost?$"
-
-MtPyre_6F_Text_CedricPostBattle:
-	.string "I had this feeling that a lost TRAINER\n"
-	.string "would be panicked and easy to beat.\p"
-	.string "It's dirty and I won't try it again…$"
-
+MtPyre_6F_Text_RockSmashTip::
+# 21 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Those unwilling to take the bugs\n"
+	.string "and the dragons from their haven\l"
+	.string "can find luck in the rocks.$"

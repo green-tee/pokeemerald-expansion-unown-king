@@ -10,3 +10,18 @@ script FieryPath_EventScript_TryRemoveFakeBoulder {
         }
     }
 }
+
+script FieryPath_EventScript_Inscription {
+    lock
+    msgbox(FieryPath_Text_WaysOfWater, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text FieryPath_Text_WaysOfWater {
+    "Only those who truly master the ways\n"
+    "of water can explore this temple\l"
+    "to the fullest.\p"
+    "This hallway is connected to one\n"
+    "of the aquatic caverns."
+}

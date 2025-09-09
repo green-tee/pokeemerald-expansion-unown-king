@@ -108,7 +108,7 @@ Route101_Text_ThereAre26Unown::
 # 41 "data/maps/Route101/scripts.pory"
 	.string "There are 26 Unown specimen\n"
 	.string "hiding in the Temple.\l"
-	.string "They will help you decrypting messages\l"
+	.string "They will help you decrypt messages\l"
 	.string "written in an unintelligible script.\p"
 	.string "Find them all!$"
 

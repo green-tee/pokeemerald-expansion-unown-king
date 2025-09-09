@@ -1,0 +1,20 @@
+mapscripts MtPyre_5F_MapScripts {}
+
+script MtPyre_5F_EventScript_Inscription {
+    lock
+    msgbox(MtPyre_5F_Text_WeHopeTheBadKingNeverRecovers, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text MtPyre_5F_Text_WeHopeTheBadKingNeverRecovers {
+    "We, the Imprisoners, hope with all\n"
+    "our heart that the Bad King never\l"
+    "recover from the tragic confrontation\l"
+    "with the Good King.\p"
+    "Its servants, who had weakened the\n"
+    "Good King, were exhausted, yet almost\l"
+    "unharmed.\p"
+    "Our allies, on the other hand, were\n"
+    "able to wound the Bad King."
+}

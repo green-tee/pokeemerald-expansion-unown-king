@@ -1,0 +1,45 @@
+mapscripts GraniteCave_B1F_MapScripts {}
+
+script GraniteCave_B1F_Inscription {
+    lock
+    if (!flag(FLAG_SYS_USE_FLASH)) {
+        msgbox(GraniteCave_B1F_Text_TooDark, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(GraniteCave_B1F_Text_UnownKingStory, MSGBOX_UNOWNCRYPT)
+        closemessage
+    }
+    release
+}
+
+text GraniteCave_B1F_Text_TooDark {
+    "It's too dark to read anything."
+}
+
+text GraniteCave_B1F_Text_UnownKingStory {
+    "Some humans warred their own equals.\n"
+    "Through the centuries, the wars never\l"
+    "stopped.\p"
+    "The destruction caused by those humans\n"
+    "angered the Unown King, who succumbed\l"
+    "to the same craze.\p"
+    "It attempted to eradicate all humans.\p"
+    "However, there existed humans who\l"
+    "loathed bloodshed.\p"
+    "The Unown King saw the kind,\n"
+    "the poor, and the just\l"
+    "and could not ignore what it saw.\p"
+    "Unknowingly, the Unown King split in\n"
+    "two halves: the Good and the Bad.\p"
+    "The Good rejected the Bad's desire to\n"
+    "exterminate all human beings.\p"
+    "The two Kings clashed.\n"
+    "The Good perished.\p"
+    "The Bad, however, was weakened in the\n"
+    "battle.\p"
+    "It became weak enough\n"
+    "for the innocent humans to conquer it\l"
+    "and seal it into a temple,\l"
+    "till the day when an unfazed soul\l"
+    "may put it to rest for good."
+}

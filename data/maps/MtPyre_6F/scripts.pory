@@ -1,0 +1,25 @@
+mapscripts MtPyre_6F_MapScripts {
+    MAP_SCRIPT_ON_RESUME: MtPyre_6F_TryRemoveFakeBoulder
+}
+
+script MtPyre_6F_TryRemoveFakeBoulder {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_CAUGHT || var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+        }
+    }
+}
+
+script MtPyre_6F_EventScript_Inscription {
+    lock
+    msgbox(MtPyre_6F_Text_RockSmashTip, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text MtPyre_6F_Text_RockSmashTip {
+    "Those unwilling to take the bugs\n"
+    "and the dragons from their haven\l"
+    "can find luck in the rocks."
+}

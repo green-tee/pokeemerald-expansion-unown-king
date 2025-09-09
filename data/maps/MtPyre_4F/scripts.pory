@@ -18,3 +18,15 @@ script MtPyre_4F_EventScript_TryRemoveFakeBoulderAfterWarp {
         setflag(FLAG_TEMP_1C) // Hide fake boulder
     }
 }
+
+script MtPyre_4F_EventScript_Inscription {
+    lock
+    msgbox(MtPyre_4F_Text_DefeatTheDarkness, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text MtPyre_4F_Text_DefeatTheDarkness {
+    "Those who wish to see clear\n"
+    "must put out the darkness."
+}

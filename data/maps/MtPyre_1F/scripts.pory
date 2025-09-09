@@ -1,0 +1,13 @@
+mapscripts MtPyre_1F_MapScripts {}
+
+script MtPyre_1F_EventScript_Inscription {
+    lock
+    msgbox(MtPyre_1F_Text_UnownKingImprisoned, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text MtPyre_1F_Text_UnownKingImprisoned {
+    "This temple keeps the Unown King\n"
+    "imprisoned."
+}

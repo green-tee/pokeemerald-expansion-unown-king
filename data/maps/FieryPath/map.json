@@ -327,5 +327,30 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 49,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "FieryPath_EventScript_Inscription"
+    },
+    {
+      "type": "sign",
+      "x": 50,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "FieryPath_EventScript_Inscription"
+    },
+    {
+      "type": "sign",
+      "x": 51,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "FieryPath_EventScript_Inscription"
+    }
+  ]
 }

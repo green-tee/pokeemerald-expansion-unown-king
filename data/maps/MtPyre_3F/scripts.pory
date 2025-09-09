@@ -1,0 +1,17 @@
+mapscripts MtPyre_3F_MapScripts {}
+
+script MtPyre_3F_EventScript_Inscription {
+    lock
+    msgbox(MtPyre_3F_Text_TruthRevealed, MSGBOX_UNOWNCRYPT)
+    closemessage
+    release
+}
+
+text MtPyre_3F_Text_TruthRevealed {
+    "In this room, the truth about\n"
+    "the Unown King is unveiled.\p"
+    "Humans came into existence in its\n"
+    "shape after its wish.\p"
+    "Oh, how much we, the Imprisoners,\n"
+    "pity what has become of it!"
+}
