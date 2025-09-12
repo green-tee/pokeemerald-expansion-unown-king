@@ -1839,6 +1839,8 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
     dest->maxHP = 0;
     value = MAIL_NONE;
     SetMonData(dest, MON_DATA_MAIL, &value);
+    value = FALSE;
+    SetMonData(dest, MON_DATA_IS_BOSS, &value); // I hard-coded it, but there should never be any need for it to be TRUE
     value = GetBoxMonData(&dest->box, MON_DATA_HP_LOST);
     CalculateMonStats(dest);
     value = GetMonData(dest, MON_DATA_MAX_HP) - value;

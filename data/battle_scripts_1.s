@@ -4078,6 +4078,7 @@ BattleScript_EffectPerishSong::
 BattleScript_PerishSongLoop::
 	jumpifblockedbysoundproof BS_TARGET, BattleScript_PerishSongBlocked
 	jumpifpranksterblocked BS_TARGET, BattleScript_PerishSongNotAffected
+	jumpifbossblocked BS_TARGET, BattleScript_PerishSongNotAffected
 BattleScript_PerishSongLoopIncrement::
 	addbyte gBattlerTarget, 1
 	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_PerishSongLoop

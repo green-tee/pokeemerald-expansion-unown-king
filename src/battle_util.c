@@ -11354,11 +11354,13 @@ void ClearDamageCalcResults(void)
     gBattleStruct->numSpreadTargets = 0;
 }
 
-bool32 DoesDestinyBondFail(u32 battler)
+bool32 DoesDestinyBondFail(u32 battlerAttacker, u32 battlerTarget)
 {
     if (B_DESTINY_BOND_FAIL >= GEN_7
-        && GetMoveEffect(gLastLandedMoves[battler]) == EFFECT_DESTINY_BOND
-        && GetMoveEffect(gLastResultingMoves[battler]) == EFFECT_DESTINY_BOND)
+        && GetMoveEffect(gLastLandedMoves[battlerAttacker]) == EFFECT_DESTINY_BOND
+        && GetMoveEffect(gLastResultingMoves[battlerAttacker]) == EFFECT_DESTINY_BOND)
+        return TRUE;
+    if (GetMonData(GetBattlerMon(battlerTarget), MON_DATA_IS_BOSS, NULL))
         return TRUE;
     return FALSE;
 }

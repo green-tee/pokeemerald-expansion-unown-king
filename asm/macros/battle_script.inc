@@ -2241,6 +2241,11 @@
 	.4byte \jumpInstr
 	.endm
 
+	.macro jumpifbossblocked battler: req, jumpInstr: req
+	various \battler, VARIOUS_JUMP_IF_BOSS_BLOCKED
+	.4byte \jumpInstr
+	.endm
+
 	.macro jumpifteamhealthy battler:req, jumpInstr:req
 	various \battler, VARIOUS_JUMP_IF_TEAM_HEALTHY
 	.4byte \jumpInstr

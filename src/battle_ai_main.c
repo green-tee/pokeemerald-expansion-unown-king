@@ -2160,7 +2160,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_DESTINY_BOND:
-            if (DoesDestinyBondFail(battlerAtk))
+            if (DoesDestinyBondFail(battlerAtk, battlerDef))
                 ADJUST_SCORE(-10);
             if (gBattleMons[battlerDef].status2 & STATUS2_DESTINY_BOND)
                 ADJUST_SCORE(-10);

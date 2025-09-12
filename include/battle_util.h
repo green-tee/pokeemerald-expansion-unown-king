@@ -374,7 +374,7 @@ void TryDeactivateSleepClause(u32 battlerSide, u32 indexInParty);
 bool32 IsSleepClauseActiveForSide(u32 battlerSide);
 bool32 IsSleepClauseEnabled();
 void ClearDamageCalcResults(void);
-u32 DoesDestinyBondFail(u32 battler);
+u32 DoesDestinyBondFail(u32 battlerAttacker, u32 battlerTarget);
 bool32 IsMoveEffectBlockedByTarget(u32 ability);
 bool32 IsPursuitTargetSet(void);
 void ClearPursuitValuesIfSet(u32 battler);

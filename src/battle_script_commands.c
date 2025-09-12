@@ -11413,6 +11413,15 @@ static void Cmd_various(void)
             gBattlescriptCurrInstr = cmd->nextInstr;
         return;
     }
+    case VARIOUS_JUMP_IF_BOSS_BLOCKED:
+    {
+        VARIOUS_ARGS(const u8 *jumpInstr);
+        if (GetMonData(GetBattlerMon(battler), MON_DATA_IS_BOSS, NULL))
+            gBattlescriptCurrInstr = cmd->jumpInstr;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        return;
+    }
     case VARIOUS_TRY_TO_CLEAR_PRIMAL_WEATHER:
     {
         bool8 shouldNotClear = FALSE;
@@ -13039,7 +13048,12 @@ static void Cmd_tryKO(void)
             endured = AFFECTION_ENDURED;
     }
 
-    if (targetAbility == ABILITY_STURDY)
+    if (GetMonData(GetBattlerMon(gBattlerTarget), MON_DATA_IS_BOSS, NULL)) {
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_KO_UNAFFECTED;
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    else if (targetAbility == ABILITY_STURDY)
     {
         gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
         gLastUsedAbility = ABILITY_STURDY;
@@ -13052,16 +13066,20 @@ static void Cmd_tryKO(void)
                 && gDisableStructs[gBattlerTarget].battlerWithSureHit == gBattlerAttacker)
             || GetBattlerAbility(gBattlerAttacker) == ABILITY_NO_GUARD
             || targetAbility == ABILITY_NO_GUARD)
-            && gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
+            && (GetMonData(GetBattlerMon(gBattlerAttacker), MON_DATA_IS_BOSS, NULL) || gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level))
         {
             lands = TRUE;
         }
         else
         {
-            u16 odds = GetMoveAccuracy(gCurrentMove) + (gBattleMons[gBattlerAttacker].level - gBattleMons[gBattlerTarget].level);
+            u16 odds = GetMoveAccuracy(gCurrentMove);
+            if (gBattleMons[gBattlerAttacker].level - gBattleMons[gBattlerTarget].level >= 0)
+                odds += (gBattleMons[gBattlerAttacker].level - gBattleMons[gBattlerTarget].level);
             if (B_SHEER_COLD_ACC >= GEN_7 && gCurrentMove == MOVE_SHEER_COLD && !IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_ICE))
                 odds -= 10;
-            if (RandomPercentage(RNG_ACCURACY, odds) && gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
+            if (RandomPercentage(RNG_ACCURACY, odds) && (
+                GetMonData(GetBattlerMon(gBattlerAttacker), MON_DATA_IS_BOSS, NULL) || gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
+            )
                 lands = TRUE;
         }
 
@@ -13093,7 +13111,7 @@ static void Cmd_tryKO(void)
         else
         {
             gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
-            if (gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
+            if (GetMonData(GetBattlerMon(gBattlerAttacker), MON_DATA_IS_BOSS, NULL) || gBattleMons[gBattlerAttacker].level >= gBattleMons[gBattlerTarget].level)
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_KO_MISS;
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_KO_UNAFFECTED;
@@ -13844,7 +13862,7 @@ static void Cmd_trysetdestinybond(void)
     {
         gBattlescriptCurrInstr = BattleScript_MoveBlockedByDynamax;
     }
-    else if (DoesDestinyBondFail(gBattlerAttacker))
+    else if (DoesDestinyBondFail(gBattlerAttacker, gBattlerTarget))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
@@ -14115,7 +14133,9 @@ static void Cmd_trysetperishsong(void)
         if (gStatuses3[i] & STATUS3_PERISH_SONG
             || GetBattlerAbility(i) == ABILITY_SOUNDPROOF
             || BlocksPrankster(gCurrentMove, gBattlerAttacker, i, TRUE)
-            || gStatuses3[i] & STATUS3_COMMANDER)
+            || gStatuses3[i] & STATUS3_COMMANDER
+            || GetMonData(GetBattlerMon(i), MON_DATA_IS_BOSS, NULL)
+        )
         {
             notAffectedCount++;
         }
@@ -15137,12 +15157,13 @@ static void Cmd_setdamagetohealthdifference(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    if (GetNonDynamaxHP(gBattlerTarget) <= gBattleMons[gBattlerAttacker].hp)
-    {
+    if (GetMonData(GetBattlerMon(gBattlerTarget), MON_DATA_IS_BOSS, NULL) && gBattleMons[gBattlerTarget].hp * 5 > gBattleMons[gBattlerTarget].maxHP) {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
-    else
-    {
+    else if (GetNonDynamaxHP(gBattlerTarget) <= gBattleMons[gBattlerAttacker].hp) {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+    else {
         gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxHP(gBattlerTarget) - gBattleMons[gBattlerAttacker].hp;
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
