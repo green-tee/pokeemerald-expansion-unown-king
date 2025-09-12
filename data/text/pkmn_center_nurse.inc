@@ -9,6 +9,10 @@ gText_CrystalHeal::
 	.string "The Blue Crystal fully healed\n"
 	.string "your party.$"
 
+gText_CrystalFaint::
+	.string "This Crystal is all faint\n"
+	.string "and it cannot do anything.$"
+
 gText_IllTakeYourPkmn::
 	.string "Okay, I'll take your POKéMON\n"
 	.string "for a few seconds.$"

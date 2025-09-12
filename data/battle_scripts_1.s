@@ -2860,6 +2860,8 @@ BattleScript_EffectDarkVoid::
 .if B_DARK_VOID_FAIL >= GEN_7
 	jumpifspecies BS_ATTACKER, SPECIES_DARKRAI, BattleScript_EffectNonVolatileStatus
 	goto BattleScript_PokemonCantUseTheMove
+.else
+	goto BattleScript_EffectNonVolatileStatus
 .endif
 
 BattleScript_TerrainPreventsEnd2::

@@ -145,3 +145,10 @@ script EventScript_CrystalHeal {
     closemessage
     release
 }
+
+script EventScript_CrystalFaint {
+	lock
+	msgbox(gText_CrystalFaint, MSGBOX_DEFAULT)
+	closemessage
+	release
+}

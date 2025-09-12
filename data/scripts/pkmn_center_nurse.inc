@@ -286,3 +286,15 @@ EventScript_CrystalHeal::
 	release
 	return
 
+
+EventScript_CrystalFaint::
+# 150 "data/scripts/pkmn_center_nurse.pory"
+	lock
+# 151 "data/scripts/pkmn_center_nurse.pory"
+	msgbox gText_CrystalFaint, MSGBOX_DEFAULT
+# 152 "data/scripts/pkmn_center_nurse.pory"
+	closemessage
+# 153 "data/scripts/pkmn_center_nurse.pory"
+	release
+	return
+

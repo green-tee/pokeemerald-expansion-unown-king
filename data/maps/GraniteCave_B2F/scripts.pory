@@ -1,0 +1,34 @@
+mapscripts GraniteCave_B2F_MapScripts {
+    MAP_SCRIPT_ON_RESUME: GraniteCave_B2F_EventScript_TryRemoveDarkrai
+}
+
+script GraniteCave_B2F_EventScript_TryRemoveDarkrai {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+        }
+    }
+}
+
+script GraniteCave_B2F_EventScript_Darkrai {
+    lock
+    faceplayer
+    playmoncry(SPECIES_DARKRAI, CRY_MODE_NORMAL)
+    msgbox(GraniteCave_B2F_Text_Darkrai, MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    createmon(1, 0, SPECIES_DARKRAI, 30, move1=MOVE_DARK_VOID, move2=MOVE_NIGHTMARE, move3=MOVE_DREAM_EATER, move4=MOVE_DARK_PULSE, abilityNum=0, isShiny=FALSE)
+    special(BattleSetup_StartBossBattle)
+    waitstate
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    finditem(ITEM_HM_FLASH)
+    setflag(FLAG_BADGE02_GET)
+    release
+}
+
+text GraniteCave_B2F_Text_Darkrai {
+    "Gasp!\n"
+    "Something's comin out of the dark!"
+}

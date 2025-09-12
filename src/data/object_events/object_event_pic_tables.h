@@ -350,18 +350,6 @@ static const struct SpriteFrameImage sPicTable_PushableBoulder[] = {
     obj_frame_tiles(gObjectEventPic_PushableBoulder),
 };
 
-static const struct SpriteFrameImage sPicTable_MrBrineysBoat[] = {
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 1),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 2),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 0),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 1),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 1),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 2),
-    overworld_frame(gObjectEventPic_MrBrineysBoat, 4, 4, 2),
-};
-
 static const struct SpriteFrameImage sPicTable_Truck[] = {
     obj_frame_tiles(gObjectEventPic_Truck),
 };
@@ -443,6 +431,25 @@ static const struct SpriteFrameImage sPicTable_MayFieldMove[] = {
 
 static const struct SpriteFrameImage sPicTable_Cameraman[] = {
     overworld_ascending_frames(gObjectEventPic_Cameraman, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_CrystalFaint[] = {
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  0),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  1),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  2),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  3),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  4),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  5),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  6),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  7),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  8),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4,  9),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4, 10),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4, 11),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4, 12),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4, 13),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4, 14),
+    overworld_frame(gObjectEventPic_CrystalFaint, 2, 4, 15),
 };
 
 static const struct SpriteFrameImage sPicTable_CrystalHeal[] = {

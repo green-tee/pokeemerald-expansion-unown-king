@@ -1,8 +1,42 @@
-mapscripts MeteorFalls_StevensCave_MapScripts {}
+mapscripts MeteorFalls_StevensCave_MapScripts {
+    MAP_SCRIPT_ON_RESUME: MeteorFalls_StevensCave_TryRemoveTornadus
+}
+
+script MeteorFalls_StevensCave_TryRemoveTornadus {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+        }
+    }
+}
 
 script MeteorFalls_StevensCave_EventScript_Tornadus {
     lock
+    faceplayer
+    playmoncry(SPECIES_TORNADUS, CRY_MODE_NORMAL)
+    //applymovement(LOCALID_TORNADUS, Common_Movement_FacePlayer)
+    //waitmovement(LOCALID_TORNADUS)
+    msgbox(MeteorFalls_StevensCave_Text_Tornadus, MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    createmon(1, 0, SPECIES_TORNADUS, 45, move1=MOVE_SWAGGER, move2=MOVE_AIR_SLASH, move3=MOVE_CRUNCH, move4=MOVE_EXTRASENSORY, abilityNum=0, isShiny=FALSE)
+    special(BattleSetup_StartBossBattle)
+    waitstate
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    finditem(ITEM_HM_FLY, 1)
+    setflag(FLAG_BADGE06_GET)
+    clearflag(FLAG_HIDE_LUGIA)
     release
+}
+
+text MeteorFalls_StevensCave_Text_Tornadus {
+    "This Pokémon looks annoyed.\n"
+    "Did the flute lure it here?\p"
+    "…\p"
+    "Oh!\n"
+    "It's about to attack!"
 }
 
 script MeteorFalls_StevensCave_EventScript_Inscription {

@@ -110,7 +110,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE104_BOAT",
-      "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+      "graphics_id": "OBJ_EVENT_GFX_CRYSTAL_FAINT",
       "x": 12,
       "y": 54,
       "elevation": 1,

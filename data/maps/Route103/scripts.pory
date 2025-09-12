@@ -1,61 +1,37 @@
-mapscripts Route103_MapScripts {}
-
-script Route103_EventScript_ImHereForTesting {
-    lock
-    faceplayer
-    msgbox(Route103_Text_ImHereForTesting, MSGBOX_DEFAULT)
-    closemessage
-    release
+mapscripts Route103_MapScripts {
+    MAP_SCRIPT_ON_RESUME: Route103_EventScript_TryRemoveMilotic
 }
 
-text Route103_Text_ImHereForTesting {
-    "I'm here for testing purposes."
-}
-
-script Route103_EventScript_TestUnowncrypt {
-    lock
-    faceplayer
-    msgbox(Route103_Text_TestUnowncrypt, MSGBOX_UNOWNCRYPT)
-    closemessage
-    release
-}
-
-text Route103_Text_TestUnowncrypt {
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ\n"
-    "abcdefghijklmnopqrstuvwxyz\p"
-    "0123456789\p"
-    "Never gonna give you up,\n"
-    "Never gonna let you down,\l"
-    "Never gonna run around\l"
-    "And desert you."
-}
-
-script Route103_EventScript_TestMiloticBossBattle {
-    lock
-    faceplayer
-    msgbox(Route103_Text_StartingMiloticBattle, MSGBOX_YESNO)
-    if (var(VAR_RESULT) == YES) {
-        closemessage
-        createmon(1, 0, SPECIES_MILOTIC, 30, move1=MOVE_DRAINING_KISS, move2=MOVE_WATER_PULSE, move3=MOVE_DRAGON_TAIL, move4=MOVE_AVALANCHE, abilityNum=0, isShiny=FALSE)
-        #setwildbattle(SPECIES_MILOTIC, 30)
-        special(BattleSetup_StartBossBattle)
-        waitstate
-    } else {
-        closemessage
-        setwildbattle(SPECIES_MILOTIC, 30)
-        special(BattleSetup_StartLegendaryBattle)
-        waitstate
+script Route103_EventScript_TryRemoveMilotic {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+        }
     }
-    msgbox(Route103_Text_MiloticBattleOver, MSGBOX_DEFAULT)
+}
+
+script Route103_EventScript_Milotic {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MILOTIC, CRY_MODE_NORMAL)
+    msgbox(Route103_Text_Milotic, MSGBOX_DEFAULT)
+    waitmoncry
     closemessage
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    createmon(1, 0, SPECIES_MILOTIC, 35, move1=MOVE_DRAINING_KISS, move2=MOVE_WATER_PULSE, move3=MOVE_DRAGON_TAIL, move4=MOVE_AVALANCHE, abilityNum=0, isShiny=FALSE)
+    special(BattleSetup_StartBossBattle)
+    waitstate
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    finditem(ITEM_HM_DIVE)
+    setflag(FLAG_BADGE07_GET)
     release
 }
 
-text Route103_Text_StartingMiloticBattle {
-    "Starting battle against Milotic.\n"
-    "Do you want to fight the hostile version?"
-}
-
-text Route103_Text_MiloticBattleOver {
-    "Milotic battle over."
+text Route103_Text_Milotic {
+    "Wow!\n"
+    "This Pokémon is gorgeous!\p"
+    "…\p"
+    "Oh no!\n"
+    "It's hostile!"
 }

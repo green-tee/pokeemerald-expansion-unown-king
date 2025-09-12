@@ -1,0 +1,35 @@
+mapscripts Underwater_Route134_MapScripts {
+    MAP_SCRIPT_ON_RESUME: Underwater_Route134_EventScript_TryRemoveKyogreAndUpdateCrystals
+}
+
+script Underwater_Route134_EventScript_TryRemoveKyogreAndUpdateCrystals {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(VAR_LAST_TALKED)
+            clearflag(FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_HEAL)
+            setflag(FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_FAINT)
+        }
+    }
+}
+
+script Underwater_Route134_EventScript_Kyogre {
+    lock
+    faceplayer
+    playmoncry(SPECIES_KYOGRE, CRY_MODE_NORMAL)
+    msgbox(Underwater_Route134_Text_Kyogre, MSGBOX_DEFAULT)
+    waitmoncry
+    closemessage
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    createmon(1, 0, SPECIES_KYOGRE, 42, move1=MOVE_WATER_SPOUT, move2=MOVE_ANCIENT_POWER, move3=MOVE_ICE_BEAM, move4=MOVE_SHEER_COLD, abilityNum=0, isShiny=FALSE)
+    special(BattleSetup_StartBossBattle)
+    waitstate
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    finditem(ITEM_HM_WATERFALL)
+    setflag(FLAG_BADGE08_GET)
+    release
+}
+
+text Underwater_Route134_Text_Kyogre {
+    "An imposing creature is attacking!"
+}

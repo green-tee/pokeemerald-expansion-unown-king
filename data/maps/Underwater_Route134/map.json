@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_KYOGRE",
       "graphics_id": "OBJ_EVENT_GFX_KYOGRE",
       "x": 15,
       "y": 11,
@@ -24,8 +25,34 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "Underwater_Route134_EventScript_Kyogre",
+      "flag": "FLAG_HIDE_KYOGRE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CRYSTAL_HEAL",
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CrystalHeal",
+      "flag": "FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_HEAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CRYSTAL_FAINT",
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CrystalFaint",
+      "flag": "FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_FAINT"
     }
   ],
   "warp_events": [

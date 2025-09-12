@@ -18,7 +18,7 @@ BirthIsland_Exterior_OnTransition:
 	end
 
 BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle::
-	setflag FLAG_HIDE_DEOXYS
+	@setflag FLAG_HIDE_DEOXYS
 	setflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
 	return
 
