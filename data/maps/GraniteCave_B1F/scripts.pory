@@ -1,15 +1,46 @@
 mapscripts GraniteCave_B1F_MapScripts {}
 
-script GraniteCave_B1F_Inscription {
-    lock
+const VAR_PLAYER_POS_ON_INSCRIPTION = VAR_TEMP_0
+const PLAYER_POS_LEFT = 0
+const PLAYER_POS_MIDDLE = 1
+const PLAYER_POS_RIGHT = 2
+
+script GraniteCave_B1F_InscriptionLeft {
+    setvar(VAR_PLAYER_POS_ON_INSCRIPTION, PLAYER_POS_LEFT)
+    call(GraniteCave_B1F_InscriptionCommon)
+}
+
+script GraniteCave_B1F_InscriptionMiddle {
+    setvar(VAR_PLAYER_POS_ON_INSCRIPTION, PLAYER_POS_MIDDLE)
+    call(GraniteCave_B1F_InscriptionCommon)
+}
+
+script GraniteCave_B1F_InscriptionRight {
+    setvar(VAR_PLAYER_POS_ON_INSCRIPTION, PLAYER_POS_RIGHT)
+    call(GraniteCave_B1F_InscriptionCommon)
+}
+
+script GraniteCave_B1F_InscriptionCommon {
+    lockall
     if (!flag(FLAG_SYS_USE_FLASH)) {
         msgbox(GraniteCave_B1F_Text_TooDark, MSGBOX_DEFAULT)
         closemessage
     } else {
         msgbox(GraniteCave_B1F_Text_UnownKingStory, MSGBOX_UNOWNCRYPT)
         closemessage
+        if (var(VAR_CHAMBER_OF_TRUTH_STATE) < 3) {
+            specialvar(VAR_RESULT, FoundAllUnown)
+            if (var(VAR_RESULT) == TRUE) {
+                call(GraniteCave_B1F_EventScript_PlayerDecyphered)
+                setvar(VAR_CHAMBER_OF_TRUTH_STATE, 3)
+            }
+            if (var(VAR_CHAMBER_OF_TRUTH_STATE) == 1) {
+                call(GraniteCave_B1F_EventScript_PlayerDidntDecypher)
+                setvar(VAR_CHAMBER_OF_TRUTH_STATE, 2)
+            }
+        }
     }
-    release
+    releaseall
 }
 
 text GraniteCave_B1F_Text_TooDark {
@@ -24,7 +55,7 @@ text GraniteCave_B1F_Text_UnownKingStory {
     "angered the Unown King, who succumbed\l"
     "to the same craze.\p"
     "It attempted to eradicate all humans.\p"
-    "However, there existed humans who\l"
+    "However, there existed humans who\n"
     "loathed bloodshed.\p"
     "The Unown King saw the kind,\n"
     "the poor, and the just\l"
@@ -42,4 +73,315 @@ text GraniteCave_B1F_Text_UnownKingStory {
     "and seal it into a temple,\l"
     "till the day when an unfazed soul\l"
     "may put it to rest for good."
+}
+
+script(local) GraniteCave_B1F_EventScript_PlayerDecyphered {
+    call(GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays)
+    msgbox(GraniteCave_B1F_Text_IsThatWhatItSays)
+    waitmessage
+    playfanfare(MUS_RG_POKE_FLUTE)
+    waitfanfare
+    closemessage
+    playmoncry(SPECIES_TORNADUS, CRY_MODE_NORMAL)
+    setvar(VAR_0x8004, 1) // Vertical pan
+    setvar(VAR_0x8005, 1) // Horizontal pan
+    setvar(VAR_0x8006, 8) // Number of shakes
+    setvar(VAR_0x8007, 5) // Delay
+    special(ShakeCamera)
+    waitstate
+    clearflag(FLAG_HIDE_TORNADUS) // Unlock the boss fight against Tornadus in the Hollow room
+    clearflag(FLAG_HIDE_LUGIA)
+    msgbox(GraniteCave_B1F_Text_WhatWasThat, MSGBOX_DEFAULT)
+    closemessage
+    giveitem(ITEM_POKE_FLUTE)
+    msgbox(GraniteCave_B1F_Text_ThankYou, MSGBOX_DEFAULT)
+    closemessage
+    call(GraniteCave_B1F_InscriptionGuysGoesBack)
+}
+
+script(local) GraniteCave_B1F_EventScript_PlayerDidntDecypher {
+    call(GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays)
+    msgbox(GraniteCave_B1F_Text_YouCantDecypher, MSGBOX_DEFAULT)
+    closemessage
+    call(GraniteCave_B1F_InscriptionGuysGoesBack)
+}
+
+script(local) GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays {
+    switch (var(VAR_PLAYER_POS_ON_INSCRIPTION)) {
+        case PLAYER_POS_LEFT:
+            applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtLeft)
+            waitmovement(LOCALID_INSCRIPTION_GUY)
+        case PLAYER_POS_MIDDLE:
+            applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtMiddle)
+            waitmovement(LOCALID_INSCRIPTION_GUY)
+        case PLAYER_POS_RIGHT:
+            applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtRight)
+            waitmovement(LOCALID_INSCRIPTION_GUY)
+    }
+    msgbox(GraniteCave_B1F_Text_WhatDoesItSay, MSGBOX_DEFAULT)
+    closemessage
+    applymovement(LOCALID_PLAYER, GraniteCave_B1F_Movement_TurnToInscriptionGuy)
+    waitmovement(LOCALID_PLAYER)
+    msgbox(GraniteCave_B1F_Text_ThreeDots, MSGBOX_DEFAULT)
+    closemessage
+}
+
+movement GraniteCave_B1F_Movement_WalkToPlayerAtLeft {
+    walk_left * 2
+    walk_in_place_up
+}
+
+movement GraniteCave_B1F_Movement_WalkToPlayerAtMiddle {
+    walk_left
+    walk_in_place_up
+}
+
+movement GraniteCave_B1F_Movement_WalkToPlayerAtRight {
+    walk_in_place_up
+}
+
+text GraniteCave_B1F_Text_WhatDoesItSay {
+    "So, what does it say?"
+}
+
+movement GraniteCave_B1F_Movement_TurnToInscriptionGuy {
+    walk_in_place_down
+}
+
+text GraniteCave_B1F_Text_ThreeDots {
+    "…"
+}
+
+text GraniteCave_B1F_Text_IsThatWhatItSays {
+    "Really?\n"
+    "Is that what it says?\p"
+    "Wow, I… I'd never have thought that\n"
+    "the Unown King's story would be so dark.\l"
+    "I can hardly believe what you're\l"
+    "telling me!\p"
+    "So, this temple is some kind of prison\n"
+    "for the Unown King, right?\l"
+    "I mean, the “Bad King”.\p"
+    "Well then, I suppose I must reward you\n"
+    "for the trouble of decyphering\l"
+    "the whole thing.\p"
+    "I don't have much money to give you,\n"
+    "but you can keep this flute.\l"
+    "It's really valuable, I promise!\p"
+    "Listen to its sound!"
+}
+
+text GraniteCave_B1F_Text_WhatWasThat {
+    "…\p"
+    "…\n"
+    "What was that?\l"
+    "Could it be… Did the flute do this?\p"
+    "You know, the song I played…\n"
+    "It's the Melody of Awakening.\l"
+    "It's supposed to wake up whoever has\l"
+    "fallen asleep.\p"
+    "I really hope I didn't cause anything\n"
+    "serious…\p"
+    "Anyway, you can keep the flute.\n"
+    "Hold on, I'll clean it for you."
+}
+
+text GraniteCave_B1F_Text_ThankYou {
+    "Thank you for helping me out.\n"
+    "I really appreciate it!"
+}
+
+text GraniteCave_B1F_Text_YouCantDecypher {
+    "You can't decypher it completely, huh?\p"
+    "I see.\p"
+    "If you manage to decypher more parts\l"
+    "of it, let me know!"
+}
+
+script(local) GraniteCave_B1F_InscriptionGuysGoesBack {
+    switch (var(VAR_PLAYER_POS_ON_INSCRIPTION)) {
+        case PLAYER_POS_LEFT:
+            applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromLeft)
+            waitmovement(LOCALID_INSCRIPTION_GUY)
+        case PLAYER_POS_MIDDLE:
+            applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromMiddle)
+            waitmovement(LOCALID_INSCRIPTION_GUY)
+        case PLAYER_POS_RIGHT:
+            applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromRight)
+            waitmovement(LOCALID_INSCRIPTION_GUY)
+    }
+}
+
+movement GraniteCave_B1F_Movement_WalkAwayFromPlayerFromLeft {
+    walk_right * 2
+    walk_in_place_up
+}
+
+movement GraniteCave_B1F_Movement_WalkAwayFromPlayerFromMiddle {
+    walk_right
+    walk_in_place_up
+}
+
+movement GraniteCave_B1F_Movement_WalkAwayFromPlayerFromRight {
+    walk_in_place_down
+    face_up
+}
+
+script GraniteCave_B1F_EventScript_MeetInscriptionGuyFromWest {
+    lockall
+    applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnSurprisedWest)
+    playse(SE_PIN)
+    waitmovement(LOCALID_INSCRIPTION_GUY)
+    waitse
+    call(GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon)
+    releaseall
+}
+
+script GraniteCave_B1F_EventScript_MeetInscriptionGuyFromSouth {
+    lockall
+    applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnSurprisedSouth)
+    playse(SE_PIN)
+    waitmovement(LOCALID_INSCRIPTION_GUY)
+    waitse
+    call(GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon)
+    releaseall
+}
+
+script(local) GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon {
+    if (flag(FLAG_SYS_USE_FLASH)) {
+        msgbox(GraniteCave_B1F_EventScript_ThankYouForTurningOnTheLight, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(GraniteCave_B1F_Text_CanYouTurnOnTheLight, MSGBOX_DEFAULT)
+        closemessage
+    }
+    applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnBackNorth)
+    waitmovement(LOCALID_INSCRIPTION_GUY)
+    setvar(VAR_CHAMBER_OF_TRUTH_STATE, 1)
+}
+
+movement GraniteCave_B1F_Movement_TurnSurprisedWest {
+    face_left
+    emote_exclamation_mark
+}
+
+movement GraniteCave_B1F_Movement_TurnSurprisedSouth {
+    face_down
+    emote_exclamation_mark
+}
+
+movement GraniteCave_B1F_Movement_TurnBackNorth {
+    face_up
+}
+
+text GraniteCave_B1F_Text_CanYouTurnOnTheLight {
+    "Hey, you!\n"
+    "Would you mind lighting up this place?\p"
+    "I'm trying to read the inscription on\n"
+    "this wall, but it's too dark!\l"
+    "I can barely see it!"
+}
+
+text GraniteCave_B1F_EventScript_ThankYouForTurningOnTheLight {
+    "Hey, you!\n"
+    "Thank you for brightening up this room.\p"
+    "I'm trying to read the inscription on\n"
+    "this wall, but I could barely see it\l"
+    "in the dark.\p"
+    "Not that it matters, because I don't\n"
+    "understand a thing!"
+}
+
+script GraniteCave_B1F_EventScript_InscriptionGuy {
+    lock
+    faceplayer
+    switch (var(VAR_CHAMBER_OF_TRUTH_STATE)) {
+        case 0:
+            call(GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher)
+        case 1:
+            call(GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher)
+        case 2:
+            call(GraniteCave_B1F_EventScript_InscriptionGuy_WaitingForPlayerToDecypher)
+        case 3:
+            call(GraniteCave_B1F_EventScript_InscriptionGuy_PlayedFlute)
+        default:
+            call(GraniteCave_B1F_EventScript_InscriptionGuy_AfterTornadusBattle)
+    }
+    release
+}
+
+script(local) GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher {
+    if (flag(FLAG_SYS_USE_FLASH)) {
+        msgbox(GraniteCave_B1F_Text_ICantUnderstandThisWriting, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(GraniteCave_B1F_Text_ItsYouCanYouTurnTheLightOn, MSGBOX_DEFAULT)
+        closemessage
+    }
+    applymovement(LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnBackNorth)
+    waitmovement(LOCALID_INSCRIPTION_GUY)
+}
+
+text GraniteCave_B1F_Text_ItsYouCanYouTurnTheLightOn {
+    "Oh, it's you!\p"
+    "Could you make it a bit brighter\n"
+    "for me?"
+}
+
+text GraniteCave_B1F_Text_ICantUnderstandThisWriting {
+    "Oh… Er…\p"
+    "I have no clue what this writing is\n"
+    "saying!\p"
+    "But according to the Maidens, it should\n"
+    "tell crucial information about the tale\l"
+    "of the Unown King.\p"
+    "Would you help me decypher it?"
+}
+
+script(local) GraniteCave_B1F_EventScript_InscriptionGuy_WaitingForPlayerToDecypher {
+    msgbox(GraniteCave_B1F_Text_CountingOnYou, MSGBOX_DEFAULT)
+    closemessage
+}
+
+text GraniteCave_B1F_Text_CountingOnYou {
+    "With your help, I'm sure I can finally\n"
+    "the inscription on this wall.\p"
+    "I'm counting on you!\p"
+    "If you manage to decipher the whole\n"
+    "thing, I'll give you something cool\l"
+    "in return: my flute!\p"
+    "Hey, don't give me that look!\n"
+    "It's very valuable!\p"
+    "Yes, I'll clean it before giving it\n"
+    "to you."
+}
+
+script(local) GraniteCave_B1F_EventScript_InscriptionGuy_PlayedFlute {
+    msgbox(GraniteCave_B1F_Text_TheFluteDidSomething, MSGBOX_DEFAULT)
+    closemessage
+}
+
+text GraniteCave_B1F_Text_TheFluteDidSomething {
+    "Er…\n"
+    "I think the Melody of Awakening did\l"
+    "something.\p"
+    "I don't know what happened, let's hope\n"
+    "everything will be alright!"
+}
+
+script(local) GraniteCave_B1F_EventScript_InscriptionGuy_AfterTornadusBattle {
+    msgbox(GraniteCave_B1F_Text_IWouldveNeverImagined, MSGBOX_DEFAULT)
+    closemessage
+}
+
+text GraniteCave_B1F_Text_IWouldveNeverImagined {
+    "I would've never imagined that the tale\n"
+    "of the Unown King would take a turn\l"
+    "like that.\p"
+    "What I'm getting is that\n"
+    "it turned evil, but half of it\l"
+    "separated from its body and stayed\l"
+    "good.\p"
+    "Should we perhaps… defeat the evil half\n"
+    "once and for all?"
 }

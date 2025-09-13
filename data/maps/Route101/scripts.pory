@@ -1,10 +1,10 @@
 mapscripts Route101_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Route101_EventScript_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_ROUTE101_STATE, 0: Route101_EventScript_FacePlayerNorth
+        VAR_INTRO_AREA_STATE, 0: Route101_EventScript_FacePlayerNorth
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_ROUTE101_STATE, 0: Route101_EventScript_PlayIntroFollowUp
+        VAR_INTRO_AREA_STATE, 0: Route101_EventScript_PlayIntroFollowUp
     ]
 }
 
@@ -26,7 +26,7 @@ script Route101_EventScript_PlayIntroFollowUp {
     closemessage
     setflag(FLAG_SYS_POKEMON_GET)
     setflag(FLAG_SYS_POKEDEX_GET)
-    setvar(VAR_ROUTE101_STATE, 1)
+    setvar(VAR_INTRO_AREA_STATE, 1)
     releaseall
 }
 

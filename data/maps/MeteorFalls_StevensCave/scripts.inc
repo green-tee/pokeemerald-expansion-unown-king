@@ -47,11 +47,11 @@ MeteorFalls_StevensCave_EventScript_Tornadus::
 # 27 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 28 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	finditem ITEM_HM_FLY, 1
+	giveitem ITEM_HM_FLY
 # 29 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 	setflag FLAG_BADGE06_GET
 # 30 "data/maps/MeteorFalls_StevensCave/scripts.pory"
-	clearflag FLAG_HIDE_LUGIA
+	setvar VAR_CHAMBER_OF_TRUTH_STATE, 4
 # 31 "data/maps/MeteorFalls_StevensCave/scripts.pory"
 	release
 	return

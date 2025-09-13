@@ -25,9 +25,9 @@ script MeteorFalls_StevensCave_EventScript_Tornadus {
     special(BattleSetup_StartBossBattle)
     waitstate
     clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    finditem(ITEM_HM_FLY, 1)
+    giveitem(ITEM_HM_FLY)
     setflag(FLAG_BADGE06_GET)
-    clearflag(FLAG_HIDE_LUGIA)
+    setvar(VAR_CHAMBER_OF_TRUTH_STATE, 4)
     release
 }
 

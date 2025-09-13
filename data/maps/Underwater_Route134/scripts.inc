@@ -51,7 +51,7 @@ Underwater_Route134_EventScript_Kyogre::
 # 27 "data/maps/Underwater_Route134/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 28 "data/maps/Underwater_Route134/scripts.pory"
-	finditem ITEM_HM_WATERFALL
+	giveitem ITEM_HM_WATERFALL
 # 29 "data/maps/Underwater_Route134/scripts.pory"
 	setflag FLAG_BADGE08_GET
 # 30 "data/maps/Underwater_Route134/scripts.pory"

@@ -192,7 +192,7 @@ GraniteCave_StevensRoom_EventScript_Lugia_5:
 # 95 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	setflag FLAG_CAUGHT_LUGIA
 # 96 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	finditem ITEM_SACRED_ASH, 1
+	giveitem ITEM_SACRED_ASH, 1
 	goto GraniteCave_StevensRoom_EventScript_Lugia_1
 
 

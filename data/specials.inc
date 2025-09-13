@@ -317,6 +317,7 @@ gSpecials::
 	def_special InitRoamer
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
+	def_special IsGhostTypeInParty
 	def_special DoContestHallWarp
 	def_special LoadWallyZigzagoon
 	def_special IsStarterInParty
@@ -335,6 +336,7 @@ gSpecials::
 	def_special SetTrainerFacingDirection
 	def_special DoSealedChamberShakingEffect_Short
 	def_special FoundBlackGlasses
+	def_special FoundAllUnown
 	def_special StartDroughtWeatherBlend
 	def_special DoDiveWarp
 	def_special DoFallWarp

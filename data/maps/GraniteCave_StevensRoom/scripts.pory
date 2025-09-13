@@ -93,7 +93,7 @@ script GraniteCave_StevensRoom_EventScript_Lugia {
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
             setflag(FLAG_CAUGHT_LUGIA)
-            finditem(ITEM_SACRED_ASH, 1)
+            giveitem(ITEM_SACRED_ASH, 1)
         }
     } else {
         closemessage

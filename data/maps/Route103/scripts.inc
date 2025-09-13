@@ -47,7 +47,7 @@ Route103_EventScript_Milotic::
 # 25 "data/maps/Route103/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 26 "data/maps/Route103/scripts.pory"
-	finditem ITEM_HM_DIVE
+	giveitem ITEM_HM_DIVE
 # 27 "data/maps/Route103/scripts.pory"
 	setflag FLAG_BADGE07_GET
 # 28 "data/maps/Route103/scripts.pory"

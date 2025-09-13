@@ -5,7 +5,7 @@ InsideOfTruck_MapScripts::
 
 InsideOfTruck_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 3 "data/maps/InsideOfTruck/scripts.pory"
-	map_script_2 VAR_ROUTE101_STATE, 0, InsideOfTruck_EventScript_PlayIntro
+	map_script_2 VAR_INTRO_AREA_STATE, 0, InsideOfTruck_EventScript_PlayIntro
 	.2byte 0
 
 

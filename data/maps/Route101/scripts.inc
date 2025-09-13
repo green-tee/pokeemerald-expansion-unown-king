@@ -9,12 +9,12 @@ Route101_MapScripts::
 
 Route101_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 4 "data/maps/Route101/scripts.pory"
-	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_FacePlayerNorth
+	map_script_2 VAR_INTRO_AREA_STATE, 0, Route101_EventScript_FacePlayerNorth
 	.2byte 0
 
 Route101_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 7 "data/maps/Route101/scripts.pory"
-	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_PlayIntroFollowUp
+	map_script_2 VAR_INTRO_AREA_STATE, 0, Route101_EventScript_PlayIntroFollowUp
 	.2byte 0
 
 
@@ -50,7 +50,7 @@ Route101_EventScript_PlayIntroFollowUp::
 # 28 "data/maps/Route101/scripts.pory"
 	setflag FLAG_SYS_POKEDEX_GET
 # 29 "data/maps/Route101/scripts.pory"
-	setvar VAR_ROUTE101_STATE, 1
+	setvar VAR_INTRO_AREA_STATE, 1
 # 30 "data/maps/Route101/scripts.pory"
 	releaseall
 	return

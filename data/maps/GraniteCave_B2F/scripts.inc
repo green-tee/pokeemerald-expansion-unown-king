@@ -47,7 +47,7 @@ GraniteCave_B2F_EventScript_Darkrai::
 # 25 "data/maps/GraniteCave_B2F/scripts.pory"
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 # 26 "data/maps/GraniteCave_B2F/scripts.pory"
-	finditem ITEM_HM_FLASH
+	giveitem ITEM_HM_FLASH
 # 27 "data/maps/GraniteCave_B2F/scripts.pory"
 	setflag FLAG_BADGE02_GET
 # 28 "data/maps/GraniteCave_B2F/scripts.pory"

@@ -23,7 +23,7 @@ script Route103_EventScript_Milotic {
     special(BattleSetup_StartBossBattle)
     waitstate
     clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    finditem(ITEM_HM_DIVE)
+    giveitem(ITEM_HM_DIVE)
     setflag(FLAG_BADGE07_GET)
     release
 }

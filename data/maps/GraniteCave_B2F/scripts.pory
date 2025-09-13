@@ -23,7 +23,7 @@ script GraniteCave_B2F_EventScript_Darkrai {
     special(BattleSetup_StartBossBattle)
     waitstate
     clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    finditem(ITEM_HM_FLASH)
+    giveitem(ITEM_HM_FLASH)
     setflag(FLAG_BADGE02_GET)
     release
 }

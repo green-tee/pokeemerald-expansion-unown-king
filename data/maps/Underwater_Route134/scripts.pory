@@ -25,7 +25,7 @@ script Underwater_Route134_EventScript_Kyogre {
     special(BattleSetup_StartBossBattle)
     waitstate
     clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
-    finditem(ITEM_HM_WATERFALL)
+    giveitem(ITEM_HM_WATERFALL)
     setflag(FLAG_BADGE08_GET)
     release
 }

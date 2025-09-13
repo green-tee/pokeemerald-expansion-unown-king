@@ -1283,6 +1283,26 @@ void IsGrassTypeInParty(void)
     gSpecialVar_Result = FALSE;
 }
 
+void IsGhostTypeInParty(void) {
+    u8 i;
+    u16 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].types[0] == TYPE_GHOST || gSpeciesInfo[species].types[1] == TYPE_GHOST)
+            {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+    }
+    gSpecialVar_Result = FALSE;
+}
+
 void SpawnCameraObject(void)
 {
     u8 obj = SpawnSpecialObjectEventParameterized(OBJ_EVENT_GFX_BOY_1,
@@ -1549,6 +1569,16 @@ static void StopCameraShake(u8 taskId)
 bool8 FoundBlackGlasses(void)
 {
     return FlagGet(FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES);
+}
+
+bool8 FoundAllUnown(void)
+{
+    u32 i;
+    for (i = FLAG_FOUND_UNOWN_A; i <= FLAG_FOUND_UNOWN_Z; i++) {
+        if (!FlagGet(i))
+            return FALSE;
+    }
+    return TRUE;
 }
 
 void SetRoute119Weather(void)
