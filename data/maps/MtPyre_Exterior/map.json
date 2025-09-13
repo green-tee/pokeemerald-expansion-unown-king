@@ -41,30 +41,32 @@
       "flag": "FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP"
     },
     {
+      "local_id": "LOCALID_LATIAS",
       "graphics_id": "OBJ_EVENT_GFX_LATIAS",
       "x": 2,
       "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MtPyre_Exterior_EventScript_LatiosOrLatias",
+      "flag": "FLAG_HIDE_LATIAS"
     },
     {
+      "local_id": "LOCALID_LATIOS",
       "graphics_id": "OBJ_EVENT_GFX_LATIOS",
       "x": 24,
       "y": 15,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "MtPyre_Exterior_EventScript_LatiosOrLatias",
+      "flag": "FLAG_HIDE_LATIOS"
     }
   ],
   "warp_events": [
@@ -90,53 +92,7 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 17,
-      "y": 0,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "MtPyre_Exterior_EventScript_FogTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 18,
-      "y": 0,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "MtPyre_Exterior_EventScript_FogTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 1,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "MtPyre_Exterior_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 0,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "MtPyre_Exterior_EventScript_SunTrigger"
-    },
-    {
-      "type": "trigger",
-      "x": 19,
-      "y": 0,
-      "elevation": 3,
-      "var": "TRIGGER_RUN_IMMEDIATELY",
-      "var_value": "0",
-      "script": "MtPyre_Exterior_EventScript_FogTrigger"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",

@@ -13,7 +13,7 @@ script GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter {
 }
 
 script GraniteCave_StevensRoom_EventScript_TryShowLugia {
-    if (!flag(FLAG_CAUGHT_LUGIA)) {
+    if (flag(FLAG_RECEIVED_FLUTE) && flag(FLAG_HIDE_LUGIA) && !flag(FLAG_CAUGHT_LUGIA)) {
         clearflag(FLAG_HIDE_LUGIA)
     }
 }

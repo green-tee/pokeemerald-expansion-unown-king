@@ -30,12 +30,22 @@ GraniteCave_StevensRoom_EventScript_TryHideStaticEncounter_3:
 
 GraniteCave_StevensRoom_EventScript_TryShowLugia::
 # 16 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	goto_if_unset FLAG_CAUGHT_LUGIA, GraniteCave_StevensRoom_EventScript_TryShowLugia_1
+	goto_if_set FLAG_RECEIVED_FLUTE, GraniteCave_StevensRoom_EventScript_TryShowLugia_3
 	return
 
 GraniteCave_StevensRoom_EventScript_TryShowLugia_1:
 # 17 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	clearflag FLAG_HIDE_LUGIA
+	return
+
+GraniteCave_StevensRoom_EventScript_TryShowLugia_2:
+# 16 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	goto_if_unset FLAG_CAUGHT_LUGIA, GraniteCave_StevensRoom_EventScript_TryShowLugia_1
+	return
+
+GraniteCave_StevensRoom_EventScript_TryShowLugia_3:
+# 16 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	goto_if_set FLAG_HIDE_LUGIA, GraniteCave_StevensRoom_EventScript_TryShowLugia_2
 	return
 
 

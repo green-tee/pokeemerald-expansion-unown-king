@@ -94,6 +94,7 @@ script(local) GraniteCave_B1F_EventScript_PlayerDecyphered {
     msgbox(GraniteCave_B1F_Text_WhatWasThat, MSGBOX_DEFAULT)
     closemessage
     giveitem(ITEM_POKE_FLUTE)
+    setflag(FLAG_RECEIVED_FLUTE)
     msgbox(GraniteCave_B1F_Text_ThankYou, MSGBOX_DEFAULT)
     closemessage
     call(GraniteCave_B1F_InscriptionGuysGoesBack)

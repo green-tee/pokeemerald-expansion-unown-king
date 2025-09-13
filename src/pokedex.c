@@ -4586,6 +4586,18 @@ u16 GetHoennPokedexCount(u8 caseID)
     return count;
 }
 
+u16 GetUnownCount(void)
+{
+    u16 count = 0;
+    u32 i;
+
+    for (i = FLAG_FOUND_UNOWN_A; i <= FLAG_FOUND_UNOWN_Z; i++) {
+        if (FlagGet(i))
+            count++;
+    }
+    return count;
+}
+
 u16 GetKantoPokedexCount(u8 caseID)
 {
     u16 count = 0;
