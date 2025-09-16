@@ -273,6 +273,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownX;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownY;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownZ;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownQuestion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnownExclamation;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -541,6 +543,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_UNOWN_X] =                  &gObjectEventGraphicsInfo_UnownX,
     [OBJ_EVENT_GFX_UNOWN_Y] =                  &gObjectEventGraphicsInfo_UnownY,
     [OBJ_EVENT_GFX_UNOWN_Z] =                  &gObjectEventGraphicsInfo_UnownZ,
+    [OBJ_EVENT_GFX_UNOWN_QUESTION] =           &gObjectEventGraphicsInfo_UnownQuestion,
+    [OBJ_EVENT_GFX_UNOWN_EXCLAMATION] =        &gObjectEventGraphicsInfo_UnownExclamation,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

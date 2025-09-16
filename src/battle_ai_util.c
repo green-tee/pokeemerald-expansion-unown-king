@@ -245,7 +245,7 @@ static bool32 ShouldFailForIllusion(u32 illusionSpecies, u32 battlerId)
     u32 i, j;
     const struct LevelUpMove *learnset;
 
-    if (gBattleHistory->abilities[battlerId] == ABILITY_ILLUSION)
+    if (gBattleHistory->abilities[battlerId] == ABILITY_ILLUSION || gBattleHistory->abilities[battlerId] == ABILITY_UNKNOWN)
         return FALSE;
 
     // Don't fall for Illusion if the mon used a move it cannot know.

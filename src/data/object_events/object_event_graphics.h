@@ -412,6 +412,8 @@ const u32 gObjectEventPic_NpcUnownW[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_NpcUnownX[] = INCBIN_U32("graphics/object_events/pics/unown/x.4bpp");
 const u32 gObjectEventPic_NpcUnownY[] = INCBIN_U32("graphics/object_events/pics/unown/y.4bpp");
 const u32 gObjectEventPic_NpcUnownZ[] = INCBIN_U32("graphics/object_events/pics/unown/z.4bpp");
+const u32 gObjectEventPic_NpcUnownQuestion[] = INCBIN_U32("graphics/object_events/pics/unown/question.4bpp");
+const u32 gObjectEventPic_NpcUnownExclamation[] = INCBIN_U32("graphics/object_events/pics/unown/exclamation.4bpp");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");

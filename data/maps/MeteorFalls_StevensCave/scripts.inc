@@ -81,4 +81,7 @@ MeteorFalls_StevensCave_Text_NeedFly::
 	.string "the place where the Unown King\l"
 	.string "is imprisoned.\p"
 	.string "The master of flight appears\n"
-	.string "when the Melody of Awakening is heard.$"
+	.string "when the Melody of Awakening is heard.\p"
+	.string "May the Melody never be played in the\n"
+	.string "inside of this prison, lest the King\l"
+	.string "and its servants hear its notes.$"

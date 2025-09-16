@@ -6240,267 +6240,761 @@ Electrike
 Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_WALLACE ===
-Name: WALLACE
-Class: Champion
-Pic: Champion Wallace
+=== TRAINER_UNOWN_KING_COF_SPE_HOO ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Basic Trainer
-Mugshot: Yellow
 
-Wailord
-Level: 57
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
-
-Tentacruel
-Level: 55
+Cofagrigus
+Level: 47
+Ability: Unknown
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
-- Hydro Pump
-- Sludge Bomb
-- Ice Beam
+- Protect
+- Shadow Ball
+- Psychic
 
-Ludicolo
-Level: 56
+Deoxys Speed
+Level: 48
+Ability: Unknown
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-Whiscash
-Level: 56
+Slaking
+Level: 48
+Ability: Unknown
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-Gyarados
-Level: 56
+Archeops
+Level: 48
+Ability: Unknown
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-Milotic @ Sitrus Berry
-Level: 58
+Regigigas
+Level: 49
+Ability: Unknown
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+Ho-Oh @ Power Herb
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
 - Recover
-- Surf
-- Ice Beam
+
+=== TRAINER_UNOWN_KING_COF_SPE_REG ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Cofagrigus
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-=== TRAINER_ANDREW ===
-Name: ANDREW
-Class: Fisherman
-Pic: Fisherman
+Deoxys Speed
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
+
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
+
+Archeops
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
+
+Ho-Oh @ Power Herb
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+Regigigas
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+=== TRAINER_UNOWN_KING_COF_ATT_HOO ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cofagrigus
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-Tentacool
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Deoxys Attack
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-Magikarp
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-=== TRAINER_IVAN ===
-Name: IVAN
-Class: Fisherman
-Pic: Fisherman
+Archeops
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
+
+Regigigas
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+Ho-Oh @ Power Herb
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+=== TRAINER_UNOWN_KING_COF_ATT_REG ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cofagrigus
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-Magikarp
-Level: 6
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Deoxys Attack
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-Magikarp
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-=== TRAINER_CLAUDE ===
-Name: CLAUDE
-Class: Fisherman
-Pic: Fisherman
+Archeops
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
+
+Ho-Oh @ Power Herb
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+Regigigas
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+=== TRAINER_UNOWN_KING_COF_DEF_HOO ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magikarp
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cofagrigus
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-Goldeen
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Deoxys Defense
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-Barboach
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-=== TRAINER_ELLIOT_1 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+Archeops
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
+
+Regigigas
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+Ho-Oh @ Power Herb
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+=== TRAINER_UNOWN_KING_COF_DEF_REG ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magikarp
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cofagrigus
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-Tentacool
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Deoxys Defense
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-Magikarp
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-=== TRAINER_NED ===
-Name: NED
-Class: Fisherman
-Pic: Fisherman
+Archeops
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
+
+Ho-Oh @ Power Herb
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+Regigigas
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+=== TRAINER_UNOWN_KING_ARC_SPE_HOO ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Tentacool
-Level: 11
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Archeops
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-=== TRAINER_DALE ===
-Name: DALE
-Class: Fisherman
-Pic: Fisherman
+Deoxys Speed
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
+
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
+
+Cofagrigus
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
+
+Regigigas
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+Ho-Oh @ Power Herb
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+=== TRAINER_UNOWN_KING_ARC_SPE_REG ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Tentacool
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Archeops
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-Wailmer
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Deoxys Speed
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-Tentacool
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-Wailmer
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cofagrigus
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-=== TRAINER_NOLAN ===
-Name: NOLAN
-Class: Fisherman
-Pic: Fisherman
+Ho-Oh @ Power Herb
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+Regigigas
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+=== TRAINER_UNOWN_KING_ARC_ATT_HOO ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Barboach
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Archeops
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-=== TRAINER_BARNY ===
-Name: BARNY
-Class: Fisherman
-Pic: Fisherman
+Deoxys Attack
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
+
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
+
+Cofagrigus
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
+
+Regigigas
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+Ho-Oh @ Power Herb
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+=== TRAINER_UNOWN_KING_ARC_ATT_REG ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Tentacool
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Archeops
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-Carvanha
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Deoxys Attack
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-=== TRAINER_WADE ===
-Name: WADE
-Class: Fisherman
-Pic: Fisherman
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
+
+Cofagrigus
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
+
+Ho-Oh @ Power Herb
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+Regigigas
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+=== TRAINER_UNOWN_KING_ARC_DEF_HOO ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Tentacool
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Archeops
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-=== TRAINER_CARTER ===
-Name: CARTER
-Class: Fisherman
-Pic: Fisherman
+Deoxys Defense
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
+
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
+
+Cofagrigus
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
+
+Regigigas
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
+
+Ho-Oh @ Power Herb
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
+
+=== TRAINER_UNOWN_KING_ARC_DEF_REG ===
+Name: Unown King
+Class: Unown King
+Pic: Unown King
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Wailmer
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Archeops
+Level: 47
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Acrobatics
+- Dragon Claw
+- U-Turn
+- Ancient Power
 
-Tentacruel
-Level: 25
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Deoxys Defense
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Cosmic Power
+- Knock Off
+- Psyshock
+- Leer
 
-=== TRAINER_ELLIOT_2 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Check Bad Move
+Slaking
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Hammer Arm
+- Yawn
+- Flail
+- Sucker Punch
 
-Tentacool
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Cofagrigus
+Level: 48
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Toxic
+- Protect
+- Shadow Ball
+- Psychic
 
-Gyarados
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Ho-Oh @ Power Herb
+Level: 49
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sacred Fire
+- Sky Attack
+- Punishment
+- Recover
 
-Gyarados
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Regigigas
+Level: 50
+Ability: Unknown
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Dizzy Punch
+- Fire Punch
+- Thunder Punch
+- Ice Punch
 
 === TRAINER_ELLIOT_3 ===
 Name: ELLIOT

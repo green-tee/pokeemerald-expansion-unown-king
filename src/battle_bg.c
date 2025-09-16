@@ -796,7 +796,7 @@ void DrawMainBattleBackground(void)
                 LoadPalette(gBattleEnvironmentPalette_BuildingLeader, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                 return;
             }
-            else if (trainerClass == TRAINER_CLASS_CHAMPION)
+            else if (trainerClass == TRAINER_CLASS_UNOWN_KING)
             {
                 LZDecompressVram(gBattleEnvironmentTiles_Stadium, (void *)(BG_CHAR_ADDR(2)));
                 LZDecompressVram(gBattleEnvironmentTilemap_Stadium, (void *)(BG_SCREEN_ADDR(26)));
@@ -1196,7 +1196,7 @@ void DrawBattleEntryBackground(void)
                 LZDecompressVram(gBattleEnvironmentAnimTilemap_Building, (void *)(BG_SCREEN_ADDR(28)));
                 return;
             }
-            else if (trainerClass == TRAINER_CLASS_CHAMPION)
+            else if (trainerClass == TRAINER_CLASS_UNOWN_KING)
             {
                 LZDecompressVram(gBattleEnvironmentAnimTiles_Building, (void *)(BG_CHAR_ADDR(1)));
                 LZDecompressVram(gBattleEnvironmentAnimTilemap_Building, (void *)(BG_SCREEN_ADDR(28)));
@@ -1260,7 +1260,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                     LZDecompressVram(gBattleEnvironmentTiles_Building, (void *)(BG_CHAR_ADDR(2)));
                     break;
                 }
-                else if (trainerClass == TRAINER_CLASS_CHAMPION)
+                else if (trainerClass == TRAINER_CLASS_UNOWN_KING)
                 {
                     LZDecompressVram(gBattleEnvironmentTiles_Stadium, (void *)(BG_CHAR_ADDR(2)));
                     break;
@@ -1322,7 +1322,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                     LZDecompressVram(gBattleEnvironmentTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
                     break;
                 }
-                else if (trainerClass == TRAINER_CLASS_CHAMPION)
+                else if (trainerClass == TRAINER_CLASS_UNOWN_KING)
                 {
                     LZDecompressVram(gBattleEnvironmentTilemap_Stadium, (void *)(BG_SCREEN_ADDR(26)));
                     break;
@@ -1384,7 +1384,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                     LoadPalette(gBattleEnvironmentPalette_BuildingLeader, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                     break;
                 }
-                else if (trainerClass == TRAINER_CLASS_CHAMPION)
+                else if (trainerClass == TRAINER_CLASS_UNOWN_KING)
                 {
                     LoadPalette(gBattleEnvironmentPalette_StadiumWallace, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                     break;

@@ -129,6 +129,7 @@ gScriptCmdTable::
 	script_cmd_table_entry SCR_OP_MESSAGEUNOWNCRYPT             ScrCmd_messageunowncrypt,           requests_effects=1  @ This messes up the other comments
 	script_cmd_table_entry SCR_OP_CLOSEMESSAGE                  ScrCmd_closemessage,                requests_effects=1  @ 0x68
 	script_cmd_table_entry SCR_OP_LOCKALL                       ScrCmd_lockall,                     requests_effects=1  @ 0x69
+	script_cmd_table_entry SCR_OP_LOCKPLAYER                    ScrCmd_lockplayer,                  requests_effects01  @ This messes up the other comments
 	script_cmd_table_entry SCR_OP_LOCK                          ScrCmd_lock,                        requests_effects=1  @ 0x6a
 	script_cmd_table_entry SCR_OP_RELEASEALL                    ScrCmd_releaseall,                  requests_effects=1  @ 0x6b
 	script_cmd_table_entry SCR_OP_RELEASE                       ScrCmd_release,                     requests_effects=1  @ 0x6c

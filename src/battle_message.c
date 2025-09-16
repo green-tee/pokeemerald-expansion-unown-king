@@ -2812,14 +2812,16 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 break;
             case B_TXT_TRAINER1_NAME_WITH_CLASS: // trainer1 name with trainer class
                 toCpy = textStart;
-                classString = BattleStringGetOpponentClassByTrainerId(TRAINER_BATTLE_PARAM.opponentA);
-                while (classString[classLength] != EOS)
-                {
-                    textStart[classLength] = classString[classLength];
-                    classLength++;
+                if (TRAINER_BATTLE_PARAM.opponentA < TRAINER_UNOWN_KING_START || TRAINER_BATTLE_PARAM.opponentA > TRAINER_UNOWN_KING_END) {
+                    classString = BattleStringGetOpponentClassByTrainerId(TRAINER_BATTLE_PARAM.opponentA);
+                    while (classString[classLength] != EOS)
+                    {
+                        textStart[classLength] = classString[classLength];
+                        classLength++;
+                    }
+                    textStart[classLength] = CHAR_SPACE;
+                    textStart += classLength + 1;
                 }
-                textStart[classLength] = CHAR_SPACE;
-                textStart += classLength + 1;
                 nameString = BattleStringGetOpponentNameByTrainerId(TRAINER_BATTLE_PARAM.opponentA, textStart, multiplayerId, GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT));
                 if (nameString != textStart)
                 {
@@ -3184,20 +3186,26 @@ static void IllusionNickHack(u32 battler, u32 partyId, u8 *dst)
     // we know it's gEnemyParty
     struct Pokemon *mon = &gEnemyParty[partyId], *partnerMon;
 
-    if (GetMonAbility(mon) == ABILITY_ILLUSION)
-    {
-        if (IsBattlerAlive(BATTLE_PARTNER(battler)))
-            partnerMon = GetBattlerMon(BATTLE_PARTNER(battler));
+    if (GetMonAbility(mon) == ABILITY_UNKNOWN) {
+        if (partyId + 1 == CalculateEnemyPartyCount())
+            GetMonData(&gUnownFake[1], MON_DATA_NICKNAME, dst);
         else
-            partnerMon = mon;
+            GetMonData(&gUnownFake[0], MON_DATA_NICKNAME, dst);
+    } else {
+        if (GetMonAbility(mon) == ABILITY_ILLUSION) {
+            if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+                partnerMon = GetBattlerMon(BATTLE_PARTNER(battler));
+            else
+                partnerMon = mon;
 
-        id = GetIllusionMonPartyId(gEnemyParty, mon, partnerMon);
+            id = GetIllusionMonPartyId(gEnemyParty, mon, partnerMon);
+        }
+
+        if (id != PARTY_SIZE)
+            GetMonData(&gEnemyParty[id], MON_DATA_NICKNAME, dst);
+        else
+            GetMonData(mon, MON_DATA_NICKNAME, dst);
     }
-
-    if (id != PARTY_SIZE)
-        GetMonData(&gEnemyParty[id], MON_DATA_NICKNAME, dst);
-    else
-        GetMonData(mon, MON_DATA_NICKNAME, dst);
 }
 
 void ExpandBattleTextBuffPlaceholders(const u8 *src, u8 *dst)

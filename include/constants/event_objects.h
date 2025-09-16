@@ -270,6 +270,8 @@
 #define OBJ_EVENT_GFX_UNOWN_X                    263
 #define OBJ_EVENT_GFX_UNOWN_Y                    264
 #define OBJ_EVENT_GFX_UNOWN_Z                    265
+#define OBJ_EVENT_GFX_UNOWN_QUESTION             266
+#define OBJ_EVENT_GFX_UNOWN_EXCLAMATION          267
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit

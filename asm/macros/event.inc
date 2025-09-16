@@ -863,6 +863,11 @@
 	.byte SCR_OP_LOCKALL
 	.endm
 
+	@ Freezes the player once their movement is finished.
+	.macro lockplayer
+	.byte SCR_OP_LOCKPLAYER
+	.endm
+
 	@ Freezes all objects immediately except the player and the selected object. The player and selected object are frozen once their movement is finished.
 	.macro lock
 	.byte SCR_OP_LOCK

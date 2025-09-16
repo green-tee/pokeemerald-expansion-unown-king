@@ -92,7 +92,53 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNOWN_KING_PRISON_STATE",
+      "var_value": "0",
+      "script": "MtPyre_Exterior_EventScript_GoToFinalBoss"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNOWN_KING_PRISON_STATE",
+      "var_value": "0",
+      "script": "MtPyre_Exterior_EventScript_GoToFinalBoss"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNOWN_KING_PRISON_STATE",
+      "var_value": "0",
+      "script": "MtPyre_Exterior_EventScript_GoToFinalBoss"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNOWN_KING_PRISON_STATE",
+      "var_value": "0",
+      "script": "MtPyre_Exterior_EventScript_GoToFinalBoss"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_UNOWN_KING_PRISON_STATE",
+      "var_value": "0",
+      "script": "MtPyre_Exterior_EventScript_GoToFinalBoss"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

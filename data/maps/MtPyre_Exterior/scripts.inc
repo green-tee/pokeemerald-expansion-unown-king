@@ -166,8 +166,85 @@ MtPyre_Exterior_EventScript_LatiosOrLatias_CaughtFlag_3:
 	return
 
 
+MtPyre_Exterior_EventScript_GoToFinalBoss::
+# 85 "data/maps/MtPyre_Exterior/scripts.pory"
+	lockall
+# 86 "data/maps/MtPyre_Exterior/scripts.pory"
+	message MtPyre_Exterior_Text_WantToGoToFinalBoss
+# 87 "data/maps/MtPyre_Exterior/scripts.pory"
+	waitmessage
+# 88 "data/maps/MtPyre_Exterior/scripts.pory"
+	dynmultichoice 16, 8, TRUE, 2, 1, DYN_MULTICHOICE_CB_NONE, Multichoice_Option_GoAhead, Multichoice_Option_GoBack
+# 89 "data/maps/MtPyre_Exterior/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq MtPyre_Exterior_EventScript_GoToFinalBoss_1
+# 100 "data/maps/MtPyre_Exterior/scripts.pory"
+	closemessage
+# 101 "data/maps/MtPyre_Exterior/scripts.pory"
+	applymovement LOCALID_PLAYER, MtPyre_Exterior_Movement_GoBack
+# 102 "data/maps/MtPyre_Exterior/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 103 "data/maps/MtPyre_Exterior/scripts.pory"
+	releaseall
+	return
+
+MtPyre_Exterior_EventScript_GoToFinalBoss_1:
+# 91 "data/maps/MtPyre_Exterior/scripts.pory"
+	closemessage
+# 92 "data/maps/MtPyre_Exterior/scripts.pory"
+	msgbox MtPyre_Exterior_Text_GoodLuck, MSGBOX_DEFAULT
+# 93 "data/maps/MtPyre_Exterior/scripts.pory"
+	closemessage
+# 94 "data/maps/MtPyre_Exterior/scripts.pory"
+	applymovement LOCALID_PLAYER, MtPyre_Exterior_Movement_GoForth
+# 95 "data/maps/MtPyre_Exterior/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 96 "data/maps/MtPyre_Exterior/scripts.pory"
+	warp MAP_MT_PYRE_SUMMIT, 15, 30
+# 97 "data/maps/MtPyre_Exterior/scripts.pory"
+	waitstate
+	return
+
+
+# 130 "data/maps/MtPyre_Exterior/scripts.pory"
+MtPyre_Exterior_Movement_GoForth:
+# 131 "data/maps/MtPyre_Exterior/scripts.pory"
+	walk_up
+	step_end
+
+# 134 "data/maps/MtPyre_Exterior/scripts.pory"
+MtPyre_Exterior_Movement_GoBack:
+# 135 "data/maps/MtPyre_Exterior/scripts.pory"
+	walk_down
+# 135 "data/maps/MtPyre_Exterior/scripts.pory"
+	walk_down
+	step_end
+
 MtPyre_Exterior_Text_FightLatiosOrLatias::
 # 78 "data/maps/MtPyre_Exterior/scripts.pory"
 	.string "This Pokémon is staring at you\n"
 	.string "with a smile on its face.\l"
 	.string "Will you fight it?$"
+
+MtPyre_Exterior_Text_WantToGoToFinalBoss::
+# 107 "data/maps/MtPyre_Exterior/scripts.pory"
+	.string "Hold on a second!\n"
+	.string "Ahead lies the end of your quest.\p"
+	.string "Once you cross this line, you won't be\n"
+	.string "able to come back. The only options are\l"
+	.string "victory or defeat.\p"
+	.string "If you wish to save your game, go back\n"
+	.string "before stepping forward.\p"
+	.string "What will you do?$"
+
+Multichoice_Option_GoAhead::
+# 118 "data/maps/MtPyre_Exterior/scripts.pory"
+	.string "I'm going ahead!$"
+
+Multichoice_Option_GoBack::
+# 122 "data/maps/MtPyre_Exterior/scripts.pory"
+	.string "I'm not ready.$"
+
+MtPyre_Exterior_Text_GoodLuck::
+# 126 "data/maps/MtPyre_Exterior/scripts.pory"
+	.string "Good luck!$"

@@ -1405,32 +1405,34 @@ static const struct SpriteFrameImage sPicTable_HoOhOld[] = {
     overworld_frame(gObjectEventPic_NpcUnown ## XYZ, 2, 4, 2),\
 }
 
-sPicTableNpcUnown(A); // sPicTable_NpcUnownA
-sPicTableNpcUnown(B); // sPicTable_NpcUnownB
-sPicTableNpcUnown(C); // sPicTable_NpcUnownC
-sPicTableNpcUnown(D); // sPicTable_NpcUnownD
-sPicTableNpcUnown(E); // sPicTable_NpcUnownE
-sPicTableNpcUnown(F); // sPicTable_NpcUnownF
-sPicTableNpcUnown(G); // sPicTable_NpcUnownG
-sPicTableNpcUnown(H); // sPicTable_NpcUnownH
-sPicTableNpcUnown(I); // sPicTable_NpcUnownI
-sPicTableNpcUnown(J); // sPicTable_NpcUnownJ
-sPicTableNpcUnown(K); // sPicTable_NpcUnownK
-sPicTableNpcUnown(L); // sPicTable_NpcUnownL
-sPicTableNpcUnown(M); // sPicTable_NpcUnownM
-sPicTableNpcUnown(N); // sPicTable_NpcUnownN
-sPicTableNpcUnown(O); // sPicTable_NpcUnownO
-sPicTableNpcUnown(P); // sPicTable_NpcUnownP
-sPicTableNpcUnown(Q); // sPicTable_NpcUnownQ
-sPicTableNpcUnown(R); // sPicTable_NpcUnownR
-sPicTableNpcUnown(S); // sPicTable_NpcUnownS
-sPicTableNpcUnown(T); // sPicTable_NpcUnownT
-sPicTableNpcUnown(U); // sPicTable_NpcUnownU
-sPicTableNpcUnown(V); // sPicTable_NpcUnownV
-sPicTableNpcUnown(W); // sPicTable_NpcUnownW
-sPicTableNpcUnown(X); // sPicTable_NpcUnownX
-sPicTableNpcUnown(Y); // sPicTable_NpcUnownY
-sPicTableNpcUnown(Z); // sPicTable_NpcUnownZ
+sPicTableNpcUnown(A);           // sPicTable_NpcUnownA
+sPicTableNpcUnown(B);           // sPicTable_NpcUnownB
+sPicTableNpcUnown(C);           // sPicTable_NpcUnownC
+sPicTableNpcUnown(D);           // sPicTable_NpcUnownD
+sPicTableNpcUnown(E);           // sPicTable_NpcUnownE
+sPicTableNpcUnown(F);           // sPicTable_NpcUnownF
+sPicTableNpcUnown(G);           // sPicTable_NpcUnownG
+sPicTableNpcUnown(H);           // sPicTable_NpcUnownH
+sPicTableNpcUnown(I);           // sPicTable_NpcUnownI
+sPicTableNpcUnown(J);           // sPicTable_NpcUnownJ
+sPicTableNpcUnown(K);           // sPicTable_NpcUnownK
+sPicTableNpcUnown(L);           // sPicTable_NpcUnownL
+sPicTableNpcUnown(M);           // sPicTable_NpcUnownM
+sPicTableNpcUnown(N);           // sPicTable_NpcUnownN
+sPicTableNpcUnown(O);           // sPicTable_NpcUnownO
+sPicTableNpcUnown(P);           // sPicTable_NpcUnownP
+sPicTableNpcUnown(Q);           // sPicTable_NpcUnownQ
+sPicTableNpcUnown(R);           // sPicTable_NpcUnownR
+sPicTableNpcUnown(S);           // sPicTable_NpcUnownS
+sPicTableNpcUnown(T);           // sPicTable_NpcUnownT
+sPicTableNpcUnown(U);           // sPicTable_NpcUnownU
+sPicTableNpcUnown(V);           // sPicTable_NpcUnownV
+sPicTableNpcUnown(W);           // sPicTable_NpcUnownW
+sPicTableNpcUnown(X);           // sPicTable_NpcUnownX
+sPicTableNpcUnown(Y);           // sPicTable_NpcUnownY
+sPicTableNpcUnown(Z);           // sPicTable_NpcUnownZ
+sPicTableNpcUnown(Question);    // sPicTable_NpcUnownQuestion
+sPicTableNpcUnown(Exclamation); // sPicTable_NpcUnownExclamation
 
 static const struct SpriteFrameImage sPicTable_RubySapphireBrendan[] = {
     overworld_ascending_frames(gObjectEventPic_RubySapphireBrendanNormal, 2, 4),

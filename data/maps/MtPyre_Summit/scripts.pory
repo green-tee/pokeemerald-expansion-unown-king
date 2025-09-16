@@ -1,0 +1,223 @@
+mapscripts MtPyre_Summit_MapScripts {
+    MAP_SCRIPT_ON_RESUME: MtPyre_Summit_EventScript_TryRemoveUnown
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_UNOWN_KING_PRISON_STATE, 0: MtPyre_Summit_EventScript_FacePlayerNorth
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0: MtPyre_Summit_EventScript_StartFinalBossSequence
+    ]
+}
+
+script MtPyre_Summit_EventScript_TryRemoveUnown {
+    if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            removeobject(LOCALID_UNOWN_BOTTOM_LEFT)
+            removeobject(LOCALID_UNOWN_MIDDLE_LEFT)
+            removeobject(LOCALID_UNOWN_TOP_LEFT)
+            removeobject(LOCALID_UNOWN_BOTTOM_RIGHT)
+            removeobject(LOCALID_UNOWN_MIDDLE_RIGHT)
+            removeobject(LOCALID_UNOWN_TOP_RIGHT)
+        }
+    }
+}
+
+script MtPyre_Summit_EventScript_FacePlayerNorth {
+    turnobject(LOCALID_PLAYER, DIR_NORTH)
+}
+
+script MtPyre_Summit_EventScript_StartFinalBossSequence {
+    lockplayer
+    setvar(VAR_TEMP_0, 1)
+    applymovement(LOCALID_PLAYER, MtPyre_Summit_Movement_WalkToFinalBoss1)
+    waitmovement(LOCALID_PLAYER)
+    delay(30)
+    applymovement(LOCALID_PLAYER, MtPyre_Summit_Movement_WalkToFinalBoss2)
+    waitmovement(LOCALID_PLAYER)
+    playbgm(MUS_VS_ELITE_FOUR, FALSE)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, MtPyre_Summit_Movement_Surprised)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, MtPyre_Summit_Movement_PanCameraToUnownKing)
+    waitmovement(LOCALID_CAMERA)
+    special(RemoveCameraObject)
+    delay(60)
+    msgbox(MtPyre_Summit_Text_WorthlessHuman, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    msgbox(MtPyre_Summit_Text_YouWantToDefeatMe, MSGBOX_DEFAULT)
+    closemessage
+    call(MtPyre_Summit_EventScript_UnownSurroundPlayer)
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    call(MtPyre_Summit_EventScript_DoUnownKingBattle)
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    releaseall
+}
+
+movement MtPyre_Summit_Movement_WalkToFinalBoss1 {
+    walk_up * 3
+}
+
+movement MtPyre_Summit_Movement_WalkToFinalBoss2 {
+    walk_up * 7
+}
+
+movement MtPyre_Summit_Movement_Surprised {
+    emote_exclamation_mark
+}
+
+movement MtPyre_Summit_Movement_PanCameraToUnownKing {
+    walk_slow_up * 3
+}
+
+text MtPyre_Summit_Text_WorthlessHuman {
+    "Worthless human!\n"
+    "Are you the one who made the Melody\l"
+    "of Awakening resonate through this\l"
+    "whole prison?\p"
+    "Ha ha ha!\n"
+    "I congratulate you!\p"
+    "…\n"
+    "It was not you?\p"
+    "It does not matter!\n"
+    "Whoever it was, their clueless, foolish\l"
+    "mistake has allowed my servants to\l"
+    "fully recover from the clash with\l"
+    "my other half and its damned\l"
+    "human allies!\p"
+    "If the Melody of Awakening had been\n"
+    "performed outside, the Master of Flight\l"
+    "would have prevented it from reaching\l"
+    "us, thanks to its power over the winds!"
+}
+
+text MtPyre_Summit_Text_YouWantToDefeatMe {
+    "Regardless, you have come here in order\n"
+    "to destroy me and my servants,\l"
+    "have you not?\p"
+    "You fool!\p"
+    "My wounds may not have healed,\n"
+    "but my servants will extinguish\l"
+    "those creatures that follow you,\l"
+    "then you will be defenseless\l"
+    "against them!\p"
+    "You have no hope of triumph.\n"
+    "Prepare to meet your end!"
+}
+
+script MtPyre_Summit_EventScript_UnownSurroundPlayer {
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_TOP_LEFT, MtPyre_Summit_Movement_UnownDown)
+    waitmovement(0)
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_MIDDLE_LEFT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_TOP_LEFT, MtPyre_Summit_Movement_UnownDown)
+    waitmovement(0)
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_TOP_RIGHT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_BOTTOM_LEFT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_MIDDLE_LEFT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_TOP_LEFT, MtPyre_Summit_Movement_UnownDown)
+    waitmovement(0)
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_MIDDLE_RIGHT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_TOP_RIGHT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_BOTTOM_LEFT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_MIDDLE_LEFT, MtPyre_Summit_Movement_UnownDown)
+    applymovement(LOCALID_UNOWN_TOP_LEFT, MtPyre_Summit_Movement_UnownDown)
+    waitmovement(0)
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_BOTTOM_RIGHT, MtPyre_Summit_Movement_SurroundFromBottomRight)
+    applymovement(LOCALID_UNOWN_BOTTOM_LEFT, MtPyre_Summit_Movement_SurroundFromBottomLeft)
+    applymovement(LOCALID_UNOWN_MIDDLE_RIGHT, MtPyre_Summit_Movement_SurroundFromMiddleRight)
+    applymovement(LOCALID_UNOWN_MIDDLE_LEFT, MtPyre_Summit_Movement_SurroundFromMiddleLeft)
+    applymovement(LOCALID_UNOWN_TOP_RIGHT, MtPyre_Summit_Movement_SurroundFromTopRight)
+    applymovement(LOCALID_UNOWN_TOP_LEFT, MtPyre_Summit_Movement_SurroundFromTopLeft)
+    waitmovement(0)
+}
+
+movement MtPyre_Summit_Movement_UnownDown {
+    walk_fast_down
+}
+
+movement MtPyre_Summit_Movement_SurroundFromBottomRight {
+    walk_fast_left * 4
+    face_down
+}
+
+movement MtPyre_Summit_Movement_SurroundFromBottomLeft {
+    walk_fast_right * 4
+    face_up
+}
+
+movement MtPyre_Summit_Movement_SurroundFromMiddleRight {
+    walk_fast_down
+    walk_fast_left * 3
+    face_down
+}
+
+movement MtPyre_Summit_Movement_SurroundFromMiddleLeft {
+    walk_fast_down
+    walk_fast_right * 3
+    face_up
+}
+
+movement MtPyre_Summit_Movement_SurroundFromTopRight {
+    walk_fast_down * 2
+    walk_fast_left * 2
+    face_down
+}
+
+movement MtPyre_Summit_Movement_SurroundFromTopLeft {
+    walk_fast_down * 2
+    walk_fast_right * 2
+    face_up
+}
+
+script MtPyre_Summit_EventScript_DoUnownKingBattle {
+    //setflag(FLAG_BATTLE_NO_REWARD)
+    random(12)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_SPE_HOO, MtPyre_Summit_Text_UnownKingDefeated)
+        case 1:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_SPE_REG, MtPyre_Summit_Text_UnownKingDefeated)
+        case 2:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_ATT_HOO, MtPyre_Summit_Text_UnownKingDefeated)
+        case 3:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_ATT_REG, MtPyre_Summit_Text_UnownKingDefeated)
+        case 4:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_DEF_HOO, MtPyre_Summit_Text_UnownKingDefeated)
+        case 5:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_DEF_REG, MtPyre_Summit_Text_UnownKingDefeated)
+        case 6:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_ARC_SPE_HOO, MtPyre_Summit_Text_UnownKingDefeated)
+        case 7:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_ARC_SPE_REG, MtPyre_Summit_Text_UnownKingDefeated)
+        case 8:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_ARC_ATT_HOO, MtPyre_Summit_Text_UnownKingDefeated)
+        case 9:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_ARC_ATT_REG, MtPyre_Summit_Text_UnownKingDefeated)
+        case 10:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_ARC_DEF_HOO, MtPyre_Summit_Text_UnownKingDefeated)
+        case 11:
+        default:
+            trainerbattle_no_intro(TRAINER_UNOWN_KING_ARC_DEF_REG, MtPyre_Summit_Text_UnownKingDefeated)
+    }
+}
+
+text MtPyre_Summit_Text_UnownKingDefeated {
+    "My servants… Powerless!\n"
+    "Reduced to dust!"
+}
+
+script MtPyre_Summit_EventScript_TestFinalBoss {
+    lock
+    playbgm(MUS_VS_ELITE_FOUR, FALSE)
+    msgbox("Testing final boss battle.", MSGBOX_DEFAULT)
+    closemessage
+    trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_SPE_HOO, "Final boss battle completed.")
+    msgbox("Final boss test completed.", MSGBOX_DEFAULT)
+    closemessage
+    release
+}

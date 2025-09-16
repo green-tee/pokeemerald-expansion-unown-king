@@ -1603,6 +1603,23 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
     }
 }
 
+// lockplayer freezes the player after waiting for their current movement to finish.
+bool8 ScrCmd_lockplayer(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (IsOverworldLinkActive()) {
+        return FALSE;
+    } else {
+        struct ObjectEvent *followerObj = GetFollowerObject();
+        FreezePlayer_WaitForPlayer();
+        SetupNativeScript(ctx, IsFreezePlayerFinished);
+        if (FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT) && followerObj) // Unfreeze follower object (conditionally)
+            UnfreezeObjectEvent(followerObj);
+        return TRUE;
+    }
+}
+
 // lock freezes all object events except the player, follower, and the selected object immediately.
 // The player and selected object are frozen after waiting for their current movement to finish.
 bool8 ScrCmd_lock(struct ScriptContext *ctx)

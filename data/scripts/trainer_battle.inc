@@ -50,7 +50,7 @@ EventScript_DoNoIntroTrainerBattle::
 	applymovement VAR_LAST_TALKED, Movement_RevealTrainer
 	waitmovement 0
 	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	special PlayTrainerEncounterMusic
+	@special PlayTrainerEncounterMusic
 	dotrainerbattle
 	gotopostbattlescript
 

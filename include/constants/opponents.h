@@ -338,18 +338,20 @@
 #define TRAINER_EDDIE                       332
 #define TRAINER_ALLEN                       333
 #define TRAINER_TIMMY                       334
-#define TRAINER_WALLACE                     335
-#define TRAINER_ANDREW                      336
-#define TRAINER_IVAN                        337
-#define TRAINER_CLAUDE                      338
-#define TRAINER_ELLIOT_1                    339
-#define TRAINER_NED                         340
-#define TRAINER_DALE                        341
-#define TRAINER_NOLAN                       342
-#define TRAINER_BARNY                       343
-#define TRAINER_WADE                        344
-#define TRAINER_CARTER                      345
-#define TRAINER_ELLIOT_2                    346
+#define TRAINER_UNOWN_KING_START            335
+#define TRAINER_UNOWN_KING_END              TRAINER_UNOWN_KING_START + 11
+#define TRAINER_UNOWN_KING_COF_SPE_HOO      TRAINER_UNOWN_KING_START
+#define TRAINER_UNOWN_KING_COF_SPE_REG      TRAINER_UNOWN_KING_START + 1
+#define TRAINER_UNOWN_KING_COF_ATT_HOO      TRAINER_UNOWN_KING_START + 2
+#define TRAINER_UNOWN_KING_COF_ATT_REG      TRAINER_UNOWN_KING_START + 3
+#define TRAINER_UNOWN_KING_COF_DEF_HOO      TRAINER_UNOWN_KING_START + 4
+#define TRAINER_UNOWN_KING_COF_DEF_REG      TRAINER_UNOWN_KING_START + 5
+#define TRAINER_UNOWN_KING_ARC_SPE_HOO      TRAINER_UNOWN_KING_START + 6
+#define TRAINER_UNOWN_KING_ARC_SPE_REG      TRAINER_UNOWN_KING_START + 7
+#define TRAINER_UNOWN_KING_ARC_ATT_HOO      TRAINER_UNOWN_KING_START + 8
+#define TRAINER_UNOWN_KING_ARC_ATT_REG      TRAINER_UNOWN_KING_START + 9
+#define TRAINER_UNOWN_KING_ARC_DEF_HOO      TRAINER_UNOWN_KING_START + 10
+#define TRAINER_UNOWN_KING_ARC_DEF_REG      TRAINER_UNOWN_KING_END
 #define TRAINER_ELLIOT_3                    347
 #define TRAINER_ELLIOT_4                    348
 #define TRAINER_ELLIOT_5                    349

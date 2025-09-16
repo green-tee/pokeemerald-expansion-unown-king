@@ -186,7 +186,7 @@ const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
     },
     [FRONTIER_FACILITY_FACTORY] =
     {
-        .trainerId = TRAINER_NOLAND,
+        .trainerId = TRAINER_UNOWN_KING_ARC_SPE_REG,
         .objEventGfx = OBJ_EVENT_GFX_NOLAND,
         .isFemale = FALSE,
         .lostTexts = {

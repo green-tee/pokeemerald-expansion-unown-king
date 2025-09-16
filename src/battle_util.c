@@ -4739,6 +4739,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             }
             break;
         case ABILITY_ILLUSION:
+        case ABILITY_UNKNOWN:
             if (gBattleStruct->illusion[gBattlerTarget].state == ILLUSION_ON && IsBattlerTurnDamaged(gBattlerTarget))
             {
                 gBattleScripting.battler = gBattlerTarget;
@@ -10334,6 +10335,8 @@ bool32 TryClearIllusion(u32 battler, u32 caseID)
         return FALSE;
     if (GetBattlerAbility(battler) == ABILITY_ILLUSION && IsBattlerAlive(battler))
         return FALSE;
+    if (GetBattlerAbility(battler) == ABILITY_UNKNOWN && IsBattlerAlive(battler))
+        return FALSE;
 
     gBattleScripting.battler = battler;
     if (caseID == ABILITYEFFECT_ON_SWITCHIN)
@@ -10371,8 +10374,13 @@ void ClearIllusionMon(u32 battler)
 u32 GetIllusionMonSpecies(u32 battler)
 {
     struct Pokemon *illusionMon = GetIllusionMonPtr(battler);
-    if (illusionMon != NULL)
+    if (illusionMon != NULL) {
+        if (illusionMon == &gUnownFake[0])
+            return SPECIES_UNOWN_QUESTION;
+        if (illusionMon == &gUnownFake[1])
+            return SPECIES_UNOWN_EXCLAMATION;
         return GetMonData(illusionMon, MON_DATA_SPECIES);
+    }
     return SPECIES_NONE;
 }
 
@@ -10401,28 +10409,40 @@ u32 GetIllusionMonPartyId(struct Pokemon *party, struct Pokemon *mon, struct Pok
 bool32 SetIllusionMon(struct Pokemon *mon, u32 battler)
 {
     struct Pokemon *party, *partnerMon;
+    u32 partyCount;
     u32 id;
+    u16 ability = GetMonAbility(mon);
 
     gBattleStruct->illusion[battler].state = ILLUSION_OFF;
-    if (GetMonAbility(mon) != ABILITY_ILLUSION)
+    if (ability != ABILITY_ILLUSION && ability != ABILITY_UNKNOWN)
         return FALSE;
 
     party = GetBattlerParty(battler);
+    partyCount = party == gEnemyParty ? CalculateEnemyPartyCount() : CalculatePlayerPartyCount();
+    if (ability == ABILITY_ILLUSION) {
 
-    if (IsBattlerAlive(BATTLE_PARTNER(battler)))
-        partnerMon = &party[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]];
-    else
-        partnerMon = mon;
+        if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+            partnerMon = &party[gBattlerPartyIndexes[BATTLE_PARTNER(battler)]];
+        else
+            partnerMon = mon;
 
-    id = GetIllusionMonPartyId(party, mon, partnerMon);
-    if (id != PARTY_SIZE)
-    {
+        id = GetIllusionMonPartyId(party, mon, partnerMon);
+        if (id != PARTY_SIZE)
+        {
+            gBattleStruct->illusion[battler].state = ILLUSION_ON;
+            gBattleStruct->illusion[battler].mon = &party[id];
+            return TRUE;
+        }
+
+        return FALSE;
+    } else {
         gBattleStruct->illusion[battler].state = ILLUSION_ON;
-        gBattleStruct->illusion[battler].mon = &party[id];
+        if (gBattlerPartyIndexes[battler] + 1 == partyCount)
+            gBattleStruct->illusion[battler].mon = &gUnownFake[1];
+        else
+            gBattleStruct->illusion[battler].mon = &gUnownFake[0];
         return TRUE;
     }
-
-    return FALSE;
 }
 
 bool32 ShouldGetStatBadgeBoost(u16 badgeFlag, u32 battler)

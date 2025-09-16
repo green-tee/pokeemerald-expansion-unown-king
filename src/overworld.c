@@ -1802,6 +1802,7 @@ void CB2_NewGame(void)
     StopMapMusic();
     ResetSafariZoneFlag_();
     NewGameInitData();
+    InitUnownFake();
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();
@@ -2003,6 +2004,7 @@ void CB2_ContinueSavedGame(void)
     else
         InitMapFromSavedGame();
 
+    InitUnownFake();
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();

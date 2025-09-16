@@ -11,3 +11,13 @@ text MtPyre_1F_Text_UnownKingImprisoned {
     "This temple keeps the Unown King\n"
     "imprisoned."
 }
+
+script MtPyre_1F_EventScript_WalkingGal {
+    msgbox(MtPyre_1F_Text_ImLookingForRarePokemon, MSGBOX_NPC)
+}
+
+text MtPyre_1F_Text_ImLookingForRarePokemon {
+    "I'm looking for rare Pokémon to catch,\n"
+    "but I'm not in the mood to battle\l"
+    "other Trainers."
+}

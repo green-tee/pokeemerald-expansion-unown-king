@@ -80,3 +80,57 @@ text MtPyre_Exterior_Text_FightLatiosOrLatias {
     "with a smile on its face.\l"
     "Will you fight it?"
 }
+
+script MtPyre_Exterior_EventScript_GoToFinalBoss {
+    lockall
+    message(MtPyre_Exterior_Text_WantToGoToFinalBoss)
+    waitmessage
+    dynmultichoice(16, 8, TRUE, 2, 1, DYN_MULTICHOICE_CB_NONE, Multichoice_Option_GoAhead, Multichoice_Option_GoBack)
+    if (var(VAR_RESULT) == 0) {
+        // Warp and start final boss sequence
+        closemessage
+        msgbox(MtPyre_Exterior_Text_GoodLuck, MSGBOX_DEFAULT)
+        closemessage
+        applymovement(LOCALID_PLAYER, MtPyre_Exterior_Movement_GoForth)
+        waitmovement(LOCALID_PLAYER)
+        warp(MAP_MT_PYRE_SUMMIT, 15, 30)
+        waitstate
+    } else {
+        // Walk a few steps down
+        closemessage
+        applymovement(LOCALID_PLAYER, MtPyre_Exterior_Movement_GoBack)
+        waitmovement(LOCALID_PLAYER)
+        releaseall
+    }
+}
+
+text MtPyre_Exterior_Text_WantToGoToFinalBoss {
+    "Hold on a second!\n"
+    "Ahead lies the end of your quest.\p"
+    "Once you cross this line, you won't be\n"
+    "able to come back. The only options are\l"
+    "victory or defeat.\p"
+    "If you wish to save your game, go back\n"
+    "before stepping forward.\p"
+    "What will you do?"
+}
+
+text Multichoice_Option_GoAhead {
+    "I'm going ahead!"
+}
+
+text Multichoice_Option_GoBack {
+    "I'm not ready."
+}
+
+text MtPyre_Exterior_Text_GoodLuck {
+    "Good luck!"
+}
+
+movement MtPyre_Exterior_Movement_GoForth {
+    walk_up
+}
+
+movement MtPyre_Exterior_Movement_GoBack {
+    walk_down * 2
+}
