@@ -96,6 +96,87 @@ Route101_Movement_WalkUp2:
 	walk_up
 	step_end
 
+Route101_EventScript_MoveRelearner::
+# 82 "data/maps/Route101/scripts.pory"
+	lockall
+# 83 "data/maps/Route101/scripts.pory"
+	applymovement LOCALID_MOVE_REMINDER, Common_Movement_FacePlayer
+# 84 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_WantToRelearnMove, MSGBOX_YESNO
+# 85 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Route101_EventScript_MoveRelearner_2
+# 117 "data/maps/Route101/scripts.pory"
+	closemessage
+Route101_EventScript_MoveRelearner_1:
+# 119 "data/maps/Route101/scripts.pory"
+	releaseall
+	return
+
+Route101_EventScript_MoveRelearner_2:
+# 86 "data/maps/Route101/scripts.pory"
+	closemessage
+# 87 "data/maps/Route101/scripts.pory"
+	special ChooseMonForMoveRelearner
+# 88 "data/maps/Route101/scripts.pory"
+	waitstate
+# 89 "data/maps/Route101/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_ne Route101_EventScript_MoveRelearner_5
+# 113 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_ComeBackAtAnyTime, MSGBOX_DEFAULT
+# 114 "data/maps/Route101/scripts.pory"
+	closemessage
+	goto Route101_EventScript_MoveRelearner_1
+
+Route101_EventScript_MoveRelearner_5:
+# 90 "data/maps/Route101/scripts.pory"
+	special IsSelectedMonEgg
+# 91 "data/maps/Route101/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Route101_EventScript_MoveRelearner_8
+# 95 "data/maps/Route101/scripts.pory"
+	compare VAR_0x8005, 0
+	goto_if_eq Route101_EventScript_MoveRelearner_11
+# 99 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_WhichMove, MSGBOX_DEFAULT
+# 100 "data/maps/Route101/scripts.pory"
+	closemessage
+# 101 "data/maps/Route101/scripts.pory"
+	special TeachMoveRelearnerMove
+# 102 "data/maps/Route101/scripts.pory"
+	waitstate
+# 103 "data/maps/Route101/scripts.pory"
+	compare VAR_0x8004, 0
+	goto_if_eq Route101_EventScript_MoveRelearner_14
+# 107 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_DoneComeBackAtAnyTime, MSGBOX_DEFAULT
+# 108 "data/maps/Route101/scripts.pory"
+	closemessage
+	goto Route101_EventScript_MoveRelearner_1
+
+Route101_EventScript_MoveRelearner_8:
+# 92 "data/maps/Route101/scripts.pory"
+	msgbox Route101_ThatIsAnEgg, MSGBOX_DEFAULT
+# 93 "data/maps/Route101/scripts.pory"
+	closemessage
+	goto Route101_EventScript_MoveRelearner_1
+
+Route101_EventScript_MoveRelearner_11:
+# 96 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_CantTeachAnyMoves, MSGBOX_DEFAULT
+# 97 "data/maps/Route101/scripts.pory"
+	closemessage
+	goto Route101_EventScript_MoveRelearner_1
+
+Route101_EventScript_MoveRelearner_14:
+# 104 "data/maps/Route101/scripts.pory"
+	msgbox Route101_Text_ComeBackAtAnyTime, MSGBOX_DEFAULT
+# 105 "data/maps/Route101/scripts.pory"
+	closemessage
+	goto Route101_EventScript_MoveRelearner_1
+
+
 Route101_Text_RestOfTheStory::
 # 33 "data/maps/Route101/scripts.pory"
 	.string "The rest of this story is for you\n"
@@ -120,3 +201,37 @@ Route101_Text_TakeThisMon::
 Route101_Text_CannotLeave::
 # 73 "data/maps/Route101/scripts.pory"
 	.string "You cannot leave this area.$"
+
+Route101_Text_WantToRelearnMove::
+# 122 "data/maps/Route101/scripts.pory"
+	.string "Hi! I'm an expert in moves that\n"
+	.string "Pokémon can learn.\p"
+	.string "If you need to, I can help your Pokémon\n"
+	.string "remember a move that they forgot.\l"
+	.string "Don't worry, the service is free.\n"
+	.string "of charge. Wanna try?$"
+
+Route101_ThatIsAnEgg::
+# 131 "data/maps/Route101/scripts.pory"
+	.string "That… is an egg.\n"
+	.string "Let it hatch first!$"
+
+Route101_Text_CantTeachAnyMoves::
+# 136 "data/maps/Route101/scripts.pory"
+	.string "Oh… I'm sorry, this Pokémon already\n"
+	.string "knows every move that it has tried\l"
+	.string "to learn. Come back when it's grown\l"
+	.string "stronger!$"
+
+Route101_Text_WhichMove::
+# 143 "data/maps/Route101/scripts.pory"
+	.string "Okay, which move should I teach it?$"
+
+Route101_Text_ComeBackAtAnyTime::
+# 147 "data/maps/Route101/scripts.pory"
+	.string "Come back at any time!$"
+
+Route101_Text_DoneComeBackAtAnyTime::
+# 151 "data/maps/Route101/scripts.pory"
+	.string "There we go!\n"
+	.string "Come back at any time!$"

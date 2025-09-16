@@ -25,7 +25,7 @@ BattleFrontier_Lounge7_EventScript_ChooseLeftTutorMove::
 	setvar VAR_0x8006, 0
 	special ShowScrollableMultichoice
 	waitstate
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	copyvar VAR_TEMP_MOVE_TUTOR_SELECTION, VAR_RESULT
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_Softboiled
 	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss
@@ -49,7 +49,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewLeftTutorMove::
 	setvar VAR_0x8006, 1
 	special ShowScrollableMultichoice
 	waitstate
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	copyvar VAR_TEMP_MOVE_TUTOR_SELECTION, VAR_RESULT
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_Softboiled
 	case 1, BattleFrontier_Lounge7_EventScript_SeismicToss
@@ -149,7 +149,7 @@ BattleFrontier_Lounge7_EventScript_ChooseRightTutorMove::
 	setvar VAR_0x8006, 0
 	special ShowScrollableMultichoice
 	waitstate
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	copyvar VAR_TEMP_MOVE_TUTOR_SELECTION, VAR_RESULT
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl
 	case 1, BattleFrontier_Lounge7_EventScript_Snore
@@ -173,7 +173,7 @@ BattleFrontier_Lounge7_EventScript_ChooseNewRightTutorMove::
 	setvar VAR_0x8006, 1
 	special ShowScrollableMultichoice
 	waitstate
-	copyvar VAR_TEMP_FRONTIER_TUTOR_SELECTION, VAR_RESULT
+	copyvar VAR_TEMP_MOVE_TUTOR_SELECTION, VAR_RESULT
 	switch VAR_RESULT
 	case 0, BattleFrontier_Lounge7_EventScript_DefenseCurl
 	case 1, BattleFrontier_Lounge7_EventScript_Snore
@@ -263,7 +263,7 @@ BattleFrontier_Lounge7_EventScript_CancelChooseMon::
 
 @ VAR_0x8008 is the price
 @ VAR_TEMP_C is the scroll multichoice ID
-@ VAR_TEMP_FRONTIER_TUTOR_SELECTION is the move selection
+@ VAR_TEMP_MOVE_TUTOR_SELECTION is the move selection
 @ VAR_TEMP_FRONTIER_TUTOR_ID is which move tutor was spoken to
 BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection::
 	special BufferBattleFrontierTutorMoveName

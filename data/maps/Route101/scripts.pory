@@ -77,3 +77,78 @@ text Route101_Text_CannotLeave {
 movement Route101_Movement_WalkUp2 {
     walk_up * 2
 }
+
+script Route101_EventScript_MoveRelearner {
+    lockall
+    applymovement(LOCALID_MOVE_REMINDER, Common_Movement_FacePlayer)
+    msgbox(Route101_Text_WantToRelearnMove, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        closemessage
+        special(ChooseMonForMoveRelearner)
+        waitstate
+        if (var(VAR_0x8004) != PARTY_NOTHING_CHOSEN) {
+            special(IsSelectedMonEgg)
+            if (var(VAR_RESULT) == TRUE) {
+                msgbox(Route101_ThatIsAnEgg, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                if (var(VAR_0x8005) == 0) {
+                    msgbox(Route101_Text_CantTeachAnyMoves, MSGBOX_DEFAULT)
+                    closemessage
+                } else {
+                    msgbox(Route101_Text_WhichMove, MSGBOX_DEFAULT)
+                    closemessage
+                    special(TeachMoveRelearnerMove)
+                    waitstate
+                    if (var(VAR_0x8004) == 0) {
+                        msgbox(Route101_Text_ComeBackAtAnyTime, MSGBOX_DEFAULT)
+                        closemessage
+                    } else {
+                        msgbox(Route101_Text_DoneComeBackAtAnyTime, MSGBOX_DEFAULT)
+                        closemessage
+                    }
+                }
+            }
+        } else {
+            msgbox(Route101_Text_ComeBackAtAnyTime, MSGBOX_DEFAULT)
+            closemessage
+        }
+    } else {
+        closemessage
+    }
+    releaseall
+}
+
+text Route101_Text_WantToRelearnMove {
+    "Hi! I'm an expert in moves that\n"
+    "Pokémon can learn.\p"
+    "If you need to, I can help your Pokémon\n"
+    "remember a move that they forgot.\l"
+    "Don't worry, the service is free.\n"
+    "of charge. Wanna try?"
+}
+
+text Route101_ThatIsAnEgg {
+    "That… is an egg.\n"
+    "Let it hatch first!"
+}
+
+text Route101_Text_CantTeachAnyMoves {
+    "Oh… I'm sorry, this Pokémon already\n"
+    "knows every move that it has tried\l"
+    "to learn. Come back when it's grown\l"
+    "stronger!"
+}
+
+text Route101_Text_WhichMove {
+    "Okay, which move should I teach it?"
+}
+
+text Route101_Text_ComeBackAtAnyTime {
+    "Come back at any time!"
+}
+
+text Route101_Text_DoneComeBackAtAnyTime {
+    "There we go!\n"
+    "Come back at any time!"
+}

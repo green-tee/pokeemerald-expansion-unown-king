@@ -21,3 +21,61 @@ text MtPyre_1F_Text_ImLookingForRarePokemon {
     "but I'm not in the mood to battle\l"
     "other Trainers."
 }
+
+script MtPyre_1F_EventScript_PokeBallMerchant {
+    lockall
+    applymovement(LOCALID_BALL_MERCHANT, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(MtPyre_1F_EventScript_BuySomePokeBall, MSGBOX_DEFAULT)
+    pokemart(MtPyre_1F_Mart_PokeBalls)
+    msgbox(MtPyre_1F_Text_SeeYouAgain, MSGBOX_DEFAULT)
+    closemessage
+    releaseall
+}
+
+text MtPyre_1F_EventScript_BuySomePokeBall {
+    "Hello, traveler.\n"
+    "Will you buy some Poké Balls?"
+}
+
+text MtPyre_1F_Text_SeeYouAgain {
+    "See you again!"
+}
+
+mart MtPyre_1F_Mart_PokeBalls {
+    ITEM_POKE_BALL
+    ITEM_GREAT_BALL
+    ITEM_ULTRA_BALL
+    ITEM_QUICK_BALL
+}
+
+script MtPyre_1F_EventScript_RemediesMerchant {
+    lockall
+    applymovement(LOCALID_REMEDIES_MERCHANT, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(MtPyre_1F_Text_BuySomeRemedies, MSGBOX_DEFAULT)
+    pokemart(MtPyre_1F_Mart_Remedies)
+    msgbox(MtPyre_1F_Text_SeeYouAgain, MSGBOX_DEFAULT)
+    closemessage
+    releaseall
+}
+
+text MtPyre_1F_Text_BuySomeRemedies {
+    "Hello, traveler.\n"
+    "Are you interested in some of my merch?"
+}
+
+mart MtPyre_1F_Mart_Remedies {
+    ITEM_FRESH_WATER
+    ITEM_LEMONADE
+    ITEM_MOOMOO_MILK
+    ITEM_CHESTO_BERRY
+    ITEM_CHERI_BERRY
+    ITEM_RAWST_BERRY
+    ITEM_PECHA_BERRY
+    ITEM_ASPEAR_BERRY
+    ITEM_PERSIM_BERRY
+    ITEM_RAGE_CANDY_BAR
+    ITEM_REVIVE
+    ITEM_RARE_CANDY
+}
