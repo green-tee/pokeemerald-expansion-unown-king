@@ -18,3 +18,127 @@ text MtPyre_5F_Text_WeHopeTheBadKingNeverRecovers {
     "Our allies, on the other hand, were\n"
     "able to wound the Bad King."
 }
+
+script MtPyre_5F_EventScript_MaidenAphrosie {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE01_GET)) {
+        msgbox(MtPyre_5F_Text_ThereAreSmallTreesOutside, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        if (!flag(FLAG_TALKED_TO_APHROSIE)) {
+            msgbox(MtPyre_5F_Text_OhATraveler, MSGBOX_DEFAULT)
+            setflag(FLAG_TALKED_TO_APHROSIE)
+        }
+        msgbox(MtPyre_5F_Text_YouMustSucceedInTwoTrials, MSGBOX_DEFAULT)
+        closemessage
+        special(IsGhostTypeInParty)
+        if (var(VAR_RESULT) == TRUE) {
+            msgbox(MtPyre_5F_Text_YouHaveAGhostType, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(MtPyre_5F_Text_LetsNotWasteAnyMoreTime, MSGBOX_DEFAULT)
+                closemessage
+                playbgm(MUS_VS_GYM_LEADER, FALSE)
+                trainerbattle_no_intro(TRAINER_MAIDEN2, MtPyre_5F_Text_MaidenAphrosieDefeated)
+                lock
+                faceplayer
+                msgbox(MtPyre_5F_Text_YouPassedTheSecondTrial, MSGBOX_DEFAULT)
+                giveitem(ITEM_HM_CUT)
+                setflag(FLAG_BADGE01_GET)
+                msgbox(MtPyre_5F_Text_WithCutYouCanExplore, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                msgbox(MtPyre_5F_Text_HowDisappointing, MSGBOX_DEFAULT)
+                closemessage
+            }
+        } else {
+            msgbox(MtPyre_5F_Text_NoGhostTypes, MSGBOX_DEFAULT)
+            closemessage
+        }
+    }
+    release
+}
+
+text MtPyre_5F_Text_OhATraveler {
+    "Oh! A traveler?\p"
+    "Hello! I'm Aphrosie, the youngest\n"
+    "of this temple's Maidens.\p"
+    "I'm here to lend a hand to… uhm…\n"
+    "the worthy ones, those who wish to\l"
+    "see every nook and granny…\p"
+    "No, let me try again.\n"
+    "Cranny, not granny.\p"
+    "Ahem!\p"
+    "Those who wish to see every nook\n"
+    "and cranny of this temple must first\l"
+    "prove that they're worthy.\l"
+    "I'm here to see if they are.\p"
+    "Those judged worthy will receive help\n"
+    "in order to venture deeper into this\l"
+    "temple."
+}
+
+text MtPyre_5F_Text_YouMustSucceedInTwoTrials {
+    "In order to be judged worthy, you must\n"
+    "succeed in two trials.\l"
+    "The first consists in finding a\l"
+    "Ghost-type Pokémon. Did you bring one?"
+}
+
+text MtPyre_5F_Text_NoGhostTypes {
+    "…\p"
+    "You don't have any Ghost-type Pokémon\n"
+    "in your party. Come back with one!"
+}
+
+text MtPyre_5F_Text_YouHaveAGhostType {
+    "…\p"
+    "Yes! There's a Ghost-type Pokémon\n"
+    "in your party!\p"
+    "Alright, here's the second trial:\n"
+    "You must defeat me in battle!\l"
+    "Shall we let our Pokémon fight?"
+}
+
+text MtPyre_5F_Text_HowDisappointing {
+    "Aw, how disappointing!\n"
+    "Come back if you change your mind.\l"
+    "Don't forget your Ghost-type Pokémon!"
+}
+
+text MtPyre_5F_Text_LetsNotWasteAnyMoreTime {
+    "Cool!\n"
+    "Let's not waste any more time!"
+}
+
+text MtPyre_5F_Text_MaidenAphrosieDefeated {
+    "Huh, I lost!"
+}
+
+text MtPyre_5F_Text_YouPassedTheSecondTrial {
+    "I guess you passed the second trial too!\n"
+    "That means, you're worthy!\p"
+    "As a reward, I'll give you this:\n"
+    "a Hidden Maneuver!"
+}
+
+text MtPyre_5F_Text_WithCutYouCanExplore {
+    "This Hidden Maneuver bears the power\n"
+    "of Cut. In battle it's a mediocre move,\l"
+    "but if you have a Pokémon that can\l"
+    "learn it, you can cut down those\l"
+    "annoying small trees that bar your way.\p"
+    "Don't feel bad for the environment,\n"
+    "they grow back in the bat of an eye.\l"
+    "Nobody can explain why!\p"
+    "Anyway, there aren't many of those trees\n"
+    "inside the temple, but you can find\l"
+    "a few more outside."
+}
+
+text MtPyre_5F_Text_ThereAreSmallTreesOutside {
+    "There aren't many small trees inside the\n"
+    "temple, but there are a few outside.\p"
+    "Although I don't think you can go much\n"
+    "far without aid from my older Sisters."
+}

@@ -30,3 +30,86 @@ text MtPyre_4F_Text_DefeatTheDarkness {
     "Those who wish to see clear\n"
     "must put out the darkness."
 }
+
+script MtPyre_4F_EventScript_MaidenAressia {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE05_GET)) {
+        msgbox(MtPyre_4F_Text_BelieveInYourself, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(MtPyre_4F_Text_ImTheStrongestMaiden, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            closemessage
+            msgbox(MtPyre_4F_Text_ShallWeBegin, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_GYM_LEADER, FALSE)
+            trainerbattle_no_intro(TRAINER_MAIDEN4, MtPyre_4F_Text_MaidenAressiaDefeated)
+            lock
+            faceplayer
+            msgbox(MtPyre_4F_Text_WhatAnIncredibleBattle, MSGBOX_DEFAULT)
+            closemessage
+            giveitem(ITEM_HM_SURF)
+            setflag(FLAG_BADGE05_GET)
+            msgbox(MtPyre_4F_Text_ThisIsAPowerfulMove, MSGBOX_DEFAULT)
+        } else {
+            closemessage
+            msgbox(MtPyre_4F_Text_ISee, MSGBOX_DEFAULT)
+            closemessage
+        }
+    }
+    release
+}
+
+text MtPyre_4F_Text_ImTheStrongestMaiden {
+    "Greetings, traveler!\p"
+    "I am Aressia, the strongest of\n"
+    "the four Maidens.\p"
+    "I aid the worty ones by lending them\n"
+    "the force of nature.\p"
+    "Be warned, though: if you accept my\n"
+    "gift, the road ahead will be a\l"
+    "perilous one.\l"
+    "That is why I must test your ability\l"
+    "in battle more than my Sisters.\p"
+    "Are you ready to fight?"
+}
+
+text MtPyre_4F_Text_ISee {
+    "I see.\n"
+    "Take your time to prepare."
+}
+
+text MtPyre_4F_Text_ShallWeBegin {
+    "Well then, shall we begin?"
+}
+
+text MtPyre_4F_Text_MaidenAressiaDefeated {
+    "Well done, traveler!\n"
+    "You are indeed a worthy one."
+}
+
+text MtPyre_4F_Text_WhatAnIncredibleBattle {
+    "What an incredible battle!\n"
+    "You earned the power I promised:\l"
+    "the ability to navigate the calm waters\l"
+    "that cuddle this temple.\p"
+    "Take it!"
+}
+
+text MtPyre_4F_Text_ThisIsAPowerfulMove {
+    "If you feel like teaching this move\n"
+    "to one of your Pokémon, it is a \l"
+    "powerful one. Pokémon that are weak to\l"
+    "Water-type moves do not fare well\l"
+    "against it.\p"
+    "I must warn you again: from now on,\n"
+    "you must always be on your toes.\p"
+    "But I believe in you.\n"
+    "You too, believe in yourself."
+}
+
+text MtPyre_4F_Text_BelieveInYourself {
+    "I believe in you.\n"
+    "You too, believe in yourself, always."
+}

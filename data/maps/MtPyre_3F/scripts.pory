@@ -15,3 +15,99 @@ text MtPyre_3F_Text_TruthRevealed {
     "Oh, how much we, the Imprisoners,\n"
     "pity what has become of it!"
 }
+
+script MtPyre_3F_EventScript_MaidenHermione {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE03_GET)) {
+        msgbox(MtPyre_3F_Text_WithRockSmashYouCanExplore, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(MtPyre_3F_Text_ImOneOfTheFourMaidens, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            closemessage
+            playbgm(MUS_VS_GYM_LEADER, FALSE)
+            msgbox(MtPyre_3F_Text_LetUsBegin, MSGBOX_DEFAULT)
+            closemessage
+            trainerbattle_no_intro(TRAINER_MAIDEN1, MtPyre_3F_Text_MaidenHermioneDefeated)
+            lock
+            faceplayer
+            msgbox(MtPyre_3F_Text_NicelyDone, MSGBOX_DEFAULT)
+            closemessage
+            giveitem(ITEM_HM_ROCK_SMASH)
+            setflag(FLAG_BADGE03_GET)
+            msgbox(MtPyre_3F_Text_ThisIsAHiddenMachine, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            closemessage
+            msgbox(MtPyre_3F_Text_ComeBackWhenReady, MSGBOX_DEFAULT)
+            closemessage
+        }
+    }
+    release
+}
+
+text MtPyre_3F_Text_ImOneOfTheFourMaidens {
+    "Welcome, traveler!\p"
+    "My name is Hermione, I'm one of the\n"
+    "four Maidens of this temple.\p"
+    "My purpose is to aid the worthy ones\n"
+    "who wish to explore this place to the\l"
+    "very last corner.\p"
+    "Have you seen any cracked rocks\n"
+    "lying around?\p"
+    "Those rocks can be shattered by those\n"
+    "with the required power.\p"
+    "I can lend you such power, but first\n"
+    "you need to prove yourself in battle.\l"
+    "Are you up to the challenge?"
+}
+
+text MtPyre_3F_Text_ComeBackWhenReady {
+    "If you're looking for the power to\n"
+    "destroy rocks, come back when you're\l"
+    "ready to fight."
+}
+
+text MtPyre_3F_Text_LetUsBegin {
+    "Very well, traveler.\n"
+    "I want to see the best you can do.\p"
+    "Let us begin!"
+}
+
+text MtPyre_3F_Text_MaidenHermioneDefeated {
+    "You passed the trial, traveler!"
+}
+
+text MtPyre_3F_Text_NicelyDone {
+    "Nicely done, traveler!\n"
+    "You deserve the power I was\l"
+    "talking about.\l"
+    "I'll hand it to you right now."
+}
+
+text MtPyre_3F_Text_ThisIsAHiddenMachine {
+    "This is called a Hidden Maneuver.\n"
+    "If a Pokémon is exposed to its\l"
+    "presence, it can immediately learn\l"
+    "a new move, as long as it's in its\l"
+    "nature.\p"
+    "This Hidden Maneuver contains\n"
+    "the power of Rock Smash, which,\l"
+    "admittedly, isn't that strong of a move.\p"
+    "However, you don't have to teach this\n"
+    "move to any of your Pokémon.\p"
+    "As long as a Pokémon can learn it,\n"
+    "it can break the cracked rocks\l"
+    "that are in your way.\p"
+    "Now, go! Explore this temple\n"
+    "to your heart's content!"
+}
+
+text MtPyre_3F_Text_WithRockSmashYouCanExplore {
+    "With the power of Rock Smash\n"
+    "by your side, you are able to explore\l"
+    "most of this temple.\p"
+    "Now, go!\n"
+    "Explore to your heart's content!"
+}

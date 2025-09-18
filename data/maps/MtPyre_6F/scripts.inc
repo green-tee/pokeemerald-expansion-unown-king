@@ -38,8 +38,49 @@ MtPyre_6F_EventScript_Inscription::
 	return
 
 
+MtPyre_6F_EventScript_StoneMerchant::
+# 28 "data/maps/MtPyre_6F/scripts.pory"
+	lockall
+# 29 "data/maps/MtPyre_6F/scripts.pory"
+	applymovement LOCALID_STONE_MERCHANT, Common_Movement_FacePlayer
+# 30 "data/maps/MtPyre_6F/scripts.pory"
+	waitmovement 0
+# 31 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_EventScript_BuySomeStones, MSGBOX_DEFAULT
+# 32 "data/maps/MtPyre_6F/scripts.pory"
+	pokemart MtPyre_6F_Mart_Stones
+# 33 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_EventScript_SeeYouAgain, MSGBOX_DEFAULT
+# 34 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+# 35 "data/maps/MtPyre_6F/scripts.pory"
+	releaseall
+	return
+
+
+	.align 2
+# 48 "data/maps/MtPyre_6F/scripts.pory"
+MtPyre_6F_Mart_Stones:
+# 49 "data/maps/MtPyre_6F/scripts.pory"
+	.2byte ITEM_FIRE_STONE
+# 50 "data/maps/MtPyre_6F/scripts.pory"
+	.2byte ITEM_WATER_STONE
+# 51 "data/maps/MtPyre_6F/scripts.pory"
+	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_NONE
+
 MtPyre_6F_Text_RockSmashTip::
 # 21 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Those unwilling to take the bugs\n"
 	.string "and the dragons from their haven\l"
 	.string "can find luck in the rocks.$"
+
+MtPyre_6F_EventScript_BuySomeStones::
+# 38 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Hello, traveler.\n"
+	.string "I've got some rare stones here.\l"
+	.string "Do you want to buy some?$"
+
+MtPyre_6F_EventScript_SeeYouAgain::
+# 44 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Step by again!$"

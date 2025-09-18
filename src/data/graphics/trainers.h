@@ -109,17 +109,17 @@ const u16 gTrainerPalette_PsychicF[] = INCBIN_U16("graphics/trainers/front_pics/
 const u32 gTrainerFrontPic_Gentleman[] = INCBIN_U32("graphics/trainers/front_pics/gentleman.4bpp.lz");
 const u16 gTrainerPalette_Gentleman[] = INCBIN_U16("graphics/trainers/front_pics/gentleman.gbapal");
 
-const u32 gTrainerFrontPic_EliteFourSidney[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_sidney.4bpp.lz");
-const u16 gTrainerPalette_EliteFourSidney[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_sidney.gbapal");
+const u32 gTrainerFrontPic_Maiden1[] = INCBIN_U32("graphics/trainers/front_pics/maiden_1.4bpp.lz");
+const u16 gTrainerPalette_Maiden1[] = INCBIN_U16("graphics/trainers/front_pics/maiden_1.gbapal");
 
-const u32 gTrainerFrontPic_EliteFourPhoebe[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_phoebe.4bpp.lz");
-const u16 gTrainerPalette_EliteFourPhoebe[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_phoebe.gbapal");
+const u32 gTrainerFrontPic_Maiden2[] = INCBIN_U32("graphics/trainers/front_pics/maiden_2.4bpp.lz");
+const u16 gTrainerPalette_Maiden2[] = INCBIN_U16("graphics/trainers/front_pics/maiden_2.gbapal");
 
-const u32 gTrainerFrontPic_EliteFourGlacia[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_glacia.4bpp.lz");
-const u16 gTrainerPalette_EliteFourGlacia[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_glacia.gbapal");
+const u32 gTrainerFrontPic_Maiden3[] = INCBIN_U32("graphics/trainers/front_pics/maiden_3.4bpp.lz");
+const u16 gTrainerPalette_Maiden3[] = INCBIN_U16("graphics/trainers/front_pics/maiden_3.gbapal");
 
-const u32 gTrainerFrontPic_EliteFourDrake[] = INCBIN_U32("graphics/trainers/front_pics/elite_four_drake.4bpp.lz");
-const u16 gTrainerPalette_EliteFourDrake[] = INCBIN_U16("graphics/trainers/front_pics/elite_four_drake.gbapal");
+const u32 gTrainerFrontPic_Maiden4[] = INCBIN_U32("graphics/trainers/front_pics/maiden_4.4bpp.lz");
+const u16 gTrainerPalette_Maiden4[] = INCBIN_U16("graphics/trainers/front_pics/maiden_4.gbapal");
 
 const u32 gTrainerFrontPic_LeaderRoxanne[] = INCBIN_U32("graphics/trainers/front_pics/leader_roxanne.4bpp.lz");
 const u16 gTrainerPalette_LeaderRoxanne[] = INCBIN_U16("graphics/trainers/front_pics/leader_roxanne.gbapal");
@@ -346,10 +346,10 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_PSYCHIC_M, gTrainerFrontPic_PsychicM, gTrainerPalette_PsychicM),
     TRAINER_SPRITE(TRAINER_PIC_PSYCHIC_F, gTrainerFrontPic_PsychicF, gTrainerPalette_PsychicF),
     TRAINER_SPRITE(TRAINER_PIC_GENTLEMAN, gTrainerFrontPic_Gentleman, gTrainerPalette_Gentleman),
-    TRAINER_SPRITE(TRAINER_PIC_ELITE_FOUR_SIDNEY, gTrainerFrontPic_EliteFourSidney, gTrainerPalette_EliteFourSidney),
-    TRAINER_SPRITE(TRAINER_PIC_ELITE_FOUR_PHOEBE, gTrainerFrontPic_EliteFourPhoebe, gTrainerPalette_EliteFourPhoebe),
-    TRAINER_SPRITE(TRAINER_PIC_ELITE_FOUR_GLACIA, gTrainerFrontPic_EliteFourGlacia, gTrainerPalette_EliteFourGlacia, -4, 4, 0x1B0),
-    TRAINER_SPRITE(TRAINER_PIC_ELITE_FOUR_DRAKE, gTrainerFrontPic_EliteFourDrake, gTrainerPalette_EliteFourDrake, 0, 5, 0x1A0),
+    TRAINER_SPRITE(TRAINER_PIC_MAIDEN1, gTrainerFrontPic_Maiden1, gTrainerPalette_Maiden1),
+    TRAINER_SPRITE(TRAINER_PIC_MAIDEN2, gTrainerFrontPic_Maiden2, gTrainerPalette_Maiden2),
+    TRAINER_SPRITE(TRAINER_PIC_MAIDEN3, gTrainerFrontPic_Maiden3, gTrainerPalette_Maiden3, -4, 4, 0x1B0),
+    TRAINER_SPRITE(TRAINER_PIC_MAIDEN4, gTrainerFrontPic_Maiden4, gTrainerPalette_Maiden4, 0, 5, 0x1A0),
     TRAINER_SPRITE(TRAINER_PIC_LEADER_ROXANNE, gTrainerFrontPic_LeaderRoxanne, gTrainerPalette_LeaderRoxanne),
     TRAINER_SPRITE(TRAINER_PIC_LEADER_BRAWLY, gTrainerFrontPic_LeaderBrawly, gTrainerPalette_LeaderBrawly),
     TRAINER_SPRITE(TRAINER_PIC_LEADER_WATTSON, gTrainerFrontPic_LeaderWattson, gTrainerPalette_LeaderWattson),

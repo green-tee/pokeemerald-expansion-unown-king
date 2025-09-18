@@ -51,10 +51,10 @@
 #define TRAINER_PIC_PSYCHIC_M             33
 #define TRAINER_PIC_PSYCHIC_F             34
 #define TRAINER_PIC_GENTLEMAN             35
-#define TRAINER_PIC_ELITE_FOUR_SIDNEY     36
-#define TRAINER_PIC_ELITE_FOUR_PHOEBE     37
-#define TRAINER_PIC_ELITE_FOUR_GLACIA     38
-#define TRAINER_PIC_ELITE_FOUR_DRAKE      39
+#define TRAINER_PIC_MAIDEN1               36
+#define TRAINER_PIC_MAIDEN2               37
+#define TRAINER_PIC_MAIDEN3               38
+#define TRAINER_PIC_MAIDEN4               39
 #define TRAINER_PIC_LEADER_ROXANNE        40
 #define TRAINER_PIC_LEADER_BRAWLY         41
 #define TRAINER_PIC_LEADER_WATTSON        42
@@ -316,7 +316,7 @@
 #define TRAINER_CLASS_BUG_MANIAC     0x1c
 #define TRAINER_CLASS_PSYCHIC        0x1d
 #define TRAINER_CLASS_GENTLEMAN      0x1e
-#define TRAINER_CLASS_ELITE_FOUR     0x1f
+#define TRAINER_CLASS_MAIDEN         0x1f
 #define TRAINER_CLASS_LEADER         0x20
 #define TRAINER_CLASS_SCHOOL_KID     0x21
 #define TRAINER_CLASS_SR_AND_JR      0x22

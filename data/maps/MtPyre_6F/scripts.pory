@@ -23,3 +23,30 @@ text MtPyre_6F_Text_RockSmashTip {
     "and the dragons from their haven\l"
     "can find luck in the rocks."
 }
+
+script MtPyre_6F_EventScript_StoneMerchant {
+    lockall
+    applymovement(LOCALID_STONE_MERCHANT, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(MtPyre_6F_EventScript_BuySomeStones, MSGBOX_DEFAULT)
+    pokemart(MtPyre_6F_Mart_Stones)
+    msgbox(MtPyre_6F_EventScript_SeeYouAgain, MSGBOX_DEFAULT)
+    closemessage
+    releaseall
+}
+
+text MtPyre_6F_EventScript_BuySomeStones {
+    "Hello, traveler.\n"
+    "I've got some rare stones here.\l"
+    "Do you want to buy some?"
+}
+
+text MtPyre_6F_EventScript_SeeYouAgain {
+    "Step by again!"
+}
+
+mart MtPyre_6F_Mart_Stones {
+    ITEM_FIRE_STONE
+    ITEM_WATER_STONE
+    ITEM_DAWN_STONE
+}

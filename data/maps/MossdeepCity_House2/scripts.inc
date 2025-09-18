@@ -17,7 +17,7 @@ MossdeepCity_House2_EventScript_Wingull::
 	msgbox MossdeepCity_House2_Text_Wingull, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
-	setflag FLAG_WINGULL_DELIVERED_MAIL
+	setflag FLAG_RECEIVED_EGG_FROM_GAIA
 	clearflag FLAG_HIDE_FORTREE_CITY_HOUSE_4_WINGULL
 	call_if_eq VAR_FACING, DIR_NORTH, MossdeepCity_House2_EventScript_WingullExitNorth
 	call_if_eq VAR_FACING, DIR_WEST, MossdeepCity_House2_EventScript_WingullExitWest

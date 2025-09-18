@@ -2,6 +2,10 @@ mapscripts FieryPath_MapScripts {
     MAP_SCRIPT_ON_RESUME: FieryPath_EventScript_TryRemoveFakeBoulder
 }
 
+const VAR_EGG_OPTION_1 = VAR_TEMP_0
+const VAR_EGG_OPTION_2 = VAR_TEMP_1
+const VAR_EGG_CHOSEN_SPECIES = VAR_TEMP_2
+
 script FieryPath_EventScript_TryRemoveFakeBoulder {
     if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
         specialvar(VAR_RESULT, GetBattleOutcome)
@@ -24,4 +28,184 @@ text FieryPath_Text_WaysOfWater {
     "to the fullest.\p"
     "This hallway is connected to one\n"
     "of the aquatic caverns."
+}
+
+script FieryPath_EventScript_MaidenGaia {
+    lock
+    faceplayer
+    if (flag(FLAG_BADGE04_GET)) {
+        if (flag(FLAG_RECEIVED_EGG_FROM_GAIA)) {
+            msgbox(FieryPath_Text_HallwayImpractical, MSGBOX_DEFAULT)
+        } else {
+            if (flag(FLAG_GAVE_WATER_TO_GAIA)) {
+                call(FieryPath_EventScript_TryGiveEgg)
+            } else {
+                msgbox(FieryPath_Text_ImSoThirsty, MSGBOX_DEFAULT)
+                checkitem(ITEM_FRESH_WATER, 1)
+                if (var(VAR_RESULT) == TRUE) {
+                    msgbox(FieryPath_Text_MayIHaveWater, MSGBOX_YESNO)
+                    if (var(VAR_RESULT) == YES) {
+                        removeitem(ITEM_FRESH_WATER, 1)
+                        setflag(FLAG_GAVE_WATER_TO_GAIA)
+                        msgbox(FieryPath_Text_ThankYouVeryMuch, MSGBOX_DEFAULT)
+                        closemessage
+                        call(FieryPath_EventScript_TryGiveEgg)
+                    } else {
+                        closemessage
+                    }
+                } else {
+                    closemessage
+                }
+            }
+        }
+    } else {
+        msgbox(FieryPath_Text_ImOneOfTheMaidens, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(FieryPath_Text_LetTheBattleBegin, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_GYM_LEADER, FALSE)
+            trainerbattle_no_intro(TRAINER_MAIDEN3, FieryPath_Text_MaidenGaiaDefeated)
+            lock
+            faceplayer
+            msgbox(FieryPath_Text_YouSucceeded, MSGBOX_DEFAULT)
+            closemessage
+            giveitem(ITEM_HM_STRENGTH)
+            setflag(FLAG_BADGE04_GET)
+            msgbox(FieryPath_Text_YouCanReachTheStrongestSister, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            msgbox(FieryPath_Text_IUnderstand, MSGBOX_DEFAULT)
+            closemessage
+        }
+    }
+    release
+}
+
+script(local) FieryPath_EventScript_TryGiveEgg {
+    getpartysize
+    if (var(VAR_RESULT) < PARTY_SIZE) {
+        switch (var(VAR_STARTER_MON)) {
+            case 0: // Electrike
+                setvar(VAR_EGG_OPTION_1, SPECIES_HOUNDOUR)
+                setvar(VAR_EGG_OPTION_2, SPECIES_VULPIX_ALOLA)
+            case 1: // Houndour
+                setvar(VAR_EGG_OPTION_1, SPECIES_VULPIX_ALOLA)
+                setvar(VAR_EGG_OPTION_2, SPECIES_ELECTRIKE)
+            case 2: // Vulpix (Alola)
+                setvar(VAR_EGG_OPTION_1, SPECIES_ELECTRIKE)
+                setvar(VAR_EGG_OPTION_2, SPECIES_HOUNDOUR)
+        }
+        bufferspeciesname(STR_VAR_1, VAR_EGG_OPTION_1)
+        bufferspeciesname(STR_VAR_2, VAR_EGG_OPTION_2)
+        message(FieryPath_Text_WhichEggDoYouWant)
+        waitmessage
+        dynmultichoice(20, 8, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, "{STR_VAR_1}", "{STR_VAR_2}")
+        if (var(VAR_RESULT) == 0) {
+            copyvar(VAR_EGG_CHOSEN_SPECIES, VAR_EGG_OPTION_1)
+        } else {
+            copyvar(VAR_EGG_CHOSEN_SPECIES, VAR_EGG_OPTION_2)
+        }
+        msgbox(FieryPath_Text_Sure, MSGBOX_DEFAULT)
+        giveegg(VAR_EGG_CHOSEN_SPECIES)
+        if (var(VAR_RESULT) != MON_CANT_GIVE) {
+            setflag(FLAG_RECEIVED_EGG_FROM_GAIA)
+            copyvar(VAR_GAIA_EGG_SPECIES, VAR_EGG_CHOSEN_SPECIES)
+        }
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox(FieryPath_ScriptReceivedAnEgg, MSGBOX_DEFAULT)
+        waitfanfare
+        closemessage
+    } else {
+        msgbox(FieryPath_Text_NoRoomForEgg, MSGBOX_DEFAULT)
+        closemessage
+    }
+}
+
+text FieryPath_Text_ImOneOfTheMaidens {
+    "Hi, traveler!\n"
+    "Do you need help?\p"
+    "I'm Gaia, one of the four Maidens\n"
+    "of this temple.\p"
+    "I can lend you the power to move\n"
+    "those heavy boulders out of your way,\l"
+    "but you must defeat me in battle first.\p"
+    "I'm not the strongest of the four,\n"
+    "but I advise you to be prepared\l"
+    "nonetheless.\p"
+    "Are you sure you want to challenge me?"
+}
+
+text FieryPath_Text_IUnderstand {
+    "I understand.\n"
+    "If you want to prove yourself,\l"
+    "talk to me again."
+}
+
+text FieryPath_Text_LetTheBattleBegin {
+    "Of course.\n"
+    "Let the battle begin!"
+}
+
+text FieryPath_Text_MaidenGaiaDefeated {
+    "You defeated me. For that, you deserve\n"
+    "the prize I'm about to give you."
+}
+
+text FieryPath_Text_YouSucceeded {
+    "You succeeded in winning our battle.\n"
+    "That makes you worthy of receiving\l"
+    "this power."
+}
+
+text FieryPath_Text_YouCanReachTheStrongestSister {
+    "With this power, you can reach\n"
+    "the strongest of my Sisters.\p"
+    "The large boulders on the floor are\n"
+    "now barely an inconvenience to you.\p"
+    "I wish you success in everything\n"
+    "in your life!"
+}
+
+text FieryPath_Text_ImSoThirsty {
+    "Oh, I'm so thirsty!"
+}
+
+text FieryPath_Text_MayIHaveWater {
+    "Hey, may I have a bottle of water,\n"
+    "please?"
+}
+
+text FieryPath_Text_ThankYouVeryMuch {
+    "Thank you very much!\p"
+    "{FONT_SMALL}Glug… Glug…\p"
+    "{FONT_NORMAL}That's better!\p"
+    "Hey, listen!"
+}
+
+text FieryPath_Text_NoRoomForEgg {
+    "I've got two Pokémon eggs here,\n"
+    "but your party is already full of\l"
+    "Pokémon, you have no room for an egg.\p"
+    "Could you come back with a free space?"
+}
+
+text FieryPath_Text_WhichEggDoYouWant {
+    "I've got two Pokémon eggs here.\n"
+    "One will hatch into {STR_VAR_1},\l"
+    "the other into {STR_VAR_2}.\p"
+    "Which one would you like?"
+}
+
+text FieryPath_Text_Sure {
+    "Sure!"
+}
+
+text FieryPath_Text_HallwayImpractical {
+    "This hallway is highly impractical,\n"
+    "don't you think?"
+}
+
+text FieryPath_ScriptReceivedAnEgg {
+    "{PLAYER} received an egg, which\n"
+    "will hatch into {STR_VAR_1}."
 }

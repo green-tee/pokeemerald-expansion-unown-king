@@ -335,7 +335,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_BUG_MANIAC] = { _("BUG MANIAC"), 15 },
     [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6 },
     [TRAINER_CLASS_GENTLEMAN] = { _("GENTLEMAN"), 20, BALL_LUXURY },
-    [TRAINER_CLASS_ELITE_FOUR] = { _("ELITE FOUR"), 25, BALL_ULTRA },
+    [TRAINER_CLASS_MAIDEN] = { _("Maiden"), 25, BALL_ULTRA },
     [TRAINER_CLASS_LEADER] = { _("LEADER"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] = { _("SCHOOL KID") },
     [TRAINER_CLASS_SR_AND_JR] = { _("SR. AND JR."), 4 },
@@ -5398,7 +5398,7 @@ static void HandleEndTurn_BattleWon(void)
         /*
         switch (GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
         {
-        case TRAINER_CLASS_ELITE_FOUR:
+        case TRAINER_CLASS_MAIDEN:
         case TRAINER_CLASS_UNOWN_KING:
             PlayBGM(MUS_VICTORY_LEAGUE);
             break;
