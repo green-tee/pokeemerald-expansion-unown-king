@@ -424,6 +424,7 @@
 #define ITEM_DIANCITE 338
 
 // Gems
+#define ITEM_GEM_START 339
 #define ITEM_NORMAL_GEM 339
 #define ITEM_FIRE_GEM 340
 #define ITEM_WATER_GEM 341
@@ -442,6 +443,7 @@
 #define ITEM_DARK_GEM 354
 #define ITEM_STEEL_GEM 355
 #define ITEM_FAIRY_GEM 356
+#define ITEM_GEM_END 356
 
 // Z-Crystals
 #define ITEM_NORMALIUM_Z 357
@@ -993,11 +995,13 @@
 #define ITEM_POKESHI_DOLL 827
 
 #define ITEM_STRANGE_BALL 828
+#define ITEM_LUCKY_CHARM 829
+#define RANDOM_ITEM_GEM 830
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define ITEMS_COUNT 830
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

@@ -67,6 +67,8 @@ MtPyre_6F_Mart_Stones:
 	.2byte ITEM_WATER_STONE
 # 51 "data/maps/MtPyre_6F/scripts.pory"
 	.2byte ITEM_DAWN_STONE
+# 52 "data/maps/MtPyre_6F/scripts.pory"
+	.2byte ITEM_MOON_STONE
 	.2byte ITEM_NONE
 
 MtPyre_6F_Text_RockSmashTip::

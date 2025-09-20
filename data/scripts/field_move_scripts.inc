@@ -15,9 +15,9 @@ Text_WantToCut:
 # 8 "data/scripts/field_move_scripts.pory"
 	.string "This tree looks like it can be\n"
 # 9 "data/scripts/field_move_scripts.pory"
-	.string "CUT down!\p"
+	.string "cut down!\p"
 # 10 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to CUT it?$"
+	.string "Would you like to cut it?$"
 # 11 "data/scripts/field_move_scripts.pory"
 
 # 12 "data/scripts/field_move_scripts.pory"
@@ -31,7 +31,7 @@ Text_CantCut:
 # 16 "data/scripts/field_move_scripts.pory"
 	.string "This tree looks like it can be\n"
 # 17 "data/scripts/field_move_scripts.pory"
-	.string "CUT down!$"
+	.string "cut down!$"
 # 18 "data/scripts/field_move_scripts.pory"
 
 # 19 "data/scripts/field_move_scripts.pory"
@@ -253,13 +253,13 @@ Text_WantToSmash:
 # 127 "data/scripts/field_move_scripts.pory"
 	.string "This rock appears to be breakable.\n"
 # 128 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use ROCK SMASH?$"
+	.string "Would you like to use Rock Smash?$"
 # 129 "data/scripts/field_move_scripts.pory"
 
 # 130 "data/scripts/field_move_scripts.pory"
 Text_CantSmash:
 # 131 "data/scripts/field_move_scripts.pory"
-	.string "It's a rugged rock, but a POKéMON\n"
+	.string "It's a rugged rock, but a Pokémon\n"
 # 132 "data/scripts/field_move_scripts.pory"
 	.string "may be able to smash it.$"
 # 133 "data/scripts/field_move_scripts.pory"
@@ -287,19 +287,19 @@ EventScript_CheckActivatedBoulder::
 # 144 "data/scripts/field_move_scripts.pory"
 Text_WantToStrength:
 # 145 "data/scripts/field_move_scripts.pory"
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Pokémon\n"
 # 146 "data/scripts/field_move_scripts.pory"
 	.string "may be able to push it aside.\p"
 # 147 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use STRENGTH?$"
+	.string "Would you like to use Strength?$"
 # 148 "data/scripts/field_move_scripts.pory"
 
 # 149 "data/scripts/field_move_scripts.pory"
 Text_MonUsedStrength:
 # 150 "data/scripts/field_move_scripts.pory"
-	.string "{STR_VAR_1} used STRENGTH!\p"
+	.string "{STR_VAR_1} used Strength!\p"
 # 151 "data/scripts/field_move_scripts.pory"
-	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "{STR_VAR_1}'s Strength made it\n"
 # 152 "data/scripts/field_move_scripts.pory"
 	.string "possible to move boulders around!$"
 # 153 "data/scripts/field_move_scripts.pory"
@@ -307,7 +307,7 @@ Text_MonUsedStrength:
 # 154 "data/scripts/field_move_scripts.pory"
 Text_CantStrength:
 # 155 "data/scripts/field_move_scripts.pory"
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but a Pokémon\n"
 # 156 "data/scripts/field_move_scripts.pory"
 	.string "may be able to push it aside.$"
 # 157 "data/scripts/field_move_scripts.pory"
@@ -315,7 +315,7 @@ Text_CantStrength:
 # 158 "data/scripts/field_move_scripts.pory"
 Text_StrengthActivated:
 # 159 "data/scripts/field_move_scripts.pory"
-	.string "STRENGTH made it possible to move\n"
+	.string "Strength made it possible to move\n"
 # 160 "data/scripts/field_move_scripts.pory"
 	.string "boulders around.$"
 # 161 "data/scripts/field_move_scripts.pory"
@@ -333,13 +333,13 @@ Text_WantToWaterfall:
 # 167 "data/scripts/field_move_scripts.pory"
 	.string "It's a large waterfall.\n"
 # 168 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use WATERFALL?$"
+	.string "Would you like to use Waterfall?$"
 # 169 "data/scripts/field_move_scripts.pory"
 
 # 170 "data/scripts/field_move_scripts.pory"
 Text_MonUsedWaterfall:
 # 171 "data/scripts/field_move_scripts.pory"
-	.string "{STR_VAR_1} used WATERFALL.$"
+	.string "{STR_VAR_1} used Waterfall.$"
 # 172 "data/scripts/field_move_scripts.pory"
 
 # 173 "data/scripts/field_move_scripts.pory"
@@ -403,7 +403,7 @@ EventScript_UseCutGrass::
 # 202 "data/scripts/field_move_scripts.pory"
 Text_CantDive:
 # 203 "data/scripts/field_move_scripts.pory"
-	.string "The sea is deep here. A POKéMON\n"
+	.string "The sea is deep here. A Pokémon\n"
 # 204 "data/scripts/field_move_scripts.pory"
 	.string "may be able to go underwater.$"
 # 205 "data/scripts/field_move_scripts.pory"
@@ -413,13 +413,13 @@ Text_WantToDive:
 # 207 "data/scripts/field_move_scripts.pory"
 	.string "The sea is deep here.\n"
 # 208 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 # 209 "data/scripts/field_move_scripts.pory"
 
 # 210 "data/scripts/field_move_scripts.pory"
 Text_MonUsedDive:
 # 211 "data/scripts/field_move_scripts.pory"
-	.string "{STR_VAR_1} used DIVE.$"
+	.string "{STR_VAR_1} used Dive.$"
 # 212 "data/scripts/field_move_scripts.pory"
 
 # 213 "data/scripts/field_move_scripts.pory"
@@ -427,7 +427,7 @@ Text_CantSurface:
 # 214 "data/scripts/field_move_scripts.pory"
 	.string "Light is filtering down from above.\n"
 # 215 "data/scripts/field_move_scripts.pory"
-	.string "A POKéMON may be able to surface.$"
+	.string "A Pokémon may be able to surface.$"
 # 216 "data/scripts/field_move_scripts.pory"
 
 # 217 "data/scripts/field_move_scripts.pory"
@@ -435,7 +435,7 @@ Text_WantToSurface:
 # 218 "data/scripts/field_move_scripts.pory"
 	.string "Light is filtering down from above.\n"
 # 219 "data/scripts/field_move_scripts.pory"
-	.string "Would you like to use DIVE?$"
+	.string "Would you like to use Dive?$"
 # 220 "data/scripts/field_move_scripts.pory"
 
 # 221 "data/scripts/field_move_scripts.pory"

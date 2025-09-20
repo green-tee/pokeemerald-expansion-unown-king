@@ -49,4 +49,5 @@ mart MtPyre_6F_Mart_Stones {
     ITEM_FIRE_STONE
     ITEM_WATER_STONE
     ITEM_DAWN_STONE
+    ITEM_MOON_STONE
 }

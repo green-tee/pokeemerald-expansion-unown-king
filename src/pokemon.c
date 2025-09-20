@@ -6111,15 +6111,16 @@ static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 
 void SetWildMonHeldItem(void)
 {
+    u16 count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
+    u16 i;
+    u16 itemGem = ITEM_GEM_START + (Random() % (ITEM_GEM_END + 1 - ITEM_GEM_START));
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
     {
         u16 rnd;
         u16 species;
-        u16 count = (WILD_DOUBLE_BATTLE) ? 2 : 1;
-        u16 i;
         bool32 itemHeldBoost = CanFirstMonBoostHeldItemRarity();
-        u16 chanceNoItem = itemHeldBoost ? 20 : 45;
-        u16 chanceNotRare = itemHeldBoost ? 80 : 95;
+        //u16 chanceNoItem = itemHeldBoost ? 20 : 45;
+        u16 chanceNotRare = itemHeldBoost ? 60 : 80;
 
         for (i = 0; i < count; i++)
         {
@@ -6141,8 +6142,8 @@ void SetWildMonHeldItem(void)
                 else
                 {
                     // In inactive Altering Cave, use normal items
-                    if (rnd < chanceNoItem)
-                        continue;
+                    //if (rnd < chanceNoItem)
+                    //    continue;
                     if (rnd < chanceNotRare)
                         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
                     else
@@ -6158,14 +6159,19 @@ void SetWildMonHeldItem(void)
                 }
                 else
                 {
-                    if (rnd < chanceNoItem)
-                        continue;
+                    //if (rnd < chanceNoItem)
+                    //    continue;
                     if (rnd < chanceNotRare)
                         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemCommon);
                     else
                         SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &gSpeciesInfo[species].itemRare);
                 }
             }
+        }
+    }
+    for (i = 0; i < count; i++) {
+        if (GetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, NULL) == RANDOM_ITEM_GEM) {
+            SetMonData(&gEnemyParty[i], MON_DATA_HELD_ITEM, &itemGem);
         }
     }
 }

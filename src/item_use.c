@@ -231,7 +231,7 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
     if (IsGen6ExpShareEnabled())
     {
         PlaySE(SE_PC_OFF);
-        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+        if (!gTasks[taskId].data[2]) // To account for pressing SELECT in the overworld
             DisplayItemMessageOnField(taskId, gText_ExpShareOff, Task_CloseCantUseKeyItemMessage);
         else
             DisplayItemMessage(taskId, FONT_NORMAL, gText_ExpShareOff, CloseItemMessage);
@@ -239,7 +239,7 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
     else
     {
         PlaySE(SE_EXP_MAX);
-        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+        if (!gTasks[taskId].data[2]) // To account for pressing SELECT in the overworld
             DisplayItemMessageOnField(taskId, gText_ExpShareOn, Task_CloseCantUseKeyItemMessage);
         else
             DisplayItemMessage(taskId, FONT_NORMAL, gText_ExpShareOn, CloseItemMessage);
@@ -248,6 +248,24 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
 #else
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 #endif
+}
+
+void ItemUseOutOfBattle_LuckyCharm(u8 taskId)
+{
+    if (FlagGet(FLAG_LUCKY_CHARM_ON)) {
+        PlaySE(SE_PC_OFF);
+        if (!gTasks[taskId].data[2]) // To account for pressing SELECT in the overworld
+            DisplayItemMessageOnField(taskId, gText_LuckyCharmOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_LuckyCharmOff, CloseItemMessage);
+    } else {
+        PlaySE(SE_EXP_MAX);
+        if (!gTasks[taskId].data[2]) // To account for pressing SELECT in the overworld
+            DisplayItemMessageOnField(taskId, gText_LuckyCharmOn, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_LuckyCharmOn, CloseItemMessage);
+    }
+    FlagToggle(FLAG_LUCKY_CHARM_ON);
 }
 
 void ItemUseOutOfBattle_Bike(u8 taskId)

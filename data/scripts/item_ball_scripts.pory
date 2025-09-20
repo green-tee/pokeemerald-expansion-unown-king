@@ -1,0 +1,11 @@
+script Common_EventScript_FindItem {
+    callnative(GetItemBallIdAndAmountFromTemplate)
+    copyvar(VAR_TEMP_0, VAR_RESULT)
+    finditem(VAR_RESULT, VAR_0x8009)
+    switch (var(VAR_TEMP_0)) {
+        case ITEM_EXP_SHARE:
+            setflag(I_EXP_SHARE_FLAG)
+        case ITEM_LUCKY_CHARM:
+            setflag(FLAG_LUCKY_CHARM_ON)
+    }
+}

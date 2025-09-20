@@ -8267,6 +8267,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ExpShare,
     },
 
+    [ITEM_LUCKY_CHARM] =
+    {
+        .name = _("Lucky Charm"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "This device doubles\n"
+            "the exp. received\n"
+            "by your party."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_LuckyCharm,
+        .iconPic = gItemIcon_ExpCharm,
+        .iconPalette = gItemIconPalette_ExpCharm,
+    },
+
     [ITEM_QUICK_CLAW] =
     {
         .name = _("Quick Claw"),
