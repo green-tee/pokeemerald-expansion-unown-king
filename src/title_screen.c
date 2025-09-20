@@ -30,10 +30,10 @@ enum {
 };
 
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
-#define VERSION_BANNER_LEFT_X 98
-#define VERSION_BANNER_RIGHT_X 162
+#define VERSION_BANNER_LEFT_X 90
+#define VERSION_BANNER_RIGHT_X (VERSION_BANNER_LEFT_X + 64)
 #define VERSION_BANNER_Y 2
-#define VERSION_BANNER_Y_GOAL 66
+#define VERSION_BANNER_Y_GOAL 70
 #define START_BANNER_X 128
 
 #define CLEAR_SAVE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_UP)
@@ -50,7 +50,8 @@ static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToBerryFixScreen(void);
 static void CB2_GoToCopyrightScreen(void);
-static void UpdateLegendaryMarkingColor(u8);
+static void UpdateUnownKingMarkingColor(u8);
+static void UpdateMarkingColor(u8 colorIndex, u8 frameNum, s8 rbase, s8 gbase, s8 bbase, s8 rfinal, s8 gfinal, s8 bfinal);
 
 static void SpriteCB_VersionBannerLeft(struct Sprite *sprite);
 static void SpriteCB_VersionBannerRight(struct Sprite *sprite);
@@ -60,8 +61,8 @@ static void SpriteCB_PokemonLogoShine(struct Sprite *sprite);
 // const rom data
 static const u16 sUnusedUnknownPal[] = INCBIN_U16("graphics/title_screen/unused.gbapal");
 
-static const u32 sTitleScreenRayquazaGfx[] = INCBIN_U32("graphics/title_screen/rayquaza.4bpp.lz");
-static const u32 sTitleScreenRayquazaTilemap[] = INCBIN_U32("graphics/title_screen/rayquaza.bin.lz");
+static const u32 sTitleScreenUnownKingGfx[] = INCBIN_U32("graphics/title_screen/unown_king.4bpp.lz");
+static const u32 sTitleScreenUnownKingTilemap[] = INCBIN_U32("graphics/title_screen/unown_king.bin.lz");
 static const u32 sTitleScreenLogoShineGfx[] = INCBIN_U32("graphics/title_screen/logo_shine.4bpp.lz");
 static const u32 sTitleScreenCloudsGfx[] = INCBIN_U32("graphics/title_screen/clouds.4bpp.lz");
 
@@ -600,8 +601,8 @@ void CB2_InitTitleScreen(void)
         LZ77UnCompVram(gTitleScreenPokemonLogoTilemap, (void *)(BG_SCREEN_ADDR(9)));
         LoadPalette(gTitleScreenBgPalettes, BG_PLTT_ID(0), 15 * PLTT_SIZE_4BPP);
         // bg3
-        LZ77UnCompVram(sTitleScreenRayquazaGfx, (void *)(BG_CHAR_ADDR(2)));
-        LZ77UnCompVram(sTitleScreenRayquazaTilemap, (void *)(BG_SCREEN_ADDR(26)));
+        LZ77UnCompVram(sTitleScreenUnownKingGfx, (void *)(BG_CHAR_ADDR(2)));
+        LZ77UnCompVram(sTitleScreenUnownKingTilemap, (void *)(BG_SCREEN_ADDR(26)));
         // bg1
         LZ77UnCompVram(sTitleScreenCloudsGfx, (void *)(BG_CHAR_ADDR(3)));
         LZ77UnCompVram(gTitleScreenCloudsTilemap, (void *)(BG_SCREEN_ADDR(27)));
@@ -812,7 +813,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
             gBattle_BG1_Y = gTasks[taskId].tBg1Y / 2;
             gBattle_BG1_X = 0;
         }
-        UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
+        UpdateUnownKingMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
@@ -854,16 +855,51 @@ static void CB2_GoToBerryFixScreen(void)
     }
 }
 
-static void UpdateLegendaryMarkingColor(u8 frameNum)
+static void UpdateUnownKingMarkingColor(u8 frameNum)
 {
-    if ((frameNum % 4) == 0) // Change color every 4th frame
+    if ((frameNum % 4) == 0) // Change eyes color every 4th frame
     {
+        /*
         s32 intensity = Cos(frameNum, 128) + 128;
-        s32 r = 31 - ((intensity * 32 - intensity) / 256);
-        s32 g = 31 - (intensity * 22 / 256);
-        s32 b = 12;
+        s32 r = 31 - (intensity *  1 / 256);
+        s32 g = 31 - (intensity * 16 / 256);
+        s32 b = 0;
 
         u16 color = RGB(r, g, b);
-        LoadPalette(&color, BG_PLTT_ID(14) + 15, sizeof(color));
-   }
+        LoadPalette(&color, BG_PLTT_ID(14) + 5, sizeof(color));
+        */
+        UpdateMarkingColor( 5, frameNum, 30, 15,  0, 31, 25,  0);
+        UpdateMarkingColor( 6, frameNum, 24,  8,  0, 31, 18,  0);
+    }
+    if ((frameNum % 2) == 0) // Change flames color every 2nd frame
+    {
+        /*
+        // V1
+        UpdateMarkingColor( 9, frameNum * 2, 22,  3, 11,  7,  3, 22);
+        UpdateMarkingColor(10, frameNum * 2, 25,  7, 17,  8, 10, 20);
+        UpdateMarkingColor(11, frameNum * 2, 30,  8, 27, 15, 15, 27);
+        UpdateMarkingColor(12, frameNum * 2, 18,  0,  6,  4,  4, 22);
+        */
+
+        // V2
+        UpdateMarkingColor( 9, frameNum * 2, 22,  3, 11,  7, 13, 19);
+        UpdateMarkingColor(10, frameNum * 2, 25,  7, 17,  6, 20, 24);
+        UpdateMarkingColor(11, frameNum * 2, 30,  8, 27, 15, 27, 27);
+        UpdateMarkingColor(12, frameNum * 2, 18,  0,  6,  2, 12, 13);
+    }
 }
+
+#define TRANSITION_COLOR(base, final, intensity) ((final) - (intensity) * ((final) - (base)) / 256)
+
+static void UpdateMarkingColor(u8 colorIndex, u8 frameNum, s8 rbase, s8 gbase, s8 bbase, s8 rfinal, s8 gfinal, s8 bfinal)
+{
+    s32 intensity = Cos(frameNum, 128) + 128;
+    s32 r = TRANSITION_COLOR(rbase, rfinal, intensity);
+    s32 g = TRANSITION_COLOR(gbase, gfinal, intensity);
+    s32 b = TRANSITION_COLOR(bbase, bfinal, intensity);
+
+    u16 color  = RGB(r, g, b);
+    LoadPalette(&color, BG_PLTT_ID(14) + colorIndex, sizeof(color));
+}
+
+#undef TRANSITION_COLOR
