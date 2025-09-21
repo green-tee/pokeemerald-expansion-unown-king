@@ -345,7 +345,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_UNOWN_KING] = { _("Unown King") },
     [TRAINER_CLASS_FISHERMAN] = { _("FISHERMAN"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_DIVE : BALL_LURE },
     [TRAINER_CLASS_TRIATHLETE] = { _("TRIATHLETE"), 10 },
-    [TRAINER_CLASS_DRAGON_TAMER] = { _("DRAGON TAMER"), 12 },
+    [TRAINER_CLASS_BEAST_TAMER] = { _("Beast Tamer"), 12 },
     [TRAINER_CLASS_NINJA_BOY] = { _("NINJA BOY"), 3 },
     [TRAINER_CLASS_BATTLE_GIRL] = { _("BATTLE GIRL"), 6 },
     [TRAINER_CLASS_PARASOL_LADY] = { _("PARASOL LADY"), 10 },
@@ -353,7 +353,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_TWINS] = { _("TWINS"), 3 },
     [TRAINER_CLASS_SAILOR] = { _("SAILOR"), 8 },
     [TRAINER_CLASS_COOLTRAINER_2] = { _("COOLTRAINER"), 5, BALL_ULTRA },
-    [TRAINER_CLASS_MAGMA_ADMIN] = { _("MAGMA ADMIN"), 10 },
+    [TRAINER_CLASS_SCOUNDREL] = { _("Scoundrel"), 10 },
     [TRAINER_CLASS_RIVAL] = { _("{PKMN} TRAINER"), 15 },
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
@@ -5406,7 +5406,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_AQUA_LEADER:
-        case TRAINER_CLASS_MAGMA_ADMIN:
+        case TRAINER_CLASS_SCOUNDREL:
         case TRAINER_CLASS_MAGMA_LEADER:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;

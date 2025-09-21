@@ -55,6 +55,14 @@ Route103_EventScript_Milotic::
 	return
 
 
+Route103_EventScript_Scoundrel::
+# 40 "data/maps/Route103/scripts.pory"
+	trainerbattle_single TRAINER_SCOUNDREL_WALTER, Route103_Text_ISpottedYou, Route103_Text_IJustHadToOpenMyMouth
+# 41 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_IHaveAWaterStone, MSGBOX_AUTOCLOSE
+	return
+
+
 Route103_Text_Milotic::
 # 31 "data/maps/Route103/scripts.pory"
 	.string "Wow!\n"
@@ -62,3 +70,18 @@ Route103_Text_Milotic::
 	.string "…\p"
 	.string "Oh no!\n"
 	.string "It's hostile!$"
+
+Route103_Text_ISpottedYou::
+# 44 "data/maps/Route103/scripts.pory"
+	.string "I spotted you, weakling!$"
+
+Route103_Text_IJustHadToOpenMyMouth::
+# 48 "data/maps/Route103/scripts.pory"
+	.string "I just had to open my mouth, huh?$"
+
+Route103_Text_IHaveAWaterStone::
+# 52 "data/maps/Route103/scripts.pory"
+	.string "I used a Water Stone on one of my\n"
+	.string "Lombre and it turned into a Ludicolo.\l"
+	.string "I wish I had a Staryu and a Feebas\l"
+	.string "as well!$"

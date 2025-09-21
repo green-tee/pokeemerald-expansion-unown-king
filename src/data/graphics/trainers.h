@@ -187,8 +187,8 @@ const u16 gTrainerPalette_SwimmingTriathleteM[] = INCBIN_U16("graphics/trainers/
 const u32 gTrainerFrontPic_SwimmingTriathleteF[] = INCBIN_U32("graphics/trainers/front_pics/swimming_triathlete_f.4bpp.lz");
 const u16 gTrainerPalette_SwimmingTriathleteF[] = INCBIN_U16("graphics/trainers/front_pics/swimming_triathlete_f.gbapal");
 
-const u32 gTrainerFrontPic_DragonTamer[] = INCBIN_U32("graphics/trainers/front_pics/dragon_tamer.4bpp.lz");
-const u16 gTrainerPalette_DragonTamer[] = INCBIN_U16("graphics/trainers/front_pics/dragon_tamer.gbapal");
+const u32 gTrainerFrontPic_BeastTamer[] = INCBIN_U32("graphics/trainers/front_pics/beast_tamer.4bpp.lz");
+const u16 gTrainerPalette_BeastTamer[] = INCBIN_U16("graphics/trainers/front_pics/beast_tamer.gbapal");
 
 const u32 gTrainerFrontPic_NinjaBoy[] = INCBIN_U32("graphics/trainers/front_pics/ninja_boy.4bpp.lz");
 const u16 gTrainerPalette_NinjaBoy[] = INCBIN_U16("graphics/trainers/front_pics/ninja_boy.gbapal");
@@ -208,8 +208,8 @@ const u16 gTrainerPalette_Twins[] = INCBIN_U16("graphics/trainers/front_pics/twi
 const u32 gTrainerFrontPic_Sailor[] = INCBIN_U32("graphics/trainers/front_pics/sailor.4bpp.lz");
 const u16 gTrainerPalette_Sailor[] = INCBIN_U16("graphics/trainers/front_pics/sailor.gbapal");
 
-const u32 gTrainerFrontPic_MagmaAdmin[] = INCBIN_U32("graphics/trainers/front_pics/magma_admin.4bpp.lz");
-const u16 gTrainerPalette_MagmaAdmin[] = INCBIN_U16("graphics/trainers/front_pics/magma_admin.gbapal");
+const u32 gTrainerFrontPic_Scoundrel[] = INCBIN_U32("graphics/trainers/front_pics/scoundrel.4bpp.lz");
+const u16 gTrainerPalette_Scoundrel[] = INCBIN_U16("graphics/trainers/front_pics/scoundrel.gbapal");
 
 const u32 gTrainerFrontPic_Wally[] = INCBIN_U32("graphics/trainers/front_pics/wally.4bpp.lz");
 const u16 gTrainerPalette_Wally[] = INCBIN_U16("graphics/trainers/palettes/wally.gbapal");
@@ -372,14 +372,14 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RUNNING_TRIATHLETE_F, gTrainerFrontPic_RunningTriathleteF, gTrainerPalette_RunningTriathleteF),
     TRAINER_SPRITE(TRAINER_PIC_SWIMMING_TRIATHLETE_M, gTrainerFrontPic_SwimmingTriathleteM, gTrainerPalette_SwimmingTriathleteM),
     TRAINER_SPRITE(TRAINER_PIC_SWIMMING_TRIATHLETE_F, gTrainerFrontPic_SwimmingTriathleteF, gTrainerPalette_SwimmingTriathleteF),
-    TRAINER_SPRITE(TRAINER_PIC_DRAGON_TAMER, gTrainerFrontPic_DragonTamer, gTrainerPalette_DragonTamer),
+    TRAINER_SPRITE(TRAINER_PIC_BEAST_TAMER, gTrainerFrontPic_BeastTamer, gTrainerPalette_BeastTamer),
     TRAINER_SPRITE(TRAINER_PIC_NINJA_BOY, gTrainerFrontPic_NinjaBoy, gTrainerPalette_NinjaBoy),
     TRAINER_SPRITE(TRAINER_PIC_BATTLE_GIRL, gTrainerFrontPic_BattleGirl, gTrainerPalette_BattleGirl),
     TRAINER_SPRITE(TRAINER_PIC_PARASOL_LADY, gTrainerFrontPic_ParasolLady, gTrainerPalette_ParasolLady),
     TRAINER_SPRITE(TRAINER_PIC_SWIMMER_F, gTrainerFrontPic_SwimmerF, gTrainerPalette_SwimmerF),
     TRAINER_SPRITE(TRAINER_PIC_TWINS, gTrainerFrontPic_Twins, gTrainerPalette_Twins),
     TRAINER_SPRITE(TRAINER_PIC_SAILOR, gTrainerFrontPic_Sailor, gTrainerPalette_Sailor),
-    TRAINER_SPRITE(TRAINER_PIC_MAGMA_ADMIN, gTrainerFrontPic_MagmaAdmin, gTrainerPalette_MagmaAdmin),
+    TRAINER_SPRITE(TRAINER_PIC_SCOUNDREL, gTrainerFrontPic_Scoundrel, gTrainerPalette_Scoundrel),
     TRAINER_SPRITE(TRAINER_PIC_WALLY, gTrainerFrontPic_Wally, gTrainerPalette_Wally),
     TRAINER_SPRITE(TRAINER_PIC_BRENDAN, gTrainerFrontPic_Brendan, gTrainerPalette_Brendan),
     TRAINER_SPRITE(TRAINER_PIC_MAY, gTrainerFrontPic_May, gTrainerPalette_May),

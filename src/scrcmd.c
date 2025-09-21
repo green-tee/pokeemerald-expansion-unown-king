@@ -2178,7 +2178,7 @@ bool8 ScrCmd_bufferunownform(struct ScriptContext *ctx)
 
     if (UNOWN_FORM_A <= formId && formId <= UNOWN_FORM_Z)
         sScriptStringVars[stringVarIndex][0] = CHAR_A + formId;
-    else if (formId == UNONW_FORM_QSTM)
+    else if (formId == UNOWN_FORM_QSTM)
         sScriptStringVars[stringVarIndex][0] = CHAR_QUESTION_MARK;
     else if (formId == UNOWN_FORM_EXCM)
         sScriptStringVars[stringVarIndex][0] = CHAR_EXCL_MARK;

@@ -269,7 +269,7 @@
 #define UNOWN_FORM_X    23
 #define UNOWN_FORM_Y    24
 #define UNOWN_FORM_Z    25
-#define UNONW_FORM_QSTM 26
+#define UNOWN_FORM_QSTM 26
 #define UNOWN_FORM_EXCM 27
 
 #define F_SUMMARY_SCREEN_FLIP_SPRITE 0x80

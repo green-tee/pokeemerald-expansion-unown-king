@@ -81,177 +81,335 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_SAWYER_1 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
+=== TRAINER_SCOUNDREL_GROSKY ===
+Name: Grosky
+Class: Scoundrel
+Pic: Scoundrel
 Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
 
-Geodude
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Poochyena
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Zubat
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 Carvanha
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Aqua Jet
+- Bite
+- Screech
+- Ice Fang
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Weavile
+Level: 27
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Metal Claw
+- Avalanche
+- Swords Dance
+- Shadow Claw
+
+=== TRAINER_SCOUNDREL_JOAQUIN ===
+Name: Joaquin
+Class: Scoundrel
+Pic: Scoundrel
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Miltank
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Stomp
+- Milk Drink
+- Rollout
+- Body Slam
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Tauros @ Chesto Berry
+Level: 27
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Horn Attack
+- Payback
+- Rest
+- Tail Whip
+
+=== TRAINER_SCOUNDREL_DIRK ===
+Name: Dirk
+Class: Scoundrel
+Pic: Scoundrel
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Whirlipede
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Bug Bite
+- Poison Tail
+- Protect
+- Pursuit
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Croagunk
+Level: 27
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Swagger
+- Poison Jab
+- Revenge
+- Taunt
+
+=== TRAINER_SCOUNDREL_ABDUL ===
+Name: Abdul
+Class: Scoundrel
+Pic: Scoundrel
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move / Will Suicide
+
+Graveler
+Level: 26
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Self-Destruct
+- Bulldoze
+- Rock Throw
+
+Boldore
+Level: 27
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Iron Defense
+- Headbutt
+- Rock Blast
+- Power Gem
+
+=== TRAINER_SCOUNDREL_MORPHEUS ===
+Name: Morpheus
+Class: Scoundrel
+Pic: Scoundrel
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vigoroth
+Level: 28
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Pursuit
+- Slash
+- Reversal
+- Encore
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Axew
+Level: 29
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Dragon Claw
+- Slash
+- Scary Face
+- Dual Chop
+
+Houndoom
+Level: 30
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Fire Fang
+- Bite
+- Inferno
+- Thunder Fang
+
+=== TRAINER_SCOUNDREL_WALTER ===
+Name: Walter
+Class: Scoundrel
+Pic: Scoundrel
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Houndour
+Level: 23
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Bite
+- Roar
+- Ember
+- Howl
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Lombre
+Level: 24
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Bubble Beam
+- Synthesis
+- Absorb
+- Fake Out
+
+Ludicolo
+Level: 25
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Giga Drain
+- Astonish
+- Water Gun
+- Flail
+
+=== TRAINER_BEAST_TAMER_CAESAR ===
+Name: Caesar
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sharpedo
+Level: 44
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Night Slash
+- Aqua Jet
+- Ice Fang
+- Psychic Fangs
 
-=== TRAINER_GABRIELLE_1 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
+Aggron
+Level: 45
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Iron Tail
+- Rock Slide
+- Stealth Rock
+- Reversal
 
-Skitty
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Manectric
+Level: 45
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Discharge
+- Ice Fang
+- Curse
+- Fire Fang
 
-Poochyena
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Walrein
+Level: 45
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Ice Fang
+- Stomping Tantrum
+- Crunch
+- Brine
 
-Zigzagoon
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Haxorus
+Level: 46
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Dance
+- Dragon Claw
+- Dragon Pulse
+- Iron Tail
 
-Lotad
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seedot
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Taillow
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_PETALBURG_WOODS ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_BEAST_TAMER_TRITON ===
+Name: Triton
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shelgon
+Level: 43
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Zen Headbutt
+- Dragon Breath
+- Headbutt
+- Ember
 
-=== TRAINER_MARCEL ===
-Name: MARCEL
-Class: Cooltrainer
-Pic: Cooltrainer M
+Fraxure
+Level: 43
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Pulse
+- Dual Chop
+- Slash
+
+=== TRAINER_BEAST_TAMER_WILHELM ===
+Name: Wilhelm
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
-Music: Cool
+Music: Magma
+Double Battle: No
+AI: Check Bad Move
+
+Bouffalant
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Megahorn
+- Head Charge
+- Pursuit
+- Revenge
+
+Rapidash
+Level: 42
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Fire Blast
+- Megahorn
+- Flame Charge
+- Stomp
+
+=== TRAINER_BEAST_TAMER_SOLOMON ===
+Name: Solomon
+Class: Beast Tamer
+Pic: Beast Tamer
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Galvantula
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Signal Beam
+- Electroweb
+- Electro Ball
+- Agility
+
+Scolipede
+Level: 41
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Steamroller
+- Poison Tail
+- Venoshock
+- Screech
+
+=== TRAINER_BEAST_TAMER_XANTE ===
+Name: Xante
+Class: Beast Tamer
+Pic: Beast Tamer
+Gender: Male
+Music: Magma
 Items: Hyper Potion
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Torterra
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Leech Seed
+- Earthquake
+- Wood Hammer
+- Bite
 
-Shiftry
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Infernape
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Close Combat
+- Fire Punch
+- Thunder Punch
+- Focus Energy
+
+Empoleon
+Level: 39
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Brine
+- Metal Claw
+- Swords Dance
+- Aqua Jet
+
+Kangaskhan
+Level: 40
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Crunch
+- Dizzy Punch
+- Fake Out
+- Bite
 
 === TRAINER_ALBERTO ===
 Name: ALBERTO
@@ -7608,8 +7766,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_NICOLAS_1 ===
 Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -7625,8 +7783,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_NICOLAS_2 ===
 Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -7642,8 +7800,8 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 === TRAINER_NICOLAS_3 ===
 Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -7659,8 +7817,8 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_NICOLAS_4 ===
 Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -7680,8 +7838,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_NICOLAS_5 ===
 Name: NICOLAS
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -7701,8 +7859,8 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 
 === TRAINER_AARON ===
 Name: AARON
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Class: Beast Tamer
+Pic: Beast Tamer
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -9783,8 +9941,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TABITHA_MOSSDEEP ===
 Name: TABITHA
-Class: Magma Admin
-Pic: Magma Admin
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
@@ -11344,8 +11502,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TABITHA_MT_CHIMNEY ===
 Name: TABITHA
-Class: Magma Admin
-Pic: Magma Admin
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No
@@ -13904,8 +14062,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TABITHA_MAGMA_HIDEOUT ===
 Name: TABITHA
-Class: Magma Admin
-Pic: Magma Admin
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
 Music: Magma
 Double Battle: No

@@ -35,3 +35,23 @@ text Route103_Text_Milotic {
     "Oh no!\n"
     "It's hostile!"
 }
+
+script Route103_EventScript_Scoundrel {
+    trainerbattle_single(TRAINER_SCOUNDREL_WALTER, Route103_Text_ISpottedYou, Route103_Text_IJustHadToOpenMyMouth)
+    msgbox(Route103_Text_IHaveAWaterStone, MSGBOX_AUTOCLOSE)
+}
+
+text Route103_Text_ISpottedYou {
+    "I spotted you, weakling!"
+}
+
+text Route103_Text_IJustHadToOpenMyMouth {
+    "I just had to open my mouth, huh?"
+}
+
+text Route103_Text_IHaveAWaterStone {
+    "I used a Water Stone on one of my\n"
+    "Lombre and it turned into a Ludicolo.\l"
+    "I wish I had a Staryu and a Feebas\l"
+    "as well!"
+}

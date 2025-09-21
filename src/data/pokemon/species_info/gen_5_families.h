@@ -10052,7 +10052,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sFraxureLevelUpLearnset,
         .teachableLearnset = sFraxureTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 48, SPECIES_HAXORUS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 46, SPECIES_HAXORUS}),
     },
 
     [SPECIES_HAXORUS] =

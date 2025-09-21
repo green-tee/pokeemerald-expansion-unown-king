@@ -185,7 +185,7 @@ FieryPath_EventScript_TryGiveEgg_13:
 # 114 "data/maps/FieryPath/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 115 "data/maps/FieryPath/scripts.pory"
-	msgbox FieryPath_ScriptReceivedAnEgg, MSGBOX_DEFAULT
+	msgbox FieryPath_Text_ReceivedAnEgg, MSGBOX_DEFAULT
 # 116 "data/maps/FieryPath/scripts.pory"
 	waitfanfare
 # 117 "data/maps/FieryPath/scripts.pory"
@@ -224,6 +224,91 @@ FieryPath_EventScript_TryGiveEgg_14:
 # 112 "data/maps/FieryPath/scripts.pory"
 	copyvar VAR_GAIA_EGG_SPECIES, VAR_TEMP_2
 	goto FieryPath_EventScript_TryGiveEgg_13
+
+
+FieryPath_EventScript_BeastTamerNE::
+# 214 "data/maps/FieryPath/scripts.pory"
+	lock
+# 215 "data/maps/FieryPath/scripts.pory"
+	faceplayer
+# 216 "data/maps/FieryPath/scripts.pory"
+	goto_if_set FLAG_TEMP_1, FieryPath_EventScript_BeastTamerNE_2
+# 220 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_ImTheStrongestTrainer, MSGBOX_YESNO
+# 221 "data/maps/FieryPath/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq FieryPath_EventScript_BeastTamerNE_5
+# 239 "data/maps/FieryPath/scripts.pory"
+	closemessage
+FieryPath_EventScript_BeastTamerNE_1:
+# 242 "data/maps/FieryPath/scripts.pory"
+	release
+	return
+
+FieryPath_EventScript_BeastTamerNE_2:
+# 217 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_ImUpToAnotherFight
+# 218 "data/maps/FieryPath/scripts.pory"
+	closemessage
+	goto FieryPath_EventScript_BeastTamerNE_1
+
+FieryPath_EventScript_BeastTamerNE_5:
+# 222 "data/maps/FieryPath/scripts.pory"
+	playbgm MUS_VS_GYM_LEADER, FALSE
+# 223 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_VeryWellBringItOn, MSGBOX_DEFAULT
+# 224 "data/maps/FieryPath/scripts.pory"
+	closemessage
+# 225 "data/maps/FieryPath/scripts.pory"
+	trainerbattle_no_intro TRAINER_BEAST_TAMER_CAESAR, FieryPath_Text_YouAreTheRealBeast
+# 226 "data/maps/FieryPath/scripts.pory"
+	setflag FLAG_TEMP_1
+# 227 "data/maps/FieryPath/scripts.pory"
+	goto_if_set FLAG_RECEIVED_MASTER_BALL, FieryPath_EventScript_BeastTamerNE_8
+# 231 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_IHaveAPresent, MSGBOX_DEFAULT
+# 232 "data/maps/FieryPath/scripts.pory"
+	closemessage
+# 233 "data/maps/FieryPath/scripts.pory"
+	giveitem ITEM_MASTER_BALL, 1
+# 234 "data/maps/FieryPath/scripts.pory"
+	setflag FLAG_RECEIVED_MASTER_BALL
+# 235 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_ThisIsAMasterBall, MSGBOX_DEFAULT
+# 236 "data/maps/FieryPath/scripts.pory"
+	closemessage
+	goto FieryPath_EventScript_BeastTamerNE_1
+
+FieryPath_EventScript_BeastTamerNE_8:
+# 228 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_IHaveNothingMoreToSay, MSGBOX_DEFAULT
+# 229 "data/maps/FieryPath/scripts.pory"
+	closemessage
+	goto FieryPath_EventScript_BeastTamerNE_1
+
+
+FieryPath_EventScript_BeastTamerNW::
+# 290 "data/maps/FieryPath/scripts.pory"
+	trainerbattle_single TRAINER_BEAST_TAMER_TRITON, FieryPath_Text_AssistMeInTraining, FieryPath_Text_NotAsPlanned
+# 291 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_LegendaryPokemon, MSGBOX_AUTOCLOSE
+	return
+
+
+FieryPath_EventScript_BeastTamerSW::
+# 312 "data/maps/FieryPath/scripts.pory"
+	trainerbattle_single TRAINER_BEAST_TAMER_WILHELM, FieryPath_Text_ThisIsntAPlaceForInexperienced, FieryPath_Text_ITakeItBack
+# 313 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_HowIsItGoing, MSGBOX_AUTOCLOSE
+	return
+
+
+FieryPath_EventScript_BeastTamerSE::
+# 330 "data/maps/FieryPath/scripts.pory"
+	trainerbattle_single TRAINER_BEAST_TAMER_SOLOMON, FieryPath_Text_TodaysYouthIsPathetic, FieryPath_Text_YouGotLucky
+# 331 "data/maps/FieryPath/scripts.pory"
+	msgbox FieryPath_Text_HaveYouFoundDarkrai, MSGBOX_AUTOCLOSE
+	return
 
 
 FieryPath_EventScript_TryGiveEgg_Text_0:
@@ -326,7 +411,99 @@ FieryPath_Text_HallwayImpractical::
 	.string "This hallway is highly impractical,\n"
 	.string "don't you think?$"
 
-FieryPath_ScriptReceivedAnEgg::
+FieryPath_Text_ReceivedAnEgg::
 # 208 "data/maps/FieryPath/scripts.pory"
 	.string "{PLAYER} received an egg, which\n"
 	.string "will hatch into {STR_VAR_1}.$"
+
+FieryPath_Text_ImTheStrongestTrainer::
+# 245 "data/maps/FieryPath/scripts.pory"
+	.string "I'm the strongest Trainer lurking\n"
+	.string "in this temple. My Pokémon are brutal\l"
+	.string "and well trained. They know moves that\l"
+	.string "you can only dream of teaching yours.\p"
+	.string "If you want to challenge me, I'm in.$"
+
+FieryPath_Text_VeryWellBringItOn::
+# 253 "data/maps/FieryPath/scripts.pory"
+	.string "Very well, traveler.\n"
+	.string "I don't intend to go easy on you.\p"
+	.string "Now, bring it on!$"
+
+FieryPath_Text_YouAreTheRealBeast::
+# 259 "data/maps/FieryPath/scripts.pory"
+	.string "You are the real beast!$"
+
+FieryPath_Text_IHaveNothingMoreToSay::
+# 263 "data/maps/FieryPath/scripts.pory"
+	.string "Traveler! I have nothing more to say\n"
+	.string "to you.\p"
+	.string "Don't let any opponent frighten you!$"
+
+FieryPath_Text_IHaveAPresent::
+# 269 "data/maps/FieryPath/scripts.pory"
+	.string "Excellent, traveler!\n"
+	.string "You fight incredibly well!\p"
+	.string "I have a present for you.\n"
+	.string "You absolutely earned it!$"
+
+FieryPath_Text_ThisIsAMasterBall::
+# 276 "data/maps/FieryPath/scripts.pory"
+	.string "This is a Master Ball.\n"
+	.string "It's the most effective Poké Ball.\p"
+	.string "It can catch any wild Pokémon\n"
+	.string "and it never fails.\p"
+	.string "Don't go waste it on a common Pokémon!$"
+
+FieryPath_Text_ImUpToAnotherFight::
+# 284 "data/maps/FieryPath/scripts.pory"
+	.string "If you pass by again,\n"
+	.string "I'm up for another fight!$"
+
+FieryPath_Text_AssistMeInTraining::
+# 294 "data/maps/FieryPath/scripts.pory"
+	.string "You!\n"
+	.string "Assist me in my training!$"
+
+FieryPath_Text_NotAsPlanned::
+# 299 "data/maps/FieryPath/scripts.pory"
+	.string "Hmpf!\n"
+	.string "Didn't work out quite as planned!$"
+
+FieryPath_Text_LegendaryPokemon::
+# 304 "data/maps/FieryPath/scripts.pory"
+	.string "I know there's supposed to be a\n"
+	.string "legendary creature inside the\l"
+	.string "Room of Bagon, but last time I checked,\l"
+	.string "it wasn't there.$"
+
+FieryPath_Text_ThisIsntAPlaceForInexperienced::
+# 316 "data/maps/FieryPath/scripts.pory"
+	.string "This isn't a place for the inexperienced!$"
+
+FieryPath_Text_ITakeItBack::
+# 320 "data/maps/FieryPath/scripts.pory"
+	.string "I take it back, you aren't inexperenced\n"
+	.string "at all.$"
+
+FieryPath_Text_HowIsItGoing::
+# 325 "data/maps/FieryPath/scripts.pory"
+	.string "How's it going, champ?$"
+
+FieryPath_Text_TodaysYouthIsPathetic::
+# 334 "data/maps/FieryPath/scripts.pory"
+	.string "Today's youth is pathetic!\n"
+	.string "I'll show you how a real Trainer fights!$"
+
+FieryPath_Text_YouGotLucky::
+# 339 "data/maps/FieryPath/scripts.pory"
+	.string "You got lucky this time!$"
+
+FieryPath_Text_HaveYouFoundDarkrai::
+# 343 "data/maps/FieryPath/scripts.pory"
+	.string "Youngling!\n"
+	.string "Have you found Darkrai yet?\p"
+	.string "I heard it patrols a room so dark\n"
+	.string "that you can't see your own feet.\p"
+	.string "Of course, against my Bug-type Pokémon,\n"
+	.string "it's got no chance!$"

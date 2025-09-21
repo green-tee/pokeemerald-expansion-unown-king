@@ -74,6 +74,20 @@ MtPyre_3F_EventScript_MaidenHermione_5:
 	goto MtPyre_3F_EventScript_MaidenHermione_1
 
 
+MtPyre_3F_EventScript_ExpertBeforeChamber::
+# 116 "data/maps/MtPyre_3F/scripts.pory"
+	lock
+# 117 "data/maps/MtPyre_3F/scripts.pory"
+	faceplayer
+# 118 "data/maps/MtPyre_3F/scripts.pory"
+	msgbox MtPyre_3F_ThereIsAStrongTrainer, MSGBOX_DEFAULT
+# 119 "data/maps/MtPyre_3F/scripts.pory"
+	closemessage
+# 120 "data/maps/MtPyre_3F/scripts.pory"
+	release
+	return
+
+
 MtPyre_3F_Text_TruthRevealed::
 # 10 "data/maps/MtPyre_3F/scripts.pory"
 	.string "In this room, the truth about\n"
@@ -147,3 +161,8 @@ MtPyre_3F_Text_WithRockSmashYouCanExplore::
 	.string "most of this temple.\p"
 	.string "Now, go!\n"
 	.string "Explore to your heart's content!$"
+
+MtPyre_3F_ThereIsAStrongTrainer::
+# 123 "data/maps/MtPyre_3F/scripts.pory"
+	.string "Careful!\n"
+	.string "There's a very strong Trainer inside!$"

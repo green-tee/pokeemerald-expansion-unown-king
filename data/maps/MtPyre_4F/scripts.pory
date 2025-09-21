@@ -113,3 +113,307 @@ text MtPyre_4F_Text_BelieveInYourself {
     "I believe in you.\n"
     "You too, believe in yourself, always."
 }
+
+script MtPyre_4F_EventScript_ScoundrelN {
+    lock
+    faceplayer
+    if (defeated(TRAINER_SCOUNDREL_GROSKY)) {
+        msgbox(MtPyre_4F_Text_IHaveToFindAnotherUnown, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        if (flag(FLAG_FOUND_UNOWN_V)) {
+            msgbox(MtPyre_4F_Text_TheUnownIsGone, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                closemessage
+                playbgm(MUS_VS_WILD, FALSE)
+                trainerbattle_no_intro(TRAINER_SCOUNDREL_GROSKY, MtPyre_4F_Text_HowCouldILose)
+                msgbox(MtPyre_4F_Text_IHaveToFindAnotherUnown, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                closemessage
+            }
+        } else {
+            playbgm(MUS_VS_WILD, FALSE)
+            msgbox(MtPyre_4F_Text_WeReBullyingThisUnown, MSGBOX_DEFAULT)
+            closemessage
+            trainerbattle_no_intro(TRAINER_SCOUNDREL_GROSKY, MtPyre_4F_Text_HowCouldILose)
+            msgbox(MtPyre_4F_Text_ImOutOfHere, MSGBOX_DEFAULT)
+            closemessage
+            if (var(VAR_FACING) == DIR_SOUTH) {
+                applymovement(LOCALID_SCOUNDREL_N, MtPyre_4F_Movement_EscapeDodgeN)
+                waitmovement(LOCALID_SCOUNDREL_N)
+            } else {
+                applymovement(LOCALID_SCOUNDREL_N, MtPyre_4F_Movement_EscapeN)
+                waitmovement(LOCALID_SCOUNDREL_N)
+            }
+            removeobject(VAR_LAST_TALKED)
+            playse(SE_FLEE)
+            waitse
+        }
+    }
+    release
+}
+
+text MtPyre_4F_Text_WeReBullyingThisUnown {
+    "What? I'm bullying this Unown,\n"
+    "don't you see?"
+}
+
+text MtPyre_4F_Text_HowCouldILose {
+    "How?! How could I lose?!"
+}
+
+text MtPyre_4F_Text_ImOutOfHere {
+    "Task!\n"
+    "I'm out of here!"
+}
+
+text MtPyre_4F_Text_TheUnownIsGone {
+    "Welp, the Unown is gone.\n"
+    "How about a battle?"
+}
+
+text MtPyre_4F_Text_IHaveToFindAnotherUnown {
+    "Now I have to find another Unown.\p"
+    "Haha! Hust kidding."
+}
+
+movement MtPyre_4F_Movement_EscapeN {
+    walk_fast_up * 4
+}
+
+movement MtPyre_4F_Movement_EscapeDodgeN {
+    walk_fast_left
+    walk_fast_up * 4
+}
+
+script MtPyre_4F_EventScript_ScoundrelS {
+    lock
+    faceplayer
+    if (defeated(TRAINER_SCOUNDREL_JOAQUIN)) {
+        msgbox(MtPyre_4F_Text_NowImBoredAgain, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        if (flag(FLAG_FOUND_UNOWN_V)) {
+            msgbox(MtPyre_4F_Text_ImBored, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                closemessage
+                playbgm(MUS_VS_WILD, FALSE)
+                trainerbattle_no_intro(TRAINER_SCOUNDREL_JOAQUIN, MtPyre_4F_Text_ICantBelieveILost)
+                msgbox(MtPyre_4F_Text_NowImBoredAgain, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                closemessage
+            }
+        } else {
+            playbgm(MUS_VS_WILD, FALSE)
+            msgbox(MtPyre_4F_Text_ShutUp, MSGBOX_DEFAULT)
+            closemessage
+            trainerbattle_no_intro(TRAINER_SCOUNDREL_JOAQUIN, MtPyre_4F_Text_ICantBelieveILost)
+            msgbox(MtPyre_4F_Text_ImHeadingOut, MSGBOX_DEFAULT)
+            closemessage
+            if (var(VAR_FACING) == DIR_EAST) {
+                applymovement(LOCALID_SCOUNDREL_S, MtPyre_4F_Movement_EscapeDodgeS)
+                waitmovement(LOCALID_SCOUNDREL_S)
+            } else {
+                
+                applymovement(LOCALID_SCOUNDREL_S, MtPyre_4F_Movement_EscapeS)
+                waitmovement(LOCALID_SCOUNDREL_S)
+            }
+            removeobject(VAR_LAST_TALKED)
+            playse(SE_FLEE)
+            waitse
+        }
+    }
+    release
+}
+
+text MtPyre_4F_Text_ShutUp {
+    "Shut up!\n"
+    "I'm busy here!"
+}
+
+text MtPyre_4F_Text_ICantBelieveILost {
+    "Nooo! I can't believe I lost!"
+}
+
+text MtPyre_4F_Text_ImHeadingOut {
+    "Umpf!\n"
+    "I'm heading out!"
+}
+
+text MtPyre_4F_Text_ImBored {
+    "Ugh, I'm so bored.\n"
+    "Kill my boredom with a battle!"
+}
+
+text MtPyre_4F_Text_NowImBoredAgain {
+    "It was good while it lasted,\n"
+    "but now I'm bored again."
+}
+
+movement MtPyre_4F_Movement_EscapeS {
+    walk_fast_left * 2
+    walk_fast_up * 3
+    walk_fast_right
+    walk_fast_up * 3
+}
+
+movement MtPyre_4F_Movement_EscapeDodgeS {
+    walk_fast_right * 2
+    walk_fast_up * 3
+    walk_fast_left
+    walk_fast_up * 3
+}
+
+script MtPyre_4F_EventScript_ScoundrelW {
+    lock
+    faceplayer
+    if (defeated(TRAINER_SCOUNDREL_DIRK)) {
+        msgbox(MtPyre_4F_ILostToAPipsqueakLikeYou, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        if (flag(FLAG_FOUND_UNOWN_V)) {
+            msgbox(MtPyre_4F_Text_AreYouLookingForAFight, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                closemessage
+                playbgm(MUS_VS_WILD, FALSE)
+                trainerbattle_no_intro(TRAINER_SCOUNDREL_DIRK, MtPyre_4F_Text_NoWay)
+                msgbox(MtPyre_4F_ILostToAPipsqueakLikeYou, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                closemessage
+            }
+        } else {
+            playbgm(MUS_VS_WILD, FALSE)
+            msgbox(MtPyre_4F_Text_MoveYourFaceAway, MSGBOX_DEFAULT)
+            closemessage
+            trainerbattle_no_intro(TRAINER_SCOUNDREL_DIRK, MtPyre_4F_Text_NoWay)
+            msgbox(MtPyre_4F_Text_INeverWantToSeeYou, MSGBOX_DEFAULT)
+            closemessage
+            if (var(VAR_FACING) == DIR_SOUTH) {
+                applymovement(LOCALID_SCOUNDREL_W, MtPyre_4F_Movement_EscapeDodgeW)
+                waitmovement(LOCALID_SCOUNDREL_W)
+            } else {
+                applymovement(LOCALID_SCOUNDREL_W, MtPyre_4F_Movement_EscapeW)
+                waitmovement(LOCALID_SCOUNDREL_W)
+            }
+            removeobject(VAR_LAST_TALKED)
+            playse(SE_FLEE)
+            waitse
+        }
+    }
+    release
+}
+
+text MtPyre_4F_Text_MoveYourFaceAway {
+    "Hey, pipsqueak! Move your dumb face\n"
+    "away from mine!"
+}
+
+text MtPyre_4F_Text_NoWay {
+    "No way!"
+}
+
+text MtPyre_4F_Text_INeverWantToSeeYou {
+    "I never want to see your face again,\n"
+    "pipsqueak!"
+}
+
+text MtPyre_4F_Text_AreYouLookingForAFight {
+    "Pipsqueak!\n"
+    "Are you looking for a fight?"
+}
+
+text MtPyre_4F_ILostToAPipsqueakLikeYou {
+    "I lost to a pipsqueak like you. I guess\n"
+    "you can't always judge by appearence."
+}
+
+movement MtPyre_4F_Movement_EscapeW {
+    walk_fast_up * 5
+}
+
+movement MtPyre_4F_Movement_EscapeDodgeW {
+    walk_fast_left
+    walk_fast_up * 2
+    walk_fast_right
+    walk_fast_up * 3
+}
+
+script MtPyre_4F_EventScript_ScoundrelE {
+    lock
+    faceplayer
+    if (defeated(TRAINER_SCOUNDREL_ABDUL)) {
+        msgbox(MtPyre_4F_Text_IHeardMoonStone, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        if (flag(FLAG_FOUND_UNOWN_V)) {
+            msgbox(MtPyre_4F_Text_WantToBattle, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                closemessage
+                playbgm(MUS_VS_WILD, FALSE)
+                trainerbattle_no_intro(TRAINER_SCOUNDREL_ABDUL, MtPyre_4F_Text_GreatNoImOutOfPokemon)
+                msgbox(MtPyre_4F_Text_IHeardMoonStone, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                closemessage
+            }
+        } else {
+            playbgm(MUS_VS_WILD, FALSE)
+            msgbox(MtPyre_4F_Text_ItsNoneOfYourBusiness, MSGBOX_DEFAULT)
+            closemessage
+            trainerbattle_no_intro(TRAINER_SCOUNDREL_ABDUL, MtPyre_4F_Text_GreatNoImOutOfPokemon)
+            msgbox(MtPyre_4F_Text_ImDoneHere, MSGBOX_DEFAULT)
+            closemessage
+            if (var(VAR_FACING) == DIR_SOUTH) {
+                applymovement(LOCALID_SCOUNDREL_E, MtPyre_4F_Movement_EscapeDodgeE)
+                waitmovement(LOCALID_SCOUNDREL_E)
+            } else {
+                applymovement(LOCALID_SCOUNDREL_E, MtPyre_4F_Movement_EscapeE)
+                waitmovement(LOCALID_SCOUNDREL_E)
+            }
+            removeobject(VAR_LAST_TALKED)
+            playse(SE_FLEE)
+            waitse
+        }
+    }
+    release
+}
+
+text MtPyre_4F_Text_ItsNoneOfYourBusiness {
+    "It's none of your business what I'm\n"
+    "doing here! Go back to your mummy!"
+}
+
+text MtPyre_4F_Text_GreatNoImOutOfPokemon {
+    "Oh, great! Now I'm out of Pokémon."
+}
+
+text MtPyre_4F_Text_ImDoneHere {
+    "Alright, then!\n"
+    "I'm done here!"
+}
+
+text MtPyre_4F_Text_WantToBattle {
+    "Hm? You want to battle?\n"
+    "Sure, why not?"
+}
+
+text MtPyre_4F_Text_IHeardMoonStone {
+    "I heard that a Moon Stone could make\n"
+    "my Pokémon evolve.\p"
+    "If you think about it, it's a stone\n"
+    "coming from a big rock in the sky."
+}
+
+movement MtPyre_4F_Movement_EscapeE {
+    walk_fast_up * 5
+}
+
+movement MtPyre_4F_Movement_EscapeDodgeE {
+    walk_fast_right
+    walk_fast_up * 2
+    walk_fast_left
+    walk_fast_up * 3
+}

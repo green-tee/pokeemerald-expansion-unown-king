@@ -111,3 +111,16 @@ text MtPyre_3F_Text_WithRockSmashYouCanExplore {
     "Now, go!\n"
     "Explore to your heart's content!"
 }
+
+script MtPyre_3F_EventScript_ExpertBeforeChamber {
+    lock
+    faceplayer
+    msgbox(MtPyre_3F_ThereIsAStrongTrainer, MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+text MtPyre_3F_ThereIsAStrongTrainer {
+    "Careful!\n"
+    "There's a very strong Trainer inside!"
+}

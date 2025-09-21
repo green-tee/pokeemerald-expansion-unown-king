@@ -246,7 +246,7 @@
 #define FLAG_TALKED_TO_APHROSIE              0xDE
 #define FLAG_GAVE_WATER_TO_GAIA              0xDF
 #define FLAG_RECEIVED_EGG_FROM_GAIA          0xE0
-#define FLAG_RECEIVED_20_COINS               0xE1
+#define FLAG_RECEIVED_MASTER_BALL            0xE1
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
@@ -782,10 +782,10 @@
 #define FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_FAINT                    0x2DB
 #define FLAG_HIDE_LATIOS                                            0x2DC
 #define FLAG_HIDE_LATIAS                                            0x2DD
-#define FLAG_HIDE_PLAYERS_HOUSE_DAD                                 0x2DE
-#define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING      0x2DF
-#define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING          0x2E0
-#define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE             0x2E1
+#define FLAG_HIDE_EAST_WING_SCOUNDREL_N                             0x2DE
+#define FLAG_HIDE_EAST_WING_SCOUNDREL_S                             0x2DF
+#define FLAG_HIDE_EAST_WING_SCOUNDREL_W                             0x2E0
+#define FLAG_HIDE_EAST_WING_SCOUNDREL_E                             0x2E1
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY                               0x2E2
 #define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                           0x2E3
 #define FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN                            0x2E4

@@ -195,7 +195,7 @@ text GraniteCave_B1F_Text_ThankYou {
 text GraniteCave_B1F_Text_YouCantDecypher {
     "You can't decypher it completely, huh?\p"
     "I see.\p"
-    "If you manage to decypher more parts\l"
+    "If you manage to decypher more parts\n"
     "of it, let me know!"
 }
 
@@ -346,7 +346,7 @@ script(local) GraniteCave_B1F_EventScript_InscriptionGuy_WaitingForPlayerToDecyp
 
 text GraniteCave_B1F_Text_CountingOnYou {
     "With your help, I'm sure I can finally\n"
-    "the inscription on this wall.\p"
+    "read the inscription on this wall.\p"
     "I'm counting on you!\p"
     "If you manage to decipher the whole\n"
     "thing, I'll give you something cool\l"
@@ -385,4 +385,25 @@ text GraniteCave_B1F_Text_IWouldveNeverImagined {
     "good.\p"
     "Should we perhaps… defeat the evil half\n"
     "once and for all?"
+}
+
+script GraniteCave_B1F_EventScript_BeastTamer {
+    trainerbattle_single(TRAINER_BEAST_TAMER_XANTE, GraniteCave_B1F_Text_WhatAreYouDoingHere, GraniteCave_B1F_Text_IUnderstandWhy)
+    msgbox(GraniteCave_B1F_Text_SneaselRazorClaw, MSGBOX_AUTOCLOSE)
+}
+
+text GraniteCave_B1F_Text_WhatAreYouDoingHere {
+    "What are you doing here? It's dangerous!\n"
+    "Dangerous because of me!"
+}
+
+text GraniteCave_B1F_Text_IUnderstandWhy {
+    "I understand why you weren't afraid!"
+}
+
+text GraniteCave_B1F_Text_SneaselRazorClaw {
+    "Some wild Sneasel hold a Razor Claw.\n"
+    "It helps them evolve.\p"
+    "I'm pretty sure wild Axew can hold them\n"
+    "too."
 }

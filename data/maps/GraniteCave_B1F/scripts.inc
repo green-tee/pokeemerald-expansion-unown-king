@@ -443,6 +443,14 @@ GraniteCave_B1F_EventScript_InscriptionGuy_AfterTornadusBattle:
 	return
 
 
+GraniteCave_B1F_EventScript_BeastTamer::
+# 391 "data/maps/GraniteCave_B1F/scripts.pory"
+	trainerbattle_single TRAINER_BEAST_TAMER_XANTE, GraniteCave_B1F_Text_WhatAreYouDoingHere, GraniteCave_B1F_Text_IUnderstandWhy
+# 392 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_SneaselRazorClaw, MSGBOX_AUTOCLOSE
+	return
+
+
 GraniteCave_B1F_Text_TooDark::
 # 46 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "It's too dark to read anything.$"
@@ -526,7 +534,7 @@ GraniteCave_B1F_Text_YouCantDecypher::
 # 195 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "You can't decypher it completely, huh?\p"
 	.string "I see.\p"
-	.string "If you manage to decypher more parts\l"
+	.string "If you manage to decypher more parts\n"
 	.string "of it, let me know!$"
 
 GraniteCave_B1F_Text_CanYouTurnOnTheLight::
@@ -566,7 +574,7 @@ GraniteCave_B1F_Text_ICantUnderstandThisWriting::
 GraniteCave_B1F_Text_CountingOnYou::
 # 347 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "With your help, I'm sure I can finally\n"
-	.string "the inscription on this wall.\p"
+	.string "read the inscription on this wall.\p"
 	.string "I'm counting on you!\p"
 	.string "If you manage to decipher the whole\n"
 	.string "thing, I'll give you something cool\l"
@@ -595,3 +603,19 @@ GraniteCave_B1F_Text_IWouldveNeverImagined::
 	.string "good.\p"
 	.string "Should we perhaps… defeat the evil half\n"
 	.string "once and for all?$"
+
+GraniteCave_B1F_Text_WhatAreYouDoingHere::
+# 395 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "What are you doing here? It's dangerous!\n"
+	.string "Dangerous because of me!$"
+
+GraniteCave_B1F_Text_IUnderstandWhy::
+# 400 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "I understand why you weren't afraid!$"
+
+GraniteCave_B1F_Text_SneaselRazorClaw::
+# 404 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Some wild Sneasel hold a Razor Claw.\n"
+	.string "It helps them evolve.\p"
+	.string "I'm pretty sure wild Axew can hold them\n"
+	.string "too.$"

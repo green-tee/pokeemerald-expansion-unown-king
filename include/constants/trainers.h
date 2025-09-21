@@ -4,6 +4,16 @@
 #include "constants/opponents.h"
 #include "constants/battle_frontier_trainers.h"
 
+/**
+ * Notes
+ * Trainers in a certain Class have Pokémon whose levels span through a given range, boundaries included, as follows:
+ * TRAINER_CLASS_BREEDER:     from  7 to 14
+ * TRAINER_CLASS_FIGHTER:     from 15 to 22
+ * TRAINER_CLASS_SCOUNDREL:   from 23 to 30
+ * TRAINER_CLASS_PSYCHIC:     from 31 to 38
+ * TRAINER_CLASS_BEAST_TAMER: from 39 to 46
+ */
+
 // Special Trainer Ids.
 //      0-299 are frontier trainers
 #define TRAINER_RECORD_MIXING_FRIEND        FRONTIER_TRAINERS_COUNT
@@ -77,14 +87,14 @@
 #define TRAINER_PIC_RUNNING_TRIATHLETE_F  59
 #define TRAINER_PIC_SWIMMING_TRIATHLETE_M 60
 #define TRAINER_PIC_SWIMMING_TRIATHLETE_F 61
-#define TRAINER_PIC_DRAGON_TAMER          62
+#define TRAINER_PIC_BEAST_TAMER           62
 #define TRAINER_PIC_NINJA_BOY             63
 #define TRAINER_PIC_BATTLE_GIRL           64
 #define TRAINER_PIC_PARASOL_LADY          65
 #define TRAINER_PIC_SWIMMER_F             66
 #define TRAINER_PIC_TWINS                 67
 #define TRAINER_PIC_SAILOR                68
-#define TRAINER_PIC_MAGMA_ADMIN           69
+#define TRAINER_PIC_SCOUNDREL             69
 #define TRAINER_PIC_WALLY                 70
 #define TRAINER_PIC_BRENDAN               71
 #define TRAINER_PIC_MAY                   72
@@ -326,7 +336,7 @@
 #define TRAINER_CLASS_UNOWN_KING     0x26
 #define TRAINER_CLASS_FISHERMAN      0x27
 #define TRAINER_CLASS_TRIATHLETE     0x28
-#define TRAINER_CLASS_DRAGON_TAMER   0x29
+#define TRAINER_CLASS_BEAST_TAMER    0x29
 #define TRAINER_CLASS_NINJA_BOY      0x2a
 #define TRAINER_CLASS_BATTLE_GIRL    0x2b
 #define TRAINER_CLASS_PARASOL_LADY   0x2c
@@ -334,7 +344,7 @@
 #define TRAINER_CLASS_TWINS          0x2e
 #define TRAINER_CLASS_SAILOR         0x2f
 #define TRAINER_CLASS_COOLTRAINER_2  0x30 // Used for only one trainer.
-#define TRAINER_CLASS_MAGMA_ADMIN    0x31
+#define TRAINER_CLASS_SCOUNDREL      0x31
 #define TRAINER_CLASS_RIVAL          0x32
 #define TRAINER_CLASS_BUG_CATCHER    0x33
 #define TRAINER_CLASS_PKMN_RANGER    0x34

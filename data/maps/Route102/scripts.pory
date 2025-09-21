@@ -1,0 +1,50 @@
+mapscripts Route102_MapScripts {}
+
+script Route102_EventScript_Scoundrel {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_1)) {
+        msgbox(Route102_Text_WeCanBattleAgain, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(Route102_Text_WantToHaveAFight, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(Route102_Text_DontFallDown, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_WILD, FALSE)
+            trainerbattle_no_intro(TRAINER_SCOUNDREL_MORPHEUS, Route102_Text_ScoundrelDefeated)
+            setflag(FLAG_TEMP_1)
+            lock
+            faceplayer
+            msgbox(Route102_Text_ItsATerrifyingFall, MSGBOX_DEFAULT)
+        } else {
+            closemessage
+        }
+    }
+    release
+}
+
+text Route102_Text_WeCanBattleAgain {
+    "If you feel like it, we can battle\n"
+    "again sometimes."
+}
+
+text Route102_Text_WantToHaveAFight {
+    "Hehehe…\n"
+    "Wanna have a battle on this cliff?"
+}
+
+text Route102_Text_DontFallDown {
+    "Don't fall down!\n"
+    "Hahaha!"
+}
+
+text Route102_Text_ScoundrelDefeated {
+    "…\n"
+    "… Huh…"
+}
+
+text Route102_Text_ItsATerrifyingFall {
+    "It's a terrifying fall from here, but\n"
+    "that didn't indimidate you, did it?"
+}

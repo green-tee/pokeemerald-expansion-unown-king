@@ -15812,12 +15812,14 @@ static void Cmd_handleballthrow(void)
         BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_TrainerBallBlock;
+        AddBagItem(gLastUsedItem, 1);
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_BOSS)
     {
         BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_ItDodgedBall;
+        AddBagItem(gLastUsedItem, 1);
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
     {

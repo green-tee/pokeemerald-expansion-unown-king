@@ -112,7 +112,7 @@ script(local) FieryPath_EventScript_TryGiveEgg {
             copyvar(VAR_GAIA_EGG_SPECIES, VAR_EGG_CHOSEN_SPECIES)
         }
         playfanfare(MUS_OBTAIN_ITEM)
-        msgbox(FieryPath_ScriptReceivedAnEgg, MSGBOX_DEFAULT)
+        msgbox(FieryPath_Text_ReceivedAnEgg, MSGBOX_DEFAULT)
         waitfanfare
         closemessage
     } else {
@@ -205,7 +205,146 @@ text FieryPath_Text_HallwayImpractical {
     "don't you think?"
 }
 
-text FieryPath_ScriptReceivedAnEgg {
+text FieryPath_Text_ReceivedAnEgg {
     "{PLAYER} received an egg, which\n"
     "will hatch into {STR_VAR_1}."
+}
+
+script FieryPath_EventScript_BeastTamerNE {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_1)) {
+        msgbox(FieryPath_Text_ImUpToAnotherFight)
+        closemessage
+    } else {
+        msgbox(FieryPath_Text_ImTheStrongestTrainer, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            playbgm(MUS_VS_GYM_LEADER, FALSE)
+            msgbox(FieryPath_Text_VeryWellBringItOn, MSGBOX_DEFAULT)
+            closemessage
+            trainerbattle_no_intro(TRAINER_BEAST_TAMER_CAESAR, FieryPath_Text_YouAreTheRealBeast)
+            setflag(FLAG_TEMP_1)
+            if (flag(FLAG_RECEIVED_MASTER_BALL)) {
+                msgbox(FieryPath_Text_IHaveNothingMoreToSay, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                msgbox(FieryPath_Text_IHaveAPresent, MSGBOX_DEFAULT)
+                closemessage
+                giveitem(ITEM_MASTER_BALL, 1)
+                setflag(FLAG_RECEIVED_MASTER_BALL)
+                msgbox(FieryPath_Text_ThisIsAMasterBall, MSGBOX_DEFAULT)
+                closemessage
+            }
+        } else {
+            closemessage
+        }
+    }
+    release
+}
+
+text FieryPath_Text_ImTheStrongestTrainer {
+    "I'm the strongest Trainer lurking\n"
+    "in this temple. My Pokémon are brutal\l"
+    "and well trained. They know moves that\l"
+    "you can only dream of teaching yours.\p"
+    "If you want to challenge me, I'm in."
+}
+
+text FieryPath_Text_VeryWellBringItOn {
+    "Very well, traveler.\n"
+    "I don't intend to go easy on you.\p"
+    "Now, bring it on!"
+}
+
+text FieryPath_Text_YouAreTheRealBeast {
+    "You are the real beast!"
+}
+
+text FieryPath_Text_IHaveNothingMoreToSay {
+    "Traveler! I have nothing more to say\n"
+    "to you.\p"
+    "Don't let any opponent frighten you!"
+}
+
+text FieryPath_Text_IHaveAPresent {
+    "Excellent, traveler!\n"
+    "You fight incredibly well!\p"
+    "I have a present for you.\n"
+    "You absolutely earned it!"
+}
+
+text FieryPath_Text_ThisIsAMasterBall {
+    "This is a Master Ball.\n"
+    "It's the most effective Poké Ball.\p"
+    "It can catch any wild Pokémon\n"
+    "and it never fails.\p"
+    "Don't go waste it on a common Pokémon!"
+}
+
+text FieryPath_Text_ImUpToAnotherFight {
+    "If you pass by again,\n"
+    "I'm up for another fight!"
+}
+
+script FieryPath_EventScript_BeastTamerNW {
+    trainerbattle_single(TRAINER_BEAST_TAMER_TRITON, FieryPath_Text_AssistMeInTraining, FieryPath_Text_NotAsPlanned)
+    msgbox(FieryPath_Text_LegendaryPokemon, MSGBOX_AUTOCLOSE)
+}
+
+text FieryPath_Text_AssistMeInTraining {
+    "You!\n"
+    "Assist me in my training!"
+}
+
+text FieryPath_Text_NotAsPlanned {
+    "Hmpf!\n"
+    "Didn't work out quite as planned!"
+}
+
+text FieryPath_Text_LegendaryPokemon {
+    "I know there's supposed to be a\n"
+    "legendary creature inside the\l"
+    "Room of Bagon, but last time I checked,\l"
+    "it wasn't there."
+}
+
+script FieryPath_EventScript_BeastTamerSW {
+    trainerbattle_single(TRAINER_BEAST_TAMER_WILHELM, FieryPath_Text_ThisIsntAPlaceForInexperienced, FieryPath_Text_ITakeItBack)
+    msgbox(FieryPath_Text_HowIsItGoing, MSGBOX_AUTOCLOSE)
+}
+
+text FieryPath_Text_ThisIsntAPlaceForInexperienced {
+    "This isn't a place for the inexperienced!"
+}
+
+text FieryPath_Text_ITakeItBack {
+    "I take it back, you aren't inexperenced\n"
+    "at all."
+}
+
+text FieryPath_Text_HowIsItGoing {
+    "How's it going, champ?"
+}
+
+script FieryPath_EventScript_BeastTamerSE {
+    trainerbattle_single(TRAINER_BEAST_TAMER_SOLOMON, FieryPath_Text_TodaysYouthIsPathetic, FieryPath_Text_YouGotLucky)
+    msgbox(FieryPath_Text_HaveYouFoundDarkrai, MSGBOX_AUTOCLOSE)
+}
+
+text FieryPath_Text_TodaysYouthIsPathetic {
+    "Today's youth is pathetic!\n"
+    "I'll show you how a real Trainer fights!"
+}
+
+text FieryPath_Text_YouGotLucky {
+    "You got lucky this time!"
+}
+
+text FieryPath_Text_HaveYouFoundDarkrai {
+    "Youngling!\n"
+    "Have you found Darkrai yet?\p"
+    "I heard it patrols a room so dark\n"
+    "that you can't see your own feet.\p"
+    "Of course, against my Bug-type Pokémon,\n"
+    "it's got no chance!"
 }
