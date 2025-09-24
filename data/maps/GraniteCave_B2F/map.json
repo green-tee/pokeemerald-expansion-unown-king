@@ -66,5 +66,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 0,
+      "y": 11,
+      "elevation": 0,
+      "item": "ITEM_CHESTO_BERRY",
+      "flag": "FLAG_HIDDEN_ITEM_PITCH_BLACK_CHESTO_BERRY"
+    }
+  ]
 }

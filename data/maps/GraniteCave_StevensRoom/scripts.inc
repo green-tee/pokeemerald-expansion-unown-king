@@ -171,10 +171,10 @@ GraniteCave_StevensRoom_EventScript_Lugia::
 # 86 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq GraniteCave_StevensRoom_EventScript_Lugia_2
-# 99 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 101 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	closemessage
 GraniteCave_StevensRoom_EventScript_Lugia_1:
-# 101 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 103 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	release
 	return
 
@@ -202,11 +202,13 @@ GraniteCave_StevensRoom_EventScript_Lugia_5:
 # 95 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	setflag FLAG_CAUGHT_LUGIA
 # 96 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	giveitem ITEM_SACRED_ASH, 1
+	clearflag FLAG_ITEM_LUGIA_SACRED_ASH
+# 97 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+	showobjectat LOCALID_SACRED_ASH, MAP_GRANITE_CAVE_STEVENS_ROOM
 	goto GraniteCave_StevensRoom_EventScript_Lugia_1
 
 
 GraniteCave_StevensRoom_Text_FightLugia::
-# 104 "data/maps/GraniteCave_StevensRoom/scripts.pory"
+# 106 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	.string "This Pokémon is staring at you calmly.\n"
 	.string "Will you fight it?$"

@@ -94,6 +94,28 @@ MtPyre_5F_EventScript_MaidenAphrosie_11:
 	goto MtPyre_5F_EventScript_MaidenAphrosie_1
 
 
+MtPyre_5F_EventScript_Yahaha::
+# 147 "data/maps/MtPyre_5F/scripts.pory"
+	lock
+# 148 "data/maps/MtPyre_5F/scripts.pory"
+	faceplayer
+# 149 "data/maps/MtPyre_5F/scripts.pory"
+	msgbox MtPyre_5F_Text_Yahaha, MSGBOX_DEFAULT
+# 150 "data/maps/MtPyre_5F/scripts.pory"
+	closemessage
+# 151 "data/maps/MtPyre_5F/scripts.pory"
+	release
+	return
+
+
+MtPyre_5F_EventScript_Fighter::
+# 159 "data/maps/MtPyre_5F/scripts.pory"
+	trainerbattle_single TRAINER_FIGHTER_PAULA, MtPyre_5F_Text_ThisIsThePerfectSpot, MtPyre_5F_Text_TheTrainersCode
+# 160 "data/maps/MtPyre_5F/scripts.pory"
+	msgbox MtPyre_5F_Text_AbilityFrisk, MSGBOX_AUTOCLOSE
+	return
+
+
 MtPyre_5F_Text_WeHopeTheBadKingNeverRecovers::
 # 10 "data/maps/MtPyre_5F/scripts.pory"
 	.string "We, the Imprisoners, hope with all\n"
@@ -189,3 +211,27 @@ MtPyre_5F_Text_ThereAreSmallTreesOutside::
 	.string "temple, but there are a few outside.\p"
 	.string "Although I don't think you can go much\n"
 	.string "far without aid from my older Sisters.$"
+
+MtPyre_5F_Text_Yahaha::
+# 154 "data/maps/MtPyre_5F/scripts.pory"
+	.string "Yahaha! You found me!$"
+
+MtPyre_5F_Text_ThisIsThePerfectSpot::
+# 163 "data/maps/MtPyre_5F/scripts.pory"
+	.string "This is the perfect spot to find\n"
+	.string "Trainers to battle!$"
+
+MtPyre_5F_Text_TheTrainersCode::
+# 168 "data/maps/MtPyre_5F/scripts.pory"
+	.string "The Trainer's Code states that I must\n"
+	.string "give you money now.$"
+
+MtPyre_5F_Text_AbilityFrisk::
+# 173 "data/maps/MtPyre_5F/scripts.pory"
+	.string "If you send in a Pokémon whose ability\n"
+	.string "is Frisk, you can see what item your\l"
+	.string "opponent is holding.\p"
+	.string "It's very useful when trying to get a\n"
+	.string "specific item from a wild Pokémon.\p"
+	.string "Gallade, Carbink, and Spiritomb can have\n"
+	.string "that ability.$"

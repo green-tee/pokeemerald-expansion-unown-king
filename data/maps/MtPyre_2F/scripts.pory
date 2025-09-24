@@ -24,3 +24,139 @@ text MtPyre_2F_Text_UnownList {
     "U - Below the longest hallway\p"
     "N - The bugs' nesting place"
 }
+
+script MtPyre_2F_EventScript_Psychic {
+    trainerbattle_single(TRAINER_PSYCHIC_CLELIA, MtPyre_2F_Text_JustBecauseImAPsychic, MtPyre_2F_Text_ImEvaporating)
+    msgbox(MtPyre_2F_Text_FindFeebas, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_2F_Text_JustBecauseImAPsychic {
+    "Just because I'm a Psychic, that\n"
+    "doesn't mean I can only use\l"
+    "Psychic-type Pokémon.\p"
+    "I'll beat you with the power of water\n"
+    "and water! And water! Water!"
+}
+
+text MtPyre_2F_Text_ImEvaporating {
+    "I'm evaporating…"
+}
+
+text MtPyre_2F_Text_FindFeebas {
+    "If you want to find a Feebas, you need\n"
+    "a good rod. You can't expect one\l"
+    "to fall for any old rod."
+}
+
+script MrPyre_2F_EventScript_GuyBeforeHollowRoom {
+    lock
+    faceplayer
+    msgbox(MtPyre_2F_Text_ILetMyGuardDown, MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+text MtPyre_2F_Text_ILetMyGuardDown {
+    "I walked into this room ahead and found\n"
+    "a bunch of harmless Pokémon.\l"
+    "I let my guard down.\p"
+    "But then a big bipedal Pokémon and a\n"
+    "huge Bug came from behind a pillar and\l"
+    "I barely escaped!"
+}
+
+script MtPyre_2F_EventScript_TrainerTypesGal {
+    lock
+    faceplayer
+    msgbox(MtPyre_2F_Text_ExplainTrainerTypes, MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+text MtPyre_2F_Text_ExplainTrainerTypes {
+    "There are different types of Trainers\n"
+    "around here. Breeders are the weakest,\l"
+    "but they tend to use more Pokémon than\l"
+    "the others.\p"
+    "Fighters are a bit tougher, but you\n"
+    "should be able to overcome them with a\l"
+    "little training.\p"
+    "Next are the bald Scoundrels. They're\n"
+    "usually mean towards weak Trainers.\l"
+    "You might want to avoid them, at least\l"
+    "for a while.\p"
+    "And you definitely want to avoid\n"
+    "Psychics.\p"
+    "As for the Beast Tamers, you'll hardly\n"
+    "meet them if you aren't strong enough\l"
+    "to take them on.\p"
+    "That said, there's a feral Beast Tamer\n"
+    "hiding in a room shrouded in darkness.\l"
+    "Be extra careful if you venture there!"
+}
+
+script MtPyre_2F_EventScript_Fighter {
+    trainerbattle_single(TRAINER_FIGHTER_JOLENE, MtPyre_2F_Text_GetZapped, MtPyre_2F_Text_INeedMorePower)
+    msgbox(MtPyre_2F_Text_LightningDoesntStruckTwice, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_2F_Text_GetZapped {
+    "Get zapped by my overcharged Pokémon!"
+}
+
+text MtPyre_2F_Text_INeedMorePower {
+    "I need more raw power."
+}
+
+text MtPyre_2F_Text_LightningDoesntStruckTwice {
+    "Lightning usually doesn't strike\n"
+    "twice. I'm not going to battle with you\l"
+    "again."
+}
+
+script MtPyre_2F_EventScript_BreederWalking {
+    trainerbattle_single(TRAINER_BREEDER_LIAM, MtPyre_2F_Text_IDontUsuallyWin, MtPyre_2F_Text_NoBigDeal)
+    msgbox(MtPyre_2F_HowDoesGardenWork, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_2F_Text_IDontUsuallyWin {
+    "I'm not exactly used to winning,\n"
+    "but that won't stop me from trying!"
+}
+
+text MtPyre_2F_Text_NoBigDeal {
+    "No big deal, I'll keep trying!"
+}
+
+text MtPyre_2F_HowDoesGardenWork {
+    "How does this garden even work?\n"
+    "Did the people who built this temple\l"
+    "leave a patch of ground so deep that\l"
+    "trees could grow and have room for\l"
+    "their roots?\p"
+    "Where's the light coming from anyway?"
+}
+
+script MtPyre_2F_EventScript_BreederStill {
+    trainerbattle_single(TRAINER_BREEDER_OLIVER, MtPyre_2F_Text_WellShowPokemon, MtPyre_2F_Text_ThatWasEntertaining)
+    msgbox(MtPyre_2F_Text_HaveYouHeardOfMaidens, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_2F_Text_WellShowPokemon {
+    "You'll show me your Pokémon\n"
+    "and I'll show you mine!"
+}
+
+text MtPyre_2F_Text_ThatWasEntertaining {
+    "That was entertaining!"
+}
+
+text MtPyre_2F_Text_HaveYouHeardOfMaidens {
+    "Have you heard of the four Maidens\n"
+    "of this temple?\p"
+    "They're four sisters who dress in fancy\n"
+    "clothes and help Trainers who are\l"
+    "skilled enough.\p"
+    "I've heard that one of them is obsessed\n"
+    "with Ghost-type Pokémon."
+}

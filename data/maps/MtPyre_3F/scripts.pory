@@ -124,3 +124,92 @@ text MtPyre_3F_ThereIsAStrongTrainer {
     "Careful!\n"
     "There's a very strong Trainer inside!"
 }
+
+script MtPyre_3F_EventScript_Fighter {
+    trainerbattle_single(TRAINER_FIGHTER_GAGA, MtPyre_3F_Text_YouLookLikeAValidOpponent, MtPyre_3F_Text_YouWereAValidOpponent)
+    msgbox(MtPyre_3F_ThereAreTwoUnown, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_3F_Text_YouLookLikeAValidOpponent {
+    "You look like a valid opponent!\n"
+    "Let's have a battle!"
+}
+
+text MtPyre_3F_Text_YouWereAValidOpponent {
+    "You really were a valid opponent!"
+}
+
+text MtPyre_3F_ThereAreTwoUnown {
+    "I saw two Unown nearby. One jumped over\n"
+    "the cracked rocks.\p"
+    "The other went hiding… I don't know\n
+    where.\p"
+    "I got distracted for a second, then I\n"
+    "looked back at it and I couldn't see it\l"
+    "anymore."
+}
+
+script MtPyre_3F_EventScript_Breeder1 {
+    trainerbattle_single(TRAINER_BREEDER_TOMMY, MtPyre_3F_Text_AreYouLookingForPokemon, MtPyre_3F_Text_NothingIncredible)
+    msgbox(MtPyre_3F_Text_UseThief, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_3F_Text_AreYouLookingForPokemon {
+    "Oh, hi! Are you looking for cute Pokémon\n"
+    "too? I'll show you mine!"
+}
+
+text MtPyre_3F_Text_NothingIncredible {
+    "Yeah… Nothing incredible, right?"
+}
+
+text MtPyre_3F_Text_UseThief {
+    "If one of your Pokémon knows the move\n"
+    "Thief, go crazy with all the wild\l"
+    "Pokémon you meet!\p"
+    "Trust me, you won't regret it!"
+}
+
+script MtPyre_3F_EventScript_Breeder2 {
+    trainerbattle_single(TRAINER_BREEDER_JAMAL, MtPyre_3F_Text_ThisIsOurTrainingGround, MtPyre_3F_Text_IllRaiseMoreMunchlax)
+    msgbox(MtPyre_3F_Text_CollectItems, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_3F_Text_ThisIsOurTrainingGround {
+    "This is the training ground for my\n"
+    "Munchlax! Let's do Trainer stuff!"
+}
+
+text MtPyre_3F_Text_IllRaiseMoreMunchlax {
+    "I'm going to raise even more Munchlax!"
+}
+
+text MtPyre_3F_Text_CollectItems {
+    "It's generally recommended that you\n"
+    "pick up as many items as you can\l"
+    "before battling against other Trainers.\l"
+    "That way you'll have more options\l"
+    "to prepare!"
+}
+
+script MtPyre_3F_EventScript_Breeder3 {
+    trainerbattle_single(TRAINER_BREEDER_OZZY, MtPyre_3F_Text_ThisPlaceGivesMeCreeps, MtPyre_3F_DidItWork)
+    msgbox(MtPyre_3F_PokemonCarryGems, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_3F_Text_ThisPlaceGivesMeCreeps {
+    "This place gives me the creeps.\p"
+    "Please, let me batte against you.\n"
+    "I need to boost my confidence!"
+}
+
+text MtPyre_3F_DidItWork {
+    "Heh, I wonder if it worked…"
+}
+
+text MtPyre_3F_PokemonCarryGems {
+    "The Pokémon that look like rocks\n"
+    "carry shiny gems along.\l"
+    "That at least makes this place a little\l"
+    "less creepy."
+}

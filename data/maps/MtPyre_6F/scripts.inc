@@ -71,6 +71,110 @@ MtPyre_6F_Mart_Stones:
 	.2byte ITEM_MOON_STONE
 	.2byte ITEM_NONE
 
+MtPyre_6F_EventScript_PsychicM::
+# 56 "data/maps/MtPyre_6F/scripts.pory"
+	lock
+# 57 "data/maps/MtPyre_6F/scripts.pory"
+	faceplayer
+# 58 "data/maps/MtPyre_6F/scripts.pory"
+	goto_if_set FLAG_TEMP_1, MtPyre_6F_EventScript_PsychicM_2
+# 62 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_ISenseYourDesire, MSGBOX_YESNO
+# 63 "data/maps/MtPyre_6F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq MtPyre_6F_EventScript_PsychicM_5
+# 72 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+MtPyre_6F_EventScript_PsychicM_1:
+# 75 "data/maps/MtPyre_6F/scripts.pory"
+	release
+	return
+
+MtPyre_6F_EventScript_PsychicM_2:
+# 59 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_ImLookingForwardToRematch, MSGBOX_DEFAULT
+# 60 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+	goto MtPyre_6F_EventScript_PsychicM_1
+
+MtPyre_6F_EventScript_PsychicM_5:
+# 64 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_LetsGo, MSGBOX_DEFAULT
+# 65 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+# 66 "data/maps/MtPyre_6F/scripts.pory"
+	playbgm MUS_VS_WILD, FALSE
+# 67 "data/maps/MtPyre_6F/scripts.pory"
+	trainerbattle_no_intro TRAINER_PSYCHIC_SIGMUND, MtPyre_6F_WhatABitterDefeat
+# 68 "data/maps/MtPyre_6F/scripts.pory"
+	setflag FLAG_TEMP_1
+# 69 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_YouAreAmazing, MSGBOX_DEFAULT
+# 70 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+	goto MtPyre_6F_EventScript_PsychicM_1
+
+
+MtPyre_6F_EventScript_PsychicFSouth::
+# 104 "data/maps/MtPyre_6F/scripts.pory"
+	lock
+# 105 "data/maps/MtPyre_6F/scripts.pory"
+	faceplayer
+# 106 "data/maps/MtPyre_6F/scripts.pory"
+	goto_if_set FLAG_TEMP_2, MtPyre_6F_EventScript_PsychicFSouth_2
+# 110 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_WhatsTheMatter, MSGBOX_YESNO
+# 111 "data/maps/MtPyre_6F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq MtPyre_6F_EventScript_PsychicFSouth_5
+# 120 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+MtPyre_6F_EventScript_PsychicFSouth_1:
+# 123 "data/maps/MtPyre_6F/scripts.pory"
+	release
+	return
+
+MtPyre_6F_EventScript_PsychicFSouth_2:
+# 107 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_IfYouComeBack, MSGBOX_DEFAULT
+# 108 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+	goto MtPyre_6F_EventScript_PsychicFSouth_1
+
+MtPyre_6F_EventScript_PsychicFSouth_5:
+# 112 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_LetsHaveSomeFun, MSGBOX_DEFAULT
+# 113 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+# 114 "data/maps/MtPyre_6F/scripts.pory"
+	playbgm MUS_VS_WILD, FALSE
+# 115 "data/maps/MtPyre_6F/scripts.pory"
+	trainerbattle_no_intro TRAINER_PSYCHIC_LAURA, MtPyre_6F_Text_LosingIsPartOfTheHobby
+# 116 "data/maps/MtPyre_6F/scripts.pory"
+	setflag FLAG_TEMP_2
+# 117 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_OhWell, MSGBOX_DEFAULT
+# 118 "data/maps/MtPyre_6F/scripts.pory"
+	closemessage
+	goto MtPyre_6F_EventScript_PsychicFSouth_1
+
+
+MtPyre_6F_EventScript_PsychicFCenter::
+# 153 "data/maps/MtPyre_6F/scripts.pory"
+	trainerbattle_single TRAINER_PSYCHIC_ELLIE, MtPyre_6F_Text_IForesaw, MtPyre_6F_Text_MyPredictionsWereWrong
+# 154 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_GolduckIsntPsychich, MSGBOX_AUTOCLOSE
+	return
+
+
+MtPyre_6F_EventScript_Fighter::
+# 173 "data/maps/MtPyre_6F/scripts.pory"
+	trainerbattle_single TRAINER_FIGHTER_STEPHANIE, MtPyre_6F_Text_YouKnowTheRules, MtPyre_6F_Text_NeverGonnaGiveUp
+# 174 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_Ditto, MSGBOX_AUTOCLOSE
+	return
+
+
 MtPyre_6F_Text_RockSmashTip::
 # 21 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Those unwilling to take the bugs\n"
@@ -86,3 +190,84 @@ MtPyre_6F_EventScript_BuySomeStones::
 MtPyre_6F_EventScript_SeeYouAgain::
 # 44 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Step by again!$"
+
+MtPyre_6F_Text_ISenseYourDesire::
+# 78 "data/maps/MtPyre_6F/scripts.pory"
+	.string "I sense your desire to have a battle.\n"
+	.string "Can I be your opponent?$"
+
+MtPyre_6F_Text_LetsGo::
+# 83 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Let's go!$"
+
+MtPyre_6F_WhatABitterDefeat::
+# 87 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Oh, what a bitter defeat!\n"
+	.string "Alas, I must hand it to you.$"
+
+MtPyre_6F_YouAreAmazing::
+# 92 "data/maps/MtPyre_6F/scripts.pory"
+	.string "You're amazing! I'm even more\n"
+	.string "motivated to defeat you, if we\l"
+	.string "battle again.$"
+
+MtPyre_6F_ImLookingForwardToRematch::
+# 98 "data/maps/MtPyre_6F/scripts.pory"
+	.string "I'm looking forward to having a\n"
+	.string "rematch against you!$"
+
+MtPyre_6F_Text_WhatsTheMatter::
+# 126 "data/maps/MtPyre_6F/scripts.pory"
+	.string "What's the matter?\n"
+	.string "A battle, right now?\l"
+	.string "Yes, count me in.$"
+
+MtPyre_6F_Text_LetsHaveSomeFun::
+# 132 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Let's have some fun!$"
+
+MtPyre_6F_Text_LosingIsPartOfTheHobby::
+# 136 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Taking some losses comes with\n"
+	.string "the territory in our hobby.$"
+
+MtPyre_6F_Text_OhWell::
+# 141 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Oh, well. I'll do better\n"
+	.string "next time!$"
+
+MtPyre_6F_Text_IfYouComeBack::
+# 146 "data/maps/MtPyre_6F/scripts.pory"
+	.string "If you come back and you're\n"
+	.string "in the mood for another battle,\l"
+	.string "I'll gladly take you on again.$"
+
+MtPyre_6F_Text_IForesaw::
+# 157 "data/maps/MtPyre_6F/scripts.pory"
+	.string "I foresaw you coming to me,\n"
+	.string "now I challenge you to a battle!$"
+
+MtPyre_6F_Text_MyPredictionsWereWrong::
+# 162 "data/maps/MtPyre_6F/scripts.pory"
+	.string "But… But… My predictions!\n"
+	.string "They were wrong?!$"
+
+MtPyre_6F_Text_GolduckIsntPsychich::
+# 167 "data/maps/MtPyre_6F/scripts.pory"
+	.string "What do you mean, Golduck isn't a\n"
+	.string "Psychic-type?$"
+
+MtPyre_6F_Text_YouKnowTheRules::
+# 177 "data/maps/MtPyre_6F/scripts.pory"
+	.string "You know the rules, when two Trainers'\n"
+	.string "eyes meet…$"
+
+MtPyre_6F_Text_NeverGonnaGiveUp::
+# 182 "data/maps/MtPyre_6F/scripts.pory"
+	.string "I'm never gonna give up!\n"
+	.string "Not for a single loss!$"
+
+MtPyre_6F_Text_Ditto::
+# 187 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Is it just me, or are Ditto\n"
+	.string "almost everywhere?$"

@@ -48,3 +48,26 @@ text Route102_Text_ItsATerrifyingFall {
     "It's a terrifying fall from here, but\n"
     "that didn't indimidate you, did it?"
 }
+
+script Route102_EventScript_Breeder {
+    trainerbattle_single(TRAINER_BREEDER_MATTHEW, Route102_Text_ThisPlaceIsRelaxing, Route102_Text_ImportantToRelax)
+    msgbox(Route102_Text_EternalPond, MSGBOX_AUTOCLOSE)
+}
+
+text Route102_Text_ThisPlaceIsRelaxing {
+    "This place is so calm, so relaxing…\p"
+    "It's perfect for a relaxing battle!"
+}
+
+text Route102_Text_ImportantToRelax {
+    "What's important is that we relaxed,\n"
+    "not who won!"
+}
+
+text Route102_Text_EternalPond {
+    "The Eternal Pond…\n"
+    "Despite the waterfall, it never runs\l"
+    "out of water and it never overflows.\p"
+    "It shouldn't be possible, but that's\n"
+    "precisely why it fascinates me so much."
+}

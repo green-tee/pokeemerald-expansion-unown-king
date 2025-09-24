@@ -214,8 +214,12 @@ script FieryPath_EventScript_BeastTamerNE {
     lock
     faceplayer
     if (flag(FLAG_TEMP_1)) {
-        msgbox(FieryPath_Text_ImUpToAnotherFight)
-        closemessage
+        if (flag(FLAG_RECEIVED_MASTER_BALL)) {
+            msgbox(FieryPath_Text_ImUpToAnotherFight)
+            closemessage
+        } else {
+            call(FieryPath_EventScript_BeastTamerTryGiveMasterBall)
+        }
     } else {
         msgbox(FieryPath_Text_ImTheStrongestTrainer, MSGBOX_YESNO)
         if (var(VAR_RESULT) == YES) {
@@ -228,18 +232,28 @@ script FieryPath_EventScript_BeastTamerNE {
                 msgbox(FieryPath_Text_IHaveNothingMoreToSay, MSGBOX_DEFAULT)
                 closemessage
             } else {
-                msgbox(FieryPath_Text_IHaveAPresent, MSGBOX_DEFAULT)
-                closemessage
-                giveitem(ITEM_MASTER_BALL, 1)
-                setflag(FLAG_RECEIVED_MASTER_BALL)
-                msgbox(FieryPath_Text_ThisIsAMasterBall, MSGBOX_DEFAULT)
-                closemessage
+                call(FieryPath_EventScript_BeastTamerTryGiveMasterBall)
             }
         } else {
             closemessage
         }
     }
     release
+}
+
+script(local) FieryPath_EventScript_BeastTamerTryGiveMasterBall {
+    msgbox(FieryPath_Text_IHaveAPresent, MSGBOX_DEFAULT)
+    closemessage
+    checkitemspace(ITEM_MASTER_BALL, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        giveitem(ITEM_MASTER_BALL, 1)
+        setflag(FLAG_RECEIVED_MASTER_BALL)
+        msgbox(FieryPath_Text_ThisIsAMasterBall, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(FieryPath_Text_YouHaveNoRoom, MSGBOX_DEFAULT)
+        closemessage
+    }
 }
 
 text FieryPath_Text_ImTheStrongestTrainer {
@@ -271,6 +285,11 @@ text FieryPath_Text_IHaveAPresent {
     "You fight incredibly well!\p"
     "I have a present for you.\n"
     "You absolutely earned it!"
+}
+
+text FieryPath_Text_YouHaveNoRoom {
+    "Oh, but you have no room for it!\n"
+    "That is so unfortunate!"
 }
 
 text FieryPath_Text_ThisIsAMasterBall {
@@ -347,4 +366,79 @@ text FieryPath_Text_HaveYouFoundDarkrai {
     "that you can't see your own feet.\p"
     "Of course, against my Bug-type Pokémon,\n"
     "it's got no chance!"
+}
+
+script FieryPath_EventScript_PsychicF {
+    trainerbattle_single(TRAINER_PSYCHIC_MARGOT, FieryPath_Text_ICantGiveYouTips, FieryPath_Text_INeedMyOwnLessons)
+    msgbox(FieryPath_Text_TheresABoulder, MSGBOX_AUTOCLOSE)
+}
+
+text FieryPath_Text_ICantGiveYouTips {
+    "I can't give you any tips, but I can\n"
+    "teach you a lesson about the hardships\l"
+    "of life!"
+}
+
+text FieryPath_Text_INeedMyOwnLessons {
+    "Ugh! I need to learn from my own lesson!"
+}
+
+text FieryPath_Text_TheresABoulder {
+    "There's a heavy boulder blocking the\n"
+    "access to the upper part of this\l"
+    "hallway.\l"
+    "Can I get past it at all?"
+}
+
+script FieryPath_EventScript_PsychicM {
+    trainerbattle_single(TRAINER_PSYCHIC_HERALD, FieryPath_Text_IFeelRarePokemon, FieryPath_Text_AsIForetold)
+    msgbox(FieryPath_Text_ArchenYamaskSpiritomBagon, MSGBOX_AUTOCLOSE)
+}
+
+text FieryPath_Text_IFeelRarePokemon {
+    "I'm feeling the presence of rare\n"
+    "Pokémon. Archen? Yamask? Spiritomb?\p"
+    "You… don't look like a Pokémon.\n"
+    "But I sense that you have Pokémon\l"
+    "with you, so let's have a battle!"
+}
+
+text FieryPath_Text_AsIForetold {
+    "As I foretold, the day of my defeat\n"
+    "has come."
+}
+
+text FieryPath_Text_ArchenYamaskSpiritomBagon {
+    "I've done a bit of reseach.\n"
+    "There are Archen, Yamask, and Spiritomb\l"
+    "lurking in this hallway, but I have\l"
+    "no clue how to make them appear.\p"
+    "I do know, however, that the Bagon\n"
+    "in the Room of Bagon hold\l"
+    "extraordinary items!"
+}
+
+script FieryPath_EventScript_Fighter {
+    trainerbattle_single(TRAINER_FIGHTER_LANA, FieryPath_Text_ThisIsTheLongestHallway, FieryPath_Text_ILost)
+    msgbox(FieryPath_Text_NincadaEvolution, MSGBOX_AUTOCLOSE)
+}
+
+text FieryPath_Text_ThisIsTheLongestHallway {
+    "This is the longest hallway\n"
+    "in the temple.\l"
+    "We're going to have a battle here!"
+}
+
+text FieryPath_Text_ILost {
+    "I lost…"
+}
+
+text FieryPath_Text_NincadaEvolution {
+    "My Ninjask used to be a Nincada,\n"
+    "then it evolved.\p"
+    "But when it did, I looked at my party\n"
+    "and I saw that another Pokémon\l"
+    "had appeared!\p"
+    "It was a rather disturbing Pokémon,\n"
+    "so I left it at home."
 }

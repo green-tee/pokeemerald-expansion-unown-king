@@ -379,7 +379,7 @@ MauvilleCity_GameCorner_EventScript_Gentleman::
 MauvilleCity_GameCorner_EventScript_Girl::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_STARTER_DOLL, MauvilleCity_GameCorner_EventScript_ReceivedStarterDoll
+	goto_if_set FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS, MauvilleCity_GameCorner_EventScript_ReceivedStarterDoll
 	msgbox MauvilleCity_GameCorner_Text_GotTwoOfSameDollWantOne, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_GameCorner_EventScript_DeclineStarterDoll
 	switch VAR_STARTER_MON
@@ -394,7 +394,7 @@ MauvilleCity_GameCorner_EventScript_GiveTreeckoDoll::
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForStarterDoll
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
 	givedecoration DECOR_TREECKO_DOLL
-	setflag FLAG_RECEIVED_STARTER_DOLL
+	@setflag FLAG_RECEIVED_STARTER_DOLL
 	goto MauvilleCity_GameCorner_EventScript_ReceivedStarterDoll
 	end
 
@@ -404,7 +404,7 @@ MauvilleCity_GameCorner_EventScript_GiveTorchicDoll::
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForStarterDoll
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
 	givedecoration DECOR_TORCHIC_DOLL
-	setflag FLAG_RECEIVED_STARTER_DOLL
+	@setflag FLAG_RECEIVED_STARTER_DOLL
 	goto MauvilleCity_GameCorner_EventScript_ReceivedStarterDoll
 	end
 
@@ -414,7 +414,7 @@ MauvilleCity_GameCorner_EventScript_GiveMudkipDoll::
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForStarterDoll
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
 	givedecoration DECOR_MUDKIP_DOLL
-	setflag FLAG_RECEIVED_STARTER_DOLL
+	@setflag FLAG_RECEIVED_STARTER_DOLL
 	goto MauvilleCity_GameCorner_EventScript_ReceivedStarterDoll
 	end
 

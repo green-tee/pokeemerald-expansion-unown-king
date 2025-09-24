@@ -100,6 +100,16 @@ MtPyre_1F_Mart_Remedies:
 	.2byte ITEM_REVIVE
 # 80 "data/maps/MtPyre_1F/scripts.pory"
 	.2byte ITEM_RARE_CANDY
+# 81 "data/maps/MtPyre_1F/scripts.pory"
+	.2byte ITEM_X_ATTACK
+# 82 "data/maps/MtPyre_1F/scripts.pory"
+	.2byte ITEM_X_DEFENSE
+# 83 "data/maps/MtPyre_1F/scripts.pory"
+	.2byte ITEM_X_SP_ATK
+# 84 "data/maps/MtPyre_1F/scripts.pory"
+	.2byte ITEM_X_SP_DEF
+# 85 "data/maps/MtPyre_1F/scripts.pory"
+	.2byte ITEM_X_SPEED
 	.2byte ITEM_NONE
 
 MtPyre_1F_Text_UnownKingImprisoned::

@@ -553,10 +553,10 @@ MoveTutor_EventScript_ProtectThiefTutor::
 # 280 "data/scripts/move_tutors.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MoveTutor_EventScript_ProtectThiefTutor_2
-# 297 "data/scripts/move_tutors.pory"
+# 300 "data/scripts/move_tutors.pory"
 	closemessage
 MoveTutor_EventScript_ProtectThiefTutor_1:
-# 299 "data/scripts/move_tutors.pory"
+# 302 "data/scripts/move_tutors.pory"
 	releaseall
 	return
 
@@ -568,16 +568,18 @@ MoveTutor_EventScript_ProtectThiefTutor_2:
 # 283 "data/scripts/move_tutors.pory"
 	waitmessage
 # 284 "data/scripts/move_tutors.pory"
-	dynmultichoice 16, 6, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_EventScript_ProtectThiefTutor_Text_0, MoveTutor_EventScript_ProtectThiefTutor_Text_1, Multichoice_Option_NoMove
+	dynmultichoice 16, 4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_EventScript_ProtectThiefTutor_Text_0, MoveTutor_EventScript_ProtectThiefTutor_Text_1, MoveTutor_EventScript_ProtectThiefTutor_Text_2, Multichoice_Option_NoMove
 # 285 "data/scripts/move_tutors.pory"
 	switch VAR_RESULT
 # 286 "data/scripts/move_tutors.pory"
 	case 0, MoveTutor_EventScript_ProtectThiefTutor_6
 # 289 "data/scripts/move_tutors.pory"
 	case 1, MoveTutor_EventScript_ProtectThiefTutor_7
-# 293 "data/scripts/move_tutors.pory"
+# 292 "data/scripts/move_tutors.pory"
+	case 2, MoveTutor_EventScript_ProtectThiefTutor_8
+# 296 "data/scripts/move_tutors.pory"
 	msgbox MoveTutor_Text_ComeBackIfYouNeedMe, MSGBOX_DEFAULT
-# 294 "data/scripts/move_tutors.pory"
+# 297 "data/scripts/move_tutors.pory"
 	closemessage
 	goto MoveTutor_EventScript_ProtectThiefTutor_1
 
@@ -595,175 +597,182 @@ MoveTutor_EventScript_ProtectThiefTutor_7:
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_ProtectThiefTutor_1
 
+MoveTutor_EventScript_ProtectThiefTutor_8:
+# 293 "data/scripts/move_tutors.pory"
+	setvar VAR_0x8005, MOVE_FACADE
+# 294 "data/scripts/move_tutors.pory"
+	call MoveTutor_EventScript_SelectMon
+	goto MoveTutor_EventScript_ProtectThiefTutor_1
+
 
 MoveTutor_EventScript_WeatherTutor::
-# 303 "data/scripts/move_tutors.pory"
-	lockall
-# 304 "data/scripts/move_tutors.pory"
-	applymovement LOCALID_WEATHER_TUTOR, Common_Movement_FacePlayer
-# 305 "data/scripts/move_tutors.pory"
-	waitmovement 0
 # 306 "data/scripts/move_tutors.pory"
-	msgbox MoveTutor_Text_TeachSomeMove, MSGBOX_YESNO
+	lockall
 # 307 "data/scripts/move_tutors.pory"
+	applymovement LOCALID_WEATHER_TUTOR, Common_Movement_FacePlayer
+# 308 "data/scripts/move_tutors.pory"
+	waitmovement 0
+# 309 "data/scripts/move_tutors.pory"
+	msgbox MoveTutor_Text_TeachSomeMove, MSGBOX_YESNO
+# 310 "data/scripts/move_tutors.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MoveTutor_EventScript_WeatherTutor_2
-# 330 "data/scripts/move_tutors.pory"
+# 333 "data/scripts/move_tutors.pory"
 	closemessage
 MoveTutor_EventScript_WeatherTutor_1:
-# 332 "data/scripts/move_tutors.pory"
+# 335 "data/scripts/move_tutors.pory"
 	releaseall
 	return
 
 MoveTutor_EventScript_WeatherTutor_2:
-# 308 "data/scripts/move_tutors.pory"
-	closemessage
-# 309 "data/scripts/move_tutors.pory"
-	message MoveTutor_Text_WhichMove
-# 310 "data/scripts/move_tutors.pory"
-	waitmessage
 # 311 "data/scripts/move_tutors.pory"
-	dynmultichoice 16, 2, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_EventScript_WeatherTutor_Text_0, MoveTutor_EventScript_WeatherTutor_Text_1, MoveTutor_EventScript_WeatherTutor_Text_2, MoveTutor_EventScript_WeatherTutor_Text_3, Multichoice_Option_NoMove
+	closemessage
 # 312 "data/scripts/move_tutors.pory"
-	switch VAR_RESULT
+	message MoveTutor_Text_WhichMove
 # 313 "data/scripts/move_tutors.pory"
-	case 0, MoveTutor_EventScript_WeatherTutor_6
+	waitmessage
+# 314 "data/scripts/move_tutors.pory"
+	dynmultichoice 16, 2, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_EventScript_WeatherTutor_Text_0, MoveTutor_EventScript_WeatherTutor_Text_1, MoveTutor_EventScript_WeatherTutor_Text_2, MoveTutor_EventScript_WeatherTutor_Text_3, Multichoice_Option_NoMove
+# 315 "data/scripts/move_tutors.pory"
+	switch VAR_RESULT
 # 316 "data/scripts/move_tutors.pory"
-	case 1, MoveTutor_EventScript_WeatherTutor_7
+	case 0, MoveTutor_EventScript_WeatherTutor_6
 # 319 "data/scripts/move_tutors.pory"
-	case 2, MoveTutor_EventScript_WeatherTutor_8
+	case 1, MoveTutor_EventScript_WeatherTutor_7
 # 322 "data/scripts/move_tutors.pory"
+	case 2, MoveTutor_EventScript_WeatherTutor_8
+# 325 "data/scripts/move_tutors.pory"
 	case 3, MoveTutor_EventScript_WeatherTutor_9
-# 326 "data/scripts/move_tutors.pory"
+# 329 "data/scripts/move_tutors.pory"
 	msgbox MoveTutor_Text_ComeBackIfYouNeedMe, MSGBOX_DEFAULT
-# 327 "data/scripts/move_tutors.pory"
+# 330 "data/scripts/move_tutors.pory"
 	closemessage
 	goto MoveTutor_EventScript_WeatherTutor_1
 
 MoveTutor_EventScript_WeatherTutor_6:
-# 314 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_HAIL
-# 315 "data/scripts/move_tutors.pory"
-	call MoveTutor_EventScript_SelectMon
-	goto MoveTutor_EventScript_WeatherTutor_1
-
-MoveTutor_EventScript_WeatherTutor_7:
 # 317 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_SUNNY_DAY
+	setvar VAR_0x8005, MOVE_HAIL
 # 318 "data/scripts/move_tutors.pory"
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_WeatherTutor_1
 
-MoveTutor_EventScript_WeatherTutor_8:
+MoveTutor_EventScript_WeatherTutor_7:
 # 320 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_RAIN_DANCE
+	setvar VAR_0x8005, MOVE_SUNNY_DAY
 # 321 "data/scripts/move_tutors.pory"
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_WeatherTutor_1
 
-MoveTutor_EventScript_WeatherTutor_9:
+MoveTutor_EventScript_WeatherTutor_8:
 # 323 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_SANDSTORM
+	setvar VAR_0x8005, MOVE_RAIN_DANCE
 # 324 "data/scripts/move_tutors.pory"
+	call MoveTutor_EventScript_SelectMon
+	goto MoveTutor_EventScript_WeatherTutor_1
+
+MoveTutor_EventScript_WeatherTutor_9:
+# 326 "data/scripts/move_tutors.pory"
+	setvar VAR_0x8005, MOVE_SANDSTORM
+# 327 "data/scripts/move_tutors.pory"
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_WeatherTutor_1
 
 
 MoveTutor_EventScript_OverpoweredTutor::
-# 336 "data/scripts/move_tutors.pory"
-	lockall
-# 337 "data/scripts/move_tutors.pory"
-	applymovement LOCALID_OVERPOWERED_TUTOR, Common_Movement_FacePlayer
-# 338 "data/scripts/move_tutors.pory"
-	waitmovement 0
 # 339 "data/scripts/move_tutors.pory"
-	msgbox MoveTutor_Text_TeachSomeMove, MSGBOX_YESNO
+	lockall
 # 340 "data/scripts/move_tutors.pory"
+	applymovement LOCALID_OVERPOWERED_TUTOR, Common_Movement_FacePlayer
+# 341 "data/scripts/move_tutors.pory"
+	waitmovement 0
+# 342 "data/scripts/move_tutors.pory"
+	msgbox MoveTutor_Text_TeachSomeMove, MSGBOX_YESNO
+# 343 "data/scripts/move_tutors.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq MoveTutor_EventScript_OverpoweredTutor_2
-# 363 "data/scripts/move_tutors.pory"
+# 366 "data/scripts/move_tutors.pory"
 	closemessage
 MoveTutor_EventScript_OverpoweredTutor_1:
-# 365 "data/scripts/move_tutors.pory"
+# 368 "data/scripts/move_tutors.pory"
 	releaseall
 	return
 
 MoveTutor_EventScript_OverpoweredTutor_2:
-# 341 "data/scripts/move_tutors.pory"
-	closemessage
-# 342 "data/scripts/move_tutors.pory"
-	message MoveTutor_Text_WhichMove
-# 343 "data/scripts/move_tutors.pory"
-	waitmessage
 # 344 "data/scripts/move_tutors.pory"
-	dynmultichoice 16, 2, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_EventScript_OverpoweredTutor_Text_0, MoveTutor_EventScript_OverpoweredTutor_Text_1, MoveTutor_EventScript_OverpoweredTutor_Text_2, MoveTutor_EventScript_OverpoweredTutor_Text_3, Multichoice_Option_NoMove
+	closemessage
 # 345 "data/scripts/move_tutors.pory"
-	switch VAR_RESULT
+	message MoveTutor_Text_WhichMove
 # 346 "data/scripts/move_tutors.pory"
-	case 0, MoveTutor_EventScript_OverpoweredTutor_6
+	waitmessage
+# 347 "data/scripts/move_tutors.pory"
+	dynmultichoice 16, 2, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, MoveTutor_EventScript_OverpoweredTutor_Text_0, MoveTutor_EventScript_OverpoweredTutor_Text_1, MoveTutor_EventScript_OverpoweredTutor_Text_2, MoveTutor_EventScript_OverpoweredTutor_Text_3, Multichoice_Option_NoMove
+# 348 "data/scripts/move_tutors.pory"
+	switch VAR_RESULT
 # 349 "data/scripts/move_tutors.pory"
-	case 1, MoveTutor_EventScript_OverpoweredTutor_7
+	case 0, MoveTutor_EventScript_OverpoweredTutor_6
 # 352 "data/scripts/move_tutors.pory"
-	case 2, MoveTutor_EventScript_OverpoweredTutor_8
+	case 1, MoveTutor_EventScript_OverpoweredTutor_7
 # 355 "data/scripts/move_tutors.pory"
+	case 2, MoveTutor_EventScript_OverpoweredTutor_8
+# 358 "data/scripts/move_tutors.pory"
 	case 3, MoveTutor_EventScript_OverpoweredTutor_9
-# 359 "data/scripts/move_tutors.pory"
+# 362 "data/scripts/move_tutors.pory"
 	msgbox MoveTutor_Text_ComeBackIfYouNeedMe, MSGBOX_DEFAULT
-# 360 "data/scripts/move_tutors.pory"
+# 363 "data/scripts/move_tutors.pory"
 	closemessage
 	goto MoveTutor_EventScript_OverpoweredTutor_1
 
 MoveTutor_EventScript_OverpoweredTutor_6:
-# 347 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_HYDRO_CANNON
-# 348 "data/scripts/move_tutors.pory"
-	call MoveTutor_EventScript_SelectMon
-	goto MoveTutor_EventScript_OverpoweredTutor_1
-
-MoveTutor_EventScript_OverpoweredTutor_7:
 # 350 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_BLAST_BURN
+	setvar VAR_0x8005, MOVE_HYDRO_CANNON
 # 351 "data/scripts/move_tutors.pory"
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_OverpoweredTutor_1
 
-MoveTutor_EventScript_OverpoweredTutor_8:
+MoveTutor_EventScript_OverpoweredTutor_7:
 # 353 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_FRENZY_PLANT
+	setvar VAR_0x8005, MOVE_BLAST_BURN
 # 354 "data/scripts/move_tutors.pory"
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_OverpoweredTutor_1
 
-MoveTutor_EventScript_OverpoweredTutor_9:
+MoveTutor_EventScript_OverpoweredTutor_8:
 # 356 "data/scripts/move_tutors.pory"
-	setvar VAR_0x8005, MOVE_DRACO_METEOR
+	setvar VAR_0x8005, MOVE_FRENZY_PLANT
 # 357 "data/scripts/move_tutors.pory"
+	call MoveTutor_EventScript_SelectMon
+	goto MoveTutor_EventScript_OverpoweredTutor_1
+
+MoveTutor_EventScript_OverpoweredTutor_9:
+# 359 "data/scripts/move_tutors.pory"
+	setvar VAR_0x8005, MOVE_DRACO_METEOR
+# 360 "data/scripts/move_tutors.pory"
 	call MoveTutor_EventScript_SelectMon
 	goto MoveTutor_EventScript_OverpoweredTutor_1
 
 
 MoveTutor_EventScript_SelectMon:
-# 369 "data/scripts/move_tutors.pory"
-	msgbox MoveTutor_Text_WhichMon, MSGBOX_DEFAULT
-# 370 "data/scripts/move_tutors.pory"
-	closemessage
-# 371 "data/scripts/move_tutors.pory"
-	special ChooseMonForMoveTutor
 # 372 "data/scripts/move_tutors.pory"
-	waitstate
+	msgbox MoveTutor_Text_WhichMon, MSGBOX_DEFAULT
 # 373 "data/scripts/move_tutors.pory"
+	closemessage
+# 374 "data/scripts/move_tutors.pory"
+	special ChooseMonForMoveTutor
+# 375 "data/scripts/move_tutors.pory"
+	waitstate
+# 376 "data/scripts/move_tutors.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MoveTutor_EventScript_SelectMon_1
-# 377 "data/scripts/move_tutors.pory"
+# 380 "data/scripts/move_tutors.pory"
 	msgbox MoveTutor_Text_DoneComeBackIfYouNeedMe, MSGBOX_DEFAULT
-# 378 "data/scripts/move_tutors.pory"
+# 381 "data/scripts/move_tutors.pory"
 	closemessage
 	return
 
 MoveTutor_EventScript_SelectMon_1:
-# 374 "data/scripts/move_tutors.pory"
+# 377 "data/scripts/move_tutors.pory"
 	msgbox MoveTutor_Text_ComeBackIfYouNeedMe, MSGBOX_DEFAULT
-# 375 "data/scripts/move_tutors.pory"
+# 378 "data/scripts/move_tutors.pory"
 	closemessage
 	return
 
@@ -776,63 +785,67 @@ MoveTutor_EventScript_ProtectThiefTutor_Text_1:
 # 284 "data/scripts/move_tutors.pory"
 	.string "Thief$"
 
+MoveTutor_EventScript_ProtectThiefTutor_Text_2:
+# 284 "data/scripts/move_tutors.pory"
+	.string "Facade$"
+
 MoveTutor_EventScript_WeatherTutor_Text_0:
-# 311 "data/scripts/move_tutors.pory"
+# 314 "data/scripts/move_tutors.pory"
 	.string "Hail$"
 
 MoveTutor_EventScript_WeatherTutor_Text_1:
-# 311 "data/scripts/move_tutors.pory"
+# 314 "data/scripts/move_tutors.pory"
 	.string "Sunny Day$"
 
 MoveTutor_EventScript_WeatherTutor_Text_2:
-# 311 "data/scripts/move_tutors.pory"
+# 314 "data/scripts/move_tutors.pory"
 	.string "Rain Dance$"
 
 MoveTutor_EventScript_WeatherTutor_Text_3:
-# 311 "data/scripts/move_tutors.pory"
+# 314 "data/scripts/move_tutors.pory"
 	.string "Sandstorm$"
 
 MoveTutor_EventScript_OverpoweredTutor_Text_0:
-# 344 "data/scripts/move_tutors.pory"
+# 347 "data/scripts/move_tutors.pory"
 	.string "Hydro Cannon$"
 
 MoveTutor_EventScript_OverpoweredTutor_Text_1:
-# 344 "data/scripts/move_tutors.pory"
+# 347 "data/scripts/move_tutors.pory"
 	.string "Blast Burn$"
 
 MoveTutor_EventScript_OverpoweredTutor_Text_2:
-# 344 "data/scripts/move_tutors.pory"
+# 347 "data/scripts/move_tutors.pory"
 	.string "Frenzy Plant$"
 
 MoveTutor_EventScript_OverpoweredTutor_Text_3:
-# 344 "data/scripts/move_tutors.pory"
+# 347 "data/scripts/move_tutors.pory"
 	.string "Draco Meteor$"
 
 MoveTutor_Text_TeachSomeMove::
-# 382 "data/scripts/move_tutors.pory"
+# 385 "data/scripts/move_tutors.pory"
 	.string "Hello, traveler.\n"
 	.string "Would you like to teach a move to\l"
 	.string "one of your Pokémon?\l"
 	.string "I'm not going to charge you for it.$"
 
 MoveTutor_Text_WhichMove::
-# 389 "data/scripts/move_tutors.pory"
+# 392 "data/scripts/move_tutors.pory"
 	.string "Okay, which one?$"
 
 Multichoice_Option_NoMove::
-# 393 "data/scripts/move_tutors.pory"
+# 396 "data/scripts/move_tutors.pory"
 	.string "I've changed my mind.$"
 
 MoveTutor_Text_WhichMon::
-# 397 "data/scripts/move_tutors.pory"
+# 400 "data/scripts/move_tutors.pory"
 	.string "Which Pokémon should learn this move?$"
 
 MoveTutor_Text_ComeBackIfYouNeedMe::
-# 401 "data/scripts/move_tutors.pory"
+# 404 "data/scripts/move_tutors.pory"
 	.string "Nevermind then.\n"
 	.string "Come back if you need me.$"
 
 MoveTutor_Text_DoneComeBackIfYouNeedMe::
-# 406 "data/scripts/move_tutors.pory"
+# 409 "data/scripts/move_tutors.pory"
 	.string "Cool, isn't it?\n"
 	.string "Come back if you need me again!$"

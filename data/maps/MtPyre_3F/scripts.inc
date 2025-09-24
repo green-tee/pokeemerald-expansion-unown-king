@@ -88,6 +88,38 @@ MtPyre_3F_EventScript_ExpertBeforeChamber::
 	return
 
 
+MtPyre_3F_EventScript_Fighter::
+# 129 "data/maps/MtPyre_3F/scripts.pory"
+	trainerbattle_single TRAINER_FIGHTER_GAGA, MtPyre_3F_Text_YouLookLikeAValidOpponent, MtPyre_3F_Text_YouWereAValidOpponent
+# 130 "data/maps/MtPyre_3F/scripts.pory"
+	msgbox MtPyre_3F_ThereAreTwoUnown, MSGBOX_AUTOCLOSE
+	return
+
+
+MtPyre_3F_EventScript_Breeder1::
+# 153 "data/maps/MtPyre_3F/scripts.pory"
+	trainerbattle_single TRAINER_BREEDER_TOMMY, MtPyre_3F_Text_AreYouLookingForPokemon, MtPyre_3F_Text_NothingIncredible
+# 154 "data/maps/MtPyre_3F/scripts.pory"
+	msgbox MtPyre_3F_Text_UseThief, MSGBOX_AUTOCLOSE
+	return
+
+
+MtPyre_3F_EventScript_Breeder2::
+# 174 "data/maps/MtPyre_3F/scripts.pory"
+	trainerbattle_single TRAINER_BREEDER_JAMAL, MtPyre_3F_Text_ThisIsOurTrainingGround, MtPyre_3F_Text_IllRaiseMoreMunchlax
+# 175 "data/maps/MtPyre_3F/scripts.pory"
+	msgbox MtPyre_3F_Text_CollectItems, MSGBOX_AUTOCLOSE
+	return
+
+
+MtPyre_3F_EventScript_Breeder3::
+# 196 "data/maps/MtPyre_3F/scripts.pory"
+	trainerbattle_single TRAINER_BREEDER_OZZY, MtPyre_3F_Text_ThisPlaceGivesMeCreeps, MtPyre_3F_DidItWork
+# 197 "data/maps/MtPyre_3F/scripts.pory"
+	msgbox MtPyre_3F_PokemonCarryGems, MSGBOX_AUTOCLOSE
+	return
+
+
 MtPyre_3F_Text_TruthRevealed::
 # 10 "data/maps/MtPyre_3F/scripts.pory"
 	.string "In this room, the truth about\n"
@@ -166,3 +198,71 @@ MtPyre_3F_ThereIsAStrongTrainer::
 # 123 "data/maps/MtPyre_3F/scripts.pory"
 	.string "Careful!\n"
 	.string "There's a very strong Trainer inside!$"
+
+MtPyre_3F_Text_YouLookLikeAValidOpponent::
+# 133 "data/maps/MtPyre_3F/scripts.pory"
+	.string "You look like a valid opponent!\n"
+	.string "Let's have a battle!$"
+
+MtPyre_3F_Text_YouWereAValidOpponent::
+# 138 "data/maps/MtPyre_3F/scripts.pory"
+	.string "You really were a valid opponent!$"
+
+MtPyre_3F_ThereAreTwoUnown::
+# 142 "data/maps/MtPyre_3F/scripts.pory"
+	.string "I saw two Unown nearby. One jumped over\n"
+	.string "the cracked rocks.\p"
+	.string "The other went hiding… I don't know\n where.\p"
+	.string "I got distracted for a second, then I\n"
+	.string "looked back at it and I couldn't see it\l"
+	.string "anymore.$"
+
+MtPyre_3F_Text_AreYouLookingForPokemon::
+# 157 "data/maps/MtPyre_3F/scripts.pory"
+	.string "Oh, hi! Are you looking for cute Pokémon\n"
+	.string "too? I'll show you mine!$"
+
+MtPyre_3F_Text_NothingIncredible::
+# 162 "data/maps/MtPyre_3F/scripts.pory"
+	.string "Yeah… Nothing incredible, right?$"
+
+MtPyre_3F_Text_UseThief::
+# 166 "data/maps/MtPyre_3F/scripts.pory"
+	.string "If one of your Pokémon knows the move\n"
+	.string "Thief, go crazy with all the wild\l"
+	.string "Pokémon you meet!\p"
+	.string "Trust me, you won't regret it!$"
+
+MtPyre_3F_Text_ThisIsOurTrainingGround::
+# 178 "data/maps/MtPyre_3F/scripts.pory"
+	.string "This is the training ground for my\n"
+	.string "Munchlax! Let's do Trainer stuff!$"
+
+MtPyre_3F_Text_IllRaiseMoreMunchlax::
+# 183 "data/maps/MtPyre_3F/scripts.pory"
+	.string "I'm going to raise even more Munchlax!$"
+
+MtPyre_3F_Text_CollectItems::
+# 187 "data/maps/MtPyre_3F/scripts.pory"
+	.string "It's generally recommended that you\n"
+	.string "pick up as many items as you can\l"
+	.string "before battling against other Trainers.\l"
+	.string "That way you'll have more options\l"
+	.string "to prepare!$"
+
+MtPyre_3F_Text_ThisPlaceGivesMeCreeps::
+# 200 "data/maps/MtPyre_3F/scripts.pory"
+	.string "This place gives me the creeps.\p"
+	.string "Please, let me batte against you.\n"
+	.string "I need to boost my confidence!$"
+
+MtPyre_3F_DidItWork::
+# 206 "data/maps/MtPyre_3F/scripts.pory"
+	.string "Heh, I wonder if it worked…$"
+
+MtPyre_3F_PokemonCarryGems::
+# 210 "data/maps/MtPyre_3F/scripts.pory"
+	.string "The Pokémon that look like rocks\n"
+	.string "carry shiny gems along.\l"
+	.string "That at least makes this place a little\l"
+	.string "less creepy.$"

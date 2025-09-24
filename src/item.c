@@ -641,6 +641,15 @@ void ClearBag(void)
     }
 }
 
+void NewGameInitBag(void)
+{
+    AddBagItem(ITEM_POKE_BALL, 10);
+    AddBagItem(ITEM_GREAT_BALL, 5);
+    AddBagItem(ITEM_ULTRA_BALL, 2);
+    AddBagItem(ITEM_QUICK_BALL, 1);
+    AddBagItem(ITEM_FRESH_WATER, 3);
+}
+
 u16 CountTotalItemQuantityInBag(u16 itemId)
 {
     u16 i;

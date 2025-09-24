@@ -63,6 +63,58 @@ Route103_EventScript_Scoundrel::
 	return
 
 
+Route103_EventScript_Fighter::
+# 60 "data/maps/Route103/scripts.pory"
+	lock
+# 61 "data/maps/Route103/scripts.pory"
+	faceplayer
+# 62 "data/maps/Route103/scripts.pory"
+	goto_if_set FLAG_TEMP_1, Route103_EventScript_Fighter_2
+# 66 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_ImAFighter, MSGBOX_YESNO
+# 67 "data/maps/Route103/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Route103_EventScript_Fighter_5
+# 76 "data/maps/Route103/scripts.pory"
+	closemessage
+Route103_EventScript_Fighter_1:
+# 79 "data/maps/Route103/scripts.pory"
+	release
+	return
+
+Route103_EventScript_Fighter_2:
+# 63 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_HaveYouSeenMilotic, MSGBOX_DEFAULT
+# 64 "data/maps/Route103/scripts.pory"
+	closemessage
+	goto Route103_EventScript_Fighter_1
+
+Route103_EventScript_Fighter_5:
+# 68 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_LetsDoOurBest, MSGBOX_DEFAULT
+# 69 "data/maps/Route103/scripts.pory"
+	closemessage
+# 70 "data/maps/Route103/scripts.pory"
+	playbgm MUS_VS_WILD, FALSE
+# 71 "data/maps/Route103/scripts.pory"
+	trainerbattle_no_intro TRAINER_FIGHTER_SARAH, Route103_Text_IAcceptMyDefeat
+# 72 "data/maps/Route103/scripts.pory"
+	setflag FLAG_TEMP_1
+# 73 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_IWasHopingToWin, MSGBOX_DEFAULT
+# 74 "data/maps/Route103/scripts.pory"
+	closemessage
+	goto Route103_EventScript_Fighter_1
+
+
+Route103_EventScript_Breeder::
+# 118 "data/maps/Route103/scripts.pory"
+	trainerbattle_single TRAINER_BREEDER_LEO, Route103_Text_LookWhatMyPokemonCanDo, Route103_Text_PrettyCool
+# 119 "data/maps/Route103/scripts.pory"
+	msgbox Route103_Text_IfYouCouldFly, MSGBOX_AUTOCLOSE
+	return
+
+
 Route103_Text_Milotic::
 # 31 "data/maps/Route103/scripts.pory"
 	.string "Wow!\n"
@@ -85,3 +137,53 @@ Route103_Text_IHaveAWaterStone::
 	.string "Lombre and it turned into a Ludicolo.\l"
 	.string "I wish I had a Staryu and a Feebas\l"
 	.string "as well!$"
+
+Route103_Text_ImAFighter::
+# 82 "data/maps/Route103/scripts.pory"
+	.string "I'm a Fighter, guess what I like doing\n"
+	.string "the most.\l"
+	.string "Battling, of course!\p"
+	.string "Would you accept my challenge?$"
+
+Route103_Text_LetsDoOurBest::
+# 89 "data/maps/Route103/scripts.pory"
+	.string "Perfect!\n"
+	.string "Let's both do our best!$"
+
+Route103_Text_IAcceptMyDefeat::
+# 94 "data/maps/Route103/scripts.pory"
+	.string "I accept my defeat with dignity.\n"
+	.string "That's the way of us Fighters!$"
+
+Route103_Text_IWasHopingToWin::
+# 99 "data/maps/Route103/scripts.pory"
+	.string "I won't lie, I was hoping to win\n"
+	.string "this one.\p"
+	.string "But it doesn't matter, I'm always\n"
+	.string "in the mood for another battle.$"
+
+Route103_Text_HaveYouSeenMilotic::
+# 106 "data/maps/Route103/scripts.pory"
+	.string "Have you seen the majestic creature\n"
+	.string "on the pond's surface?\l"
+	.string "It's very tanky, a damage sponge,\l"
+	.string "if you will.\p"
+	.string "If it had a Flame Orb along, it could\n"
+	.string "become brutal!\p"
+	.string "Oh, by the way, we should battle again\n"
+	.string "in the future!$"
+
+Route103_Text_LookWhatMyPokemonCanDo::
+# 122 "data/maps/Route103/scripts.pory"
+	.string "Look what my Pokémon can do!$"
+
+Route103_Text_PrettyCool::
+# 126 "data/maps/Route103/scripts.pory"
+	.string "See? Pretty cool, huh?$"
+
+Route103_Text_IfYouCouldFly::
+# 130 "data/maps/Route103/scripts.pory"
+	.string "If you could fly, you could reach\n"
+	.string "the top of the temple and see\l"
+	.string "what's there."
+	.string "\lMaybe… a legendary Pokémon?$"

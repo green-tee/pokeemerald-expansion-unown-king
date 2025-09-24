@@ -451,6 +451,116 @@ GraniteCave_B1F_EventScript_BeastTamer::
 	return
 
 
+GraniteCave_B1F_EventScript_Fighter::
+# 412 "data/maps/GraniteCave_B1F/scripts.pory"
+	trainerbattle_single TRAINER_FIGHTER_CLARISSA, GraniteCave_B1F_Text_Boo, GraniteCave_B1F_OhNoSmeargle
+# 413 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_ILoveSmeargle, MSGBOX_AUTOCLOSE
+	return
+
+
+GraniteCave_B1F_EventScript_Breeder::
+# 431 "data/maps/GraniteCave_B1F/scripts.pory"
+	lock
+# 432 "data/maps/GraniteCave_B1F/scripts.pory"
+	faceplayer
+# 433 "data/maps/GraniteCave_B1F/scripts.pory"
+	goto_if_set FLAG_TEMP_1, GraniteCave_B1F_EventScript_Breeder_2
+# 441 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_ItSureIsDark, MSGBOX_YESNO
+# 442 "data/maps/GraniteCave_B1F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq GraniteCave_B1F_EventScript_Breeder_8
+# 455 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+GraniteCave_B1F_EventScript_Breeder_1:
+# 458 "data/maps/GraniteCave_B1F/scripts.pory"
+	release
+	return
+
+GraniteCave_B1F_EventScript_Breeder_2:
+# 434 "data/maps/GraniteCave_B1F/scripts.pory"
+	goto_if_set FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS, GraniteCave_B1F_EventScript_Breeder_5
+# 438 "data/maps/GraniteCave_B1F/scripts.pory"
+	call GraniteCave_B1F_EventScript_BreederTryGiveBalls
+	goto GraniteCave_B1F_EventScript_Breeder_1
+
+GraniteCave_B1F_EventScript_Breeder_5:
+# 435 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_LetsBattleAgain, MSGBOX_DEFAULT
+# 436 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+	goto GraniteCave_B1F_EventScript_Breeder_1
+
+GraniteCave_B1F_EventScript_Breeder_8:
+# 443 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_IHaveAFullParty, MSGBOX_DEFAULT
+# 444 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+# 445 "data/maps/GraniteCave_B1F/scripts.pory"
+	playbgm MUS_VS_WILD, FALSE
+# 446 "data/maps/GraniteCave_B1F/scripts.pory"
+	trainerbattle_no_intro TRAINER_BREEDER_CONRAD, GraniteCave_B1F_Text_WowNotBad
+# 447 "data/maps/GraniteCave_B1F/scripts.pory"
+	setflag FLAG_TEMP_1
+# 448 "data/maps/GraniteCave_B1F/scripts.pory"
+	goto_if_set FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS, GraniteCave_B1F_EventScript_Breeder_11
+# 452 "data/maps/GraniteCave_B1F/scripts.pory"
+	call GraniteCave_B1F_EventScript_BreederTryGiveBalls
+	goto GraniteCave_B1F_EventScript_Breeder_1
+
+GraniteCave_B1F_EventScript_Breeder_11:
+# 449 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_IEnjoyedOurBattle
+# 450 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+	goto GraniteCave_B1F_EventScript_Breeder_1
+
+
+GraniteCave_B1F_EventScript_BreederTryGiveBalls:
+# 462 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_ThatWasFun
+# 463 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+# 464 "data/maps/GraniteCave_B1F/scripts.pory"
+	checkitemspace ITEM_ULTRA_BALL, 3
+# 465 "data/maps/GraniteCave_B1F/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq GraniteCave_B1F_EventScript_BreederTryGiveBalls_1
+# 479 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_YouHaveNoRoom, MSGBOX_DEFAULT
+# 480 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+	return
+
+GraniteCave_B1F_EventScript_BreederTryGiveBalls_1:
+# 466 "data/maps/GraniteCave_B1F/scripts.pory"
+	checkitemspace ITEM_QUICK_BALL, 3
+# 467 "data/maps/GraniteCave_B1F/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq GraniteCave_B1F_EventScript_BreederTryGiveBalls_4
+# 475 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_YouHaveNoRoom, MSGBOX_DEFAULT
+# 476 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+	return
+
+GraniteCave_B1F_EventScript_BreederTryGiveBalls_4:
+# 468 "data/maps/GraniteCave_B1F/scripts.pory"
+	giveitem ITEM_ULTRA_BALL, 3
+# 469 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_AndTheseToo, MSGBOX_DEFAULT
+# 470 "data/maps/GraniteCave_B1F/scripts.pory"
+	giveitem ITEM_QUICK_BALL, 3
+# 471 "data/maps/GraniteCave_B1F/scripts.pory"
+	setflag FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS
+# 472 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_LetsBattleAgain, MSGBOX_DEFAULT
+# 473 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+	return
+
+
 GraniteCave_B1F_Text_TooDark::
 # 46 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "It's too dark to read anything.$"
@@ -619,3 +729,58 @@ GraniteCave_B1F_Text_SneaselRazorClaw::
 	.string "It helps them evolve.\p"
 	.string "I'm pretty sure wild Axew can hold them\n"
 	.string "too.$"
+
+GraniteCave_B1F_Text_Boo::
+# 416 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "BOO!$"
+
+GraniteCave_B1F_OhNoSmeargle::
+# 420 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Oh, no! Smeargle!$"
+
+GraniteCave_B1F_ILoveSmeargle::
+# 424 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "I love Smeargle because it can master\n"
+	.string "just about every move without wasting\l"
+	.string "a turn every single battle.$"
+
+GraniteCave_B1F_Text_ItSureIsDark::
+# 484 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Hey, there! It sure is dark in here,\n"
+	.string "isn't it?\p"
+	.string "Would you like to have a battle?$"
+
+GraniteCave_B1F_Text_IHaveAFullParty::
+# 490 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Wonderful! I have a full party of\n"
+	.string "six Pokémon. How about you?$"
+
+GraniteCave_B1F_Text_WowNotBad::
+# 495 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Wow! Not bad at all!$"
+
+GraniteCave_B1F_Text_ThatWasFun::
+# 499 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "That was a fun battle!\p"
+	.string "Here, take these. I hope they can be\n"
+	.string "useful to you.$"
+
+GraniteCave_B1F_Text_YouHaveNoRoom::
+# 505 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Wait, you don't have enough room\n"
+	.string "in your bag.\p"
+	.string "Nevermind then.$"
+
+GraniteCave_B1F_Text_AndTheseToo::
+# 511 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "… and these too!$"
+
+GraniteCave_B1F_Text_LetsBattleAgain::
+# 515 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Let's battle again sometimes!$"
+
+GraniteCave_B1F_Text_IEnjoyedOurBattle::
+# 519 "data/maps/GraniteCave_B1F/scripts.pory"
+	.string "Even though I lost, I enjoyed\n"
+	.string "our battle.\p"
+	.string "Let's have battle again sometimes!$"

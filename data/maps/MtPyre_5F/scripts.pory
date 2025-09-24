@@ -142,3 +142,40 @@ text MtPyre_5F_Text_ThereAreSmallTreesOutside {
     "Although I don't think you can go much\n"
     "far without aid from my older Sisters."
 }
+
+script MtPyre_5F_EventScript_Yahaha {
+    lock
+    faceplayer
+    msgbox(MtPyre_5F_Text_Yahaha, MSGBOX_DEFAULT)
+    closemessage
+    release
+}
+
+text MtPyre_5F_Text_Yahaha {
+    "Yahaha! You found me!"
+}
+
+script MtPyre_5F_EventScript_Fighter {
+    trainerbattle_single(TRAINER_FIGHTER_PAULA, MtPyre_5F_Text_ThisIsThePerfectSpot, MtPyre_5F_Text_TheTrainersCode)
+    msgbox(MtPyre_5F_Text_AbilityFrisk, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_5F_Text_ThisIsThePerfectSpot {
+    "This is the perfect spot to find\n"
+    "Trainers to battle!"
+}
+
+text MtPyre_5F_Text_TheTrainersCode {
+    "The Trainer's Code states that I must\n"
+    "give you money now."
+}
+
+text MtPyre_5F_Text_AbilityFrisk {
+    "If you send in a Pokémon whose ability\n"
+    "is Frisk, you can see what item your\l"
+    "opponent is holding.\p"
+    "It's very useful when trying to get a\n"
+    "specific item from a wild Pokémon.\p"
+    "Gallade, Carbink, and Spiritomb can have\n"
+    "that ability."
+}

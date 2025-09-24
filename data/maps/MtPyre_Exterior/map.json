@@ -15,30 +15,32 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_LATIAS_SOUL_DEW",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 21,
-      "y": 12,
+      "x": 2,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_POTION",
+      "trainer_sight_or_berry_tree_id": "ITEM_SOUL_DEW",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MT_PYRE_EXTERIOR_MAX_POTION"
+      "flag": "FLAG_ITEM_LATIAS_SOUL_DEW"
     },
     {
+      "local_id": "LOCALID_LATIOS_SOUL_DEW",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 19,
-      "y": 7,
+      "x": 24,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_SKILL_SWAP",
+      "trainer_sight_or_berry_tree_id": "ITEM_SOUL_DEW",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MT_PYRE_EXTERIOR_TM_SKILL_SWAP"
+      "flag": "FLAG_ITEM_LATIOS_SOUL_DEW"
     },
     {
       "local_id": "LOCALID_LATIAS",
@@ -139,22 +141,5 @@
       "script": "MtPyre_Exterior_EventScript_GoToFinalBoss"
     }
   ],
-  "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 9,
-      "y": 8,
-      "elevation": 0,
-      "item": "ITEM_ULTRA_BALL",
-      "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_ULTRA_BALL"
-    },
-    {
-      "type": "hidden_item",
-      "x": 6,
-      "y": 11,
-      "elevation": 0,
-      "item": "ITEM_MAX_ETHER",
-      "flag": "FLAG_HIDDEN_ITEM_MT_PYRE_EXTERIOR_MAX_ETHER"
-    }
-  ]
+  "bg_events": []
 }

@@ -48,6 +48,14 @@ Route102_EventScript_Scoundrel_5:
 	goto Route102_EventScript_Scoundrel_1
 
 
+Route102_EventScript_Breeder::
+# 53 "data/maps/Route102/scripts.pory"
+	trainerbattle_single TRAINER_BREEDER_MATTHEW, Route102_Text_ThisPlaceIsRelaxing, Route102_Text_ImportantToRelax
+# 54 "data/maps/Route102/scripts.pory"
+	msgbox Route102_Text_EternalPond, MSGBOX_AUTOCLOSE
+	return
+
+
 Route102_Text_WeCanBattleAgain::
 # 27 "data/maps/Route102/scripts.pory"
 	.string "If you feel like it, we can battle\n"
@@ -72,3 +80,21 @@ Route102_Text_ItsATerrifyingFall::
 # 47 "data/maps/Route102/scripts.pory"
 	.string "It's a terrifying fall from here, but\n"
 	.string "that didn't indimidate you, did it?$"
+
+Route102_Text_ThisPlaceIsRelaxing::
+# 57 "data/maps/Route102/scripts.pory"
+	.string "This place is so calm, so relaxing…\p"
+	.string "It's perfect for a relaxing battle!$"
+
+Route102_Text_ImportantToRelax::
+# 62 "data/maps/Route102/scripts.pory"
+	.string "What's important is that we relaxed,\n"
+	.string "not who won!$"
+
+Route102_Text_EternalPond::
+# 67 "data/maps/Route102/scripts.pory"
+	.string "The Eternal Pond…\n"
+	.string "Despite the waterfall, it never runs\l"
+	.string "out of water and it never overflows.\p"
+	.string "It shouldn't be possible, but that's\n"
+	.string "precisely why it fascinates me so much.$"

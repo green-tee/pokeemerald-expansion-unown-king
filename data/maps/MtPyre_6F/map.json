@@ -16,16 +16,16 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 6,
-      "y": 9,
+      "x": 3,
+      "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_SHADOW_BALL",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUCKY_EGG",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MT_PYRE_6F_TM_SHADOW_BALL"
+      "flag": "FLAG_ITEM_EASTERN_HALLWAY_LUCKY_EGG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_UNOWN_H",
@@ -105,6 +105,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtPyre_6F_EventScript_StoneMerchant",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
+      "x": 3,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtPyre_6F_EventScript_PsychicFSouth",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtPyre_6F_EventScript_PsychicM",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIGHTER",
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "MtPyre_6F_EventScript_Fighter",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_F",
+      "x": 1,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "MtPyre_6F_EventScript_PsychicFCenter",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -176,6 +228,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "MtPyre_6F_EventScript_Inscription"
+    },
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "item": "ITEM_POKE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ESTERN_HALLWAY_POKE_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 14,
+      "elevation": 0,
+      "item": "ITEM_GREAT_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_EASTERN_HALLWAY_GREAT_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_EASTERN_HALLWAY_ULTRA_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "item": "ITEM_QUICK_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_EASTERN_HALLWAY_QUICK_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 19,
+      "elevation": 0,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HIDDEN_ITEM_EASTERN_HALLWAY_RARE_CANDY"
     }
   ]
 }

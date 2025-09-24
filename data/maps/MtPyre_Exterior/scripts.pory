@@ -38,7 +38,8 @@ script MtPyre_Exterior_EventScript_LatiosOrLatias {
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
             call(MtPyre_Exterior_EventScript_LatiosOrLatias_CaughtFlag)
-            giveitem(ITEM_SOUL_DEW, 1)
+            call(MtPyre_Exterior_EventScript_LatiosOrLatias_SoulDew)
+            //giveitem(ITEM_SOUL_DEW, 1)
         }
     } else {
         closemessage
@@ -72,6 +73,17 @@ script(local) MtPyre_Exterior_EventScript_LatiosOrLatias_CaughtFlag {
             setflag(FLAG_CAUGHT_LATIOS)
         case LOCALID_LATIAS:
             setflag(FLAG_CAUGHT_LATIAS)
+    }
+}
+
+script(local) MtPyre_Exterior_EventScript_LatiosOrLatias_SoulDew {
+    switch (var(VAR_LAST_TALKED)) {
+        case LOCALID_LATIOS:
+            clearflag(FLAG_ITEM_LATIOS_SOUL_DEW)
+            showobjectat(LOCALID_LATIOS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR)
+        case LOCALID_LATIAS:
+            clearflag(FLAG_ITEM_LATIAS_SOUL_DEW)
+            showobjectat(LOCALID_LATIAS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR)
     }
 }
 

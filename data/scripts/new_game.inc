@@ -116,5 +116,8 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_LUGIA
 	setflag FLAG_HIDE_TORNADUS
 	setflag FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_HEAL
+	setflag FLAG_ITEM_LATIOS_SOUL_DEW
+	setflag FLAG_ITEM_LATIAS_SOUL_DEW
+	setflag FLAG_ITEM_LUGIA_SACRED_ASH
 	call EventScript_ResetAllBerries
 	end

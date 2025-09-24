@@ -74,6 +74,7 @@
 // - MOVE_DYNAMIC_PUNCH                                //
 // - MOVE_ENDURE                                       //
 // - MOVE_EXPLOSION                                    //
+// - MOVE_FACADE                                       //
 // - MOVE_FIRE_PUNCH                                   //
 // - MOVE_FRENZY_PLANT                                 //
 // - MOVE_FURY_CUTTER                                  //

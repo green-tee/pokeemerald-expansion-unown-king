@@ -26,6 +26,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_FoundUnown_Q",
       "flag": "FLAG_FOUND_UNOWN_Q"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 59,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_PERSIM_BERRY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WATERWAYS_PERSIM_BERRY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 60,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WATERWAYS_NUGGET"
     }
   ],
   "warp_events": [
@@ -80,5 +106,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 26,
+      "elevation": 0,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HIDDEN_ITEM_WATERWAYS_RARE_CANDY_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 62,
+      "y": 11,
+      "elevation": 0,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HIDDEN_ITEM_WATERWAYS_RARE_CANDY_2"
+    }
+  ]
 }

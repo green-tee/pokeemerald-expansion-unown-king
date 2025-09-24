@@ -57,7 +57,7 @@
 #define TRAINER_PIC_CAMPER                29
 #define TRAINER_PIC_PICNICKER             30
 #define TRAINER_PIC_BUG_MANIAC            31
-#define TRAINER_PIC_POKEMON_BREEDER_M     32
+#define TRAINER_PIC_BREEDER               32
 #define TRAINER_PIC_PSYCHIC_M             33
 #define TRAINER_PIC_PSYCHIC_F             34
 #define TRAINER_PIC_GENTLEMAN             35
@@ -89,7 +89,7 @@
 #define TRAINER_PIC_SWIMMING_TRIATHLETE_F 61
 #define TRAINER_PIC_BEAST_TAMER           62
 #define TRAINER_PIC_NINJA_BOY             63
-#define TRAINER_PIC_BATTLE_GIRL           64
+#define TRAINER_PIC_FIGHTER               64
 #define TRAINER_PIC_PARASOL_LADY          65
 #define TRAINER_PIC_SWIMMER_F             66
 #define TRAINER_PIC_TWINS                 67
@@ -299,7 +299,7 @@
 #define TRAINER_CLASS_PKMN_TRAINER_2 0x1  // Unused
 #define TRAINER_CLASS_HIKER          0x2
 #define TRAINER_CLASS_TEAM_AQUA      0x3
-#define TRAINER_CLASS_PKMN_BREEDER   0x4
+#define TRAINER_CLASS_BREEDER        0x4
 #define TRAINER_CLASS_COOLTRAINER    0x5
 #define TRAINER_CLASS_BIRD_KEEPER    0x6
 #define TRAINER_CLASS_COLLECTOR      0x7
@@ -338,7 +338,7 @@
 #define TRAINER_CLASS_TRIATHLETE     0x28
 #define TRAINER_CLASS_BEAST_TAMER    0x29
 #define TRAINER_CLASS_NINJA_BOY      0x2a
-#define TRAINER_CLASS_BATTLE_GIRL    0x2b
+#define TRAINER_CLASS_FIGHTER        0x2b
 #define TRAINER_CLASS_PARASOL_LADY   0x2c
 #define TRAINER_CLASS_SWIMMER_F      0x2d
 #define TRAINER_CLASS_TWINS          0x2e

@@ -281,7 +281,7 @@ script MoveTutor_EventScript_ProtectThiefTutor {
         closemessage
         message(MoveTutor_Text_WhichMove)
         waitmessage
-        dynmultichoice(16, 6, TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Protect", "Thief", Multichoice_Option_NoMove)
+        dynmultichoice(16, 4, TRUE, 4, 0, DYN_MULTICHOICE_CB_NONE, "Protect", "Thief", "Facade", Multichoice_Option_NoMove)
         switch (var(VAR_RESULT)) {
             case 0: // Protect
                 setvar(VAR_0x8005, MOVE_PROTECT)
@@ -289,6 +289,9 @@ script MoveTutor_EventScript_ProtectThiefTutor {
             case 1: // Thief
                 setvar(VAR_0x8005, MOVE_THIEF)
                 call(MoveTutor_EventScript_SelectMon)
+			case 2: // Facade
+				setvar(VAR_0x8005, MOVE_FACADE)
+				call(MoveTutor_EventScript_SelectMon)
             default:
                 msgbox(MoveTutor_Text_ComeBackIfYouNeedMe, MSGBOX_DEFAULT)
                 closemessage

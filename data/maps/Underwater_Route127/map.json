@@ -58,22 +58,6 @@
     },
     {
       "type": "hidden_item",
-      "x": 50,
-      "y": 36,
-      "elevation": 3,
-      "item": "ITEM_HP_UP",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_127_HP_UP"
-    },
-    {
-      "type": "hidden_item",
-      "x": 34,
-      "y": 72,
-      "elevation": 3,
-      "item": "ITEM_HEART_SCALE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_127_HEART_SCALE"
-    },
-    {
-      "type": "hidden_item",
       "x": 72,
       "y": 20,
       "elevation": 3,

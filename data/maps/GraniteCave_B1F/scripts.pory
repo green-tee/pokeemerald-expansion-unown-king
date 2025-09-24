@@ -407,3 +407,117 @@ text GraniteCave_B1F_Text_SneaselRazorClaw {
     "I'm pretty sure wild Axew can hold them\n"
     "too."
 }
+
+script GraniteCave_B1F_EventScript_Fighter {
+    trainerbattle_single(TRAINER_FIGHTER_CLARISSA, GraniteCave_B1F_Text_Boo, GraniteCave_B1F_OhNoSmeargle)
+    msgbox(GraniteCave_B1F_ILoveSmeargle, MSGBOX_AUTOCLOSE)
+}
+
+text GraniteCave_B1F_Text_Boo {
+    "BOO!"
+}
+
+text GraniteCave_B1F_OhNoSmeargle {
+    "Oh, no! Smeargle!"
+}
+
+text GraniteCave_B1F_ILoveSmeargle {
+    "I love Smeargle because it can master\n"
+    "just about every move without wasting\l"
+    "a turn every single battle."
+}
+
+script GraniteCave_B1F_EventScript_Breeder {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_1)) {
+        if (flag(FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS)) {
+            msgbox(GraniteCave_B1F_Text_LetsBattleAgain, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            call(GraniteCave_B1F_EventScript_BreederTryGiveBalls)
+        }
+    } else {
+        msgbox(GraniteCave_B1F_Text_ItSureIsDark, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(GraniteCave_B1F_Text_IHaveAFullParty, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_WILD, FALSE)
+            trainerbattle_no_intro(TRAINER_BREEDER_CONRAD, GraniteCave_B1F_Text_WowNotBad)
+            setflag(FLAG_TEMP_1)
+            if (flag(FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS)) {
+                msgbox(GraniteCave_B1F_Text_IEnjoyedOurBattle)
+                closemessage
+            } else {
+                call(GraniteCave_B1F_EventScript_BreederTryGiveBalls)
+            }
+        } else {
+            closemessage
+        }
+    }
+    release
+}
+
+script(local) GraniteCave_B1F_EventScript_BreederTryGiveBalls {
+    msgbox(GraniteCave_B1F_Text_ThatWasFun)
+    closemessage
+    checkitemspace(ITEM_ULTRA_BALL, 3)
+    if (var(VAR_RESULT) == TRUE) {
+        checkitemspace(ITEM_QUICK_BALL, 3)
+        if (var(VAR_RESULT) == TRUE) {
+            giveitem(ITEM_ULTRA_BALL, 3)
+            msgbox(GraniteCave_B1F_Text_AndTheseToo, MSGBOX_DEFAULT)
+            giveitem(ITEM_QUICK_BALL, 3)
+            setflag(FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS)
+            msgbox(GraniteCave_B1F_Text_LetsBattleAgain, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            msgbox(GraniteCave_B1F_Text_YouHaveNoRoom, MSGBOX_DEFAULT)
+            closemessage
+        }
+    } else {
+        msgbox(GraniteCave_B1F_Text_YouHaveNoRoom, MSGBOX_DEFAULT)
+        closemessage
+    }
+}
+
+text GraniteCave_B1F_Text_ItSureIsDark {
+    "Hey, there! It sure is dark in here,\n"
+    "isn't it?\p"
+    "Would you like to have a battle?"
+}
+
+text GraniteCave_B1F_Text_IHaveAFullParty {
+    "Wonderful! I have a full party of\n"
+    "six Pokémon. How about you?"
+}
+
+text GraniteCave_B1F_Text_WowNotBad {
+    "Wow! Not bad at all!"
+}
+
+text GraniteCave_B1F_Text_ThatWasFun {
+    "That was a fun battle!\p"
+    "Here, take these. I hope they can be\n"
+    "useful to you."
+}
+
+text GraniteCave_B1F_Text_YouHaveNoRoom {
+    "Wait, you don't have enough room\n"
+    "in your bag.\p"
+    "Nevermind then."
+}
+
+text GraniteCave_B1F_Text_AndTheseToo {
+    "… and these too!"
+}
+
+text GraniteCave_B1F_Text_LetsBattleAgain {
+    "Let's battle again sometimes!"
+}
+
+text GraniteCave_B1F_Text_IEnjoyedOurBattle {
+    "Even though I lost, I enjoyed\n"
+    "our battle.\p"
+    "Let's have battle again sometimes!"
+}

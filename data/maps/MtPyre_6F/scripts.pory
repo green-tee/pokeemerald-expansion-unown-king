@@ -51,3 +51,140 @@ mart MtPyre_6F_Mart_Stones {
     ITEM_DAWN_STONE
     ITEM_MOON_STONE
 }
+
+script MtPyre_6F_EventScript_PsychicM {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_1)) {
+        msgbox(MtPyre_6F_ImLookingForwardToRematch, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(MtPyre_6F_Text_ISenseYourDesire, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(MtPyre_6F_Text_LetsGo, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_WILD, FALSE)
+            trainerbattle_no_intro(TRAINER_PSYCHIC_SIGMUND, MtPyre_6F_WhatABitterDefeat)
+            setflag(FLAG_TEMP_1)
+            msgbox(MtPyre_6F_YouAreAmazing, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            closemessage
+        }
+    }
+    release
+}
+
+text MtPyre_6F_Text_ISenseYourDesire {
+    "I sense your desire to have a battle.\n"
+    "Can I be your opponent?"
+}
+
+text MtPyre_6F_Text_LetsGo {
+    "Let's go!"
+}
+
+text MtPyre_6F_WhatABitterDefeat {
+    "Oh, what a bitter defeat!\n"
+    "Alas, I must hand it to you."
+}
+
+text MtPyre_6F_YouAreAmazing {
+    "You're amazing! I'm even more\n"
+    "motivated to defeat you, if we\l"
+    "battle again."
+}
+
+text MtPyre_6F_ImLookingForwardToRematch {
+    "I'm looking forward to having a\n"
+    "rematch against you!"
+}
+
+script MtPyre_6F_EventScript_PsychicFSouth {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_2)) {
+        msgbox(MtPyre_6F_Text_IfYouComeBack, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(MtPyre_6F_Text_WhatsTheMatter, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(MtPyre_6F_Text_LetsHaveSomeFun, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_WILD, FALSE)
+            trainerbattle_no_intro(TRAINER_PSYCHIC_LAURA, MtPyre_6F_Text_LosingIsPartOfTheHobby)
+            setflag(FLAG_TEMP_2)
+            msgbox(MtPyre_6F_Text_OhWell, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            closemessage
+        }
+    }
+    release
+}
+
+text MtPyre_6F_Text_WhatsTheMatter {
+    "What's the matter?\n"
+    "A battle, right now?\l"
+    "Yes, count me in."
+}
+
+text MtPyre_6F_Text_LetsHaveSomeFun {
+    "Let's have some fun!"
+}
+
+text MtPyre_6F_Text_LosingIsPartOfTheHobby {
+    "Taking some losses comes with\n"
+    "the territory in our hobby."
+}
+
+text MtPyre_6F_Text_OhWell {
+    "Oh, well. I'll do better\n"
+    "next time!"
+}
+
+text MtPyre_6F_Text_IfYouComeBack {
+    "If you come back and you're\n"
+    "in the mood for another battle,\l"
+    "I'll gladly take you on again."
+}
+
+script MtPyre_6F_EventScript_PsychicFCenter {
+    trainerbattle_single(TRAINER_PSYCHIC_ELLIE, MtPyre_6F_Text_IForesaw, MtPyre_6F_Text_MyPredictionsWereWrong)
+    msgbox(MtPyre_6F_Text_GolduckIsntPsychich, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_6F_Text_IForesaw {
+    "I foresaw you coming to me,\n"
+    "now I challenge you to a battle!"
+}
+
+text MtPyre_6F_Text_MyPredictionsWereWrong {
+    "But… But… My predictions!\n"
+    "They were wrong?!"
+}
+
+text MtPyre_6F_Text_GolduckIsntPsychich {
+    "What do you mean, Golduck isn't a\n"
+    "Psychic-type?"
+}
+
+script MtPyre_6F_EventScript_Fighter {
+    trainerbattle_single(TRAINER_FIGHTER_STEPHANIE, MtPyre_6F_Text_YouKnowTheRules, MtPyre_6F_Text_NeverGonnaGiveUp)
+    msgbox(MtPyre_6F_Text_Ditto, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_6F_Text_YouKnowTheRules {
+    "You know the rules, when two Trainers'\n"
+    "eyes meet…"
+}
+
+text MtPyre_6F_Text_NeverGonnaGiveUp {
+    "I'm never gonna give up!\n"
+    "Not for a single loss!"
+}
+
+text MtPyre_6F_Text_Ditto {
+    "Is it just me, or are Ditto\n"
+    "almost everywhere?"
+}

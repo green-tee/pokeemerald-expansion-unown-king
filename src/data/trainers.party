@@ -92,7 +92,7 @@ AI: Basic Trainer
 
 Carvanha
 Level: 26
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Aqua Jet
 - Bite
 - Screech
@@ -100,7 +100,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Weavile
 Level: 27
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Metal Claw
 - Avalanche
 - Swords Dance
@@ -117,7 +117,7 @@ AI: Check Bad Move
 
 Miltank
 Level: 26
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Stomp
 - Milk Drink
 - Rollout
@@ -125,7 +125,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Tauros @ Chesto Berry
 Level: 27
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Horn Attack
 - Payback
 - Rest
@@ -142,7 +142,7 @@ AI: Check Bad Move
 
 Whirlipede
 Level: 26
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Bug Bite
 - Poison Tail
 - Protect
@@ -150,7 +150,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Croagunk
 Level: 27
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Swagger
 - Poison Jab
 - Revenge
@@ -167,14 +167,14 @@ AI: Check Bad Move / Will Suicide
 
 Graveler
 Level: 26
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Self-Destruct
 - Bulldoze
 - Rock Throw
 
 Boldore
 Level: 27
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Iron Defense
 - Headbutt
 - Rock Blast
@@ -191,7 +191,7 @@ AI: Check Bad Move
 
 Vigoroth
 Level: 28
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Pursuit
 - Slash
 - Reversal
@@ -199,7 +199,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Axew
 Level: 29
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Dragon Claw
 - Slash
 - Scary Face
@@ -207,7 +207,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Houndoom
 Level: 30
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Fire Fang
 - Bite
 - Inferno
@@ -224,7 +224,7 @@ AI: Check Bad Move
 
 Houndour
 Level: 23
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Bite
 - Roar
 - Ember
@@ -232,7 +232,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Lombre
 Level: 24
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Bubble Beam
 - Synthesis
 - Absorb
@@ -240,7 +240,7 @@ IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
 Ludicolo
 Level: 25
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 - Giga Drain
 - Astonish
 - Water Gun
@@ -411,322 +411,530 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Fake Out
 - Bite
 
-=== TRAINER_ALBERTO ===
-Name: ALBERTO
-Class: Bird Keeper
-Pic: Bird Keeper
+=== TRAINER_PSYCHIC_SIGMUND ===
+Name: Sigmund
+Class: Psychic
+Pic: Psychic M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Pelipper
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ampharos
+Level: 36
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Thunder Punch
+- Power Gem
+- Confuse Ray
+- Light Screen
 
-Xatu
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toxicroak
+Level: 37
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Venoshock
+- Poison Sting
+- Mud Bomb
+- Revenge
 
-=== TRAINER_ED ===
-Name: ED
-Class: Collector
-Pic: Collector
-Gender: Male
+Gallade
+Level: 38
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Sharpness
+- Psycho Cut
+- Swords Dance
+- Aerial Ace
+- Brick Break
+
+=== TRAINER_PSYCHIC_LAURA ===
+Name: Laura
+Class: Psychic
+Pic: Psychic F
+Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Check Bad Move
 
-Zangoose
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Starmie
+Level: 36
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Psychic
+- Swift
+- Hydro Pump
+- Toxic
 
-Seviper
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gardevoir
+Level: 37
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Disarming Voice
+- Magical Leaf
+- Confusion
+- Calm Mind
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt F
+Ninetales Alola
+Level: 38
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Dazzling Gleam
+- Ice Shard
+- Hail
+- Nasty Plot
+
+=== TRAINER_PSYCHIC_ELLIE ===
+Name: Ellie
+Class: Psychic
+Pic: Psychic F
 Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Staryu
+Level: 34
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Minimize
+- Brine
+- Gyro Ball
+- Psywave
 
-=== TRAINER_DECLAN ===
-Name: DECLAN
-Class: Swimmer M
-Pic: Swimmer M
-Gender: Male
+Golduck
+Level: 35
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Water Pulse
+- Zen Headbutt
+- Soak
+- Screech
+
+=== TRAINER_PSYCHIC_MARGOT ===
+Name: Margot
+Class: Psychic
+Pic: Psychic F
+Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
+Sneasel
 Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Icy Wind
+- Metal Claw
+- Feint Attack
+- Leer
 
-=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Snorlax
+Level: 35
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Giga Impact
+- Rest
+- Snore
+- Lick
+
+=== TRAINER_PSYCHIC_HERALD ===
+Name: Herald
+Class: Psychic
+Pic: Psychic M
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 11
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golem
+Level: 34
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Sandstorm
+- Stealth Rock
+- Rock Blast
+- Heavy Slam
 
-=== TRAINER_GRUNT_WEATHER_INST_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Castform
+Level: 35
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Weather Ball
+- Rain Dance
+- Hydro Pump
+- Headbutt
+
+=== TRAINER_PSYCHIC_CLELIA ===
+Name: Clelia
+Class: Psychic
+Pic: Psychic F
+Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados
+Level: 31
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Aqua Tail
+- Ice Fang
+- Twister
+- Bite
 
-Poochyena
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sealeo @ Chesto Berry
+Level: 32
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Rollout
+- Aurora Beam
+- Brine
+- Rest
 
-=== TRAINER_GRUNT_WEATHER_INST_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Seaking
+Level: 33
+IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Waterfall
+- Aqua Ring
+- Agility
+- Horn Attack
+
+=== TRAINER_FIGHTER_SARAH ===
+Name: Sarah
+Class: Fighter
+Pic: Fighter
+Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mienfoo
+Level: 21
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Swift
+- Fake Out
+- Brick Break
+- Meditate
 
-Carvanha
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heracross
+Level: 22
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Arm Thrust
+- Aerial Ace
+- Fury Cutter
+- Protect
 
-=== TRAINER_GRUNT_WEATHER_INST_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Arcanine
+Level: 22
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Fire Fang
+- Thunder Fang
+- Bite
+- Roar
+
+=== TRAINER_FIGHTER_LANA ===
+Name: Lana
+Class: Fighter
+Pic: Fighter
+Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aron
+Level: 20
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Rock Tomb
+- Metal Claw
+- Headbutt
+- Mud-Slap
 
-Zubat
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ninjask
+Level: 20
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Fury Cutter
+- Sand Attack
+- Bug Bite
+- Screech
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kirlia
+Level: 20
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Magical Leaf
+- Confusion
+- Disarming Voice
+- Double Team
 
-=== TRAINER_GRUNT_MUSEUM_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+=== TRAINER_FIGHTER_PAULA ===
+Name: Paula
+Class: Fighter
+Pic: Fighter
+Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Psyduck
+Level: 16
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Water Gun
+- Tail Whip
+- Confusion
+- Fury Swipes
 
-=== TRAINER_GRUNT_MUSEUM_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
+Bagon
+Level: 19
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Headbutt
+- Dragon Breath
+- Bite
+- Ember
+
+=== TRAINER_FIGHTER_CLARISSA ===
+Name: Clarissa
+Class: Fighter
+Pic: Fighter
+Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Smeargle
+Level: 18
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Flamethrower
+- Water Pulse
+- Dragon Breath
+- Razor Leaf
 
-Carvanha
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SPACE_CENTER_1 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
-Gender: Male
+=== TRAINER_FIGHTER_STEPHANIE ===
+Name: Stephanie
+Class: Fighter
+Pic: Fighter
+Gender: Female
 Music: Magma
 Double Battle: No
 AI: Check Bad Move
 
-Numel
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Piplup
+Level: 15
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Peck
+- Bubble
+- Pound
+- Growl
 
-=== TRAINER_GRUNT_MT_PYRE_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Turtwig
+Level: 15
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Razor Leaf
+- Absorb
+- Withdraw
+- Tackle
+
+Cubone
+Level: 17
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Bone Club
+- Focus Energy
+- Headbutt
+- Leer
+
+Electrike
+Level: 17
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Spark
+- Odor Sleuth
+- Quick Attack
+- Leer
+
+=== TRAINER_FIGHTER_JOLENE ===
+Name: Jolene
+Class: Fighter
+Pic: Fighter
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flaaffy
+Level: 15
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Thunder Shock
+- Thunder Wave
+- Tackle
+- Growl
 
-=== TRAINER_GRUNT_MT_PYRE_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Joltik
+Level: 16
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Electroweb
+- Fury Cutter
+- Absorb
+- Spider Web
+
+=== TRAINER_FIGHTER_GAGA ===
+Name: Gaga
+Class: Fighter
+Pic: Fighter
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Axew
+Level: 15
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Dual Chop
+- Dragon Rage
+- Assurance
+- Leer
+
+=== TRAINER_BREEDER_CONRAD ===
+Name: Conrad
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 32
+Magikarp
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_MT_PYRE_3 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
+Feebas
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Ditto @ Quick Powder
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Venipede
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Roggenrola
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Geodude
+Level: 14
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BREEDER_OLIVER ===
+Name: Oliver
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 30
+Nincada
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carvanha
-Level: 30
+Chimchar
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt F
-Gender: Female
+Vulpix Alola
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BREEDER_LIAM ===
+Name: Liam
+Class: Breeder
+Pic: Breeder
+Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 28
+Spheal
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt F
-Gender: Female
+Lotad
+Level: 12
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BREEDER_OZZY ===
+Name: Ozzy
+Class: Breeder
+Pic: Breeder
+Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 32
+Mareep
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt F
-Gender: Female
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Zubat
-Level: 32
+Growlithe
+Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_FREDRICK ===
-Name: FREDRICK
-Class: Expert
-Pic: Expert M
+=== TRAINER_BREEDER_JAMAL ===
+Name: Jamal
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Makuhita
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Munchlax
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Machoke
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Munchlax
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_MATT ===
-Name: MATT
-Class: Aqua Admin
-Pic: Aqua Admin M
+Munchlax
+Level: 9
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BREEDER_MATTHEW ===
+Name: Matthew
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Aqua
-Items: Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Mightyena
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Goldeen
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Golbat
-Level: 34
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Feebas
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ZANDER ===
-Name: ZANDER
-Class: Black Belt
-Pic: Black Belt
+Magikarp
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Carvanha:
+Level: 8
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BREEDER_LEO ===
+Name: Leo
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Hariyama
-Level: 31
+Ditto @ Metal Powder
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_SHELLY_WEATHER_INSTITUTE ===
-Name: SHELLY
-Class: Aqua Admin
-Pic: Aqua Admin F
-Gender: Female
+=== TRAINER_BREEDER_TOMMY ===
+Name: Tommy
+Class: Breeder
+Pic: Breeder
+Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-Carvanha
-Level: 28
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Mightyena
-Level: 28
+Slakoth
+Level: 7
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_SHELLY_SEAFLOOR_CAVERN ===
@@ -8410,8 +8618,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_JOCELYN ===
 Name: JOCELYN
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8423,8 +8631,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_LAURA ===
 Name: LAURA
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8436,8 +8644,8 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_CYNDY_1 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8453,8 +8661,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CORA ===
 Name: CORA
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8466,8 +8674,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_PAULA ===
 Name: PAULA
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8479,8 +8687,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CYNDY_2 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8496,8 +8704,8 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 === TRAINER_CYNDY_3 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8513,8 +8721,8 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 === TRAINER_CYNDY_4 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -8530,8 +8738,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_CYNDY_5 ===
 Name: CYNDY
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -9860,8 +10068,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_REYNA ===
 Name: REYNA
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -10410,8 +10618,8 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_ISAAC_1 ===
 Name: ISAAC
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10481,8 +10689,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ISAAC_2 ===
 Name: ISAAC
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10514,8 +10722,8 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_ISAAC_3 ===
 Name: ISAAC
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10547,8 +10755,8 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_ISAAC_4 ===
 Name: ISAAC
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10580,8 +10788,8 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_ISAAC_5 ===
 Name: ISAAC
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Male
 Double Battle: No
@@ -10613,7 +10821,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_LYDIA_1 ===
 Name: LYDIA
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -10677,7 +10885,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYDIA_2 ===
 Name: LYDIA
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -10710,7 +10918,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_LYDIA_3 ===
 Name: LYDIA
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -10743,7 +10951,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_LYDIA_4 ===
 Name: LYDIA
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -10776,7 +10984,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_LYDIA_5 ===
 Name: LYDIA
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -11160,8 +11368,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_LILITH ===
 Name: LILITH
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -12456,8 +12664,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_VIVIAN ===
 Name: VIVIAN
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -12481,8 +12689,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DANIELLE ===
 Name: DANIELLE
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -14395,8 +14603,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HELENE ===
 Name: HELENE
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -14489,8 +14697,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_AISHA ===
 Name: AISHA
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -14580,8 +14788,8 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CALLIE ===
 Name: CALLIE
-Class: Battle Girl
-Pic: Battle Girl
+Class: Fighter
+Pic: Fighter
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -14614,8 +14822,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MYLES ===
 Name: MYLES
-Class: Pkmn Breeder
-Pic: Pokemon Breeder M
+Class: Breeder
+Pic: Breeder
 Gender: Male
 Music: Male
 Double Battle: No
@@ -14647,7 +14855,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_PAT ===
 Name: PAT
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -17153,7 +17361,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_GABRIELLE_2 ===
 Name: GABRIELLE
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -17186,7 +17394,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_GABRIELLE_3 ===
 Name: GABRIELLE
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -17219,7 +17427,7 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_GABRIELLE_4 ===
 Name: GABRIELLE
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female
@@ -17252,7 +17460,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_GABRIELLE_5 ===
 Name: GABRIELLE
-Class: Pkmn Breeder
+Class: Breeder
 Pic: Pokemon Breeder F
 Gender: Female
 Music: Female

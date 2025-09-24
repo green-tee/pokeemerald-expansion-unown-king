@@ -104,6 +104,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GraniteCave_StevensRoom_EventScript_Lugia",
       "flag": "FLAG_HIDE_LUGIA"
+    },
+    {
+      "local_id": "LOCALID_SACRED_ASH",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SACRED_ASH",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_LUGIA_SACRED_ASH"
     }
   ],
   "warp_events": [

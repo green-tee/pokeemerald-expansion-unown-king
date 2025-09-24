@@ -55,3 +55,81 @@ text Route103_Text_IHaveAWaterStone {
     "I wish I had a Staryu and a Feebas\l"
     "as well!"
 }
+
+script Route103_EventScript_Fighter {
+    lock
+    faceplayer
+    if (flag(FLAG_TEMP_1)) {
+        msgbox(Route103_Text_HaveYouSeenMilotic, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(Route103_Text_ImAFighter, MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES) {
+            msgbox(Route103_Text_LetsDoOurBest, MSGBOX_DEFAULT)
+            closemessage
+            playbgm(MUS_VS_WILD, FALSE)
+            trainerbattle_no_intro(TRAINER_FIGHTER_SARAH, Route103_Text_IAcceptMyDefeat)
+            setflag(FLAG_TEMP_1)
+            msgbox(Route103_Text_IWasHopingToWin, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            closemessage
+        }
+    }
+    release
+}
+
+text Route103_Text_ImAFighter {
+    "I'm a Fighter, guess what I like doing\n"
+    "the most.\l"
+    "Battling, of course!\p"
+    "Would you accept my challenge?"
+}
+
+text Route103_Text_LetsDoOurBest {
+    "Perfect!\n"
+    "Let's both do our best!"
+}
+
+text Route103_Text_IAcceptMyDefeat {
+    "I accept my defeat with dignity.\n"
+    "That's the way of us Fighters!"
+}
+
+text Route103_Text_IWasHopingToWin {
+    "I won't lie, I was hoping to win\n"
+    "this one.\p"
+    "But it doesn't matter, I'm always\n"
+    "in the mood for another battle."
+}
+
+text Route103_Text_HaveYouSeenMilotic {
+    "Have you seen the majestic creature\n"
+    "on the pond's surface?\l"
+    "It's very tanky, a damage sponge,\l"
+    "if you will.\p"
+    "If it had a Flame Orb along, it could\n"
+    "become brutal!\p"
+    "Oh, by the way, we should battle again\n"
+    "in the future!"
+}
+
+script Route103_EventScript_Breeder {
+    trainerbattle_single(TRAINER_BREEDER_LEO, Route103_Text_LookWhatMyPokemonCanDo, Route103_Text_PrettyCool)
+    msgbox(Route103_Text_IfYouCouldFly, MSGBOX_AUTOCLOSE)
+}
+
+text Route103_Text_LookWhatMyPokemonCanDo {
+    "Look what my Pokémon can do!"
+}
+
+text Route103_Text_PrettyCool {
+    "See? Pretty cool, huh?"
+}
+
+text Route103_Text_IfYouCouldFly {
+    "If you could fly, you could reach\n"
+    "the top of the temple and see\l"
+    "what's there."
+    "\lMaybe… a legendary Pokémon?"
+}
