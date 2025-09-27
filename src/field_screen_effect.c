@@ -1284,6 +1284,7 @@ void DoOrbEffect(void)
     u8 taskId = CreateTask(Task_OrbEffect, 80);
     s16 *data = gTasks[taskId].data;
 
+    /*
     if (gSpecialVar_Result == 0)
     {
         tBlueOrb = FALSE;
@@ -1304,6 +1305,9 @@ void DoOrbEffect(void)
         tBlueOrb = TRUE;
         tCenterX = 120;
     }
+    */
+   tBlueOrb = FALSE;
+   tCenterX = 120;
 
     tCenterY = 80;
 }

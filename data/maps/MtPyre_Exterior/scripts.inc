@@ -230,17 +230,17 @@ MtPyre_Exterior_EventScript_GoToFinalBoss_1:
 	return
 
 
-# 142 "data/maps/MtPyre_Exterior/scripts.pory"
+# 144 "data/maps/MtPyre_Exterior/scripts.pory"
 MtPyre_Exterior_Movement_GoForth:
-# 143 "data/maps/MtPyre_Exterior/scripts.pory"
+# 145 "data/maps/MtPyre_Exterior/scripts.pory"
 	walk_up
 	step_end
 
-# 146 "data/maps/MtPyre_Exterior/scripts.pory"
+# 148 "data/maps/MtPyre_Exterior/scripts.pory"
 MtPyre_Exterior_Movement_GoBack:
-# 147 "data/maps/MtPyre_Exterior/scripts.pory"
+# 149 "data/maps/MtPyre_Exterior/scripts.pory"
 	walk_down
-# 147 "data/maps/MtPyre_Exterior/scripts.pory"
+# 149 "data/maps/MtPyre_Exterior/scripts.pory"
 	walk_down
 	step_end
 
@@ -257,18 +257,20 @@ MtPyre_Exterior_Text_WantToGoToFinalBoss::
 	.string "Once you cross this line, you won't be\n"
 	.string "able to come back. The only options are\l"
 	.string "victory or defeat.\p"
+	.string "Losing the final battle will take you\n"
+	.string "to the title screen.\p"
 	.string "If you wish to save your game, go back\n"
 	.string "before stepping forward.\p"
 	.string "What will you do?$"
 
 Multichoice_Option_GoAhead::
-# 130 "data/maps/MtPyre_Exterior/scripts.pory"
+# 132 "data/maps/MtPyre_Exterior/scripts.pory"
 	.string "I'm going ahead!$"
 
 Multichoice_Option_GoBack::
-# 134 "data/maps/MtPyre_Exterior/scripts.pory"
+# 136 "data/maps/MtPyre_Exterior/scripts.pory"
 	.string "I'm not ready.$"
 
 MtPyre_Exterior_Text_GoodLuck::
-# 138 "data/maps/MtPyre_Exterior/scripts.pory"
+# 140 "data/maps/MtPyre_Exterior/scripts.pory"
 	.string "Good luck!$"

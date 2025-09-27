@@ -392,7 +392,7 @@ gSongTable::
 	song mus_awaken_legend, 2, 2
 	song mus_slots_jackpot, 2, 2
 	song mus_slots_win, 2, 2
-	song mus_too_bad, 2, 2
+	song mus_too_bad, 0, 0
 	song mus_roulette, 0, 0
 	song mus_link_contest_p1, 0, 0
 	song mus_link_contest_p2, 0, 0

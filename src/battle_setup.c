@@ -819,6 +819,9 @@ u8 GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
+    
+    if (trainerClass == TRAINER_CLASS_UNOWN_KING)
+        return B_TRANSITION_RAYQUAZA;
 
     switch (GetTrainerBattleType(trainerId))
     {

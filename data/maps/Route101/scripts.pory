@@ -2,18 +2,28 @@ mapscripts Route101_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Route101_EventScript_OnTransition
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_INTRO_AREA_STATE, 0: Route101_EventScript_FacePlayerNorth
+        VAR_INTRO_AREA_STATE, 2: Route101_EventScript_FacePlayerSouth
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_INTRO_AREA_STATE, 0: Route101_EventScript_PlayIntroFollowUp
+        VAR_INTRO_AREA_STATE, 2: Route101_EventScript_Ending
     ]
 }
 
 script Route101_EventScript_OnTransition {
     setrespawn(HEAL_LOCATION_ROUTE101)
+    if (var(VAR_INTRO_AREA_STATE) == 2) {
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    }
 }
 
 script Route101_EventScript_FacePlayerNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+}
+
+script Route101_EventScript_FacePlayerSouth {
+    turnobject(LOCALID_PLAYER, DIR_SOUTH)
 }
 
 script Route101_EventScript_PlayIntroFollowUp {
@@ -25,7 +35,7 @@ script Route101_EventScript_PlayIntroFollowUp {
     msgbox(Route101_Text_ThereAre26Unown, MSGBOX_DEFAULT)
     closemessage
     setflag(FLAG_SYS_POKEMON_GET)
-    setflag(FLAG_SYS_POKEDEX_GET)
+    //setflag(FLAG_SYS_POKEDEX_GET) // Not yet, leaving this for version 2.0.0
     setvar(VAR_INTRO_AREA_STATE, 1)
     releaseall
 }
@@ -151,4 +161,95 @@ text Route101_Text_ComeBackAtAnyTime {
 text Route101_Text_DoneComeBackAtAnyTime {
     "There we go!\n"
     "Come back at any time!"
+}
+
+script Route101_EventScript_Ending {
+    lockall
+    //playbgm(MUS_MT_PYRE, FALSE)
+    setvar(VAR_INTRO_AREA_STATE, 1)
+    special(HealPlayerParty)
+    message(Route101_Text_UnownKingWasDefeated)
+    delay(90)
+    applymovement(LOCALID_PLAYER, Route101_Movement_EndingWalk)
+    waitmessage
+    waitbuttonpress
+    closemessage
+    delay(60)
+    waitmovement(LOCALID_PLAYER)
+    clearflag(FLAG_TEMP_1)
+    msgbox(Route101_Text_UnownKingNeverSucceeded, MSGBOX_DEFAULT)
+    closemessage
+    delay(30)
+    msgbox(Route101_Text_WeHopeYouEnjoyed, MSGBOX_DEFAULT)
+    closemessage
+    call(Common_EventScript_SaveGame)
+    closemessage
+    delay(30)
+    call(Route101_EventScript_EndingFly)
+}
+
+text Route101_Text_UnownKingWasDefeated {
+    "{PLAYER} and the Unown that {PLAYER}\n"
+    "had collected managed to seal\l"
+    "the Unown King back into the altair\l"
+    "which it had broken free from.\p"
+    "But is it truly how this story ends?\n"
+    "Did these events really happen?\p"
+    "Other sources claim that the Unown King\n"
+    "vanished for eternity.\p"
+    "Alas, the truth in the matter will\n"
+    "remain fuzzy for a long time,\l"
+    "possibly forever."
+}
+
+text Route101_Text_UnownKingNeverSucceeded {
+    "One thing is for sure: the Unown King\n"
+    "never stopped the human race from\l"
+    "prosperating. The only ones who can\l"
+    "do that -let's hope they won't- are\l"
+    "humans themselves."
+}
+
+text Route101_Text_WeHopeYouEnjoyed {
+    "{COLOR GREEN}We hope you enjoyed your time playing\n"
+    "Pokémon - The Unown King.\p"
+    "This ROM-hack is a submission for the\n"
+    "{FONT_NARROW}2nd Team Aqua's Rom-Hacking Competition\l"
+    "{FONT_NORMAL}(TARC2).\p"
+    "If you wish to see all of the content\n"
+    "that didn't make the cut due to\l"
+    "time constraints, look forward to\l"
+    "the definitive version!"
+}
+
+movement Route101_Movement_EndingWalk {
+    walk_down * 14
+}
+
+script(local) Route101_EventScript_EndingFly {
+    checkpartymove(MOVE_FLY)
+    if (var(VAR_RESULT) == PARTY_SIZE) {
+        checkpartylearnable(MOVE_FLY)
+        if (var(VAR_RESULT) == PARTY_SIZE) {
+            call(Route101_EventScript_BoringReboot)
+        } else {
+            call(Route101_EventScript_FlyReboot)
+        }
+    } else {
+        call(Route101_EventScript_FlyReboot)
+    }
+}
+
+script(local) Route101_EventScript_BoringReboot {
+    fadescreen(FADE_TO_BLACK)
+    special(DoSoftReset)
+}
+
+script(local) Route101_EventScript_FlyReboot {
+    setfieldeffectargument(0, VAR_RESULT)
+    dofieldeffect(FLDEFF_USE_FLY)
+    delay(300) // waitstate doesn't work here, but without a delay, it executes the next command immediately
+    fadeoutbgm(0)
+    //fadescreen(FADE_TO_BLACK)
+    special(DoSoftReset)
 }

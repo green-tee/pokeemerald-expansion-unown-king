@@ -8844,12 +8844,11 @@ static u32 GetTrainerMoneyToGive(u16 trainerId)
     u32 moneyReward;
     u8 trainerMoney = 0;
 
-    if (trainerId == TRAINER_SECRET_BASE)
-    {
+    if (trainerId == TRAINER_SECRET_BASE) {
         moneyReward = 20 * gBattleResources->secretBase->party.levels[0] * gBattleStruct->moneyMultiplier;
-    }
-    else
-    {
+    } else if (trainerId >= TRAINER_UNOWN_KING_START && trainerId <= TRAINER_UNOWN_KING_END) {
+        moneyReward = 0;
+    } else {
         const struct TrainerMon *party = GetTrainerPartyFromId(trainerId);
         if (party == NULL)
             return 20;

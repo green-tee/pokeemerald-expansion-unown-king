@@ -49,7 +49,7 @@ static void CB2_GoToMainMenu(void);
 static void CB2_GoToClearSaveDataScreen(void);
 static void CB2_GoToResetRtcScreen(void);
 static void CB2_GoToBerryFixScreen(void);
-static void CB2_GoToCopyrightScreen(void);
+//static void CB2_GoToCopyrightScreen(void);
 static void UpdateUnownKingMarkingColor(u8);
 static void UpdateMarkingColor(u8 colorIndex, u8 frameNum, s8 rbase, s8 gbase, s8 bbase, s8 rfinal, s8 gfinal, s8 bfinal);
 
@@ -659,7 +659,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_TITLE);
+        m4aSongNumStart(MUS_SEALED_CHAMBER);
         gMain.state = 5;
         break;
     case 5:
@@ -814,11 +814,13 @@ static void Task_TitleScreenPhase3(u8 taskId)
             gBattle_BG1_X = 0;
         }
         UpdateUnownKingMarkingColor(gTasks[taskId].tCounter);
+        /*
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
             BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
             SetMainCallback2(CB2_GoToCopyrightScreen);
         }
+        */
     }
 }
 
@@ -828,11 +830,13 @@ static void CB2_GoToMainMenu(void)
         SetMainCallback2(CB2_InitMainMenu);
 }
 
+/*
 static void CB2_GoToCopyrightScreen(void)
 {
     if (!UpdatePaletteFade())
         SetMainCallback2(CB2_InitCopyrightScreenAfterTitleScreen);
 }
+*/
 
 static void CB2_GoToClearSaveDataScreen(void)
 {

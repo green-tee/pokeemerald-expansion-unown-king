@@ -1188,9 +1188,9 @@ u16 GetCurrLocationDefaultMusic(void)
     if (
         gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE101)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE101)
-        && gSaveBlock1Ptr->pos.y < 11
+        && (gSaveBlock1Ptr->pos.y < 11 || VarGet(VAR_INTRO_AREA_STATE) == 2)
     ) {
-        return MUS_VICTORY_ROAD;
+        return gSaveBlock1Ptr->pos.y < 11 ? MUS_VICTORY_ROAD : MUS_MT_PYRE;
     }
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
@@ -1214,6 +1214,8 @@ u16 GetWarpDestinationMusic(void)
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MT_PYRE_EXTERIOR)
          && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MT_PYRE_EXTERIOR))
             return MUS_VICTORY_ROAD;
+        else if (VarGet(VAR_INTRO_AREA_STATE) == 2)
+            return MUS_MT_PYRE;
         else
             return MUS_ROUTE101;
     }

@@ -94,7 +94,7 @@ script GraniteCave_StevensRoom_EventScript_Lugia {
         if (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
             setflag(FLAG_CAUGHT_LUGIA)
             clearflag(FLAG_ITEM_LUGIA_SACRED_ASH)
-            showobjectat(LOCALID_SACRED_ASH, MAP_GRANITE_CAVE_STEVENS_ROOM)
+            addobject(LOCALID_SACRED_ASH, MAP_GRANITE_CAVE_STEVENS_ROOM)
             //giveitem(ITEM_SACRED_ASH, 1)
         }
     } else {

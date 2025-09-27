@@ -80,10 +80,10 @@ script(local) MtPyre_Exterior_EventScript_LatiosOrLatias_SoulDew {
     switch (var(VAR_LAST_TALKED)) {
         case LOCALID_LATIOS:
             clearflag(FLAG_ITEM_LATIOS_SOUL_DEW)
-            showobjectat(LOCALID_LATIOS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR)
+            addobject(LOCALID_LATIOS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR)
         case LOCALID_LATIAS:
             clearflag(FLAG_ITEM_LATIAS_SOUL_DEW)
-            showobjectat(LOCALID_LATIAS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR)
+            addobject(LOCALID_LATIAS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR)
     }
 }
 
@@ -122,6 +122,8 @@ text MtPyre_Exterior_Text_WantToGoToFinalBoss {
     "Once you cross this line, you won't be\n"
     "able to come back. The only options are\l"
     "victory or defeat.\p"
+    "Losing the final battle will take you\n"
+    "to the title screen.\p"
     "If you wish to save your game, go back\n"
     "before stepping forward.\p"
     "What will you do?"

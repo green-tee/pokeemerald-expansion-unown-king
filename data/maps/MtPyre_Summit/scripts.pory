@@ -1,5 +1,6 @@
 mapscripts MtPyre_Summit_MapScripts {
     MAP_SCRIPT_ON_RESUME: MtPyre_Summit_EventScript_TryRemoveUnown
+    MAP_SCRIPT_ON_TRANSITION: MtPyre_Summit_EventScript_HideFriendlyUnown
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_UNOWN_KING_PRISON_STATE, 0: MtPyre_Summit_EventScript_FacePlayerNorth
     ]
@@ -12,6 +13,7 @@ script MtPyre_Summit_EventScript_TryRemoveUnown {
     if (flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            //savebgm(MUS_VICTORY_WILD)
             removeobject(LOCALID_UNOWN_BOTTOM_LEFT)
             removeobject(LOCALID_UNOWN_MIDDLE_LEFT)
             removeobject(LOCALID_UNOWN_TOP_LEFT)
@@ -24,6 +26,16 @@ script MtPyre_Summit_EventScript_TryRemoveUnown {
 
 script MtPyre_Summit_EventScript_FacePlayerNorth {
     turnobject(LOCALID_PLAYER, DIR_NORTH)
+}
+
+script MtPyre_Summit_EventScript_HideFriendlyUnown {
+    setflag(FLAG_TEMP_2)
+    hideobjectat(LOCALID_UNOWN_G, MAP_MT_PYRE_SUMMIT)
+    hideobjectat(LOCALID_UNOWN_L, MAP_MT_PYRE_SUMMIT)
+    hideobjectat(LOCALID_UNOWN_Y, MAP_MT_PYRE_SUMMIT)
+    hideobjectat(LOCALID_UNOWN_P, MAP_MT_PYRE_SUMMIT)
+    hideobjectat(LOCALID_UNOWN_H, MAP_MT_PYRE_SUMMIT)
+    hideobjectat(LOCALID_UNOWN_S, MAP_MT_PYRE_SUMMIT)
 }
 
 script MtPyre_Summit_EventScript_StartFinalBossSequence {
@@ -51,6 +63,14 @@ script MtPyre_Summit_EventScript_StartFinalBossSequence {
     setflag(FLAG_SYS_CTRL_OBJ_DELETE)
     call(MtPyre_Summit_EventScript_DoUnownKingBattle)
     clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        // Do ending and credits
+        call(MtPyre_Summit_EventScript_UnownKingDefeated)
+    } else {
+        // Do bad ending and game over
+        call(MtPyre_Summit_EventScript_BadEnding)
+    }
     releaseall
 }
 
@@ -176,6 +196,7 @@ movement MtPyre_Summit_Movement_SurroundFromTopLeft {
 
 script MtPyre_Summit_EventScript_DoUnownKingBattle {
     //setflag(FLAG_BATTLE_NO_REWARD)
+    setflag(FLAG_PREVENT_WHITEOUT)
     random(12)
     switch (var(VAR_RESULT)) {
         case 0:
@@ -211,13 +232,182 @@ text MtPyre_Summit_Text_UnownKingDefeated {
     "Reduced to dust!"
 }
 
-script MtPyre_Summit_EventScript_TestFinalBoss {
-    lock
-    playbgm(MUS_VS_ELITE_FOUR, FALSE)
-    msgbox("Testing final boss battle.", MSGBOX_DEFAULT)
+script(local) MtPyre_Summit_EventScript_BadEnding {
+    playbgm(MUS_TOO_BAD, FALSE)
+    setweather(WEATHER_FOG_HORIZONTAL)
+    doweather
+    delay(180)
+    msgbox(MtPyre_Summit_Text_YouAreDone, MSGBOX_DEFAULT)
     closemessage
-    trainerbattle_no_intro(TRAINER_UNOWN_KING_COF_SPE_HOO, "Final boss battle completed.")
-    msgbox("Final boss test completed.", MSGBOX_DEFAULT)
+    fadescreenspeed(FADE_TO_BLACK, 10)
+    delay(60)
+    special(DoSoftReset)
+}
+
+text MtPyre_Summit_Text_YouAreDone {
+    "You are done, foolish nobody!\p"
+    "My servants will accelerate my healing,\n"
+    "then I will leave this prison and\l"
+    "destroy each and every one of your kind!"
+}
+
+script(local) MtPyre_Summit_EventScript_UnownKingDefeated {
+    msgbox(MtPyre_Summit_EventScript_ItCannotBe, MSGBOX_DEFAULT)
     closemessage
-    release
+    call(MtPyre_Summit_EventScript_ShowFriendlyUnown)
+    call(MtPyre_Summit_EventScript_FriendlyUnownSurroundUnownKing)
+    msgbox(MtPyre_Summit_Text_MySubjectsObeyYou, MSGBOX_DEFAULT)
+    closemessage
+    delay(60)
+    msgbox(MtPyre_Summit_Text_YouCannotDestroyMe, MSGBOX_DEFAULT)
+    closemessage
+    playse(SE_ORB)
+    special(DoOrbEffect)
+    delay(300)
+    playse(SE_M_STRENGTH)
+    special(FadeOutOrbEffect)
+    waitstate
+    fadescreenspeed(FADE_TO_WHITE, 0)
+    removeobject(LOCALID_UNOWN_KING)
+    fadescreenspeed(FADE_FROM_WHITE, 0)
+    delay(180)
+    setvar(VAR_INTRO_AREA_STATE, 2) // It must then be brought back to 1 after warping
+    warpsilent(MAP_ROUTE101, 12, 13)
+    waitstate
+}
+
+text MtPyre_Summit_EventScript_ItCannotBe {
+    "No! It cannot be!\p"
+    "My servants… Defeated?!\n"
+    "By an insignificant human like you?!\p"
+    "I have not healed yet… And without them,\n"
+    "I cannot…!"
+}
+
+script(local) MtPyre_Summit_EventScript_ShowFriendlyUnown {
+    clearflag(FLAG_TEMP_2)
+    addobject(LOCALID_UNOWN_G, MAP_MT_PYRE_SUMMIT)
+    addobject(LOCALID_UNOWN_L, MAP_MT_PYRE_SUMMIT)
+    addobject(LOCALID_UNOWN_Y, MAP_MT_PYRE_SUMMIT)
+    addobject(LOCALID_UNOWN_P, MAP_MT_PYRE_SUMMIT)
+    addobject(LOCALID_UNOWN_H, MAP_MT_PYRE_SUMMIT)
+    addobject(LOCALID_UNOWN_S, MAP_MT_PYRE_SUMMIT)
+}
+
+script(local) MtPyre_Summit_EventScript_FriendlyUnownSurroundUnownKing {
+    // Final formation is:
+    // G L Y
+    //
+    // P H S
+    // L, G, P start by going East
+    // Y, S, H start by going West
+    // Start moving L
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp)
+    waitmovement(0)
+    // Start moving Y
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownUp)
+    waitmovement(0)
+    // Start moving G
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight)
+    applymovement(LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownUp)
+    waitmovement(0)
+    // Start moving S
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight)
+    applymovement(LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownUp)
+    waitmovement(0)
+    // Start moving P
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp)
+    applymovement(LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight)
+    applymovement(LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownRight)
+    applymovement(LOCALID_UNOWN_P, MtPyre_Summit_Movement_UnownUp)
+    waitmovement(0)
+    // Start moving H
+    playmoncry(SPECIES_UNOWN, CRY_MODE_NORMAL)
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp)
+    applymovement(LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownUp)
+    applymovement(LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownRight)
+    applymovement(LOCALID_UNOWN_P, MtPyre_Summit_Movement_UnownLeft)
+    applymovement(LOCALID_UNOWN_H, MtPyre_Summit_Movement_UnownUp)
+    waitmovement(0)
+    // S has finished moving
+    // Everyone else now moves to the corresponding place at the same time
+    applymovement(LOCALID_UNOWN_L, MtPyre_Summit_Movement_SurroundL)
+    applymovement(LOCALID_UNOWN_Y, MtPyre_Summit_Movement_SurroundY)
+    applymovement(LOCALID_UNOWN_G, MtPyre_Summit_Movement_SurroundG)
+    applymovement(LOCALID_UNOWN_S, MtPyre_Summit_Movement_SurroundS)
+    applymovement(LOCALID_UNOWN_P, MtPyre_Summit_Movement_SurroundP)
+    applymovement(LOCALID_UNOWN_H, MtPyre_Summit_Movement_SurroundH)
+    waitmovement(LOCALID_UNOWN_L) // It takes the longest
+}
+
+movement MtPyre_Summit_Movement_UnownUp {
+    walk_fast_up
+}
+
+movement MtPyre_Summit_Movement_UnownLeft {
+    walk_fast_left
+}
+
+movement MtPyre_Summit_Movement_UnownRight {
+    walk_fast_right
+}
+
+movement MtPyre_Summit_Movement_SurroundL {
+    walk_fast_up * 2
+    walk_fast_right * 3
+    face_down
+}
+
+movement MtPyre_Summit_Movement_SurroundY {
+    walk_fast_up * 3
+    face_down
+}
+
+movement MtPyre_Summit_Movement_SurroundG {
+    walk_fast_up * 4
+    face_down
+}
+
+movement MtPyre_Summit_Movement_SurroundS {
+    walk_fast_right
+    face_up
+}
+
+movement MtPyre_Summit_Movement_SurroundP {
+    walk_fast_left * 2
+    face_up
+}
+
+movement MtPyre_Summit_Movement_SurroundH {
+    face_up
+}
+
+text MtPyre_Summit_Text_MySubjectsObeyYou {
+    "What?!\n"
+    "My subjects… They side with you now?!"
+}
+
+text MtPyre_Summit_Text_YouCannotDestroyMe {
+    "Traitors! You will never destroy me!\n"
+    "You will seal me back into this altair,\l"
+    "but my wounds will heal!\p"
+    "Once my healing is complete, I will\n"
+    "break free from this prison, then\l"
+    "I will be strong enough to fight\l"
+    "myself!\p"
+    "Centuries…\n"
+    "Millennia…\p"
+    "However long it may take,\n"
+    "I will resurface!"
 }
