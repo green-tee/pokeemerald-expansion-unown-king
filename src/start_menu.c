@@ -1391,10 +1391,12 @@ static void ShowSaveInfoWindow(void)
     u32 xOffset;
     u32 yOffset;
 
+    /*
     if (!FlagGet(FLAG_SYS_POKEDEX_GET))
     {
         saveInfoWindow.height -= 2;
     }
+    */
 
     sSaveInfoWindowId = AddWindow(&saveInfoWindow);
     DrawStdWindowFrame(sSaveInfoWindowId, FALSE);

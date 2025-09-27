@@ -3639,6 +3639,7 @@ static void PrintEggState(void)
 
 static void PrintEggMemo(void)
 {
+    /*
     const u8 *text;
     struct PokeSummary *sum = &sMonSummaryScreen->summary;
 
@@ -3649,7 +3650,7 @@ static void PrintEggMemo(void)
         else if (DidMonComeFromGBAGames() == FALSE || DoesMonOTMatchOwner() == FALSE)
             text = gText_PeculiarEggTrade;
         else if (sum->metLocation == METLOC_SPECIAL_EGG)
-            text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromTraveler;
+            text = (DidMonComeFromRSE() == TRUE) ? gText_EggFromHotSprings : gText_EggFromMaiden;
         else
             text = gText_OddEggFoundByCouple;
     }
@@ -3659,6 +3660,8 @@ static void PrintEggMemo(void)
     }
 
     PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), text, 0, 1, 0, 0);
+    */
+   PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), gText_EggFromMaiden, 0, 1, 0, 0);
 }
 
 static void PrintSkillsPageText(void)

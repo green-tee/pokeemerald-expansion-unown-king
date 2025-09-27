@@ -3630,7 +3630,7 @@ void SetMoveEffect(bool32 primary, bool32 certain)
                 break;
             case MOVE_EFFECT_STEAL_ITEM:
                 if (!CanStealItem(gBattlerAttacker, gBattlerTarget, gBattleMons[gBattlerTarget].item)
-                    || gBattleMons[gBattlerAttacker].item != ITEM_NONE
+                    || (B_STEAL_WILD_ITEMS < GEN_9 && gBattleMons[gBattlerAttacker].item != ITEM_NONE)
                     || gBattleMons[gBattlerTarget].item == ITEM_NONE)
                 {
                     gBattlescriptCurrInstr++;
@@ -16277,6 +16277,7 @@ static void Cmd_trysetcaughtmondexflags(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
+    /*
     u32 species = GetMonData(GetBattlerMon(GetCatchingBattler()), MON_DATA_SPECIES, NULL);
     u32 personality = GetMonData(GetBattlerMon(GetCatchingBattler()), MON_DATA_PERSONALITY, NULL);
 
@@ -16289,6 +16290,8 @@ static void Cmd_trysetcaughtmondexflags(void)
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
+    */
+    gBattlescriptCurrInstr = cmd->failInstr;
 }
 
 static void Cmd_displaydexinfo(void)
@@ -17082,7 +17085,7 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
     if (IsTradedMon(&gPlayerParty[expGetterMonId]))
         *expAmount = (*expAmount * 150) / 100;
     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
-        *expAmount *= 2;
+        *expAmount = (*expAmount * 150) / 100;
     if (B_UNEVOLVED_EXP_MULTIPLIER >= GEN_6 && IsMonPastEvolutionLevel(&gPlayerParty[expGetterMonId]))
         *expAmount = (*expAmount * 4915) / 4096;
     if (B_AFFECTION_MECHANICS == TRUE && GetMonAffectionHearts(&gPlayerParty[expGetterMonId]) >= AFFECTION_FOUR_HEARTS)
@@ -17150,6 +17153,8 @@ void BS_ItemRestoreHP(void)
                 healAmount = healParam;
                 break;
         }
+        if (healAmount < 1)
+            healAmount = 1;
         if (hp + healAmount > maxHP)
             healAmount = maxHP - hp;
 

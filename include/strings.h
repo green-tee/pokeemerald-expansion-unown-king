@@ -722,7 +722,7 @@ extern const u8 gText_EggWillHatchSoon[];
 extern const u8 gText_EggWillTakeSomeTime[];
 extern const u8 gText_PeculiarEggNicePlace[];
 extern const u8 gText_PeculiarEggTrade[];
-extern const u8 gText_EggFromTraveler[];
+extern const u8 gText_EggFromMaiden[];
 extern const u8 gText_EggFromHotSprings[];
 extern const u8 gText_OddEggFoundByCouple[];
 extern const u8 gText_None[];

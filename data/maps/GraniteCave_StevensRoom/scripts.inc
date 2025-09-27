@@ -204,7 +204,7 @@ GraniteCave_StevensRoom_EventScript_Lugia_5:
 # 96 "data/maps/GraniteCave_StevensRoom/scripts.pory"
 	clearflag FLAG_ITEM_LUGIA_SACRED_ASH
 # 97 "data/maps/GraniteCave_StevensRoom/scripts.pory"
-	showobjectat LOCALID_SACRED_ASH, MAP_GRANITE_CAVE_STEVENS_ROOM
+	addobject LOCALID_SACRED_ASH, MAP_GRANITE_CAVE_STEVENS_ROOM
 	goto GraniteCave_StevensRoom_EventScript_Lugia_1
 
 

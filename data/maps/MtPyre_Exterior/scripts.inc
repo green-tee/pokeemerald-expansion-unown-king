@@ -179,14 +179,14 @@ MtPyre_Exterior_EventScript_LatiosOrLatias_SoulDew_2:
 # 82 "data/maps/MtPyre_Exterior/scripts.pory"
 	clearflag FLAG_ITEM_LATIOS_SOUL_DEW
 # 83 "data/maps/MtPyre_Exterior/scripts.pory"
-	showobjectat LOCALID_LATIOS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR
+	addobject LOCALID_LATIOS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR
 	return
 
 MtPyre_Exterior_EventScript_LatiosOrLatias_SoulDew_3:
 # 85 "data/maps/MtPyre_Exterior/scripts.pory"
 	clearflag FLAG_ITEM_LATIAS_SOUL_DEW
 # 86 "data/maps/MtPyre_Exterior/scripts.pory"
-	showobjectat LOCALID_LATIAS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR
+	addobject LOCALID_LATIAS_SOUL_DEW, MAP_MT_PYRE_EXTERIOR
 	return
 
 
