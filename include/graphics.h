@@ -262,8 +262,8 @@ extern const u32 gBattleEnvironmentAnimTilemap_Building[];
 extern const u16 gBattleEnvironmentPalette_Building[];
 extern const u16 gBattleEnvironmentPalette_Plain[];
 extern const u16 gBattleEnvironmentPalette_Frontier[];
-extern const u32 gBattleEnvironmentTiles_Stadium[];
-extern const u32 gBattleEnvironmentTilemap_Stadium[];
+extern const u32 gBattleEnvironmentTiles_Flames[];
+extern const u32 gBattleEnvironmentTilemap_Flames[];
 extern const u32 gBattleEnvironmentTiles_Rayquaza[];
 extern const u32 gBattleEnvironmentTilemap_Rayquaza[];
 extern const u32 gBattleEnvironmentAnimTiles_Rayquaza[];
@@ -277,9 +277,9 @@ extern const u16 gBattleEnvironmentPalette_StadiumAqua[];
 extern const u16 gBattleEnvironmentPalette_StadiumMagma[];
 extern const u16 gBattleEnvironmentPalette_StadiumSidney[];
 extern const u16 gBattleEnvironmentPalette_StadiumPhoebe[];
-extern const u16 gBattleEnvironmentPalette_StadiumGlacia[];
-extern const u16 gBattleEnvironmentPalette_StadiumDrake[];
-extern const u16 gBattleEnvironmentPalette_StadiumWallace[];
+extern const u16 gBattleEnvironmentPalette_FlamesPurple[];
+extern const u16 gBattleEnvironmentPalette_FlamesBlue[];
+extern const u16 gBattleEnvironmentPalette_FlamesRed[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
