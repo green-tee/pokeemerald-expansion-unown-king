@@ -763,7 +763,9 @@ void DrawMainBattleBackground(void)
         LZDecompressVram(gBattleEnvironmentTiles_Flames, (void*)(BG_CHAR_ADDR(2)));
         LZDecompressVram(gBattleEnvironmentTilemap_Flames, (void*)(BG_SCREEN_ADDR(26)));
         LoadPalette(gBattleEnvironmentPalette_FlamesBlue, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+        // TODO: Load correct palette depending on the boss that is being faced (animations)
     }
+    /*
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
@@ -790,6 +792,7 @@ void DrawMainBattleBackground(void)
             break;
         }
     }
+    */
     else
     {
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)

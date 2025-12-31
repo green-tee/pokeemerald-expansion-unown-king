@@ -175,7 +175,7 @@ text MtPyre_4F_Text_TheUnownIsGone {
 
 text MtPyre_4F_Text_IHaveToFindAnotherUnown {
     "Now I have to find another Unown.\p"
-    "Haha! Hust kidding."
+    "Haha! Just kidding."
 }
 
 movement MtPyre_4F_Movement_EscapeN {
