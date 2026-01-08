@@ -648,7 +648,7 @@ MtPyre_4F_Text_TheUnownIsGone::
 MtPyre_4F_Text_IHaveToFindAnotherUnown::
 # 176 "data/maps/MtPyre_4F/scripts.pory"
 	.string "Now I have to find another Unown.\p"
-	.string "Haha! Hust kidding.$"
+	.string "Haha! Just kidding.$"
 
 MtPyre_4F_Text_ShutUp::
 # 231 "data/maps/MtPyre_4F/scripts.pory"

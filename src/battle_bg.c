@@ -763,7 +763,8 @@ void DrawMainBattleBackground(void)
         LZDecompressVram(gBattleEnvironmentTiles_Flames, (void*)(BG_CHAR_ADDR(2)));
         LZDecompressVram(gBattleEnvironmentTilemap_Flames, (void*)(BG_SCREEN_ADDR(26)));
         LoadPalette(gBattleEnvironmentPalette_FlamesBlue, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
-        // TODO: Load correct palette depending on the boss that is being faced (animations)
+        // Load correct palette depending on the boss that is being faced (animations)
+        LoadPalette(sBattleEnvironmentTable[gBattleEnvironment].palette + 2 * PLTT_SIZE_4BPP, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
     }
     /*
     else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
