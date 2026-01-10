@@ -58,4 +58,4 @@ GraniteCave_B2F_EventScript_Darkrai::
 GraniteCave_B2F_Text_Darkrai::
 # 31 "data/maps/GraniteCave_B2F/scripts.pory"
 	.string "Gasp!\n"
-	.string "Something's comin out of the dark!$"
+	.string "Something's coming out of the dark!$"

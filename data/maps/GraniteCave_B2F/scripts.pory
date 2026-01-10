@@ -30,5 +30,5 @@ script GraniteCave_B2F_EventScript_Darkrai {
 
 text GraniteCave_B2F_Text_Darkrai {
     "Gasp!\n"
-    "Something's comin out of the dark!"
+    "Something's coming out of the dark!"
 }

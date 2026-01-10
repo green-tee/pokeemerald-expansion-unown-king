@@ -384,7 +384,7 @@ Route101_Text_UnownKingWasDefeated::
 # 191 "data/maps/Route101/scripts.pory"
 	.string "{PLAYER} and the Unown that {PLAYER}\n"
 	.string "had collected managed to seal\l"
-	.string "the Unown King back into the altair\l"
+	.string "the Unown King back into the altar\l"
 	.string "which it had broken free from.\p"
 	.string "But is it truly how this story ends?\n"
 	.string "Did these events really happen?\p"

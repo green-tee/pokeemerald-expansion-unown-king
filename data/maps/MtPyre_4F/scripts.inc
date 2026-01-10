@@ -637,7 +637,7 @@ MtPyre_4F_Text_HowCouldILose::
 
 MtPyre_4F_Text_ImOutOfHere::
 # 166 "data/maps/MtPyre_4F/scripts.pory"
-	.string "Task!\n"
+	.string "Tsk!\n"
 	.string "I'm out of here!$"
 
 MtPyre_4F_Text_TheUnownIsGone::

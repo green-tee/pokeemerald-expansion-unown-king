@@ -745,7 +745,7 @@ MtPyre_Summit_Text_MySubjectsObeyYou::
 MtPyre_Summit_Text_YouCannotDestroyMe::
 # 401 "data/maps/MtPyre_Summit/scripts.pory"
 	.string "Traitors! You will never destroy me!\n"
-	.string "You will seal me back into this altair,\l"
+	.string "You will seal me back into this altar,\l"
 	.string "but my wounds will heal!\p"
 	.string "Once my healing is complete, I will\n"
 	.string "break free from this prison, then\l"
