@@ -233,6 +233,7 @@ text MtPyre_Summit_Text_UnownKingDefeated {
 }
 
 script(local) MtPyre_Summit_EventScript_BadEnding {
+    clearflag(FLAG_PREVENT_WHITEOUT)
     playbgm(MUS_TOO_BAD, FALSE)
     setweather(WEATHER_FOG_HORIZONTAL)
     doweather
@@ -252,6 +253,7 @@ text MtPyre_Summit_Text_YouAreDone {
 }
 
 script(local) MtPyre_Summit_EventScript_UnownKingDefeated {
+    clearflag(FLAG_PREVENT_WHITEOUT)
     msgbox(MtPyre_Summit_EventScript_ItCannotBe, MSGBOX_DEFAULT)
     closemessage
     call(MtPyre_Summit_EventScript_ShowFriendlyUnown)

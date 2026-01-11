@@ -23,6 +23,7 @@
 #include "load_save.h"
 #include "main.h"
 #include "menu.h"
+#include "money.h"
 #include "new_game.h"
 #include "option_menu.h"
 #include "overworld.h"
@@ -60,6 +61,7 @@ enum
     MENU_ACTION_PLAYER,
     MENU_ACTION_SAVE,
     MENU_ACTION_OPTION,
+    MENU_ACTION_WHITEOUT,
     MENU_ACTION_EXIT,
     MENU_ACTION_RETIRE_SAFARI,
     MENU_ACTION_PLAYER_LINK,
@@ -79,6 +81,14 @@ enum
     SAVE_ERROR
 };
 
+// Whiteout status
+enum
+{
+    WHITEOUT_IN_PROGRESS,
+    WHITEOUT_CANCELED,
+    WHITEOUT_CONFIRMED
+};
+
 // IWRAM common
 COMMON_DATA bool8 (*gMenuCallback)(void) = NULL;
 
@@ -95,6 +105,10 @@ EWRAM_DATA static u8 sSaveDialogTimer = 0;
 EWRAM_DATA static bool8 sSavingComplete = FALSE;
 EWRAM_DATA static u8 sSaveInfoWindowId = 0;
 
+// Other static variables
+static u8 (*sWhiteoutDialogCallback)(void) = NULL;
+static u32 sWhiteoutMoney = 0;
+
 // Menu action callbacks
 static bool8 StartMenuPokedexCallback(void);
 static bool8 StartMenuPokemonCallback(void);
@@ -103,6 +117,7 @@ static bool8 StartMenuPokeNavCallback(void);
 static bool8 StartMenuPlayerNameCallback(void);
 static bool8 StartMenuSaveCallback(void);
 static bool8 StartMenuOptionCallback(void);
+static bool8 StartMenuWhiteoutCallback(void);
 static bool8 StartMenuExitCallback(void);
 static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
@@ -114,6 +129,8 @@ static bool8 StartMenuDexNavCallback(void);
 // Menu callbacks
 static bool8 SaveStartCallback(void);
 static bool8 SaveCallback(void);
+static bool8 WhiteoutStartCallback(void);
+static bool8 WhiteoutCallback(void);
 static bool8 BattlePyramidRetireStartCallback(void);
 static bool8 BattlePyramidRetireReturnCallback(void);
 static bool8 BattlePyramidRetireCallback(void);
@@ -136,6 +153,11 @@ static u8 SaveReturnErrorCallback(void);
 static u8 BattlePyramidConfirmRetireCallback(void);
 static u8 BattlePyramidRetireYesNoCallback(void);
 static u8 BattlePyramidRetireInputCallback(void);
+
+// Whiteout dialog callbacks
+static u8 WhiteoutConfirmWhiteoutCallback(void);
+static u8 WhiteoutYesNoCallback(void);
+static u8 WhiteoutConfirmInputCallback(void);
 
 // Task callbacks
 static void StartMenuTask(u8 taskId);
@@ -190,21 +212,22 @@ static const u8 sText_MenuDebug[] = _("DEBUG");
 
 static const struct MenuAction sStartMenuItems[] =
 {
-    [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex, {.u8_void = StartMenuPokedexCallback}},
-    [MENU_ACTION_POKEMON]         = {gText_MenuPokemon, {.u8_void = StartMenuPokemonCallback}},
-    [MENU_ACTION_BAG]             = {gText_MenuBag,     {.u8_void = StartMenuBagCallback}},
-    [MENU_ACTION_POKENAV]         = {gText_MenuPokenav, {.u8_void = StartMenuPokeNavCallback}},
-    [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,  {.u8_void = StartMenuPlayerNameCallback}},
-    [MENU_ACTION_SAVE]            = {gText_MenuSave,    {.u8_void = StartMenuSaveCallback}},
-    [MENU_ACTION_OPTION]          = {gText_MenuOption,  {.u8_void = StartMenuOptionCallback}},
-    [MENU_ACTION_EXIT]            = {gText_MenuExit,    {.u8_void = StartMenuExitCallback}},
-    [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,  {.u8_void = StartMenuSafariZoneRetireCallback}},
-    [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,  {.u8_void = StartMenuLinkModePlayerNameCallback}},
-    [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
-    [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
-    [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
-    [MENU_ACTION_DEBUG]           = {sText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
-    [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,  {.u8_void = StartMenuDexNavCallback}},
+    [MENU_ACTION_POKEDEX]         = {gText_MenuPokedex,  {.u8_void = StartMenuPokedexCallback}},
+    [MENU_ACTION_POKEMON]         = {gText_MenuPokemon,  {.u8_void = StartMenuPokemonCallback}},
+    [MENU_ACTION_BAG]             = {gText_MenuBag,      {.u8_void = StartMenuBagCallback}},
+    [MENU_ACTION_POKENAV]         = {gText_MenuPokenav,  {.u8_void = StartMenuPokeNavCallback}},
+    [MENU_ACTION_PLAYER]          = {gText_MenuPlayer,   {.u8_void = StartMenuPlayerNameCallback}},
+    [MENU_ACTION_SAVE]            = {gText_MenuSave,     {.u8_void = StartMenuSaveCallback}},
+    [MENU_ACTION_OPTION]          = {gText_MenuOption,   {.u8_void = StartMenuOptionCallback}},
+    [MENU_ACTION_WHITEOUT]        = {gText_MenuWhiteout, {.u8_void = StartMenuWhiteoutCallback}},
+    [MENU_ACTION_EXIT]            = {gText_MenuExit,     {.u8_void = StartMenuExitCallback}},
+    [MENU_ACTION_RETIRE_SAFARI]   = {gText_MenuRetire,   {.u8_void = StartMenuSafariZoneRetireCallback}},
+    [MENU_ACTION_PLAYER_LINK]     = {gText_MenuPlayer,   {.u8_void = StartMenuLinkModePlayerNameCallback}},
+    [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,     {.u8_void = StartMenuSaveCallback}},
+    [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,   {.u8_void = StartMenuBattlePyramidRetireCallback}},
+    [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,      {.u8_void = StartMenuBattlePyramidBagCallback}},
+    [MENU_ACTION_DEBUG]           = {sText_MenuDebug,    {.u8_void = StartMenuDebugCallback}},
+    [MENU_ACTION_DEXNAV]          = {gText_MenuDexNav,   {.u8_void = StartMenuDexNavCallback}},
 };
 
 static const struct BgTemplate sBgTemplates_LinkBattleSave[] =
@@ -264,6 +287,8 @@ static void InitStartMenu(void);
 static void CreateStartMenuTask(TaskFunc followupFunc);
 static void InitSave(void);
 static u8 RunSaveCallback(void);
+static void InitWhiteout(void);
+static u8 RunWhiteoutCallback(void);
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void));
 static void HideSaveMessageWindow(void);
 static void HideSaveInfoWindow(void);
@@ -278,6 +303,7 @@ static void ShowSaveInfoWindow(void);
 static void RemoveSaveInfoWindow(void);
 static void HideStartMenuWindow(void);
 static void HideStartMenuDebug(void);
+static u32 CalculateWhiteoutMoney(void);
 
 void SetDexPokemonPokenavFlags(void) // unused
 {
@@ -347,6 +373,7 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
+    AddStartMenuAction(MENU_ACTION_WHITEOUT);
     AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -363,6 +390,7 @@ static void BuildDebugStartMenu(void)
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
+    AddStartMenuAction(MENU_ACTION_WHITEOUT);
 }
 
 static void BuildSafariZoneStartMenu(void)
@@ -651,7 +679,8 @@ static bool8 HandleStartMenuInput(void)
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
-            && gMenuCallback != StartMenuBattlePyramidRetireCallback)
+            && gMenuCallback != StartMenuBattlePyramidRetireCallback
+            && gMenuCallback != StartMenuWhiteoutCallback)
         {
            FadeScreen(FADE_TO_BLACK, 0);
         }
@@ -777,6 +806,12 @@ static bool8 StartMenuOptionCallback(void)
     return FALSE;
 }
 
+static bool8 StartMenuWhiteoutCallback(void)
+{
+    gMenuCallback = WhiteoutStartCallback;
+    return FALSE;
+}
+
 static bool8 StartMenuExitCallback(void)
 {
     RemoveExtraStartMenuWindows();
@@ -891,6 +926,31 @@ static bool8 SaveCallback(void)
     return FALSE;
 }
 
+static bool8 WhiteoutStartCallback(void)
+{
+    InitWhiteout();
+    gMenuCallback = WhiteoutCallback;
+    return FALSE;
+}
+
+static bool8 WhiteoutCallback(void)
+{
+    switch (RunWhiteoutCallback()) {
+        case WHITEOUT_IN_PROGRESS:
+            return FALSE;
+        case WHITEOUT_CANCELED: // Back to start menu
+            ClearDialogWindowAndFrameToTransparent(0, FALSE);
+            InitStartMenu();
+            gMenuCallback = HandleStartMenuInput;
+            return FALSE;
+        case WHITEOUT_CONFIRMED:
+            RemoveExtraStartMenuWindows();
+            SetMainCallback2(CB2_WhiteOut);
+            return FALSE;
+    }
+    return FALSE;
+}
+
 static bool8 BattlePyramidRetireStartCallback(void)
 {
     InitBattlePyramidRetire();
@@ -945,6 +1005,20 @@ static u8 RunSaveCallback(void)
 
     sSavingComplete = FALSE;
     return sSaveDialogCallback();
+}
+
+static void InitWhiteout(void)
+{
+    sWhiteoutDialogCallback = WhiteoutConfirmWhiteoutCallback;
+}
+
+static u8 RunWhiteoutCallback(void)
+{
+    // True if text is still printing
+    if (RunTextPrintersAndIsPrinter0Active() == TRUE) {
+        return WHITEOUT_IN_PROGRESS;
+    }
+    return sWhiteoutDialogCallback();
 }
 
 void SaveGame(void)
@@ -1027,6 +1101,78 @@ static bool8 SaveErrorTimer(void)
     }
 
     return FALSE;
+}
+
+static u32 CalculateWhiteoutMoney(void) {
+    u32 currentMoney = GetMoney(&gSaveBlock1Ptr->money);
+    if (B_WHITEOUT_MONEY <= GEN_3) {
+        return currentMoney / 2;
+    } else {
+        const u16 whiteoutBadgeMoney[9] = { 8, 16, 24, 36, 48, 64, 80, 100, 120 };
+
+        s32 i;
+        s32 numBadges = 0;
+        s32 maxPartyLevel = 1;
+        s32 calculatedAmount = 0;
+        // Find highest level in party
+        for (i = 0; i < PARTY_SIZE; i++) {
+            if (
+                GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_NONE
+                && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG
+            ) {
+                if (GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) > maxPartyLevel)
+                    maxPartyLevel = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL);
+            }
+        }
+        // Count badges (i.e. HMs, story bosses)
+        for (i = 0; i < ARRAY_COUNT(gBadgeFlags); i++) {
+            if (FlagGet(gBadgeFlags[i]))
+                numBadges++;
+        }
+        // Calculate amount
+        calculatedAmount = whiteoutBadgeMoney[numBadges] * maxPartyLevel * 2; // Twice as much as whiting out from battle
+        return min(calculatedAmount, currentMoney);
+    }
+}
+
+static u8 WhiteoutConfirmWhiteoutCallback(void)
+{
+    ClearStdWindowAndFrame(GetStartMenuWindowId(), FALSE);
+
+    RemoveStartMenuWindow();
+    sWhiteoutMoney = CalculateWhiteoutMoney();
+    ConvertIntToDecimalStringN(gStringVar1, sWhiteoutMoney, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+    if (sWhiteoutMoney > 0)
+        StringExpandPlaceholders(gStringVar4, gText_ConfirmWhiteoutLoseMoney);
+    else
+        StringExpandPlaceholders(gStringVar4, gText_ConfirmWhiteoutNoLoseMoney);
+
+    LoadMessageBoxAndFrameGfx(0, TRUE);
+    AddTextPrinterForMessage_2(TRUE);
+    sWhiteoutDialogCallback = WhiteoutYesNoCallback;
+    return WHITEOUT_IN_PROGRESS;
+}
+
+static u8 WhiteoutYesNoCallback(void)
+{
+    DisplayYesNoMenuWithDefault(1); // Show Yes/No menu (default option is No)
+    sWhiteoutDialogCallback = WhiteoutConfirmInputCallback;
+    return WHITEOUT_IN_PROGRESS;
+}
+
+static u8 WhiteoutConfirmInputCallback(void)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose()) {
+        case 0: // Yes
+            HideSaveMessageWindow(); // Should work for whiteout message window as well
+            RemoveMoney(&gSaveBlock1Ptr->money, sWhiteoutMoney);
+            return WHITEOUT_CONFIRMED;
+        case MENU_B_PRESSED:
+        case 1: // No
+            HideSaveMessageWindow(); // Should work for whiteout message window as well
+            return WHITEOUT_CANCELED;
+    }
+    return WHITEOUT_IN_PROGRESS;
 }
 
 static u8 SaveConfirmSaveCallback(void)

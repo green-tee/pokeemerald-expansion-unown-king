@@ -206,6 +206,7 @@ extern const u8 gText_MenuPokenav[];
 extern const u8 gText_MenuPlayer[];
 extern const u8 gText_MenuSave[];
 extern const u8 gText_MenuOption[];
+extern const u8 gText_MenuWhiteout[];
 extern const u8 gText_MenuExit[];
 extern const u8 gText_MenuRetire[];
 extern const u8 gText_MenuRest[];
@@ -241,6 +242,10 @@ extern const u8 gText_SavingPlayer[];
 extern const u8 gText_SavingBadges[];
 extern const u8 gText_SavingPokedex[];
 extern const u8 gText_SavingTime[];
+
+// whiteout menu texts
+extern const u8 gText_ConfirmWhiteoutLoseMoney[];
+extern const u8 gText_ConfirmWhiteoutNoLoseMoney[];
 
 // Battle pyramid menu texts
 extern const u8 gText_BattlePyramidConfirmRest[];

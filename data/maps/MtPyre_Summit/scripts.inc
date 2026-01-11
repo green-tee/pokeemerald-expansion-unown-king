@@ -428,257 +428,261 @@ MtPyre_Summit_EventScript_DoUnownKingBattle_12:
 
 MtPyre_Summit_EventScript_BadEnding:
 # 236 "data/maps/MtPyre_Summit/scripts.pory"
-	playbgm MUS_TOO_BAD, FALSE
+	clearflag FLAG_PREVENT_WHITEOUT
 # 237 "data/maps/MtPyre_Summit/scripts.pory"
-	setweather WEATHER_FOG_HORIZONTAL
+	playbgm MUS_TOO_BAD, FALSE
 # 238 "data/maps/MtPyre_Summit/scripts.pory"
-	doweather
+	setweather WEATHER_FOG_HORIZONTAL
 # 239 "data/maps/MtPyre_Summit/scripts.pory"
-	delay 180
+	doweather
 # 240 "data/maps/MtPyre_Summit/scripts.pory"
-	msgbox MtPyre_Summit_Text_YouAreDone, MSGBOX_DEFAULT
+	delay 180
 # 241 "data/maps/MtPyre_Summit/scripts.pory"
-	closemessage
+	msgbox MtPyre_Summit_Text_YouAreDone, MSGBOX_DEFAULT
 # 242 "data/maps/MtPyre_Summit/scripts.pory"
-	fadescreenspeed FADE_TO_BLACK, 10
+	closemessage
 # 243 "data/maps/MtPyre_Summit/scripts.pory"
-	delay 60
+	fadescreenspeed FADE_TO_BLACK, 10
 # 244 "data/maps/MtPyre_Summit/scripts.pory"
+	delay 60
+# 245 "data/maps/MtPyre_Summit/scripts.pory"
 	special DoSoftReset
 	return
 
 
 MtPyre_Summit_EventScript_UnownKingDefeated:
-# 255 "data/maps/MtPyre_Summit/scripts.pory"
-	msgbox MtPyre_Summit_EventScript_ItCannotBe, MSGBOX_DEFAULT
 # 256 "data/maps/MtPyre_Summit/scripts.pory"
-	closemessage
+	clearflag FLAG_PREVENT_WHITEOUT
 # 257 "data/maps/MtPyre_Summit/scripts.pory"
-	call MtPyre_Summit_EventScript_ShowFriendlyUnown
+	msgbox MtPyre_Summit_EventScript_ItCannotBe, MSGBOX_DEFAULT
 # 258 "data/maps/MtPyre_Summit/scripts.pory"
-	call MtPyre_Summit_EventScript_FriendlyUnownSurroundUnownKing
+	closemessage
 # 259 "data/maps/MtPyre_Summit/scripts.pory"
-	msgbox MtPyre_Summit_Text_MySubjectsObeyYou, MSGBOX_DEFAULT
+	call MtPyre_Summit_EventScript_ShowFriendlyUnown
 # 260 "data/maps/MtPyre_Summit/scripts.pory"
-	closemessage
+	call MtPyre_Summit_EventScript_FriendlyUnownSurroundUnownKing
 # 261 "data/maps/MtPyre_Summit/scripts.pory"
-	delay 60
+	msgbox MtPyre_Summit_Text_MySubjectsObeyYou, MSGBOX_DEFAULT
 # 262 "data/maps/MtPyre_Summit/scripts.pory"
-	msgbox MtPyre_Summit_Text_YouCannotDestroyMe, MSGBOX_DEFAULT
-# 263 "data/maps/MtPyre_Summit/scripts.pory"
 	closemessage
+# 263 "data/maps/MtPyre_Summit/scripts.pory"
+	delay 60
 # 264 "data/maps/MtPyre_Summit/scripts.pory"
-	playse SE_ORB
+	msgbox MtPyre_Summit_Text_YouCannotDestroyMe, MSGBOX_DEFAULT
 # 265 "data/maps/MtPyre_Summit/scripts.pory"
-	special DoOrbEffect
+	closemessage
 # 266 "data/maps/MtPyre_Summit/scripts.pory"
-	delay 300
+	playse SE_ORB
 # 267 "data/maps/MtPyre_Summit/scripts.pory"
-	playse SE_M_STRENGTH
+	special DoOrbEffect
 # 268 "data/maps/MtPyre_Summit/scripts.pory"
-	special FadeOutOrbEffect
+	delay 300
 # 269 "data/maps/MtPyre_Summit/scripts.pory"
-	waitstate
+	playse SE_M_STRENGTH
 # 270 "data/maps/MtPyre_Summit/scripts.pory"
-	fadescreenspeed FADE_TO_WHITE, 0
+	special FadeOutOrbEffect
 # 271 "data/maps/MtPyre_Summit/scripts.pory"
-	removeobject LOCALID_UNOWN_KING
+	waitstate
 # 272 "data/maps/MtPyre_Summit/scripts.pory"
-	fadescreenspeed FADE_FROM_WHITE, 0
+	fadescreenspeed FADE_TO_WHITE, 0
 # 273 "data/maps/MtPyre_Summit/scripts.pory"
-	delay 180
+	removeobject LOCALID_UNOWN_KING
 # 274 "data/maps/MtPyre_Summit/scripts.pory"
-	setvar VAR_INTRO_AREA_STATE, 2
+	fadescreenspeed FADE_FROM_WHITE, 0
 # 275 "data/maps/MtPyre_Summit/scripts.pory"
-	warpsilent MAP_ROUTE101, 12, 13
+	delay 180
 # 276 "data/maps/MtPyre_Summit/scripts.pory"
+	setvar VAR_INTRO_AREA_STATE, 2
+# 277 "data/maps/MtPyre_Summit/scripts.pory"
+	warpsilent MAP_ROUTE101, 12, 13
+# 278 "data/maps/MtPyre_Summit/scripts.pory"
 	waitstate
 	return
 
 
 MtPyre_Summit_EventScript_ShowFriendlyUnown:
-# 288 "data/maps/MtPyre_Summit/scripts.pory"
-	clearflag FLAG_TEMP_2
-# 289 "data/maps/MtPyre_Summit/scripts.pory"
-	addobject LOCALID_UNOWN_G, MAP_MT_PYRE_SUMMIT
 # 290 "data/maps/MtPyre_Summit/scripts.pory"
-	addobject LOCALID_UNOWN_L, MAP_MT_PYRE_SUMMIT
+	clearflag FLAG_TEMP_2
 # 291 "data/maps/MtPyre_Summit/scripts.pory"
-	addobject LOCALID_UNOWN_Y, MAP_MT_PYRE_SUMMIT
+	addobject LOCALID_UNOWN_G, MAP_MT_PYRE_SUMMIT
 # 292 "data/maps/MtPyre_Summit/scripts.pory"
-	addobject LOCALID_UNOWN_P, MAP_MT_PYRE_SUMMIT
+	addobject LOCALID_UNOWN_L, MAP_MT_PYRE_SUMMIT
 # 293 "data/maps/MtPyre_Summit/scripts.pory"
-	addobject LOCALID_UNOWN_H, MAP_MT_PYRE_SUMMIT
+	addobject LOCALID_UNOWN_Y, MAP_MT_PYRE_SUMMIT
 # 294 "data/maps/MtPyre_Summit/scripts.pory"
+	addobject LOCALID_UNOWN_P, MAP_MT_PYRE_SUMMIT
+# 295 "data/maps/MtPyre_Summit/scripts.pory"
+	addobject LOCALID_UNOWN_H, MAP_MT_PYRE_SUMMIT
+# 296 "data/maps/MtPyre_Summit/scripts.pory"
 	addobject LOCALID_UNOWN_S, MAP_MT_PYRE_SUMMIT
 	return
 
 
 MtPyre_Summit_EventScript_FriendlyUnownSurroundUnownKing:
-# 305 "data/maps/MtPyre_Summit/scripts.pory"
-	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
-# 306 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp
 # 307 "data/maps/MtPyre_Summit/scripts.pory"
-	waitmovement 0
+	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
+# 308 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp
 # 309 "data/maps/MtPyre_Summit/scripts.pory"
-	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
-# 310 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft
+	waitmovement 0
 # 311 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownUp
+	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
 # 312 "data/maps/MtPyre_Summit/scripts.pory"
-	waitmovement 0
-# 314 "data/maps/MtPyre_Summit/scripts.pory"
-	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
-# 315 "data/maps/MtPyre_Summit/scripts.pory"
 	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft
-# 316 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight
-# 317 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownUp
-# 318 "data/maps/MtPyre_Summit/scripts.pory"
-	waitmovement 0
-# 320 "data/maps/MtPyre_Summit/scripts.pory"
-	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
-# 321 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft
-# 322 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight
-# 323 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft
-# 324 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownUp
-# 325 "data/maps/MtPyre_Summit/scripts.pory"
-	waitmovement 0
-# 327 "data/maps/MtPyre_Summit/scripts.pory"
-	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
-# 328 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp
-# 329 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight
-# 330 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft
-# 331 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownRight
-# 332 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_P, MtPyre_Summit_Movement_UnownUp
-# 333 "data/maps/MtPyre_Summit/scripts.pory"
-	waitmovement 0
-# 335 "data/maps/MtPyre_Summit/scripts.pory"
-	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
-# 336 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp
-# 337 "data/maps/MtPyre_Summit/scripts.pory"
+# 313 "data/maps/MtPyre_Summit/scripts.pory"
 	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownUp
-# 338 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft
-# 339 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownRight
-# 340 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_P, MtPyre_Summit_Movement_UnownLeft
-# 341 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_H, MtPyre_Summit_Movement_UnownUp
-# 342 "data/maps/MtPyre_Summit/scripts.pory"
+# 314 "data/maps/MtPyre_Summit/scripts.pory"
 	waitmovement 0
-# 345 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_SurroundL
-# 346 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_SurroundY
+# 316 "data/maps/MtPyre_Summit/scripts.pory"
+	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
+# 317 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft
+# 318 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight
+# 319 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownUp
+# 320 "data/maps/MtPyre_Summit/scripts.pory"
+	waitmovement 0
+# 322 "data/maps/MtPyre_Summit/scripts.pory"
+	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
+# 323 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownLeft
+# 324 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight
+# 325 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft
+# 326 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownUp
+# 327 "data/maps/MtPyre_Summit/scripts.pory"
+	waitmovement 0
+# 329 "data/maps/MtPyre_Summit/scripts.pory"
+	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
+# 330 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp
+# 331 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownRight
+# 332 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft
+# 333 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownRight
+# 334 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_P, MtPyre_Summit_Movement_UnownUp
+# 335 "data/maps/MtPyre_Summit/scripts.pory"
+	waitmovement 0
+# 337 "data/maps/MtPyre_Summit/scripts.pory"
+	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
+# 338 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_UnownUp
+# 339 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_UnownUp
+# 340 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_UnownLeft
+# 341 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_UnownRight
+# 342 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_P, MtPyre_Summit_Movement_UnownLeft
+# 343 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_H, MtPyre_Summit_Movement_UnownUp
+# 344 "data/maps/MtPyre_Summit/scripts.pory"
+	waitmovement 0
 # 347 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_SurroundG
+	applymovement LOCALID_UNOWN_L, MtPyre_Summit_Movement_SurroundL
 # 348 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_SurroundS
+	applymovement LOCALID_UNOWN_Y, MtPyre_Summit_Movement_SurroundY
 # 349 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_P, MtPyre_Summit_Movement_SurroundP
+	applymovement LOCALID_UNOWN_G, MtPyre_Summit_Movement_SurroundG
 # 350 "data/maps/MtPyre_Summit/scripts.pory"
-	applymovement LOCALID_UNOWN_H, MtPyre_Summit_Movement_SurroundH
+	applymovement LOCALID_UNOWN_S, MtPyre_Summit_Movement_SurroundS
 # 351 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_P, MtPyre_Summit_Movement_SurroundP
+# 352 "data/maps/MtPyre_Summit/scripts.pory"
+	applymovement LOCALID_UNOWN_H, MtPyre_Summit_Movement_SurroundH
+# 353 "data/maps/MtPyre_Summit/scripts.pory"
 	waitmovement LOCALID_UNOWN_L
 	return
 
 
-# 354 "data/maps/MtPyre_Summit/scripts.pory"
+# 356 "data/maps/MtPyre_Summit/scripts.pory"
 MtPyre_Summit_Movement_UnownUp:
-# 355 "data/maps/MtPyre_Summit/scripts.pory"
+# 357 "data/maps/MtPyre_Summit/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 358 "data/maps/MtPyre_Summit/scripts.pory"
+# 360 "data/maps/MtPyre_Summit/scripts.pory"
 MtPyre_Summit_Movement_UnownLeft:
-# 359 "data/maps/MtPyre_Summit/scripts.pory"
+# 361 "data/maps/MtPyre_Summit/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 362 "data/maps/MtPyre_Summit/scripts.pory"
+# 364 "data/maps/MtPyre_Summit/scripts.pory"
 MtPyre_Summit_Movement_UnownRight:
-# 363 "data/maps/MtPyre_Summit/scripts.pory"
+# 365 "data/maps/MtPyre_Summit/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 366 "data/maps/MtPyre_Summit/scripts.pory"
+# 368 "data/maps/MtPyre_Summit/scripts.pory"
 MtPyre_Summit_Movement_SurroundL:
-# 367 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 367 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 368 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_right
-# 368 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_right
-# 368 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_right
 # 369 "data/maps/MtPyre_Summit/scripts.pory"
-	face_down
-	step_end
-
-# 372 "data/maps/MtPyre_Summit/scripts.pory"
-MtPyre_Summit_Movement_SurroundY:
-# 373 "data/maps/MtPyre_Summit/scripts.pory"
 	walk_fast_up
-# 373 "data/maps/MtPyre_Summit/scripts.pory"
+# 369 "data/maps/MtPyre_Summit/scripts.pory"
 	walk_fast_up
-# 373 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 374 "data/maps/MtPyre_Summit/scripts.pory"
-	face_down
-	step_end
-
-# 377 "data/maps/MtPyre_Summit/scripts.pory"
-MtPyre_Summit_Movement_SurroundG:
-# 378 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 378 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 378 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 378 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_up
-# 379 "data/maps/MtPyre_Summit/scripts.pory"
-	face_down
-	step_end
-
-# 382 "data/maps/MtPyre_Summit/scripts.pory"
-MtPyre_Summit_Movement_SurroundS:
-# 383 "data/maps/MtPyre_Summit/scripts.pory"
+# 370 "data/maps/MtPyre_Summit/scripts.pory"
 	walk_fast_right
+# 370 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_right
+# 370 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_right
+# 371 "data/maps/MtPyre_Summit/scripts.pory"
+	face_down
+	step_end
+
+# 374 "data/maps/MtPyre_Summit/scripts.pory"
+MtPyre_Summit_Movement_SurroundY:
+# 375 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 375 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 375 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 376 "data/maps/MtPyre_Summit/scripts.pory"
+	face_down
+	step_end
+
+# 379 "data/maps/MtPyre_Summit/scripts.pory"
+MtPyre_Summit_Movement_SurroundG:
+# 380 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 380 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 380 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 380 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_up
+# 381 "data/maps/MtPyre_Summit/scripts.pory"
+	face_down
+	step_end
+
 # 384 "data/maps/MtPyre_Summit/scripts.pory"
+MtPyre_Summit_Movement_SurroundS:
+# 385 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_right
+# 386 "data/maps/MtPyre_Summit/scripts.pory"
 	face_up
 	step_end
 
-# 387 "data/maps/MtPyre_Summit/scripts.pory"
-MtPyre_Summit_Movement_SurroundP:
-# 388 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_left
-# 388 "data/maps/MtPyre_Summit/scripts.pory"
-	walk_fast_left
 # 389 "data/maps/MtPyre_Summit/scripts.pory"
+MtPyre_Summit_Movement_SurroundP:
+# 390 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_left
+# 390 "data/maps/MtPyre_Summit/scripts.pory"
+	walk_fast_left
+# 391 "data/maps/MtPyre_Summit/scripts.pory"
 	face_up
 	step_end
 
-# 392 "data/maps/MtPyre_Summit/scripts.pory"
+# 394 "data/maps/MtPyre_Summit/scripts.pory"
 MtPyre_Summit_Movement_SurroundH:
-# 393 "data/maps/MtPyre_Summit/scripts.pory"
+# 395 "data/maps/MtPyre_Summit/scripts.pory"
 	face_up
 	step_end
 
@@ -723,14 +727,14 @@ MtPyre_Summit_Text_UnownKingDefeated::
 	.string "Reduced to dust!$"
 
 MtPyre_Summit_Text_YouAreDone::
-# 247 "data/maps/MtPyre_Summit/scripts.pory"
+# 248 "data/maps/MtPyre_Summit/scripts.pory"
 	.string "You are done, foolish nobody!\p"
 	.string "My servants will accelerate my healing,\n"
 	.string "then I will leave this prison and\l"
 	.string "destroy each and every one of your kind!$"
 
 MtPyre_Summit_EventScript_ItCannotBe::
-# 279 "data/maps/MtPyre_Summit/scripts.pory"
+# 281 "data/maps/MtPyre_Summit/scripts.pory"
 	.string "No! It cannot be!\p"
 	.string "My servants… Defeated?!\n"
 	.string "By an insignificant human like you?!\p"
@@ -738,12 +742,12 @@ MtPyre_Summit_EventScript_ItCannotBe::
 	.string "I cannot…!$"
 
 MtPyre_Summit_Text_MySubjectsObeyYou::
-# 396 "data/maps/MtPyre_Summit/scripts.pory"
+# 398 "data/maps/MtPyre_Summit/scripts.pory"
 	.string "What?!\n"
 	.string "My subjects… They side with you now?!$"
 
 MtPyre_Summit_Text_YouCannotDestroyMe::
-# 401 "data/maps/MtPyre_Summit/scripts.pory"
+# 403 "data/maps/MtPyre_Summit/scripts.pory"
 	.string "Traitors! You will never destroy me!\n"
 	.string "You will seal me back into this altar,\l"
 	.string "but my wounds will heal!\p"

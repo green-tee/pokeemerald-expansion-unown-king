@@ -1026,6 +1026,7 @@ const u8 gText_MenuPokenav[] = _("Pokénav");
 const u8 gText_MenuPlayer[] = _("{PLAYER}");
 const u8 gText_MenuSave[] = _("Save");
 const u8 gText_MenuOption[] = _("Settings");
+const u8 gText_MenuWhiteout[] = _("Whiteout");
 const u8 gText_MenuExit[] = _("Exit");
 const u8 gText_MenuRetire[] = _("Retire");
 const u8 gText_MenuRest[] = _("Rest");
