@@ -215,8 +215,12 @@ script FieryPath_EventScript_BeastTamerNE {
     faceplayer
     if (flag(FLAG_TEMP_1)) {
         if (flag(FLAG_RECEIVED_MASTER_BALL)) {
-            msgbox(FieryPath_Text_ImUpToAnotherFight)
-            closemessage
+            if (flag(FLAG_DEFEATED_FINAL_BOSS) && !flag(FLAG_RECEIVED_SECOND_MASTER_BALL)) {
+                call(FieryPath_EventScript_BeastTamerTryGiveSecondMasterBall)
+            } else {
+                msgbox(FieryPath_Text_ImUpToAnotherFight)
+                closemessage
+            }
         } else {
             call(FieryPath_EventScript_BeastTamerTryGiveMasterBall)
         }
@@ -226,10 +230,18 @@ script FieryPath_EventScript_BeastTamerNE {
             playbgm(MUS_VS_GYM_LEADER, FALSE)
             msgbox(FieryPath_Text_VeryWellBringItOn, MSGBOX_DEFAULT)
             closemessage
-            trainerbattle_no_intro(TRAINER_BEAST_TAMER_CAESAR, FieryPath_Text_YouAreTheRealBeast)
+            if (flag(FLAG_DEFEATED_FINAL_BOSS) && flag(FLAG_RECEIVED_MASTER_BALL)) {
+                trainerbattle_no_intro(TRAINER_BEAST_TAMER_CAESAR_2, FieryPath_Text_YouAreTheRealBeast)
+            } else {
+                trainerbattle_no_intro(TRAINER_BEAST_TAMER_CAESAR, FieryPath_Text_YouAreTheRealBeast)
+            }
             setflag(FLAG_TEMP_1)
             if (flag(FLAG_RECEIVED_MASTER_BALL)) {
-                msgbox(FieryPath_Text_IHaveNothingMoreToSay, MSGBOX_DEFAULT)
+                if (flag(FLAG_DEFEATED_FINAL_BOSS) && !flag(FLAG_RECEIVED_SECOND_MASTER_BALL)) {
+                    call(FieryPath_EventScript_BeastTamerTryGiveSecondMasterBall)
+                } else {
+                    msgbox(FieryPath_Text_IHaveNothingMoreToSay, MSGBOX_DEFAULT)
+                }
                 closemessage
             } else {
                 call(FieryPath_EventScript_BeastTamerTryGiveMasterBall)
@@ -249,6 +261,21 @@ script(local) FieryPath_EventScript_BeastTamerTryGiveMasterBall {
         giveitem(ITEM_MASTER_BALL, 1)
         setflag(FLAG_RECEIVED_MASTER_BALL)
         msgbox(FieryPath_Text_ThisIsAMasterBall, MSGBOX_DEFAULT)
+        closemessage
+    } else {
+        msgbox(FieryPath_Text_YouHaveNoRoom, MSGBOX_DEFAULT)
+        closemessage
+    }
+}
+
+script(local) FieryPath_EventScript_BeastTamerTryGiveSecondMasterBall {
+    msgbox(FieryPath_Text_IHaveAnotherPresent, MSGBOX_DEFAULT)
+    closemessage
+    checkitemspace(ITEM_MASTER_BALL, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        giveitem(ITEM_MASTER_BALL, 1)
+        setflag(FLAG_RECEIVED_SECOND_MASTER_BALL)
+        msgbox(FieryPath_Text_UseItOrSellIt, MSGBOX_DEFAULT)
         closemessage
     } else {
         msgbox(FieryPath_Text_YouHaveNoRoom, MSGBOX_DEFAULT)
@@ -287,6 +314,14 @@ text FieryPath_Text_IHaveAPresent {
     "You absolutely earned it!"
 }
 
+text FieryPath_Text_IHaveAnotherPresent {
+    "Excellent, traveler!\n"
+    "You fight like no Trainer I've ever met!\p"
+    "I already gave you a present,\n"
+    "but you earned another one.\l"
+    "Here, it's all yours!"
+}
+
 text FieryPath_Text_YouHaveNoRoom {
     "Oh, but you have no room for it!\n"
     "That is so unfortunate!"
@@ -298,6 +333,14 @@ text FieryPath_Text_ThisIsAMasterBall {
     "It can catch any wild Pokémon\n"
     "and it never fails.\p"
     "Don't go waste it on a common Pokémon!"
+}
+
+text FieryPath_Text_UseItOrSellIt {
+    "Use it as you see fit or sell it\n"
+    "for a lot of money.\p"
+    "But now I'm out of Master Balls\n"
+    "to give you, so think twice before\l"
+    "casting the die!"
 }
 
 text FieryPath_Text_ImUpToAnotherFight {

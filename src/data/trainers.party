@@ -937,22 +937,64 @@ Slakoth
 Level: 7
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-=== TRAINER_SHELLY_SEAFLOOR_CAVERN ===
-Name: SHELLY
-Class: Aqua Admin
-Pic: Aqua Admin F
-Gender: Female
+=== TRAINER_BEAST_TAMER_CAESAR_2 ===
+Name: Caesar
+Class: Beast Tamer
+Pic: Beast Tamer
+Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
 Sharpedo
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Level: 64
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Night Slash
+- Aqua Jet
+- Poison Fang
+- Psychic Fangs
 
-Mightyena
-Level: 37
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Aggron
+Level: 65
+Ability: Heavy Metal
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heavy Slam
+- Rock Tomb
+- Dragon Rush
+- Curse
+
+Manectric @ Life Orb
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Ice Fang
+- Curse
+- Fire Fang
+
+Walrein @ Leftovers
+Level: 65
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Ice Fang
+- Stomping Tantrum
+- Sheer Cold
+- Brine
+
+Haxorus
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Swords Dance
+- Dragon Claw
+- Dragon Pulse
+- Iron Tail
+
+Salamence @ Persim Berry
+Level: 67
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Outrage
+- Flamethrower
+- Steel Wing
+- Fly
 
 === TRAINER_ARCHIE ===
 Name: ARCHIE

@@ -35,7 +35,7 @@ script Route101_EventScript_PlayIntroFollowUp {
     msgbox(Route101_Text_ThereAre26Unown, MSGBOX_DEFAULT)
     closemessage
     setflag(FLAG_SYS_POKEMON_GET)
-    //setflag(FLAG_SYS_POKEDEX_GET) // Not yet, leaving this for version 2.0.0
+    setflag(FLAG_SYS_POKEDEX_GET)
     setvar(VAR_INTRO_AREA_STATE, 1)
     releaseall
 }

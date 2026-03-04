@@ -248,8 +248,8 @@
 #define FLAG_RECEIVED_EGG_FROM_GAIA          0xE0
 #define FLAG_RECEIVED_MASTER_BALL            0xE1
 #define FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS  0xE2
-#define FLAG_RECEIVED_GOOD_ROD               0xE3
-#define FLAG_REGI_DOORS_OPENED               0xE4
+#define FLAG_DEFEATED_FINAL_BOSS             0xE3
+#define FLAG_RECEIVED_SECOND_MASTER_BALL     0xE4
 #define FLAG_RECEIVED_TM_RETURN              0xE5
 #define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
 #define FLAG_RECEIVED_TM_ROAR                0xE7
@@ -1225,7 +1225,7 @@
 #define FLAG_SPAWN_INVISIBLE                                        0x493 // Used to hide the player for cutscenes. It's cleared immediately after the player is hidden.
 #define FLAG_EXP_SHARE_ON                                           0x494 // Used to share experience with the whole party
 #define FLAG_LUCKY_CHARM_ON                                         0x495 // Used to double the experience received in battle
-#define FLAG_PREVENT_WHITEOUT                                       0x496 // Unused Flag
+#define FLAG_PREVENT_WHITEOUT                                       0x496 // Used to prevent whiting out after a loss against a trainer
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag

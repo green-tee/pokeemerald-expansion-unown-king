@@ -254,6 +254,10 @@ text MtPyre_Summit_Text_YouAreDone {
 
 script(local) MtPyre_Summit_EventScript_UnownKingDefeated {
     clearflag(FLAG_PREVENT_WHITEOUT)
+    if (!flag(FLAG_DEFEATED_FINAL_BOSS)) {
+        setflag(FLAG_DEFEATED_FINAL_BOSS)
+        // Set other flags to unlock post-game content
+    }
     msgbox(MtPyre_Summit_EventScript_ItCannotBe, MSGBOX_DEFAULT)
     closemessage
     call(MtPyre_Summit_EventScript_ShowFriendlyUnown)

@@ -36,7 +36,7 @@
 #define TRAINER_BREEDER_MATTHEW              30
 #define TRAINER_BREEDER_LEO                  31
 #define TRAINER_BREEDER_TOMMY                32
-#define TRAINER_SHELLY_SEAFLOOR_CAVERN       33
+#define TRAINER_BEAST_TAMER_CAESAR_2         33
 #define TRAINER_ARCHIE                       34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36

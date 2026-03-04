@@ -67,6 +67,8 @@ Route101_EventScript_PlayIntroFollowUp::
 	closemessage
 # 37 "data/maps/Route101/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
+# 38 "data/maps/Route101/scripts.pory"
+	setflag FLAG_SYS_POKEDEX_GET
 # 39 "data/maps/Route101/scripts.pory"
 	setvar VAR_INTRO_AREA_STATE, 1
 # 40 "data/maps/Route101/scripts.pory"

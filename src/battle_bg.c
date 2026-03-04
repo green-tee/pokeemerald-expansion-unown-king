@@ -806,7 +806,7 @@ void DrawMainBattleBackground(void)
                 LoadPalette(gBattleEnvironmentPalette_BuildingLeader, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                 return;
             }
-            else if (trainerClass == TRAINER_CLASS_MAIDEN)
+            else if (trainerClass == TRAINER_CLASS_MAIDEN || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BEAST_TAMER_CAESAR_2)
             {
                 LZDecompressVram(gBattleEnvironmentTiles_Flames, (void *)(BG_CHAR_ADDR(2)));
                 LZDecompressVram(gBattleEnvironmentTilemap_Flames, (void *)(BG_SCREEN_ADDR(26)));
@@ -1277,7 +1277,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                     LZDecompressVram(gBattleEnvironmentTiles_Building, (void *)(BG_CHAR_ADDR(2)));
                     break;
                 }
-                else if (trainerClass == TRAINER_CLASS_UNOWN_KING || trainerClass == TRAINER_CLASS_MAIDEN)
+                else if (trainerClass == TRAINER_CLASS_UNOWN_KING || trainerClass == TRAINER_CLASS_MAIDEN || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BEAST_TAMER_CAESAR_2)
                 {
                     LZDecompressVram(gBattleEnvironmentTiles_Flames, (void *)(BG_CHAR_ADDR(2)));
                     break;
@@ -1339,7 +1339,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                     LZDecompressVram(gBattleEnvironmentTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
                     break;
                 }
-                else if (trainerClass == TRAINER_CLASS_UNOWN_KING || trainerClass == TRAINER_CLASS_MAIDEN)
+                else if (trainerClass == TRAINER_CLASS_UNOWN_KING || trainerClass == TRAINER_CLASS_MAIDEN || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BEAST_TAMER_CAESAR_2)
                 {
                     LZDecompressVram(gBattleEnvironmentTilemap_Flames, (void *)(BG_SCREEN_ADDR(26)));
                     break;
@@ -1401,7 +1401,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
                     LoadPalette(gBattleEnvironmentPalette_BuildingLeader, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                     break;
                 }
-                else if (trainerClass == TRAINER_CLASS_MAIDEN)
+                else if (trainerClass == TRAINER_CLASS_MAIDEN || TRAINER_BATTLE_PARAM.opponentA == TRAINER_BEAST_TAMER_CAESAR_2)
                 {
                     LoadPalette(gBattleEnvironmentPalette_FlamesRed, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                     break;
