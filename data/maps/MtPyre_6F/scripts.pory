@@ -169,7 +169,7 @@ text MtPyre_6F_Text_GolduckIsntPsychich {
     "Psychic-type?"
 }
 
-script MtPyre_6F_EventScript_Fighter {
+script MtPyre_6F_EventScript_FighterNorth {
     trainerbattle_single(TRAINER_FIGHTER_STEPHANIE, MtPyre_6F_Text_YouKnowTheRules, MtPyre_6F_Text_NeverGonnaGiveUp)
     msgbox(MtPyre_6F_Text_Ditto, MSGBOX_AUTOCLOSE)
 }
@@ -187,4 +187,24 @@ text MtPyre_6F_Text_NeverGonnaGiveUp {
 text MtPyre_6F_Text_Ditto {
     "Is it just me, or are Ditto\n"
     "almost everywhere?"
+}
+
+script MtPyre_6F_EventScript_FighterSouth {
+    trainerbattle_single(TRAINER_FIGHTER_JENNA, MtPyre_6F_Text_IDontKnowWhatImDoing, MtPyre_6F_Text_IShouldNeverHaveCome)
+    msgbox(MtPyre_6F_Text_WhereDidIGetMyPokemon, MSGBOX_AUTOCLOSE)
+}
+
+text MtPyre_6F_Text_IDontKnowWhatImDoing {
+    "I don't really know what I'm doing here,\n"
+    "but anyway, let's battle!"
+}
+
+text MtPyre_6F_Text_IShouldNeverHaveCome {
+    "I should never have come to this place!"
+}
+
+text MtPyre_6F_Text_WhereDidIGetMyPokemon {
+    "Where did I get my beautiful Marowak?\n"
+    "I don't know, my father brought it home\l"
+    "when I was still little."
 }

@@ -167,11 +167,19 @@ MtPyre_6F_EventScript_PsychicFCenter::
 	return
 
 
-MtPyre_6F_EventScript_Fighter::
+MtPyre_6F_EventScript_FighterNorth::
 # 173 "data/maps/MtPyre_6F/scripts.pory"
 	trainerbattle_single TRAINER_FIGHTER_STEPHANIE, MtPyre_6F_Text_YouKnowTheRules, MtPyre_6F_Text_NeverGonnaGiveUp
 # 174 "data/maps/MtPyre_6F/scripts.pory"
 	msgbox MtPyre_6F_Text_Ditto, MSGBOX_AUTOCLOSE
+	return
+
+
+MtPyre_6F_EventScript_FighterSouth::
+# 193 "data/maps/MtPyre_6F/scripts.pory"
+	trainerbattle_single TRAINER_FIGHTER_JENNA, MtPyre_6F_Text_IDontKnowWhatImDoing, MtPyre_6F_Text_IShouldNeverHaveCome
+# 194 "data/maps/MtPyre_6F/scripts.pory"
+	msgbox MtPyre_6F_Text_WhereDidIGetMyPokemon, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -271,3 +279,18 @@ MtPyre_6F_Text_Ditto::
 # 187 "data/maps/MtPyre_6F/scripts.pory"
 	.string "Is it just me, or are Ditto\n"
 	.string "almost everywhere?$"
+
+MtPyre_6F_Text_IDontKnowWhatImDoing::
+# 197 "data/maps/MtPyre_6F/scripts.pory"
+	.string "I don't really know what I'm doing here,\n"
+	.string "but anyway, let's battle!$"
+
+MtPyre_6F_Text_IShouldNeverHaveCome::
+# 202 "data/maps/MtPyre_6F/scripts.pory"
+	.string "I should never have come to this place!$"
+
+MtPyre_6F_Text_WhereDidIGetMyPokemon::
+# 206 "data/maps/MtPyre_6F/scripts.pory"
+	.string "Where did I get my beautiful Marowak?\n"
+	.string "I don't know, my father brought it home\l"
+	.string "when I was still little.$"

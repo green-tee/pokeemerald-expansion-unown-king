@@ -3000,7 +3000,7 @@ static const struct LevelUpMove sMarowakLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
 static const struct LevelUpMove sMarowakAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_SHADOW_BONE),
     LEVEL_UP_MOVE( 1, MOVE_FALSE_SWIPE),
@@ -3024,7 +3024,7 @@ static const struct LevelUpMove sMarowakAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(60, MOVE_FLARE_BLITZ),
     LEVEL_UP_END
 };
-#endif //P_ALOLAN_FORMS
+//#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_CUBONE
 
 #if P_FAMILY_HITMONS

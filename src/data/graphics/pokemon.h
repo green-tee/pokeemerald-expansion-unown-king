@@ -4185,7 +4185,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
     const u32 gMonFrontPic_MarowakAlola[] = INCBIN_U32("graphics/pokemon/marowak/alola/front.4bpp.lz");
     const u16 gMonPalette_MarowakAlola[] = INCBIN_U16("graphics/pokemon/marowak/alola/normal.gbapal");
     const u32 gMonBackPic_MarowakAlola[] = INCBIN_U32("graphics/pokemon/marowak/alola/back.4bpp.lz");
@@ -4198,7 +4198,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_MarowakAlola[] = INCBIN_U16("graphics/pokemon/marowak/alola/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
-#endif //P_ALOLAN_FORMS
+//#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_CUBONE
 
 #if P_FAMILY_HITMONS

@@ -78,485 +78,485 @@ GraniteCave_B1F_InscriptionCommon_10:
 
 
 GraniteCave_B1F_EventScript_PlayerDecyphered:
-# 79 "data/maps/GraniteCave_B1F/scripts.pory"
-	call GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays
-# 80 "data/maps/GraniteCave_B1F/scripts.pory"
-	msgbox GraniteCave_B1F_Text_IsThatWhatItSays
-# 81 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmessage
-# 82 "data/maps/GraniteCave_B1F/scripts.pory"
-	playfanfare MUS_RG_POKE_FLUTE
-# 83 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitfanfare
-# 84 "data/maps/GraniteCave_B1F/scripts.pory"
-	closemessage
 # 85 "data/maps/GraniteCave_B1F/scripts.pory"
-	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
+	call GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays
 # 86 "data/maps/GraniteCave_B1F/scripts.pory"
-	setvar VAR_0x8004, 1
+	msgbox GraniteCave_B1F_Text_IsThatWhatItSays
 # 87 "data/maps/GraniteCave_B1F/scripts.pory"
-	setvar VAR_0x8005, 1
+	waitmessage
 # 88 "data/maps/GraniteCave_B1F/scripts.pory"
-	setvar VAR_0x8006, 8
+	playfanfare MUS_RG_POKE_FLUTE
 # 89 "data/maps/GraniteCave_B1F/scripts.pory"
-	setvar VAR_0x8007, 5
+	waitfanfare
 # 90 "data/maps/GraniteCave_B1F/scripts.pory"
-	special ShakeCamera
+	closemessage
 # 91 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitstate
+	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 # 92 "data/maps/GraniteCave_B1F/scripts.pory"
-	clearflag FLAG_HIDE_TORNADUS
+	setvar VAR_0x8004, 1
 # 93 "data/maps/GraniteCave_B1F/scripts.pory"
-	clearflag FLAG_HIDE_LUGIA
+	setvar VAR_0x8005, 1
 # 94 "data/maps/GraniteCave_B1F/scripts.pory"
-	msgbox GraniteCave_B1F_Text_WhatWasThat, MSGBOX_DEFAULT
+	setvar VAR_0x8006, 8
 # 95 "data/maps/GraniteCave_B1F/scripts.pory"
-	closemessage
+	setvar VAR_0x8007, 5
 # 96 "data/maps/GraniteCave_B1F/scripts.pory"
-	giveitem ITEM_POKE_FLUTE
+	special ShakeCamera
 # 97 "data/maps/GraniteCave_B1F/scripts.pory"
-	setflag FLAG_RECEIVED_FLUTE
+	waitstate
 # 98 "data/maps/GraniteCave_B1F/scripts.pory"
-	msgbox GraniteCave_B1F_Text_ThankYou, MSGBOX_DEFAULT
+	clearflag FLAG_HIDE_TORNADUS
 # 99 "data/maps/GraniteCave_B1F/scripts.pory"
-	closemessage
+	clearflag FLAG_HIDE_LUGIA
 # 100 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_WhatWasThat, MSGBOX_DEFAULT
+# 101 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+# 102 "data/maps/GraniteCave_B1F/scripts.pory"
+	giveitem ITEM_POKE_FLUTE
+# 103 "data/maps/GraniteCave_B1F/scripts.pory"
+	setflag FLAG_RECEIVED_FLUTE
+# 104 "data/maps/GraniteCave_B1F/scripts.pory"
+	msgbox GraniteCave_B1F_Text_ThankYou, MSGBOX_DEFAULT
+# 105 "data/maps/GraniteCave_B1F/scripts.pory"
+	closemessage
+# 106 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_InscriptionGuysGoesBack
 	return
 
 
 GraniteCave_B1F_EventScript_PlayerDidntDecypher:
-# 104 "data/maps/GraniteCave_B1F/scripts.pory"
+# 110 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays
-# 105 "data/maps/GraniteCave_B1F/scripts.pory"
+# 111 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_YouCantDecypher, MSGBOX_DEFAULT
-# 106 "data/maps/GraniteCave_B1F/scripts.pory"
+# 112 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
-# 107 "data/maps/GraniteCave_B1F/scripts.pory"
+# 113 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_InscriptionGuysGoesBack
 	return
 
 
 GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays:
-# 111 "data/maps/GraniteCave_B1F/scripts.pory"
+# 117 "data/maps/GraniteCave_B1F/scripts.pory"
 	switch VAR_TEMP_0
-# 112 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 0, GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_3
-# 115 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 1, GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_4
 # 118 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 0, GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_3
+# 121 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 1, GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_4
+# 124 "data/maps/GraniteCave_B1F/scripts.pory"
 	case 2, GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_5
 GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_1:
-# 122 "data/maps/GraniteCave_B1F/scripts.pory"
+# 128 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_WhatDoesItSay, MSGBOX_DEFAULT
-# 123 "data/maps/GraniteCave_B1F/scripts.pory"
+# 129 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
-# 124 "data/maps/GraniteCave_B1F/scripts.pory"
+# 130 "data/maps/GraniteCave_B1F/scripts.pory"
 	applymovement LOCALID_PLAYER, GraniteCave_B1F_Movement_TurnToInscriptionGuy
-# 125 "data/maps/GraniteCave_B1F/scripts.pory"
+# 131 "data/maps/GraniteCave_B1F/scripts.pory"
 	waitmovement LOCALID_PLAYER
-# 126 "data/maps/GraniteCave_B1F/scripts.pory"
+# 132 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_ThreeDots, MSGBOX_DEFAULT
-# 127 "data/maps/GraniteCave_B1F/scripts.pory"
+# 133 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
 GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_3:
-# 113 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtLeft
-# 114 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmovement LOCALID_INSCRIPTION_GUY
-	goto GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_1
-
-GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_4:
-# 116 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtMiddle
-# 117 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmovement LOCALID_INSCRIPTION_GUY
-	goto GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_1
-
-GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_5:
 # 119 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtRight
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtLeft
 # 120 "data/maps/GraniteCave_B1F/scripts.pory"
 	waitmovement LOCALID_INSCRIPTION_GUY
 	goto GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_1
 
+GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_4:
+# 122 "data/maps/GraniteCave_B1F/scripts.pory"
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtMiddle
+# 123 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmovement LOCALID_INSCRIPTION_GUY
+	goto GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_1
 
-# 130 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_WalkToPlayerAtLeft:
-# 131 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_left
-# 131 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_left
-# 132 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_in_place_up
-	step_end
+GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_5:
+# 125 "data/maps/GraniteCave_B1F/scripts.pory"
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkToPlayerAtRight
+# 126 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmovement LOCALID_INSCRIPTION_GUY
+	goto GraniteCave_B1F_EventScript_InscriptionGuyAsksWhatItSays_1
 
-# 135 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_WalkToPlayerAtMiddle:
+
 # 136 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_WalkToPlayerAtLeft:
+# 137 "data/maps/GraniteCave_B1F/scripts.pory"
 	walk_left
 # 137 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_left
+# 138 "data/maps/GraniteCave_B1F/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 140 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_WalkToPlayerAtRight:
 # 141 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_WalkToPlayerAtMiddle:
+# 142 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_left
+# 143 "data/maps/GraniteCave_B1F/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 148 "data/maps/GraniteCave_B1F/scripts.pory"
+# 146 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_WalkToPlayerAtRight:
+# 147 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_in_place_up
+	step_end
+
+# 154 "data/maps/GraniteCave_B1F/scripts.pory"
 GraniteCave_B1F_Movement_TurnToInscriptionGuy:
-# 149 "data/maps/GraniteCave_B1F/scripts.pory"
+# 155 "data/maps/GraniteCave_B1F/scripts.pory"
 	walk_in_place_down
 	step_end
 
 GraniteCave_B1F_InscriptionGuysGoesBack:
-# 203 "data/maps/GraniteCave_B1F/scripts.pory"
+# 209 "data/maps/GraniteCave_B1F/scripts.pory"
 	switch VAR_TEMP_0
-# 204 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 0, GraniteCave_B1F_InscriptionGuysGoesBack_2
-# 207 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 1, GraniteCave_B1F_InscriptionGuysGoesBack_3
 # 210 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 0, GraniteCave_B1F_InscriptionGuysGoesBack_2
+# 213 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 1, GraniteCave_B1F_InscriptionGuysGoesBack_3
+# 216 "data/maps/GraniteCave_B1F/scripts.pory"
 	case 2, GraniteCave_B1F_InscriptionGuysGoesBack_4
 	return
 
 GraniteCave_B1F_InscriptionGuysGoesBack_2:
-# 205 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromLeft
-# 206 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmovement LOCALID_INSCRIPTION_GUY
-	return
-
-GraniteCave_B1F_InscriptionGuysGoesBack_3:
-# 208 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromMiddle
-# 209 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmovement LOCALID_INSCRIPTION_GUY
-	return
-
-GraniteCave_B1F_InscriptionGuysGoesBack_4:
 # 211 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromRight
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromLeft
 # 212 "data/maps/GraniteCave_B1F/scripts.pory"
 	waitmovement LOCALID_INSCRIPTION_GUY
 	return
 
+GraniteCave_B1F_InscriptionGuysGoesBack_3:
+# 214 "data/maps/GraniteCave_B1F/scripts.pory"
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromMiddle
+# 215 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmovement LOCALID_INSCRIPTION_GUY
+	return
 
-# 216 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_WalkAwayFromPlayerFromLeft:
+GraniteCave_B1F_InscriptionGuysGoesBack_4:
 # 217 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_right
-# 217 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_right
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_WalkAwayFromPlayerFromRight
 # 218 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_in_place_up
-	step_end
+	waitmovement LOCALID_INSCRIPTION_GUY
+	return
 
-# 221 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_WalkAwayFromPlayerFromMiddle:
+
 # 222 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_WalkAwayFromPlayerFromLeft:
+# 223 "data/maps/GraniteCave_B1F/scripts.pory"
 	walk_right
 # 223 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_right
+# 224 "data/maps/GraniteCave_B1F/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 226 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_WalkAwayFromPlayerFromRight:
 # 227 "data/maps/GraniteCave_B1F/scripts.pory"
-	walk_in_place_down
+GraniteCave_B1F_Movement_WalkAwayFromPlayerFromMiddle:
 # 228 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_right
+# 229 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_in_place_up
+	step_end
+
+# 232 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_WalkAwayFromPlayerFromRight:
+# 233 "data/maps/GraniteCave_B1F/scripts.pory"
+	walk_in_place_down
+# 234 "data/maps/GraniteCave_B1F/scripts.pory"
 	face_up
 	step_end
 
 GraniteCave_B1F_EventScript_MeetInscriptionGuyFromWest::
-# 232 "data/maps/GraniteCave_B1F/scripts.pory"
-	lockall
-# 233 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnSurprisedWest
-# 234 "data/maps/GraniteCave_B1F/scripts.pory"
-	playse SE_PIN
-# 235 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmovement LOCALID_INSCRIPTION_GUY
-# 236 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitse
-# 237 "data/maps/GraniteCave_B1F/scripts.pory"
-	call GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon
 # 238 "data/maps/GraniteCave_B1F/scripts.pory"
+	lockall
+# 239 "data/maps/GraniteCave_B1F/scripts.pory"
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnSurprisedWest
+# 240 "data/maps/GraniteCave_B1F/scripts.pory"
+	playse SE_PIN
+# 241 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmovement LOCALID_INSCRIPTION_GUY
+# 242 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitse
+# 243 "data/maps/GraniteCave_B1F/scripts.pory"
+	call GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon
+# 244 "data/maps/GraniteCave_B1F/scripts.pory"
 	releaseall
 	return
 
 
 GraniteCave_B1F_EventScript_MeetInscriptionGuyFromSouth::
-# 242 "data/maps/GraniteCave_B1F/scripts.pory"
-	lockall
-# 243 "data/maps/GraniteCave_B1F/scripts.pory"
-	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnSurprisedSouth
-# 244 "data/maps/GraniteCave_B1F/scripts.pory"
-	playse SE_PIN
-# 245 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitmovement LOCALID_INSCRIPTION_GUY
-# 246 "data/maps/GraniteCave_B1F/scripts.pory"
-	waitse
-# 247 "data/maps/GraniteCave_B1F/scripts.pory"
-	call GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon
 # 248 "data/maps/GraniteCave_B1F/scripts.pory"
+	lockall
+# 249 "data/maps/GraniteCave_B1F/scripts.pory"
+	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnSurprisedSouth
+# 250 "data/maps/GraniteCave_B1F/scripts.pory"
+	playse SE_PIN
+# 251 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitmovement LOCALID_INSCRIPTION_GUY
+# 252 "data/maps/GraniteCave_B1F/scripts.pory"
+	waitse
+# 253 "data/maps/GraniteCave_B1F/scripts.pory"
+	call GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon
+# 254 "data/maps/GraniteCave_B1F/scripts.pory"
 	releaseall
 	return
 
 
 GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon:
-# 252 "data/maps/GraniteCave_B1F/scripts.pory"
+# 258 "data/maps/GraniteCave_B1F/scripts.pory"
 	goto_if_set FLAG_SYS_USE_FLASH, GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon_2
-# 256 "data/maps/GraniteCave_B1F/scripts.pory"
+# 262 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_CanYouTurnOnTheLight, MSGBOX_DEFAULT
-# 257 "data/maps/GraniteCave_B1F/scripts.pory"
+# 263 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon_1:
-# 259 "data/maps/GraniteCave_B1F/scripts.pory"
+# 265 "data/maps/GraniteCave_B1F/scripts.pory"
 	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnBackNorth
-# 260 "data/maps/GraniteCave_B1F/scripts.pory"
+# 266 "data/maps/GraniteCave_B1F/scripts.pory"
 	waitmovement LOCALID_INSCRIPTION_GUY
-# 261 "data/maps/GraniteCave_B1F/scripts.pory"
+# 267 "data/maps/GraniteCave_B1F/scripts.pory"
 	setvar VAR_CHAMBER_OF_TRUTH_STATE, 1
 	return
 
 GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon_2:
-# 253 "data/maps/GraniteCave_B1F/scripts.pory"
+# 259 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_EventScript_ThankYouForTurningOnTheLight, MSGBOX_DEFAULT
-# 254 "data/maps/GraniteCave_B1F/scripts.pory"
+# 260 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	goto GraniteCave_B1F_EventScript_MeetInscriptionGuyCommon_1
 
 
-# 264 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_TurnSurprisedWest:
-# 265 "data/maps/GraniteCave_B1F/scripts.pory"
-	face_left
-# 266 "data/maps/GraniteCave_B1F/scripts.pory"
-	emote_exclamation_mark
-	step_end
-
-# 269 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_TurnSurprisedSouth:
 # 270 "data/maps/GraniteCave_B1F/scripts.pory"
-	face_down
+GraniteCave_B1F_Movement_TurnSurprisedWest:
 # 271 "data/maps/GraniteCave_B1F/scripts.pory"
+	face_left
+# 272 "data/maps/GraniteCave_B1F/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 274 "data/maps/GraniteCave_B1F/scripts.pory"
-GraniteCave_B1F_Movement_TurnBackNorth:
 # 275 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_TurnSurprisedSouth:
+# 276 "data/maps/GraniteCave_B1F/scripts.pory"
+	face_down
+# 277 "data/maps/GraniteCave_B1F/scripts.pory"
+	emote_exclamation_mark
+	step_end
+
+# 280 "data/maps/GraniteCave_B1F/scripts.pory"
+GraniteCave_B1F_Movement_TurnBackNorth:
+# 281 "data/maps/GraniteCave_B1F/scripts.pory"
 	face_up
 	step_end
 
 GraniteCave_B1F_EventScript_InscriptionGuy::
-# 297 "data/maps/GraniteCave_B1F/scripts.pory"
+# 303 "data/maps/GraniteCave_B1F/scripts.pory"
 	lock
-# 298 "data/maps/GraniteCave_B1F/scripts.pory"
-	faceplayer
-# 299 "data/maps/GraniteCave_B1F/scripts.pory"
-	switch VAR_CHAMBER_OF_TRUTH_STATE
-# 300 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 0, GraniteCave_B1F_EventScript_InscriptionGuy_3
-# 302 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 1, GraniteCave_B1F_EventScript_InscriptionGuy_4
 # 304 "data/maps/GraniteCave_B1F/scripts.pory"
-	case 2, GraniteCave_B1F_EventScript_InscriptionGuy_5
+	faceplayer
+# 305 "data/maps/GraniteCave_B1F/scripts.pory"
+	switch VAR_CHAMBER_OF_TRUTH_STATE
 # 306 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 0, GraniteCave_B1F_EventScript_InscriptionGuy_3
+# 308 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 1, GraniteCave_B1F_EventScript_InscriptionGuy_4
+# 310 "data/maps/GraniteCave_B1F/scripts.pory"
+	case 2, GraniteCave_B1F_EventScript_InscriptionGuy_5
+# 312 "data/maps/GraniteCave_B1F/scripts.pory"
 	case 3, GraniteCave_B1F_EventScript_InscriptionGuy_6
-# 309 "data/maps/GraniteCave_B1F/scripts.pory"
+# 315 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_InscriptionGuy_AfterTornadusBattle
 GraniteCave_B1F_EventScript_InscriptionGuy_1:
-# 311 "data/maps/GraniteCave_B1F/scripts.pory"
+# 317 "data/maps/GraniteCave_B1F/scripts.pory"
 	release
 	return
 
 GraniteCave_B1F_EventScript_InscriptionGuy_3:
-# 301 "data/maps/GraniteCave_B1F/scripts.pory"
+# 307 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher
 	goto GraniteCave_B1F_EventScript_InscriptionGuy_1
 
 GraniteCave_B1F_EventScript_InscriptionGuy_4:
-# 303 "data/maps/GraniteCave_B1F/scripts.pory"
+# 309 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher
 	goto GraniteCave_B1F_EventScript_InscriptionGuy_1
 
 GraniteCave_B1F_EventScript_InscriptionGuy_5:
-# 305 "data/maps/GraniteCave_B1F/scripts.pory"
+# 311 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_InscriptionGuy_WaitingForPlayerToDecypher
 	goto GraniteCave_B1F_EventScript_InscriptionGuy_1
 
 GraniteCave_B1F_EventScript_InscriptionGuy_6:
-# 307 "data/maps/GraniteCave_B1F/scripts.pory"
+# 313 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_InscriptionGuy_PlayedFlute
 	goto GraniteCave_B1F_EventScript_InscriptionGuy_1
 
 
 GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher:
-# 315 "data/maps/GraniteCave_B1F/scripts.pory"
+# 321 "data/maps/GraniteCave_B1F/scripts.pory"
 	goto_if_set FLAG_SYS_USE_FLASH, GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher_2
-# 319 "data/maps/GraniteCave_B1F/scripts.pory"
+# 325 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_ItsYouCanYouTurnTheLightOn, MSGBOX_DEFAULT
-# 320 "data/maps/GraniteCave_B1F/scripts.pory"
+# 326 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher_1:
-# 322 "data/maps/GraniteCave_B1F/scripts.pory"
+# 328 "data/maps/GraniteCave_B1F/scripts.pory"
 	applymovement LOCALID_INSCRIPTION_GUY, GraniteCave_B1F_Movement_TurnBackNorth
-# 323 "data/maps/GraniteCave_B1F/scripts.pory"
+# 329 "data/maps/GraniteCave_B1F/scripts.pory"
 	waitmovement LOCALID_INSCRIPTION_GUY
 	return
 
 GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher_2:
-# 316 "data/maps/GraniteCave_B1F/scripts.pory"
+# 322 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_ICantUnderstandThisWriting, MSGBOX_DEFAULT
-# 317 "data/maps/GraniteCave_B1F/scripts.pory"
+# 323 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	goto GraniteCave_B1F_EventScript_InscriptionGuy_TryingToDecypher_1
 
 
 GraniteCave_B1F_EventScript_InscriptionGuy_WaitingForPlayerToDecypher:
-# 343 "data/maps/GraniteCave_B1F/scripts.pory"
+# 349 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_CountingOnYou, MSGBOX_DEFAULT
-# 344 "data/maps/GraniteCave_B1F/scripts.pory"
+# 350 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
 
 GraniteCave_B1F_EventScript_InscriptionGuy_PlayedFlute:
-# 361 "data/maps/GraniteCave_B1F/scripts.pory"
+# 367 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_TheFluteDidSomething, MSGBOX_DEFAULT
-# 362 "data/maps/GraniteCave_B1F/scripts.pory"
+# 368 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
 
 GraniteCave_B1F_EventScript_InscriptionGuy_AfterTornadusBattle:
-# 374 "data/maps/GraniteCave_B1F/scripts.pory"
+# 380 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_IWouldveNeverImagined, MSGBOX_DEFAULT
-# 375 "data/maps/GraniteCave_B1F/scripts.pory"
+# 381 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
 
 GraniteCave_B1F_EventScript_BeastTamer::
-# 391 "data/maps/GraniteCave_B1F/scripts.pory"
+# 397 "data/maps/GraniteCave_B1F/scripts.pory"
 	trainerbattle_single TRAINER_BEAST_TAMER_XANTE, GraniteCave_B1F_Text_WhatAreYouDoingHere, GraniteCave_B1F_Text_IUnderstandWhy
-# 392 "data/maps/GraniteCave_B1F/scripts.pory"
+# 398 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_SneaselRazorClaw, MSGBOX_AUTOCLOSE
 	return
 
 
 GraniteCave_B1F_EventScript_Fighter::
-# 412 "data/maps/GraniteCave_B1F/scripts.pory"
+# 418 "data/maps/GraniteCave_B1F/scripts.pory"
 	trainerbattle_single TRAINER_FIGHTER_CLARISSA, GraniteCave_B1F_Text_Boo, GraniteCave_B1F_OhNoSmeargle
-# 413 "data/maps/GraniteCave_B1F/scripts.pory"
+# 419 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_ILoveSmeargle, MSGBOX_AUTOCLOSE
 	return
 
 
 GraniteCave_B1F_EventScript_Breeder::
-# 431 "data/maps/GraniteCave_B1F/scripts.pory"
+# 437 "data/maps/GraniteCave_B1F/scripts.pory"
 	lock
-# 432 "data/maps/GraniteCave_B1F/scripts.pory"
+# 438 "data/maps/GraniteCave_B1F/scripts.pory"
 	faceplayer
-# 433 "data/maps/GraniteCave_B1F/scripts.pory"
+# 439 "data/maps/GraniteCave_B1F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, GraniteCave_B1F_EventScript_Breeder_2
-# 441 "data/maps/GraniteCave_B1F/scripts.pory"
+# 447 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_ItSureIsDark, MSGBOX_YESNO
-# 442 "data/maps/GraniteCave_B1F/scripts.pory"
+# 448 "data/maps/GraniteCave_B1F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq GraniteCave_B1F_EventScript_Breeder_8
-# 455 "data/maps/GraniteCave_B1F/scripts.pory"
+# 461 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 GraniteCave_B1F_EventScript_Breeder_1:
-# 458 "data/maps/GraniteCave_B1F/scripts.pory"
+# 464 "data/maps/GraniteCave_B1F/scripts.pory"
 	release
 	return
 
 GraniteCave_B1F_EventScript_Breeder_2:
-# 434 "data/maps/GraniteCave_B1F/scripts.pory"
+# 440 "data/maps/GraniteCave_B1F/scripts.pory"
 	goto_if_set FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS, GraniteCave_B1F_EventScript_Breeder_5
-# 438 "data/maps/GraniteCave_B1F/scripts.pory"
+# 444 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_BreederTryGiveBalls
 	goto GraniteCave_B1F_EventScript_Breeder_1
 
 GraniteCave_B1F_EventScript_Breeder_5:
-# 435 "data/maps/GraniteCave_B1F/scripts.pory"
+# 441 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_LetsBattleAgain, MSGBOX_DEFAULT
-# 436 "data/maps/GraniteCave_B1F/scripts.pory"
+# 442 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	goto GraniteCave_B1F_EventScript_Breeder_1
 
 GraniteCave_B1F_EventScript_Breeder_8:
-# 443 "data/maps/GraniteCave_B1F/scripts.pory"
+# 449 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_IHaveAFullParty, MSGBOX_DEFAULT
-# 444 "data/maps/GraniteCave_B1F/scripts.pory"
+# 450 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
-# 445 "data/maps/GraniteCave_B1F/scripts.pory"
+# 451 "data/maps/GraniteCave_B1F/scripts.pory"
 	playbgm MUS_VS_WILD, FALSE
-# 446 "data/maps/GraniteCave_B1F/scripts.pory"
-	trainerbattle_no_intro TRAINER_BREEDER_CONRAD, GraniteCave_B1F_Text_WowNotBad
-# 447 "data/maps/GraniteCave_B1F/scripts.pory"
-	setflag FLAG_TEMP_1
-# 448 "data/maps/GraniteCave_B1F/scripts.pory"
-	goto_if_set FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS, GraniteCave_B1F_EventScript_Breeder_11
 # 452 "data/maps/GraniteCave_B1F/scripts.pory"
+	trainerbattle_no_intro TRAINER_BREEDER_CONRAD, GraniteCave_B1F_Text_WowNotBad
+# 453 "data/maps/GraniteCave_B1F/scripts.pory"
+	setflag FLAG_TEMP_1
+# 454 "data/maps/GraniteCave_B1F/scripts.pory"
+	goto_if_set FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS, GraniteCave_B1F_EventScript_Breeder_11
+# 458 "data/maps/GraniteCave_B1F/scripts.pory"
 	call GraniteCave_B1F_EventScript_BreederTryGiveBalls
 	goto GraniteCave_B1F_EventScript_Breeder_1
 
 GraniteCave_B1F_EventScript_Breeder_11:
-# 449 "data/maps/GraniteCave_B1F/scripts.pory"
+# 455 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_IEnjoyedOurBattle
-# 450 "data/maps/GraniteCave_B1F/scripts.pory"
+# 456 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	goto GraniteCave_B1F_EventScript_Breeder_1
 
 
 GraniteCave_B1F_EventScript_BreederTryGiveBalls:
-# 462 "data/maps/GraniteCave_B1F/scripts.pory"
+# 468 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_ThatWasFun
-# 463 "data/maps/GraniteCave_B1F/scripts.pory"
+# 469 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
-# 464 "data/maps/GraniteCave_B1F/scripts.pory"
+# 470 "data/maps/GraniteCave_B1F/scripts.pory"
 	checkitemspace ITEM_ULTRA_BALL, 3
-# 465 "data/maps/GraniteCave_B1F/scripts.pory"
+# 471 "data/maps/GraniteCave_B1F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq GraniteCave_B1F_EventScript_BreederTryGiveBalls_1
-# 479 "data/maps/GraniteCave_B1F/scripts.pory"
+# 485 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_YouHaveNoRoom, MSGBOX_DEFAULT
-# 480 "data/maps/GraniteCave_B1F/scripts.pory"
+# 486 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
 GraniteCave_B1F_EventScript_BreederTryGiveBalls_1:
-# 466 "data/maps/GraniteCave_B1F/scripts.pory"
+# 472 "data/maps/GraniteCave_B1F/scripts.pory"
 	checkitemspace ITEM_QUICK_BALL, 3
-# 467 "data/maps/GraniteCave_B1F/scripts.pory"
+# 473 "data/maps/GraniteCave_B1F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq GraniteCave_B1F_EventScript_BreederTryGiveBalls_4
-# 475 "data/maps/GraniteCave_B1F/scripts.pory"
+# 481 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_YouHaveNoRoom, MSGBOX_DEFAULT
-# 476 "data/maps/GraniteCave_B1F/scripts.pory"
+# 482 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
 GraniteCave_B1F_EventScript_BreederTryGiveBalls_4:
-# 468 "data/maps/GraniteCave_B1F/scripts.pory"
+# 474 "data/maps/GraniteCave_B1F/scripts.pory"
 	giveitem ITEM_ULTRA_BALL, 3
-# 469 "data/maps/GraniteCave_B1F/scripts.pory"
+# 475 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_AndTheseToo, MSGBOX_DEFAULT
-# 470 "data/maps/GraniteCave_B1F/scripts.pory"
+# 476 "data/maps/GraniteCave_B1F/scripts.pory"
 	giveitem ITEM_QUICK_BALL, 3
-# 471 "data/maps/GraniteCave_B1F/scripts.pory"
+# 477 "data/maps/GraniteCave_B1F/scripts.pory"
 	setflag FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS
-# 472 "data/maps/GraniteCave_B1F/scripts.pory"
+# 478 "data/maps/GraniteCave_B1F/scripts.pory"
 	msgbox GraniteCave_B1F_Text_LetsBattleAgain, MSGBOX_DEFAULT
-# 473 "data/maps/GraniteCave_B1F/scripts.pory"
+# 479 "data/maps/GraniteCave_B1F/scripts.pory"
 	closemessage
 	return
 
@@ -576,6 +576,12 @@ GraniteCave_B1F_Text_UnownKingStory::
 	.string "It attempted to eradicate all humans.\p"
 	.string "However, there existed humans who\n"
 	.string "loathed bloodshed.\p"
+	.string "With those innocent people sided\n"
+	.string "three benevolent Spirits:\l"
+	.string "Celebi, Jirachi, and Manaphy.\l"
+	.string "They were the ones who showed\l"
+	.string "the Unown King that there were people\l"
+	.string "who wished no harm upon other humans.\p"
 	.string "The Unown King saw the kind,\n"
 	.string "the poor, and the just\l"
 	.string "and could not ignore what it saw.\p"
@@ -594,15 +600,15 @@ GraniteCave_B1F_Text_UnownKingStory::
 	.string "may put it to rest for good.$"
 
 GraniteCave_B1F_Text_WhatDoesItSay::
-# 144 "data/maps/GraniteCave_B1F/scripts.pory"
+# 150 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "So, what does it say?$"
 
 GraniteCave_B1F_Text_ThreeDots::
-# 152 "data/maps/GraniteCave_B1F/scripts.pory"
+# 158 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "…$"
 
 GraniteCave_B1F_Text_IsThatWhatItSays::
-# 156 "data/maps/GraniteCave_B1F/scripts.pory"
+# 162 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Really?\n"
 	.string "Is that what it says?\p"
 	.string "Wow, I… I'd never have thought that\n"
@@ -621,7 +627,7 @@ GraniteCave_B1F_Text_IsThatWhatItSays::
 	.string "Listen to its sound!$"
 
 GraniteCave_B1F_Text_WhatWasThat::
-# 175 "data/maps/GraniteCave_B1F/scripts.pory"
+# 181 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "…\p"
 	.string "…\n"
 	.string "What was that?\l"
@@ -636,19 +642,19 @@ GraniteCave_B1F_Text_WhatWasThat::
 	.string "Hold on, I'll clean it for you.$"
 
 GraniteCave_B1F_Text_ThankYou::
-# 190 "data/maps/GraniteCave_B1F/scripts.pory"
+# 196 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Thank you for helping me out.\n"
 	.string "I really appreciate it!$"
 
 GraniteCave_B1F_Text_YouCantDecypher::
-# 195 "data/maps/GraniteCave_B1F/scripts.pory"
+# 201 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "You can't decypher it completely, huh?\p"
 	.string "I see.\p"
 	.string "If you manage to decypher more parts\n"
 	.string "of it, let me know!$"
 
 GraniteCave_B1F_Text_CanYouTurnOnTheLight::
-# 278 "data/maps/GraniteCave_B1F/scripts.pory"
+# 284 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Hey, you!\n"
 	.string "Would you mind lighting up this place?\p"
 	.string "I'm trying to read the inscription on\n"
@@ -656,7 +662,7 @@ GraniteCave_B1F_Text_CanYouTurnOnTheLight::
 	.string "I can barely see it!$"
 
 GraniteCave_B1F_EventScript_ThankYouForTurningOnTheLight::
-# 286 "data/maps/GraniteCave_B1F/scripts.pory"
+# 292 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Hey, you!\n"
 	.string "Thank you for brightening up this room.\p"
 	.string "I'm trying to read the inscription on\n"
@@ -666,13 +672,13 @@ GraniteCave_B1F_EventScript_ThankYouForTurningOnTheLight::
 	.string "understand a thing!$"
 
 GraniteCave_B1F_Text_ItsYouCanYouTurnTheLightOn::
-# 326 "data/maps/GraniteCave_B1F/scripts.pory"
+# 332 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Oh, it's you!\p"
 	.string "Could you make it a bit brighter\n"
 	.string "for me?$"
 
 GraniteCave_B1F_Text_ICantUnderstandThisWriting::
-# 332 "data/maps/GraniteCave_B1F/scripts.pory"
+# 338 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Oh… Er…\p"
 	.string "I have no clue what this writing is\n"
 	.string "saying!\p"
@@ -682,7 +688,7 @@ GraniteCave_B1F_Text_ICantUnderstandThisWriting::
 	.string "Would you help me decypher it?$"
 
 GraniteCave_B1F_Text_CountingOnYou::
-# 347 "data/maps/GraniteCave_B1F/scripts.pory"
+# 353 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "With your help, I'm sure I can finally\n"
 	.string "read the inscription on this wall.\p"
 	.string "I'm counting on you!\p"
@@ -695,7 +701,7 @@ GraniteCave_B1F_Text_CountingOnYou::
 	.string "to you.$"
 
 GraniteCave_B1F_Text_TheFluteDidSomething::
-# 365 "data/maps/GraniteCave_B1F/scripts.pory"
+# 371 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Er…\n"
 	.string "I think the Melody of Awakening did\l"
 	.string "something.\p"
@@ -703,7 +709,7 @@ GraniteCave_B1F_Text_TheFluteDidSomething::
 	.string "everything will be alright!$"
 
 GraniteCave_B1F_Text_IWouldveNeverImagined::
-# 378 "data/maps/GraniteCave_B1F/scripts.pory"
+# 384 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "I would've never imagined that the tale\n"
 	.string "of the Unown King would take a turn\l"
 	.string "like that.\p"
@@ -715,72 +721,72 @@ GraniteCave_B1F_Text_IWouldveNeverImagined::
 	.string "once and for all?$"
 
 GraniteCave_B1F_Text_WhatAreYouDoingHere::
-# 395 "data/maps/GraniteCave_B1F/scripts.pory"
+# 401 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "What are you doing here? It's dangerous!\n"
 	.string "Dangerous because of me!$"
 
 GraniteCave_B1F_Text_IUnderstandWhy::
-# 400 "data/maps/GraniteCave_B1F/scripts.pory"
+# 406 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "I understand why you weren't afraid!$"
 
 GraniteCave_B1F_Text_SneaselRazorClaw::
-# 404 "data/maps/GraniteCave_B1F/scripts.pory"
+# 410 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Some wild Sneasel hold a Razor Claw.\n"
 	.string "It helps them evolve.\p"
 	.string "I'm pretty sure wild Axew can hold them\n"
 	.string "too.$"
 
 GraniteCave_B1F_Text_Boo::
-# 416 "data/maps/GraniteCave_B1F/scripts.pory"
+# 422 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "BOO!$"
 
 GraniteCave_B1F_OhNoSmeargle::
-# 420 "data/maps/GraniteCave_B1F/scripts.pory"
+# 426 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Oh, no! Smeargle!$"
 
 GraniteCave_B1F_ILoveSmeargle::
-# 424 "data/maps/GraniteCave_B1F/scripts.pory"
+# 430 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "I love Smeargle because it can master\n"
 	.string "just about every move without wasting\l"
 	.string "a turn every single battle.$"
 
 GraniteCave_B1F_Text_ItSureIsDark::
-# 484 "data/maps/GraniteCave_B1F/scripts.pory"
+# 490 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Hey, there! It sure is dark in here,\n"
 	.string "isn't it?\p"
 	.string "Would you like to have a battle?$"
 
 GraniteCave_B1F_Text_IHaveAFullParty::
-# 490 "data/maps/GraniteCave_B1F/scripts.pory"
+# 496 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Wonderful! I have a full party of\n"
 	.string "six Pokémon. How about you?$"
 
 GraniteCave_B1F_Text_WowNotBad::
-# 495 "data/maps/GraniteCave_B1F/scripts.pory"
+# 501 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Wow! Not bad at all!$"
 
 GraniteCave_B1F_Text_ThatWasFun::
-# 499 "data/maps/GraniteCave_B1F/scripts.pory"
+# 505 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "That was a fun battle!\p"
 	.string "Here, take these. I hope they can be\n"
 	.string "useful to you.$"
 
 GraniteCave_B1F_Text_YouHaveNoRoom::
-# 505 "data/maps/GraniteCave_B1F/scripts.pory"
+# 511 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Wait, you don't have enough room\n"
 	.string "in your bag.\p"
 	.string "Nevermind then.$"
 
 GraniteCave_B1F_Text_AndTheseToo::
-# 511 "data/maps/GraniteCave_B1F/scripts.pory"
+# 517 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "… and these too!$"
 
 GraniteCave_B1F_Text_LetsBattleAgain::
-# 515 "data/maps/GraniteCave_B1F/scripts.pory"
+# 521 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Let's battle again sometimes!$"
 
 GraniteCave_B1F_Text_IEnjoyedOurBattle::
-# 519 "data/maps/GraniteCave_B1F/scripts.pory"
+# 525 "data/maps/GraniteCave_B1F/scripts.pory"
 	.string "Even though I lost, I enjoyed\n"
 	.string "our battle.\p"
 	.string "Let's have battle again sometimes!$"

@@ -875,11 +875,11 @@ static const struct SpriteFrameImage sPicTable_Cubone[] = {
 static const struct SpriteFrameImage sPicTable_Marowak[] = {
     overworld_ascending_frames(gObjectEventPic_Marowak, 4, 4),
 };
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
 static const struct SpriteFrameImage sPicTable_MarowakAlola[] = {
     overworld_ascending_frames(gObjectEventPic_MarowakAlola, 4, 4),
 };
-#endif //P_ALOLAN_FORMS
+//#endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_CUBONE
 
 #if P_FAMILY_HITMONS

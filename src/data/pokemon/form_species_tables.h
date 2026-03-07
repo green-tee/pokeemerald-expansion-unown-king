@@ -417,10 +417,10 @@ static const u16 sExeggutorFormSpeciesIdTable[] = {
 #if P_FAMILY_CUBONE
 static const u16 sMarowakFormSpeciesIdTable[] = {
     SPECIES_MAROWAK,
-#if P_ALOLAN_FORMS
+//#if P_ALOLAN_FORMS
     SPECIES_MAROWAK_ALOLA,
-    SPECIES_MAROWAK_ALOLA_TOTEM,
-#endif
+    //SPECIES_MAROWAK_ALOLA_TOTEM,
+//#endif
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_CUBONE

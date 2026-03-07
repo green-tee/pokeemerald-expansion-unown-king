@@ -37,7 +37,7 @@
 #define TRAINER_BREEDER_LEO                  31
 #define TRAINER_BREEDER_TOMMY                32
 #define TRAINER_BEAST_TAMER_CAESAR_2         33
-#define TRAINER_ARCHIE                       34
+#define TRAINER_FIGHTER_JENNA                34
 #define TRAINER_LEAH                         35
 #define TRAINER_DAISY                        36
 #define TRAINER_ROSE_1                       37
