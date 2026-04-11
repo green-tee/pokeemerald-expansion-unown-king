@@ -16277,7 +16277,6 @@ static void Cmd_trysetcaughtmondexflags(void)
 {
     CMD_ARGS(const u8 *failInstr);
 
-    /*
     u32 species = GetMonData(GetBattlerMon(GetCatchingBattler()), MON_DATA_SPECIES, NULL);
     u32 personality = GetMonData(GetBattlerMon(GetCatchingBattler()), MON_DATA_PERSONALITY, NULL);
 
@@ -16290,8 +16289,7 @@ static void Cmd_trysetcaughtmondexflags(void)
         HandleSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_SET_CAUGHT, personality);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
-    */
-    gBattlescriptCurrInstr = cmd->failInstr;
+    //gBattlescriptCurrInstr = cmd->failInstr;
 }
 
 static void Cmd_displaydexinfo(void)
