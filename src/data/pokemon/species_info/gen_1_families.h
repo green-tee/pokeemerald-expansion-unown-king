@@ -13314,7 +13314,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sMarowakLevelUpLearnset,
         .teachableLearnset = sMarowakTeachableLearnset,
-        .formSpeciesIdTable = sMarowakFormSpeciesIdTable,
+        //.formSpeciesIdTable = sMarowakFormSpeciesIdTable,
     },
 
 //#if P_ALOLAN_FORMS
@@ -13377,7 +13377,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .isAlolanForm = TRUE,
         .levelUpLearnset = sMarowakAlolaLevelUpLearnset,
         .teachableLearnset = sMarowakAlolaTeachableLearnset,
-        .formSpeciesIdTable = sMarowakFormSpeciesIdTable,
+        //.formSpeciesIdTable = sMarowakFormSpeciesIdTable,
     },
 
     /*
