@@ -2140,6 +2140,22 @@ const struct Item gItemsInfo[] =
 
 // Encounter Modifiers
 
+    [ITEM_REPEL_SPORES] = {
+        .name = _("Repel Spores"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "{FONT_NARROW}Strange spores\n"
+            "used to synthesize\n"
+            "repelling compounds.{FONT_NORMAL}"
+        ),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Powder,
+        .iconPalette = gItemIconPalette_HealPowder,
+    },
+
     [ITEM_REPEL] =
     {
         .name = _("Repel"),

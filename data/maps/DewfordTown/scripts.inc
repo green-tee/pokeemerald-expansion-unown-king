@@ -129,7 +129,7 @@ DewfordTown_EventScript_SailToPetalburg::
 	applymovement LOCALID_PLAYER, DewfordTown_Movement_ExitBoatPetalburg
 	waitmovement 0
 	showobjectat LOCALID_PLAYER, MAP_ROUTE104
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_EASTERN_WING_REPELS_MERCHANT
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN

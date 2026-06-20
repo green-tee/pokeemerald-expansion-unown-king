@@ -113,6 +113,7 @@ EventScript_ResetAllBerries::
 	return
 
 EventScript_ResetAllMapFlags::
+	setflag FLAG_HIDE_EASTERN_WING_REPELS_MERCHANT
 	setflag FLAG_HIDE_LUGIA
 	setflag FLAG_HIDE_TORNADUS
 	setflag FLAG_HIDE_ABYSS_OF_THE_END_CRYSTAL_HEAL

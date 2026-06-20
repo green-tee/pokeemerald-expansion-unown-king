@@ -996,12 +996,13 @@
 
 #define ITEM_STRANGE_BALL 828
 #define ITEM_LUCKY_CHARM 829
-#define RANDOM_ITEM_GEM 830
+#define ITEM_REPEL_SPORES 830
+#define RANDOM_ITEM_GEM 831
 
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 830
+#define ITEMS_COUNT 831
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

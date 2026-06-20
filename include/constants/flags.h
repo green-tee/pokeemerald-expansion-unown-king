@@ -125,7 +125,7 @@
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
-#define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
+#define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player can't white out from poison before receiving Go Goggles
 #define FLAG_RECEIVED_HM_FLASH               0x6D
 #define FLAG_RECEIVED_HM_FLY                 0x6E
 #define FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT  0x6F
@@ -166,7 +166,7 @@
 #define FLAG_RETURNED_DEVON_GOODS            0x90
 #define FLAG_CAUGHT_LUGIA                    0x91
 #define FLAG_CAUGHT_HO_OH                    0x92
-#define FLAG_MR_BRINEY_SAILING_INTRO         0x93
+#define FLAG_CAUGHT_TORNADUS                 0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
 #define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
@@ -250,8 +250,8 @@
 #define FLAG_RECEIVED_ULTRA_AND_QUICK_BALLS  0xE2
 #define FLAG_DEFEATED_FINAL_BOSS             0xE3
 #define FLAG_RECEIVED_SECOND_MASTER_BALL     0xE4
-#define FLAG_RECEIVED_TM_RETURN              0xE5
-#define FLAG_RECEIVED_TM_SLUDGE_BOMB         0xE6
+#define FLAG_RECEIVED_FIRST_REPELS           0xE5
+#define FLAG_GAVE_REPEL_SPORES               0xE6
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
@@ -786,8 +786,8 @@
 #define FLAG_HIDE_EAST_WING_SCOUNDREL_S                             0x2DF
 #define FLAG_HIDE_EAST_WING_SCOUNDREL_W                             0x2E0
 #define FLAG_HIDE_EAST_WING_SCOUNDREL_E                             0x2E1
-#define FLAG_HIDE_ROUTE_104_MR_BRINEY                               0x2E2
-#define FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY                           0x2E3
+#define FLAG_HIDE_WEST_OF_TEMPLE_REPELS_MERCHANT                    0x2E2
+#define FLAG_HIDE_EASTERN_WING_REPELS_MERCHANT                      0x2E3
 #define FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN                            0x2E4
 #define FLAG_HIDE_ROUTE_109_MR_BRINEY                               0x2E5
 #define FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT                          0x2E6
@@ -1079,7 +1079,7 @@
 #define FLAG_ITEM_LATIOS_SOUL_DEW                                   0x402
 #define FLAG_ITEM_LATIAS_SOUL_DEW                                   0x403
 #define FLAG_ITEM_LUGIA_SACRED_ASH                                  0x404
-#define FLAG_ITEM_ROUTE_119_HYPER_POTION_1                          0x405
+#define FLAG_ITEM_REPEL_SPORES                                      0x405
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
 #define FLAG_ITEM_ROUTE_120_FULL_HEAL                               0x407
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408

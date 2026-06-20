@@ -22,14 +22,14 @@ Route104_MrBrineysHouse_EventScript_SetBrineyPeekoPos::
 Route104_MrBrineysHouse_EventScript_Briney::
 	lock
 	faceplayer
-	call_if_unset FLAG_MR_BRINEY_SAILING_INTRO, Route104_MrBrineysHouse_EventScript_SailingIntro
+	call_if_unset FLAG_CAUGHT_TORNADUS, Route104_MrBrineysHouse_EventScript_SailingIntro
 	goto_if_unset FLAG_DELIVERED_STEVEN_LETTER, Route104_MrBrineysHouse_EventScript_SailBothDeliveries
 	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route104_MrBrineysHouse_EventScript_SailDeliverPackage
 	goto Route104_MrBrineysHouse_EventScript_WhereAreWeBound
 	end
 
 Route104_MrBrineysHouse_EventScript_SailingIntro::
-	setflag FLAG_MR_BRINEY_SAILING_INTRO
+	setflag FLAG_CAUGHT_TORNADUS
 	msgbox Route104_MrBrineysHouse_Text_WaitUpPeeko, MSGBOX_DEFAULT
 	msgbox Route104_MrBrineysHouse_Text_ItsYouLetsSailToDewford, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route104_MrBrineysHouse_EventScript_DeclineDeliverySailing
@@ -72,8 +72,8 @@ Route104_MrBrineysHouse_EventScript_SailToDewford::
 	msgbox Route104_MrBrineysHouse_Text_SetSailForDewford, MSGBOX_DEFAULT
 	call EventScript_BackupMrBrineyLocation
 	setvar VAR_BOARD_BRINEY_BOAT_STATE, 1
-	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	clearflag FLAG_HIDE_WEST_OF_TEMPLE_REPELS_MERCHANT
+	setflag FLAG_HIDE_EASTERN_WING_REPELS_MERCHANT
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2

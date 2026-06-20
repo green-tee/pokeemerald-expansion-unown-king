@@ -173,6 +173,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtPyre_4F_EventScript_ScoundrelE",
       "flag": "FLAG_HIDE_EAST_WING_SCOUNDREL_E"
+    },
+    {
+      "local_id": "LOCALID_REPELS_MERCHANT_INSIDE",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 9,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtPyre_4F_EventScript_RepelsMerchant",
+      "flag": "0"
     }
   ],
   "warp_events": [

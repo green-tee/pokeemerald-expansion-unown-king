@@ -134,7 +134,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_ROUTE_104_MR_BRINEY"
+      "flag": "FLAG_HIDE_WEST_OF_TEMPLE_REPELS_MERCHANT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",

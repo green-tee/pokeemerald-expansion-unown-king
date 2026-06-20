@@ -568,6 +568,84 @@ MtPyre_4F_Movement_EscapeDodgeE:
 	walk_fast_up
 	step_end
 
+MtPyre_4F_EventScript_RepelsMerchant::
+# 422 "data/maps/MtPyre_4F/scripts.pory"
+	lockall
+# 423 "data/maps/MtPyre_4F/scripts.pory"
+	applymovement LOCALID_REPELS_MERCHANT_INSIDE, Common_Movement_FacePlayer
+# 424 "data/maps/MtPyre_4F/scripts.pory"
+	waitmovement 0
+# 425 "data/maps/MtPyre_4F/scripts.pory"
+	goto_if_set FLAG_GAVE_REPEL_SPORES, MtPyre_4F_EventScript_RepelsMerchant_2
+# 436 "data/maps/MtPyre_4F/scripts.pory"
+	checkitem ITEM_REPEL_SPORES, 1
+# 437 "data/maps/MtPyre_4F/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq MtPyre_4F_EventScript_RepelsMerchant_8
+# 449 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_ImOutOfRepels, MSGBOX_DEFAULT
+# 450 "data/maps/MtPyre_4F/scripts.pory"
+	closemessage
+MtPyre_4F_EventScript_RepelsMerchant_1:
+# 453 "data/maps/MtPyre_4F/scripts.pory"
+	releaseall
+	return
+
+MtPyre_4F_EventScript_RepelsMerchant_2:
+# 426 "data/maps/MtPyre_4F/scripts.pory"
+	goto_if_set FLAG_TEMP_1, MtPyre_4F_EventScript_RepelsMerchant_5
+# 430 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_WantToBuyMoreRepels, MSGBOX_DEFAULT
+# 431 "data/maps/MtPyre_4F/scripts.pory"
+	pokemart MtPyre_4F_Mart_Repels
+# 432 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_SeeYouAgain, MSGBOX_DEFAULT
+# 433 "data/maps/MtPyre_4F/scripts.pory"
+	closemessage
+	goto MtPyre_4F_EventScript_RepelsMerchant_1
+
+MtPyre_4F_EventScript_RepelsMerchant_5:
+# 427 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_PatienceRepelsTakeTime, MSGBOX_DEFAULT
+# 428 "data/maps/MtPyre_4F/scripts.pory"
+	closemessage
+	goto MtPyre_4F_EventScript_RepelsMerchant_1
+
+MtPyre_4F_EventScript_RepelsMerchant_8:
+# 438 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_YouHaveRepelSpores, MSGBOX_YESNO
+# 439 "data/maps/MtPyre_4F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq MtPyre_4F_EventScript_RepelsMerchant_11
+# 445 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_ComeBackIfYouChangeYourMind, MSGBOX_DEFAULT
+# 446 "data/maps/MtPyre_4F/scripts.pory"
+	closemessage
+	goto MtPyre_4F_EventScript_RepelsMerchant_1
+
+MtPyre_4F_EventScript_RepelsMerchant_11:
+# 440 "data/maps/MtPyre_4F/scripts.pory"
+	msgbox MtPyre_4F_Text_NowICanMakeRepels, MSGBOX_DEFAULT
+# 441 "data/maps/MtPyre_4F/scripts.pory"
+	closemessage
+# 442 "data/maps/MtPyre_4F/scripts.pory"
+	setflag FLAG_GAVE_REPEL_SPORES
+# 443 "data/maps/MtPyre_4F/scripts.pory"
+	setflag FLAG_TEMP_1
+	goto MtPyre_4F_EventScript_RepelsMerchant_1
+
+
+	.align 2
+# 466 "data/maps/MtPyre_4F/scripts.pory"
+MtPyre_4F_Mart_Repels:
+# 467 "data/maps/MtPyre_4F/scripts.pory"
+	.2byte ITEM_REPEL
+# 468 "data/maps/MtPyre_4F/scripts.pory"
+	.2byte ITEM_SUPER_REPEL
+# 469 "data/maps/MtPyre_4F/scripts.pory"
+	.2byte ITEM_MAX_REPEL
+	.2byte ITEM_NONE
+
 MtPyre_4F_Text_DefeatTheDarkness::
 # 29 "data/maps/MtPyre_4F/scripts.pory"
 	.string "Those who wish to see clear\n"
@@ -723,3 +801,52 @@ MtPyre_4F_Text_IHeardMoonStone::
 	.string "my Pokémon evolve.\p"
 	.string "If you think about it, it's a stone\n"
 	.string "coming from a big rock in the sky.$"
+
+MtPyre_4F_Text_PatienceRepelsTakeTime::
+# 456 "data/maps/MtPyre_4F/scripts.pory"
+	.string "Patience, my friend!\n"
+	.string "Repels take some time, you know.$"
+
+MtPyre_4F_Text_WantToBuyMoreRepels::
+# 461 "data/maps/MtPyre_4F/scripts.pory"
+	.string "Welcome back, traveler!\n"
+	.string "Have you come to buy more of my Repels?$"
+
+MtPyre_4F_Text_SeeYouAgain::
+# 472 "data/maps/MtPyre_4F/scripts.pory"
+	.string "Come back whenever you want!$"
+
+MtPyre_4F_Text_YouHaveRepelSpores::
+# 476 "data/maps/MtPyre_4F/scripts.pory"
+	.string "What's that? You found some Spores?\p"
+	.string "I see, I see!\p"
+	.string "I know exactly what those are!\n"
+	.string "Those are special spores that keep\l"
+	.string "wild Pokémon away if treated\l"
+	.string "a certain way.\p"
+	.string "They're technically living beings,\n"
+	.string "but they need very little resources\l"
+	.string "to survive. All it takes is oxygen.\l"
+	.string "That's enough for them to reproduce!\p"
+	.string "Hey, I've got an idea:\n"
+	.string "I just need a small sample of spores\l"
+	.string "to synthesize as many Repels\l"
+	.string "as you need. For a charge, of course.\p"
+	.string "How does it sound? Will you hand me\n"
+	.string "a pinch of Repel Spores?$"
+
+MtPyre_4F_Text_NowICanMakeRepels::
+# 495 "data/maps/MtPyre_4F/scripts.pory"
+	.string "This will be great for both of us!\n"
+	.string "I'll have a bunch of Repels ready\l"
+	.string "in little time!$"
+
+MtPyre_4F_Text_ImOutOfRepels::
+# 501 "data/maps/MtPyre_4F/scripts.pory"
+	.string "Hm? Repels?\n"
+	.string "Sorry, I'm all out of them right now.$"
+
+MtPyre_4F_Text_ComeBackIfYouChangeYourMind::
+# 506 "data/maps/MtPyre_4F/scripts.pory"
+	.string "Oh, well.\n"
+	.string "Come back if you change your mind!$"

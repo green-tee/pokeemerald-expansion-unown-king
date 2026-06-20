@@ -36,6 +36,119 @@ text Route103_Text_Milotic {
     "It's hostile!"
 }
 
+script Route103_EventScript_RepelsMerchant {
+    lock
+    faceplayer
+    if (flag(FLAG_RECEIVED_FIRST_REPELS)) {
+        call(Route103_EventScript_RepelsMerchant_AfterBuyingFirstRepels)
+    } else {
+        call(Route103_EventScript_RepelsMerchant_BeforeBuyingFirstRepels)
+    }
+    release
+}
+
+script(local) Route103_EventScript_RepelsMerchant_AfterBuyingFirstRepels {
+    // TODO: Substitute next line with hints about legendary Pokémon.
+    // This will require a commit for itself, bacause it's kind of a complicated feature.
+    msgbox(Route103_Text_ThanksForThePurchase, MSGBOX_DEFAULT)
+    closemessage
+}
+
+script(local) Route103_EventScript_RepelsMerchant_BeforeBuyingFirstRepels {
+    msgbox(Route103_Text_DoYouNeedRepels, MSGBOX_YESNO)
+    if (var(VAR_RESULT) == YES) {
+        checkmoney(2000)
+        if (var(VAR_RESULT) == TRUE) {
+            checkitemspace(ITEM_REPEL, 5)
+            if (var(VAR_RESULT) == TRUE) {
+                // Good path: player has enough money and bag space.
+                // Purchase is successful.
+                msgbox(Route103_Text_SmartChoice, MSGBOX_DEFAULT)
+                removemoney(2000)
+                giveitem(ITEM_REPEL, 5)
+                setflag(FLAG_RECEIVED_FIRST_REPELS)
+                msgbox(Route103_Text_ThanksForThePurchase, MSGBOX_DEFAULT)
+                closemessage
+            } else {
+                // Player has enough money but not enough bag space
+                msgbox(Route103_Text_YouDontHaveRoom, MSGBOX_DEFAULT)
+                closemessage
+            }
+        } else {
+            // Player doesn't have enough money
+            msgbox(Route103_Text_YouDontHaveMoney, MSGBOX_DEFAULT)
+            closemessage
+        }
+    } else {
+        // Player refused to buy Repels
+        msgbox(Route103_Text_ComeBackIfYouChangeYourMind, MSGBOX_DEFAULT)
+        closemessage
+    }
+}
+
+text Route103_Text_DoYouNeedRepels {
+    "Oh, a traveler!\n"
+    "How are you doing?\p"
+    "Moving through the temple can feel like\n"
+    "a slog, am I right?\p"
+    "I can help you a little.\n"
+    "How about some Repels? I'm selling\l"
+    "5 bottles for ¥2,000. Deal?"
+}
+
+text Route103_Text_SmartChoice {
+    "Well, then. Here you are.\n"
+    "A smart choice, if I do say so myself!"
+}
+
+text Route103_Text_YouDontHaveMoney {
+    "Oh, what a shame! You're broke.\n"
+    "I'm sorry, but I can't give you\l"
+    "these Repels for free."
+}
+
+text Route103_Text_YouDontHaveRoom {
+    "Not so fast!\n"
+    "Your bag has no room for these Repels.\l"
+    "Make some space and come back!"
+}
+
+text Route103_Text_ComeBackIfYouChangeYourMind {
+    "Oh, well.\n"
+    "Come back if you change your mind!"
+}
+
+text Route103_Text_ThanksForThePurchase {
+    "Thank you for the purchase!\n"
+    "I hope these make your journey easier!\p"
+    "What do you do if you run of of them?\n"
+    "Well… good question.\p"
+    "A buddy of mine is hanging around\n"
+    "in the Easter Wing of the temple\l"
+    "hoping to start a business selling\l"
+    "more Repels.\p"
+    "But I think he told me he needs some\n"
+    "specific ingredients.\l"
+    "I can't help you with that,\l"
+    "but I can still try doing\l"
+    "something useful for you. You see,\l"
+    "I've been on the lookout for rumors\l"
+    "about legendary Pokémon!"
+}
+
+movement Route103_Movement_RepelsMerchantRunInside {
+    walk_fast_right * 2
+    walk_fast_down * 9
+    walk_fast_right * 7
+}
+
+movement Route103_Movement_RepelsMerchantRunInsideDodge {
+    walk_fast_down
+    walk_fast_right * 2
+    walk_fast_down * 8
+    walk_fast_right * 7
+}
+
 script Route103_EventScript_Scoundrel {
     trainerbattle_single(TRAINER_SCOUNDREL_WALTER, Route103_Text_ISpottedYou, Route103_Text_IJustHadToOpenMyMouth)
     msgbox(Route103_Text_IHaveAWaterStone, MSGBOX_AUTOCLOSE)
@@ -130,6 +243,6 @@ text Route103_Text_PrettyCool {
 text Route103_Text_IfYouCouldFly {
     "If you could fly, you could reach\n"
     "the top of the temple and see\l"
-    "what's there."
-    "\lMaybe… a legendary Pokémon?"
+    "what's there.\l"
+    "Maybe… a legendary Pokémon?"
 }

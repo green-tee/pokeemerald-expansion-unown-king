@@ -417,3 +417,93 @@ movement MtPyre_4F_Movement_EscapeDodgeE {
     walk_fast_left
     walk_fast_up * 3
 }
+
+script MtPyre_4F_EventScript_RepelsMerchant {
+    lockall
+    applymovement(LOCALID_REPELS_MERCHANT_INSIDE, Common_Movement_FacePlayer)
+    waitmovement(0)
+    if (flag(FLAG_GAVE_REPEL_SPORES)) {
+        if (flag(FLAG_TEMP_1)) {
+            msgbox(MtPyre_4F_Text_PatienceRepelsTakeTime, MSGBOX_DEFAULT)
+            closemessage
+        } else {
+            msgbox(MtPyre_4F_Text_WantToBuyMoreRepels, MSGBOX_DEFAULT)
+            pokemart(MtPyre_4F_Mart_Repels)
+            msgbox(MtPyre_4F_Text_SeeYouAgain, MSGBOX_DEFAULT)
+            closemessage
+        }
+    } else {
+        checkitem(ITEM_REPEL_SPORES, 1)
+        if (var(VAR_RESULT) == TRUE) {
+            msgbox(MtPyre_4F_Text_YouHaveRepelSpores, MSGBOX_YESNO)
+            if (var(VAR_RESULT) == YES) {
+                msgbox(MtPyre_4F_Text_NowICanMakeRepels, MSGBOX_DEFAULT)
+                closemessage
+                setflag(FLAG_GAVE_REPEL_SPORES)
+                setflag(FLAG_TEMP_1)
+            } else {
+                msgbox(MtPyre_4F_Text_ComeBackIfYouChangeYourMind, MSGBOX_DEFAULT)
+                closemessage
+            }
+        } else {
+            msgbox(MtPyre_4F_Text_ImOutOfRepels, MSGBOX_DEFAULT)
+            closemessage
+        }
+    }
+    releaseall
+}
+
+text MtPyre_4F_Text_PatienceRepelsTakeTime {
+    "Patience, my friend!\n"
+    "Repels take some time, you know."
+}
+
+text MtPyre_4F_Text_WantToBuyMoreRepels {
+    "Welcome back, traveler!\n"
+    "Have you come to buy more of my Repels?"
+}
+
+mart MtPyre_4F_Mart_Repels {
+    ITEM_REPEL
+    ITEM_SUPER_REPEL
+    ITEM_MAX_REPEL
+}
+
+text MtPyre_4F_Text_SeeYouAgain {
+    "Come back whenever you want!"
+}
+
+text MtPyre_4F_Text_YouHaveRepelSpores {
+    "What's that? You found some Spores?\p"
+    "I see, I see!\p"
+    "I know exactly what those are!\n"
+    "Those are special spores that keep\l"
+    "wild Pokémon away if treated\l"
+    "a certain way.\p"
+    "They're technically living beings,\n"
+    "but they need very little resources\l"
+    "to survive. All it takes is oxygen.\l"
+    "That's enough for them to reproduce!\p"
+    "Hey, I've got an idea:\n"
+    "I just need a small sample of spores\l"
+    "to synthesize as many Repels\l"
+    "as you need. For a charge, of course.\p"
+    "How does it sound? Will you hand me\n"
+    "a pinch of Repel Spores?"
+}
+
+text MtPyre_4F_Text_NowICanMakeRepels {
+    "This will be great for both of us!\n"
+    "I'll have a bunch of Repels ready\l"
+    "in little time!"
+}
+
+text MtPyre_4F_Text_ImOutOfRepels {
+    "Hm? Repels?\n"
+    "Sorry, I'm all out of them right now."
+}
+
+text MtPyre_4F_Text_ComeBackIfYouChangeYourMind {
+    "Oh, well.\n"
+    "Come back if you change your mind!"
+}
