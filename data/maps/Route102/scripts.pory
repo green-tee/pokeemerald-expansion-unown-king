@@ -1,4 +1,8 @@
-mapscripts Route102_MapScripts {}
+mapscripts Route102_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_OUTDOOR_TORNADUS_STATE, 1: Route101_EventScript_WildTornadusEncounter
+    ]
+}
 
 script Route102_EventScript_Scoundrel {
     lock

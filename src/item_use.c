@@ -1565,48 +1565,53 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
     Task_CloseCantUseKeyItemMessage(taskId);
 }
 
+static void TrySetUpTornadusEncounter(void) {
+    if (
+        FlagGet(FLAG_DEFEATED_FINAL_BOSS)
+        && !FlagGet(FLAG_CAUGHT_TORNADUS)
+        && GetCurrentMapType() == MAP_TYPE_ROUTE
+    ) {
+        VarSet(VAR_OUTDOOR_TORNADUS_STATE, 1);
+    }
+}
+
 static void Task_DisplayPokeFluteMessage(u8 taskId)
 {
     if (WaitFanfare(FALSE))
     {
-        if (gTasks[taskId].data[3] == 0)
-            DisplayItemMessage(taskId, FONT_NORMAL, sText_PokeFluteAwakenedMon, CloseItemMessage);
-        else
+        if (gTasks[taskId].data[3] == 0) {
+            if (VarGet(VAR_OUTDOOR_TORNADUS_STATE) == 1) {
+                gBagMenu->newScreenCallback = CB2_ReturnToField;
+                DisplayItemMessage(taskId, FONT_NORMAL, sText_PokeFluteAwakenedMon, Task_FadeAndCloseBagMenu);
+            } else {
+                DisplayItemMessage(taskId, FONT_NORMAL, sText_PokeFluteAwakenedMon, CloseItemMessage);
+            }
+        } else {
             DisplayItemMessageOnField(taskId, sText_PokeFluteAwakenedMon, Task_CloseCantUseKeyItemMessage);
+        }
     }
 }
 
 static void Task_PlayPokeFlute(u8 taskId)
 {
     PlayFanfareByFanfareNum(FANFARE_RG_POKE_FLUTE);
+    TrySetUpTornadusEncounter();
     gTasks[taskId].func = Task_DisplayPokeFluteMessage;
 }
 
 void ItemUseOutOfBattle_PokeFlute(u8 taskId)
 {
-    bool32 wokeSomeoneUp = FALSE;
     u32 i;
 
     for (i = 0; i < CalculatePlayerPartyCount(); i++)
     {
-        if (!ExecuteTableBasedItemEffect(&gPlayerParty[i], ITEM_AWAKENING, i, 0))
-            wokeSomeoneUp = TRUE;
+        ExecuteTableBasedItemEffect(&gPlayerParty[i], ITEM_AWAKENING, i, 0);
     }
 
-    if (wokeSomeoneUp)
-    {
-        if (gTasks[taskId].data[3] == 0)
-            DisplayItemMessage(taskId, FONT_NORMAL, sText_PlayedPokeFlute, Task_PlayPokeFlute);
-        else
-            DisplayItemMessageOnField(taskId, sText_PlayedPokeFlute, Task_PlayPokeFlute);
-    }
+    if (gTasks[taskId].data[3] == 0)
+        DisplayItemMessage(taskId, FONT_NORMAL, sText_PlayedPokeFlute, Task_PlayPokeFlute);
     else
-    {
-        if (gTasks[taskId].data[3] == 0)
-            DisplayItemMessage(taskId, FONT_NORMAL, sText_PlayedPokeFluteCatchy, CloseItemMessage);
-        else
-            DisplayItemMessageOnField(taskId, sText_PlayedPokeFluteCatchy, Task_CloseCantUseKeyItemMessage);
-    }
+        DisplayItemMessageOnField(taskId, sText_PlayedPokeFlute, Task_PlayPokeFlute);
 }
 
 static void ItemUseOnFieldCB_TownMap(u8 taskId)

@@ -116,7 +116,7 @@
 #define VAR_INTRO_AREA_STATE                             0x4060
 #define VAR_CHAMBER_OF_TRUTH_STATE                       0x4061
 #define VAR_UNOWN_KING_PRISON_STATE                      0x4062 // Always 0
-#define VAR_ROUTE104_STATE                               0x4063
+#define VAR_OUTDOOR_TORNADUS_STATE                       0x4063
 #define VAR_ROUTE105_STATE                               0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                               0x4066 // Unused Var

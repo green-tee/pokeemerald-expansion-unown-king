@@ -1,98 +1,105 @@
 Route102_MapScripts::
+# 2 "data/maps/Route102/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route102_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+Route102_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 3 "data/maps/Route102/scripts.pory"
+	map_script_2 VAR_OUTDOOR_TORNADUS_STATE, 1, Route101_EventScript_WildTornadusEncounter
+	.2byte 0
 
 
 Route102_EventScript_Scoundrel::
-# 4 "data/maps/Route102/scripts.pory"
+# 8 "data/maps/Route102/scripts.pory"
 	lock
-# 5 "data/maps/Route102/scripts.pory"
+# 9 "data/maps/Route102/scripts.pory"
 	faceplayer
-# 6 "data/maps/Route102/scripts.pory"
-	goto_if_set FLAG_TEMP_1, Route102_EventScript_Scoundrel_2
 # 10 "data/maps/Route102/scripts.pory"
+	goto_if_set FLAG_TEMP_1, Route102_EventScript_Scoundrel_2
+# 14 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_WantToHaveAFight, MSGBOX_YESNO
-# 11 "data/maps/Route102/scripts.pory"
+# 15 "data/maps/Route102/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Route102_EventScript_Scoundrel_5
-# 21 "data/maps/Route102/scripts.pory"
+# 25 "data/maps/Route102/scripts.pory"
 	closemessage
 Route102_EventScript_Scoundrel_1:
-# 24 "data/maps/Route102/scripts.pory"
+# 28 "data/maps/Route102/scripts.pory"
 	release
 	return
 
 Route102_EventScript_Scoundrel_2:
-# 7 "data/maps/Route102/scripts.pory"
+# 11 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_WeCanBattleAgain, MSGBOX_DEFAULT
-# 8 "data/maps/Route102/scripts.pory"
+# 12 "data/maps/Route102/scripts.pory"
 	closemessage
 	goto Route102_EventScript_Scoundrel_1
 
 Route102_EventScript_Scoundrel_5:
-# 12 "data/maps/Route102/scripts.pory"
-	msgbox Route102_Text_DontFallDown, MSGBOX_DEFAULT
-# 13 "data/maps/Route102/scripts.pory"
-	closemessage
-# 14 "data/maps/Route102/scripts.pory"
-	playbgm MUS_VS_WILD, FALSE
-# 15 "data/maps/Route102/scripts.pory"
-	trainerbattle_no_intro TRAINER_SCOUNDREL_MORPHEUS, Route102_Text_ScoundrelDefeated
 # 16 "data/maps/Route102/scripts.pory"
-	setflag FLAG_TEMP_1
+	msgbox Route102_Text_DontFallDown, MSGBOX_DEFAULT
 # 17 "data/maps/Route102/scripts.pory"
-	lock
+	closemessage
 # 18 "data/maps/Route102/scripts.pory"
-	faceplayer
+	playbgm MUS_VS_WILD, FALSE
 # 19 "data/maps/Route102/scripts.pory"
+	trainerbattle_no_intro TRAINER_SCOUNDREL_MORPHEUS, Route102_Text_ScoundrelDefeated
+# 20 "data/maps/Route102/scripts.pory"
+	setflag FLAG_TEMP_1
+# 21 "data/maps/Route102/scripts.pory"
+	lock
+# 22 "data/maps/Route102/scripts.pory"
+	faceplayer
+# 23 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_ItsATerrifyingFall, MSGBOX_DEFAULT
 	goto Route102_EventScript_Scoundrel_1
 
 
 Route102_EventScript_Breeder::
-# 53 "data/maps/Route102/scripts.pory"
+# 57 "data/maps/Route102/scripts.pory"
 	trainerbattle_single TRAINER_BREEDER_MATTHEW, Route102_Text_ThisPlaceIsRelaxing, Route102_Text_ImportantToRelax
-# 54 "data/maps/Route102/scripts.pory"
+# 58 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_EternalPond, MSGBOX_AUTOCLOSE
 	return
 
 
 Route102_Text_WeCanBattleAgain::
-# 27 "data/maps/Route102/scripts.pory"
+# 31 "data/maps/Route102/scripts.pory"
 	.string "If you feel like it, we can battle\n"
 	.string "again sometimes.$"
 
 Route102_Text_WantToHaveAFight::
-# 32 "data/maps/Route102/scripts.pory"
+# 36 "data/maps/Route102/scripts.pory"
 	.string "Hehehe…\n"
 	.string "Wanna have a battle on this cliff?$"
 
 Route102_Text_DontFallDown::
-# 37 "data/maps/Route102/scripts.pory"
+# 41 "data/maps/Route102/scripts.pory"
 	.string "Don't fall down!\n"
 	.string "Hahaha!$"
 
 Route102_Text_ScoundrelDefeated::
-# 42 "data/maps/Route102/scripts.pory"
+# 46 "data/maps/Route102/scripts.pory"
 	.string "…\n"
 	.string "… Huh…$"
 
 Route102_Text_ItsATerrifyingFall::
-# 47 "data/maps/Route102/scripts.pory"
+# 51 "data/maps/Route102/scripts.pory"
 	.string "It's a terrifying fall from here, but\n"
 	.string "that didn't indimidate you, did it?$"
 
 Route102_Text_ThisPlaceIsRelaxing::
-# 57 "data/maps/Route102/scripts.pory"
+# 61 "data/maps/Route102/scripts.pory"
 	.string "This place is so calm, so relaxing…\p"
 	.string "It's perfect for a relaxing battle!$"
 
 Route102_Text_ImportantToRelax::
-# 62 "data/maps/Route102/scripts.pory"
+# 66 "data/maps/Route102/scripts.pory"
 	.string "What's important is that we relaxed,\n"
 	.string "not who won!$"
 
 Route102_Text_EternalPond::
-# 67 "data/maps/Route102/scripts.pory"
+# 71 "data/maps/Route102/scripts.pory"
 	.string "The Eternal Pond…\n"
 	.string "Despite the waterfall, it never runs\l"
 	.string "out of water and it never overflows.\p"
