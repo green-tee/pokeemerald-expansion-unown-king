@@ -872,7 +872,7 @@ static const s16 sBattlerHealthboxCoords[BATTLE_COORDS_COUNT][MAX_BATTLERS_COUNT
 {
     [BATTLE_COORDS_SINGLES] =
     {
-        [B_POSITION_PLAYER_LEFT]   = { 150, 88 },
+        [B_POSITION_PLAYER_LEFT]   = { 150, 84 },
         [B_POSITION_OPPONENT_LEFT] = { 44,  30 },
     },
     [BATTLE_COORDS_DOUBLES] =
@@ -2063,7 +2063,7 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
     }
 }
 
-#define B_EXPBAR_PIXELS 64
+#define B_EXPBAR_PIXELS 80
 #define B_HEALTHBAR_PIXELS 48
 
 s32 MoveBattleBar(u8 battler, u8 healthboxSpriteId, u8 whichBar, u8 unused)
@@ -2106,7 +2106,7 @@ s32 MoveBattleBar(u8 battler, u8 healthboxSpriteId, u8 whichBar, u8 unused)
 
 static void MoveBattleBarGraphically(u8 battler, u8 whichBar)
 {
-    u8 array[8];
+    u8 array[B_EXPBAR_PIXELS / 8];
     u8 filledPixelsCount, level;
     u8 barElementId;
     u8 i;
@@ -2147,10 +2147,10 @@ static void MoveBattleBarGraphically(u8 battler, u8 whichBar)
         level = GetMonData(GetBattlerMon(battler), MON_DATA_LEVEL);
         if (level >= MAX_LEVEL)
         {
-            for (i = 0; i < 8; i++)
+            for (i = 0; i < B_EXPBAR_PIXELS / 8; i++)
                 array[i] = 0;
         }
-        for (i = 0; i < 8; i++)
+        for (i = 0; i < B_EXPBAR_PIXELS / 8; i++)
         {
             if (i < 4)
                 CpuCopy32(GetHealthboxElementGfxPtr(HEALTHBOX_GFX_12) + array[i] * 32,
