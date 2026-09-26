@@ -598,9 +598,9 @@ enum
 static const u16 sStatusIconColors[] =
 {
     [PAL_STATUS_PSN] = RGB(24, 12, 24),
-    [PAL_STATUS_PAR] = RGB(23, 23, 3),
+    [PAL_STATUS_PAR] = RGB(31, 26, 1),
     [PAL_STATUS_SLP] = RGB(20, 20, 17),
-    [PAL_STATUS_FRZ] = RGB(17, 22, 28),
+    [PAL_STATUS_FRZ] = RGB(21, 28, 30),
     [PAL_STATUS_BRN] = RGB(28, 14, 10),
 };
 
@@ -928,7 +928,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
         UpdateIndicatorVisibilityAndType(healthboxSpriteId, TRUE);
     }
 
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, xPos, 3, 2, &windowId);
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, xPos, 4, HEALTHBOX_PAL_TOP, &windowId);
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
     if (IsOnPlayerSide(battler))
@@ -1068,7 +1068,7 @@ void UpdateHpTextInHealthbox(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp
     {
         if (IsOnPlayerSide(battler)) // Player
         {
-            PrintHpOnHealthbox(healthboxSpriteId, currHp, maxHp, 2, 0xB00, 0x3A0);
+            PrintHpOnHealthbox(healthboxSpriteId, currHp, maxHp, HEALTHBOX_PAL_BOTTOM, 0xB00, 0x3A0);
         }
         else // Opponent
         {
@@ -1744,7 +1744,7 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
         break;
     }
 
-    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, 0, 3, 2, &windowId, 55);
+    windowTileData = AddTextPrinterAndCreateWindowOnHealthboxToFit(gDisplayedStringBattle, 0, 4, HEALTHBOX_PAL_TOP, &windowId, 55);
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
@@ -1869,7 +1869,7 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     }
 
     pltAdder = PLTT_ID(gSprites[healthboxSpriteId].oam.paletteNum);
-    pltAdder += battler + 12;
+    pltAdder += battler + 14;
 
     FillPalette(sStatusIconColors[statusPalId], OBJ_PLTT_OFFSET + pltAdder, PLTT_SIZEOF(1));
     CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_OFFSET + pltAdder], (u16 *)OBJ_PLTT + pltAdder, PLTT_SIZEOF(1));
@@ -2354,8 +2354,8 @@ static u8 *AddTextPrinterAndCreateWindowOnHealthboxWithFont(const u8 *str, u32 x
     FillWindowPixelBuffer(winId, PIXEL_FILL(bgColor));
 
     color[0] = bgColor;
-    color[1] = 1;
-    color[2] = 3;
+    color[1] = HEALTHBOX_PAL_FONT;
+    color[2] = HEALTHBOX_PAL_FONT_SHADOW;
 
     AddTextPrinterParameterized4(winId, fontId, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
 
@@ -2393,6 +2393,7 @@ static void TextIntoHealthboxObject(void *dest, u8 *windowTileData, s32 windowWi
 {
     CpuCopy32(windowTileData + 256, dest + 256, windowWidth * TILE_SIZE_4BPP);
 // + 256 as that prevents the top 4 blank rows of sHealthboxWindowTemplate from being copied
+    /*
     if (windowWidth > 0)
     {
         do
@@ -2402,6 +2403,7 @@ static void TextIntoHealthboxObject(void *dest, u8 *windowTileData, s32 windowWi
             windowWidth--;
         } while (windowWidth != 0);
     }
+    //*/
 }
 
 static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 windowWidth)
