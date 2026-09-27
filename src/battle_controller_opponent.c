@@ -694,7 +694,7 @@ static u8 CountAIAliveNonEggMonsExcept(u8 slotToIgnore)
 
 static void OpponentHandleHealthBarUpdate(u32 battler)
 {
-    BtlController_HandleHealthBarUpdate(battler, FALSE);
+    BtlController_HandleHealthBarUpdate(battler, TRUE);
 }
 
 static void OpponentHandleIntroTrainerBallThrow(u32 battler)

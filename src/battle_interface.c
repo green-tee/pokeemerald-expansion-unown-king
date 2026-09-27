@@ -673,7 +673,10 @@ u8 CreateBattlerHealthboxSprites(u8 battler)
             healthboxLeftSpriteId = CreateSprite(&sHealthboxOpponentSpriteTemplates[0], DISPLAY_WIDTH, DISPLAY_HEIGHT, 1);
             healthboxRightSpriteId = CreateSpriteAtEnd(&sHealthboxOpponentSpriteTemplates[0], DISPLAY_WIDTH, DISPLAY_HEIGHT, 1);
 
-            gSprites[healthboxRightSpriteId].oam.tileNum += 32;
+            gSprites[healthboxLeftSpriteId].oam.shape = ST_OAM_SQUARE;
+
+            gSprites[healthboxRightSpriteId].oam.shape = ST_OAM_SQUARE;
+            gSprites[healthboxRightSpriteId].oam.tileNum += 64;
 
             data6 = 2;
         }
@@ -873,7 +876,7 @@ static const s16 sBattlerHealthboxCoords[BATTLE_COORDS_COUNT][MAX_BATTLERS_COUNT
     [BATTLE_COORDS_SINGLES] =
     {
         [B_POSITION_PLAYER_LEFT]   = { 150, 84 },
-        [B_POSITION_OPPONENT_LEFT] = { 44,  30 },
+        [B_POSITION_OPPONENT_LEFT] = { 32,  16 },
     },
     [BATTLE_COORDS_DOUBLES] =
     {
@@ -931,6 +934,20 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, xPos, 4, HEALTHBOX_PAL_TOP, &windowId);
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
+    // The following logic should work for both player and opponent sides with no issues
+    objVram = (void *)(OBJ_VRAM0);
+    switch (GetBattlerCoordsIndex(battler))
+    {
+    case BATTLE_COORDS_SINGLES:
+        objVram += spriteTileNum + 0x820;
+        break;
+    default:
+        objVram += spriteTileNum + 0x420;
+        break;
+    }
+
+    // Original logic split between player side and opponent side
+    /*
     if (IsOnPlayerSide(battler))
     {
         objVram = (void *)(OBJ_VRAM0);
@@ -949,6 +966,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
         objVram = (void *)(OBJ_VRAM0);
         objVram += spriteTileNum + 0x400;
     }
+    */
     TextIntoHealthboxObject(objVram, windowTileData, 3);
     RemoveWindowOnHealthbox(windowId);
 }
@@ -1066,7 +1084,7 @@ void UpdateHpTextInHealthbox(u32 healthboxSpriteId, u32 maxOrCurrent, s16 currHp
     }
     case BATTLE_COORDS_SINGLES:
     {
-        if (IsOnPlayerSide(battler)) // Player
+        if (TRUE || IsOnPlayerSide(battler)) // Player
         {
             PrintHpOnHealthbox(healthboxSpriteId, currHp, maxHp, HEALTHBOX_PAL_BOTTOM, 0xB00, 0x3A0);
         }
@@ -1748,6 +1766,22 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
 
     spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
 
+    // The following logic should work on both player and opponent sides with no issues
+    TextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x40 + spriteTileNum), windowTileData, 6);
+    ptr = (void *)(OBJ_VRAM0);
+    switch (GetBattlerCoordsIndex(gSprites[healthboxSpriteId].data[6]))
+    {
+    case BATTLE_COORDS_SINGLES:
+        ptr += spriteTileNum + 0x800;
+        break;
+    default:
+        ptr += spriteTileNum + 0x400;
+        break;
+    }
+    TextIntoHealthboxObject(ptr, windowTileData + 0xC0, 1);
+
+    // Original logic split between player side and opponent side
+    /*
     if (IsOnPlayerSide(gSprites[healthboxSpriteId].data[6]))
     {
         TextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x40 + spriteTileNum), windowTileData, 6);
@@ -1767,6 +1801,7 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     {
         TextIntoHealthboxObject((void *)(OBJ_VRAM0 + 0x20 + spriteTileNum), windowTileData, 7);
     }
+    */
 
     RemoveWindowOnHealthbox(windowId);
 }
@@ -1821,7 +1856,7 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     else
     {
         status = GetMonData(GetBattlerMon(battler), MON_DATA_STATUS);
-        tileNumAdder = 0x11;
+        tileNumAdder = 0x1A;
     }
 
     if (status & STATUS1_SLEEP)
@@ -2041,16 +2076,15 @@ void UpdateHealthboxAttribute(u8 healthboxSpriteId, struct Pokemon *mon, u8 elem
     {
         if (elementId == HEALTHBOX_LEVEL || elementId == HEALTHBOX_ALL)
             UpdateLvlInHealthbox(healthboxSpriteId, GetMonData(mon, MON_DATA_LEVEL));
-        if (gBattleSpritesDataPtr->battlerData[battler].hpNumbersNoBars)
-        {
-            if (elementId == HEALTHBOX_ALL)
-                UpdateHpTextInHealthbox(healthboxSpriteId, HP_BOTH, currHp, maxHp);
-            else if (elementId == HEALTHBOX_MAX_HP)
-                UpdateHpTextInHealthbox(healthboxSpriteId, HP_MAX, currHp, maxHp);
-            else if (elementId == HEALTHBOX_CURRENT_HP)
-                UpdateHpTextInHealthbox(healthboxSpriteId, HP_CURRENT, currHp, maxHp);
-        }
-        if (elementId == HEALTHBOX_HEALTH_BAR || elementId == HEALTHBOX_ALL)
+
+        if (elementId == HEALTHBOX_ALL)
+            UpdateHpTextInHealthbox(healthboxSpriteId, HP_BOTH, currHp, maxHp);
+        else if (elementId == HEALTHBOX_MAX_HP)
+            UpdateHpTextInHealthbox(healthboxSpriteId, HP_MAX, currHp, maxHp);
+        else if (elementId == HEALTHBOX_CURRENT_HP)
+            UpdateHpTextInHealthbox(healthboxSpriteId, HP_CURRENT, currHp, maxHp);
+        
+            if (elementId == HEALTHBOX_HEALTH_BAR || elementId == HEALTHBOX_ALL)
         {
             LoadBattleBarGfx(0);
             SetBattleBarStruct(battler, healthboxSpriteId, maxHp, currHp, 0);
