@@ -1904,7 +1904,7 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
     }
 
     pltAdder = PLTT_ID(gSprites[healthboxSpriteId].oam.paletteNum);
-    pltAdder += battler + 14;
+    pltAdder += battler + HEALTHBOX_PAL_STATUS_0;
 
     FillPalette(sStatusIconColors[statusPalId], OBJ_PLTT_OFFSET + pltAdder, PLTT_SIZEOF(1));
     CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_OFFSET + pltAdder], (u16 *)OBJ_PLTT + pltAdder, PLTT_SIZEOF(1));
